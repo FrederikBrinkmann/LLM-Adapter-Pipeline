@@ -1,9 +1,14 @@
+from __future__ import annotations
+
+from datetime import datetime
 from typing import Any
 
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel
 
 from ..config import settings
+from ..db import JobStatus, get_session
+from ..db import crud as job_crud
 from ..llm.registry import get_model
 
 router = APIRouter(prefix="/ingest", tags=["ingest"])
@@ -15,9 +20,11 @@ class IngestRequest(BaseModel):
 
 
 class IngestResponse(BaseModel):
+    job_id: int
     model_id: str
     model_display_name: str
-    result: dict[str, Any]
+    status: JobStatus
+    created_at: datetime
 
 
 @router.post("/", response_model=IngestResponse, summary="Submit free text payload")
@@ -31,9 +38,18 @@ async def ingest_payload(payload: IngestRequest) -> IngestResponse:
             detail=str(exc),
         ) from exc
 
-    result = await model.generate_structured(text=payload.text)
+    with get_session() as session:
+        job = job_crud.create_job(
+            session,
+            text=payload.text,
+            model_id=model.model_id,
+            model_display_name=model.display_name,
+        )
+
     return IngestResponse(
-        model_id=model.model_id,
-        model_display_name=model.display_name,
-        result=result,
+        job_id=job.id,
+        model_id=job.model_id,
+        model_display_name=job.model_display_name,
+        status=job.status,
+        created_at=job.created_at,
     )

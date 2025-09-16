@@ -2,8 +2,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .config import settings
+from .db import init_db
 from .llm.setup import initialize_models
-from .routes import health, ingest, models
+from .routes import health, ingest, jobs, models
 
 app = FastAPI(
     title=settings.api_title,
@@ -22,6 +23,7 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup_event() -> None:
+    init_db()
     initialize_models()
 
 
@@ -33,3 +35,4 @@ def read_root() -> dict[str, str]:
 app.include_router(health.router)
 app.include_router(ingest.router)
 app.include_router(models.router)
+app.include_router(jobs.router)

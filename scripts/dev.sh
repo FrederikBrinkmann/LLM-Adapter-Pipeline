@@ -40,12 +40,20 @@ popd >/dev/null
 uvicorn backend.app.main:app --reload --reload-dir backend/app &
 BACKEND_PID=$!
 
+python worker/run_worker.py &
+WORKER_PID=$!
+
+declare -a PIDS=("${BACKEND_PID}" "${FRONTEND_PID}" "${WORKER_PID}")
+
 cleanup() {
-  echo "\n[info] Stoppe Dev-Server..."
-  kill ${BACKEND_PID} ${FRONTEND_PID} >/dev/null 2>&1 || true
+  echo "\n[info] Stoppe Dev-Umgebung..."
+  for pid in "${PIDS[@]}"; do
+    kill "$pid" >/dev/null 2>&1 || true
+  done
 }
 
 trap cleanup INT TERM EXIT
 
 wait ${BACKEND_PID}
 wait ${FRONTEND_PID}
+wait ${WORKER_PID}

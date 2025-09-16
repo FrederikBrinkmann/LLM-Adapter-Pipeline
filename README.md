@@ -7,32 +7,27 @@ Modellagnostische LLM-Pipeline, die unstrukturierte E-Mails in ein JSON überfü
 ```
 Das Skript legt eine `.venv`-Umgebung an, installiert Python-Abhängigkeiten und – sofern `npm` verfügbar ist – auch die Frontend-Pakete.
 
-## Backend lokal starten
-1. Virtuelle Umgebung aktivieren (falls nicht durch das Skript erledigt): `source .venv/bin/activate`.
-2. FastAPI-Server starten: `uvicorn backend.app.main:app --reload --reload-dir backend/app`.
-3. API im Browser öffnen: [http://127.0.0.1:8000](http://127.0.0.1:8000) oder interaktive Doku unter [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
+## Services starten
+- **Backend API**: `source .venv/bin/activate && uvicorn backend.app.main:app --reload --reload-dir backend/app`
+- **Worker** (Job-Queue-Verarbeitung): `source .venv/bin/activate && python worker/run_worker.py`
+- **Frontend** (Vite + React): `cd frontend && npm run dev`
 
-Der Health-Check ist unter `GET /health/` erreichbar und liefert `{ "status": "ok" }`. Der Endpunkt `POST /ingest/` nimmt Freitext entgegen, ruft das ausgewählte LLM auf (standardmäßig ein Mock) und liefert das strukturierte Ergebnis zurück.
-
-## Frontend (Vite + React)
-1. Wechsel in das Frontend-Verzeichnis: `cd frontend`.
-2. Entwicklungserver starten: `npm run dev` (standardmäßig Port 5173).
-3. Optional die Backend-URL anpassen, indem eine `.env` auf Basis der Vorlage `.env.example` angelegt wird.
-
-Das Frontend lädt verfügbare Modelle über `GET /models/`, ermöglicht die Auswahl im UI und schickt den Text samt `model_id` an `/ingest/`. Die Antwort wird inklusive Modelldetails angezeigt.
-
-## Dev-Skript (Backend + Frontend gleichzeitig)
-Mit `.venv` und Node installiert kannst du beide Server in einem Terminal starten:
-
+Für lokales Arbeiten kannst du alle drei Komponenten gleichzeitig mit einem Befehl starten:
 ```bash
 ./scripts/dev.sh
 ```
+Das Skript stellt sicher, dass Abhängigkeiten installiert sind, und stoppt Backend, Worker und Frontend gemeinsam mit `CTRL+C`.
 
-Das Skript installiert fehlende Dependencies, startet `npm run dev` sowie `uvicorn` und beendet beides bei `CTRL+C`.
+## API-Überblick
+- `POST /ingest/` – erstellt einen neuen Job (Text + optional ausgewähltes Modell) und liefert `job_id` sowie den initialen Status (`queued`).
+- `GET /jobs/{job_id}` – liefert den aktuellen Status, Timestamps, Fehlermeldungen sowie – nach erfolgreicher Verarbeitung – das strukturierte Ergebnis.
+- `POST /jobs/{job_id}/submit` – sendet ein abgeschlossenes Ergebnis an das konfigurierte Ticketsystem und speichert Referenz/Antwort in der Datenbank.
+- `GET /models/` – listet alle registrierten LLM-Adapter inklusive Default-Markierung.
+
+Die SQLite-Datenbank liegt standardmäßig unter `data/pipeline.db`. Sie enthält die `jobs`-Tabelle (Status, Modell, Ergebnis, Target-Response). Über die Umgebungsvariable `LLM_PIPELINE_DATABASE_URL` kannst du z. B. auf Postgres wechseln; `LLM_PIPELINE_DATABASE_PATH` steuert die lokale SQLite-Datei.
 
 ## LLM-Konfiguration
-Die verfügbaren Modelle werden über die Settings gesteuert. Standardmäßig stehen zwei Mock-Modelle bereit (rein lokal, ohne Netzwerkanfragen). Eigene Modelle kannst du über Umgebungsvariablen hinterlegen:
-
+Die verfügbaren Modelle werden über Umgebungsvariablen bzw. `.env`-Datei gesteuert:
 ```bash
 export LLM_PIPELINE_LLM_MODELS='[
   {"model_id": "mock-basic", "display_name": "Mock Model", "provider": "mock"},
@@ -40,8 +35,28 @@ export LLM_PIPELINE_LLM_MODELS='[
 ]'
 export LLM_PIPELINE_LLM_DEFAULT_MODEL="mock-basic"
 ```
+Für echte Modelle legst du unter `backend/app/llm/` passende Adapter an (z. B. Ollama, OpenAI, HF Inference) und ergänzt sie im Provider-Registry (`backend/app/llm/setup.py`).
 
-Weitere Provider (z. B. OpenAI, Ollama, HF-Inference) können durch zusätzliche Adapter unter `backend/app/llm/` ergänzt und in der Registry registriert werden. Der Endpoint `GET /models/` liefert allen Clients eine Liste mit `model_id`, Anzeigenamen und Default-Markierung.
+## Target-Ticketsystem konfigurieren
+Setze folgende Variablen, damit `POST /jobs/{job_id}/submit` deine Dummy- oder Echt-API anruft:
+```bash
+export LLM_PIPELINE_TARGET_API_BASE_URL="http://127.0.0.1:8500"   # Basis-URL deines Ticket-Backends
+export LLM_PIPELINE_TARGET_API_TICKETS_PATH="/tickets"           # optionaler Pfad
+export LLM_PIPELINE_TARGET_API_TOKEN="<optional-bearer-token>"
+export LLM_PIPELINE_TARGET_TIMEOUT_SECONDS=10
+```
+Der Aufruf erfolgt via HTTPX, Antwort und Referenz werden im Job gespeichert (Felder `target_status`, `target_reference`, `target_response`). Ohne konfigurierte URL antwortet der Endpoint mit HTTP 503.
+
+## Frontend
+Das React-Frontend lädt beim Start `GET /models/`, erlaubt die Modellwahl und erstellt anschließend einen Job. Status und Ergebnis werden regelmäßig per Polling über `GET /jobs/{job_id}` aktualisiert. Nach erfolgreicher Verarbeitung lässt sich das Ergebnis per Button an das Ticketsystem übermitteln.
 
 ## CORS-Konfiguration
-Standardmäßig erlaubt das Backend Anfragen von `http://localhost`, `http://localhost:3000`, `http://localhost:5173` sowie den entsprechenden `127.0.0.1`-Varianten. Weitere Origins können über die Umgebungsvariable `LLM_PIPELINE_BACKEND_CORS_ORIGINS` (kommagetrennt) gesetzt werden.
+Standardmäßig erlaubt das Backend Anfragen von `http://localhost`, `http://localhost:3000`, `http://localhost:5173` sowie den entsprechenden `127.0.0.1`-Varianten. Weitere Origins können über `LLM_PIPELINE_BACKEND_CORS_ORIGINS` (kommagetrennt) gesetzt werden.
+
+## OpenAI-Kosten (nur zum Vergleich)
+Falls du zum Testen ein OpenAI-Modell einbinden möchtest, beachte die tokenbasierte Abrechnung (Stand Juli 2024):
+
+- GPT-4o: ca. 5 USD pro 1 Mio. Eingabe-Tokens und 15 USD pro 1 Mio. Ausgabe-Tokens (≈ 0,02 USD pro 1.000 Tokens insgesamt).
+- GPT-4o mini: ca. 0,15 USD pro 1 Mio. Eingabe-Tokens und 0,60 USD pro 1 Mio. Ausgabe-Tokens (≈ 0,004 USD pro 1.000 Tokens).
+
+Für ein paar Testläufe reicht ein kleines Guthaben (z. B. 5–10 USD). Preise können sich ändern – siehe https://openai.com/pricing für aktuelle Infos.

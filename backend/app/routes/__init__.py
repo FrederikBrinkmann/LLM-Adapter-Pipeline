@@ -1,3 +1,3 @@
-from . import health, ingest, models
+from . import health, ingest, models, jobs
 
-__all__ = ["health", "ingest", "models"]
+__all__ = ["health", "ingest", "models", "jobs"]
