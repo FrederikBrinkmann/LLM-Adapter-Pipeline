@@ -49,13 +49,21 @@ label {
   font-weight: 600;
 }
 
-textarea {
-  resize: vertical;
+textarea,
+select {
   padding: 1rem;
   border-radius: 8px;
   border: 1px solid #d1d5db;
   font-size: 1rem;
   font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+select {
+  background-color: #ffffff;
 }
 
 button {
@@ -77,6 +85,11 @@ button:disabled {
 
 button:not(:disabled):hover {
   background: #1d4ed8;
+}
+
+.status {
+  margin-top: 1.5rem;
+  color: #6b7280;
 }
 
 .result {

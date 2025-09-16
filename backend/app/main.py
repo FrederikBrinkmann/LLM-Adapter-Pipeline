@@ -2,7 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .config import settings
-from .routes import health, ingest
+from .llm.setup import initialize_models
+from .routes import health, ingest, models
 
 app = FastAPI(
     title=settings.api_title,
@@ -19,6 +20,11 @@ app.add_middleware(
 )
 
 
+@app.on_event("startup")
+async def startup_event() -> None:
+    initialize_models()
+
+
 @app.get("/", summary="Service info")
 def read_root() -> dict[str, str]:
     return {"message": "LLM Adapter Pipeline API is running."}
@@ -26,3 +32,4 @@ def read_root() -> dict[str, str]:
 
 app.include_router(health.router)
 app.include_router(ingest.router)
+app.include_router(models.router)

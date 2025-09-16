@@ -4,6 +4,21 @@ from pydantic import Field
 from pydantic_settings import BaseSettings
 
 
+def default_llm_models() -> list[dict[str, str]]:
+    return [
+        {
+            "model_id": "mock-basic",
+            "display_name": "Mock Model (lokal)",
+            "provider": "mock",
+        },
+        {
+            "model_id": "mock-advanced",
+            "display_name": "Mock Advanced (lokal)",
+            "provider": "mock",
+        },
+    ]
+
+
 class Settings(BaseSettings):
     api_title: str = Field(default="LLM Adapter Pipeline API")
     api_description: str = Field(
@@ -22,6 +37,9 @@ class Settings(BaseSettings):
         ),
         description="Origins allowed to access the API via CORS.",
     )
+
+    llm_default_model: str = Field(default="mock-basic")
+    llm_models: list[dict[str, str]] = Field(default_factory=default_llm_models)
 
     class Config:
         env_prefix = "LLM_PIPELINE_"
