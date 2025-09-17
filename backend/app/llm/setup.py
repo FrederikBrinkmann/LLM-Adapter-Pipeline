@@ -5,11 +5,16 @@ from typing import Callable
 from ..config import settings
 from .base import BaseLLM
 from .mock import MockLLM
+from .openai_adapter import OpenAIAdapter
 from .registry import clear_registry, register_model
 
 
 PROVIDERS: dict[str, Callable[[dict[str, str]], BaseLLM]] = {
     "mock": lambda config: MockLLM(
+        model_id=config["model_id"],
+        display_name=config.get("display_name", config["model_id"]),
+    ),
+    "openai": lambda config: OpenAIAdapter(
         model_id=config["model_id"],
         display_name=config.get("display_name", config["model_id"]),
     ),

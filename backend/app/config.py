@@ -4,20 +4,20 @@ from pathlib import Path
 from typing import Sequence
 
 from pydantic import Field, computed_field
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 def default_llm_models() -> list[dict[str, str]]:
     return [
         {
-            "model_id": "mock-basic",
-            "display_name": "Mock Model (lokal)",
-            "provider": "mock",
+            "model_id": "gpt-4o-mini",
+            "display_name": "OpenAI GPT-4o mini",
+            "provider": "openai",
         },
         {
-            "model_id": "mock-advanced",
-            "display_name": "Mock Advanced (lokal)",
-            "provider": "mock",
+            "model_id": "gpt-4o",
+            "display_name": "OpenAI GPT-4o",
+            "provider": "openai",
         },
     ]
 
@@ -30,6 +30,12 @@ def default_database_path() -> Path:
 
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_prefix="LLM_PIPELINE_",
+        case_sensitive=False,
+        env_file=(".env",),
+    )
+
     api_title: str = Field(default="LLM Adapter Pipeline API")
     api_description: str = Field(
         default="HTTP API to manage ingestion and processing jobs for the LLM adapter pipeline."
@@ -48,12 +54,16 @@ class Settings(BaseSettings):
         description="Origins allowed to access the API via CORS.",
     )
 
-    llm_default_model: str = Field(default="mock-basic")
+    llm_default_model: str = Field(default="gpt-4o-mini")
     llm_models: list[dict[str, str]] = Field(default_factory=default_llm_models)
 
     database_path: Path = Field(default_factory=default_database_path)
     database_url_override: str | None = Field(default=None, alias="database_url")
     database_echo: bool = Field(default=False)
+
+    openai_api_key: str | None = Field(default=None)
+    openai_api_base: str = Field(default="https://api.openai.com/v1")
+    openai_timeout_seconds: float = Field(default=30.0)
 
     target_api_base_url: str | None = Field(default=None)
     target_api_token: str | None = Field(default=None)
@@ -61,10 +71,6 @@ class Settings(BaseSettings):
     target_timeout_seconds: float = Field(default=10.0)
 
     worker_poll_interval: float = Field(default=1.0)
-
-    class Config:
-        env_prefix = "LLM_PIPELINE_"
-        case_sensitive = False
 
     @computed_field
     @property
