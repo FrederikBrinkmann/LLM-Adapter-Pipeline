@@ -3,12 +3,18 @@ from __future__ import annotations
 import asyncio
 import logging
 import signal
-from contextlib import asynccontextmanager
+import sys
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
 
 from backend.app.config import settings
-from backend.app.db import get_session
+from backend.app.db import get_session, init_db
 from backend.app.db import crud as job_crud
 from backend.app.llm.registry import get_model
+from backend.app.llm.setup import initialize_models
 
 logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -53,6 +59,10 @@ async def worker_loop() -> None:
 
 
 def main() -> None:
+    logger.info("Initializing database and model registry")
+    init_db()
+    initialize_models()
+
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
 
