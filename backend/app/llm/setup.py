@@ -3,25 +3,23 @@ from __future__ import annotations
 from typing import Callable
 
 from ..config import settings
-from .base import BaseLLM
-from .mock import MockLLM
+from .base import BaseLLM, LLMError
+from .model_registry import MODEL_REGISTRY, ModelDefinition
 from .ollama_adapter import OllamaAdapter
 from .openai_adapter import OpenAIAdapter
 from .registry import clear_registry, register_model
 
 
-PROVIDERS: dict[str, Callable[[dict[str, str]], BaseLLM]] = {
-    "mock": lambda config: MockLLM(
-        model_id=config["model_id"],
-        display_name=config.get("display_name", config["model_id"]),
+PROVIDERS: dict[str, Callable[[ModelDefinition], BaseLLM]] = {
+    "openai": lambda definition: OpenAIAdapter(
+        model_id=definition.model_id,
+        display_name=definition.display_name,
+        parameters=definition.parameters,
     ),
-    "openai": lambda config: OpenAIAdapter(
-        model_id=config["model_id"],
-        display_name=config.get("display_name", config["model_id"]),
-    ),
-    "ollama": lambda config: OllamaAdapter(
-        model_id=config["model_id"],
-        display_name=config.get("display_name", config["model_id"]),
+    "ollama": lambda definition: OllamaAdapter(
+        model_id=definition.model_id,
+        display_name=definition.display_name,
+        parameters=definition.parameters,
     ),
 }
 
@@ -31,14 +29,27 @@ def initialize_models() -> None:
 
     available_ids: set[str] = set()
 
-    for model_config in settings.llm_models:
-        if "model_id" not in model_config:
-            raise ValueError("llm_models entry requires a 'model_id'.")
-        provider = model_config.get("provider", "mock")
-        factory = PROVIDERS.get(provider)
+    for model_id in settings.llm_model_ids:
+        try:
+            base_definition = MODEL_REGISTRY[model_id]
+        except KeyError as exc:
+            raise ValueError(
+                f"Model id '{model_id}' not found in registry."
+            ) from exc
+
+        overrides = settings.llm_model_overrides.get(model_id)
+        definition = base_definition.apply_overrides(overrides)
+
+        factory = PROVIDERS.get(definition.provider)
         if factory is None:
-            raise ValueError(f"Provider '{provider}' not supported yet.")
-        model = factory(model_config)
+            raise ValueError(f"Provider '{definition.provider}' not supported yet.")
+
+        try:
+            model = factory(definition)
+        except LLMError as exc:
+            raise ValueError(
+                f"Failed to initialise model '{definition.model_id}': {exc}"
+            ) from exc
         register_model(model)
         available_ids.add(model.model_id)
 

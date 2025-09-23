@@ -40,20 +40,44 @@ PROMPT_TEMPLATE = dedent(
 class OllamaAdapter:
     supports_streaming = False
 
-    def __init__(self, model_id: str, display_name: str) -> None:
+    def __init__(
+        self,
+        model_id: str,
+        display_name: str,
+        *,
+        parameters: dict[str, Any] | None = None,
+    ) -> None:
         self.model_id = model_id
         self.display_name = display_name
         self._base_url = settings.ollama_base_url.rstrip("/")
         self._timeout = settings.ollama_timeout_seconds
+        self.parameters = parameters or {}
 
     async def generate_structured(self, *, text: str) -> dict[str, Any]:
         prompt_text = PROMPT_TEMPLATE.replace("{email_text}", text)
 
-        payload = {
+        payload: dict[str, Any] = {
             "model": self.model_id,
             "prompt": prompt_text,
             "stream": False,
         }
+
+        options: dict[str, Any] = {}
+
+        if "temperature" in self.parameters:
+            options["temperature"] = self.parameters["temperature"]
+        if "top_p" in self.parameters:
+            options["top_p"] = self.parameters["top_p"]
+        if "top_k" in self.parameters:
+            options["top_k"] = self.parameters["top_k"]
+        if "max_tokens" in self.parameters:
+            options["num_predict"] = self.parameters["max_tokens"]
+
+        if options:
+            payload["options"] = options
+
+        if "stop" in self.parameters:
+            payload["stop"] = self.parameters["stop"]
 
         url = f"{self._base_url}/api/generate"
 

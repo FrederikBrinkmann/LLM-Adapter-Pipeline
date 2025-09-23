@@ -41,9 +41,16 @@ PROMPT_TEMPLATE = dedent(
 class OpenAIAdapter:
     supports_streaming = False
 
-    def __init__(self, model_id: str, display_name: str) -> None:
+    def __init__(
+        self,
+        model_id: str,
+        display_name: str,
+        *,
+        parameters: dict[str, Any] | None = None,
+    ) -> None:
         self.model_id = model_id
         self.display_name = display_name
+        self.parameters = parameters or {}
         if not settings.openai_api_key:
             raise LLMError("OpenAI API key is not configured")
 
@@ -51,7 +58,6 @@ class OpenAIAdapter:
         prompt_text = PROMPT_TEMPLATE.replace("{email_text}", text)
         payload = {
             "model": self.model_id,
-            "temperature": 0,
             "messages": [
                 {
                     "role": "system",
@@ -95,6 +101,27 @@ class OpenAIAdapter:
                 },
             },
         }
+
+        temperature = self.parameters.get("temperature")
+        if temperature is not None:
+            payload["temperature"] = temperature
+
+        for key in ("top_p", "frequency_penalty", "presence_penalty"):
+            value = self.parameters.get(key)
+            if value is not None:
+                payload[key] = value
+
+        max_completion_tokens = (
+            self.parameters.get("max_completion_tokens")
+            or self.parameters.get("max_output_tokens")
+            or self.parameters.get("max_tokens")
+        )
+        if max_completion_tokens is not None:
+            payload["max_completion_tokens"] = max_completion_tokens
+
+        stop_sequences = self.parameters.get("stop")
+        if stop_sequences is not None:
+            payload["stop"] = stop_sequences
 
         headers = {
             "Authorization": f"Bearer {settings.openai_api_key}",

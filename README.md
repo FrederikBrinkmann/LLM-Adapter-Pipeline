@@ -27,15 +27,20 @@ Das Skript stellt sicher, dass Abhängigkeiten installiert sind, und stoppt Back
 Die SQLite-Datenbank liegt standardmäßig unter `data/pipeline.db`. Sie enthält die `jobs`-Tabelle (Status, Modell, Ergebnis, Target-Response). Über die Umgebungsvariable `LLM_PIPELINE_DATABASE_URL` kannst du z. B. auf Postgres wechseln; `LLM_PIPELINE_DATABASE_PATH` steuert die lokale SQLite-Datei.
 
 ## LLM-Konfiguration
-Die verfügbaren Modelle werden über Umgebungsvariablen bzw. `.env`-Datei gesteuert:
+Die verfügbaren Modelle werden über Umgebungsvariablen bzw. `.env`-Datei gesteuert. In `backend/app/llm/model_registry.py` sind alle bekannten Modelle samt Default-Parametern (Temperatur, Token-Limits etc.) hinterlegt. Aktiviere sie per ID-Liste:
 ```bash
-export LLM_PIPELINE_LLM_MODELS='[
-  {"model_id": "mock-basic", "display_name": "Mock Model", "provider": "mock"},
-  {"model_id": "local-phi3", "display_name": "Phi-3 (lokal)", "provider": "mock"}
-]'
-export LLM_PIPELINE_LLM_DEFAULT_MODEL="mock-basic"
+export LLM_PIPELINE_LLM_MODEL_IDS='["llama3", "gpt-4o-mini"]'
+export LLM_PIPELINE_LLM_DEFAULT_MODEL="llama3"
 ```
-Für echte Modelle legst du unter `backend/app/llm/` passende Adapter an (z. B. Ollama, OpenAI, HF Inference) und ergänzt sie im Provider-Registry (`backend/app/llm/setup.py`).
+Feintuning pro Modell erfolgt über Overrides, z. B. um `max_output_tokens` oder `temperature` anzupassen:
+```bash
+export LLM_PIPELINE_LLM_MODEL_OVERRIDES='{
+  "gpt-4o-mini": {
+    "parameters": {"max_output_tokens": 700, "temperature": 0.2}
+  }
+}'
+```
+Die Registry lässt sich erweitern, indem du in `model_registry.py` weitere Einträge ergänzt und – falls nötig – einen passenden Adapter unter `backend/app/llm/` implementierst.
 
 ## Target-Ticketsystem konfigurieren
 Setze folgende Variablen, damit `POST /jobs/{job_id}/submit` deine Dummy- oder Echt-API anruft:

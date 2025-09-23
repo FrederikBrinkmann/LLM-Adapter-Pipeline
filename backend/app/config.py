@@ -1,35 +1,14 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Sequence
+from typing import Any, Sequence
 
 from pydantic import Field, computed_field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-def default_llm_models() -> list[dict[str, str]]:
-    return [
-        {
-            "model_id": "llama3",
-            "display_name": "LLaMA 3 (Ollama)",
-            "provider": "ollama",
-        },
-        {
-            "model_id": "gpt-4o-mini",
-            "display_name": "OpenAI GPT-4o mini",
-            "provider": "openai",
-        },
-        {
-            "model_id": "gpt-4o",
-            "display_name": "OpenAI GPT-4o",
-            "provider": "openai",
-        },
-        {
-            "model_id": "llama3",
-            "display_name": "LLaMA 3 (Ollama)",
-            "provider": "ollama",
-        },
-    ]
+def default_llm_model_ids() -> list[str]:
+    return ["llama3"]
 
 
 def default_database_path() -> Path:
@@ -65,7 +44,8 @@ class Settings(BaseSettings):
     )
 
     llm_default_model: str = Field(default="llama3")
-    llm_models: list[dict[str, str]] = Field(default_factory=default_llm_models)
+    llm_model_ids: list[str] = Field(default_factory=default_llm_model_ids)
+    llm_model_overrides: dict[str, dict[str, Any]] = Field(default_factory=dict)
 
     database_path: Path = Field(default_factory=default_database_path)
     database_url_override: str | None = Field(default=None, alias="database_url")
