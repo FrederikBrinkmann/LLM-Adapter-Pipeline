@@ -27,6 +27,14 @@ if [[ ! -f frontend/package.json ]]; then
   exit 1
 fi
 
+ENV_FILE="${ROOT_DIR}/.env"
+if [[ -f "${ENV_FILE}" ]]; then
+  set -a
+  # Load env vars so spawned processes (uvicorn/worker) know about model settings
+  source "${ENV_FILE}"
+  set +a
+fi
+
 pip install --disable-pip-version-check --no-warn-script-location -r backend/requirements.txt >/dev/null
 
 pushd frontend >/dev/null
