@@ -38,6 +38,11 @@ header p {
   color: #6b7280;
 }
 
+.tickets-link {
+  margin-top: 0.75rem;
+  color: #4b5563;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -52,6 +57,14 @@ label {
 textarea,
 select {
   padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+input {
+  padding: 0.85rem 1rem;
   border-radius: 8px;
   border: 1px solid #d1d5db;
   font-size: 1rem;
@@ -197,4 +210,8 @@ pre {
 .status-pill.status-failed {
   background: #fee2e2;
   color: #b91c1c;
+}
+
+.pipeline-view {
+  margin-top: 1.5rem;
 }

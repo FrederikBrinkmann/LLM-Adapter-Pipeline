@@ -1,0 +1,12 @@
+{
+  "count": 50,
+  "dataset_path": "data/emails/synthetic_insurance_emails.jsonl",
+  "seed": 2024,
+  "split_files": false,
+  "ingest_api": "http://localhost:8000/ingest/",
+  "ingest_limit": null,
+  "ingest_success": 50,
+  "ingest_errors": 0,
+  "model_id": "llama3",
+  "ingest_pause": 0.2
+}

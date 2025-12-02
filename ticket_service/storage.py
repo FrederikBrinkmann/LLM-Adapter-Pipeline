@@ -1,0 +1,202 @@
+from __future__ import annotations
+
+import json
+import threading
+from datetime import datetime
+from pathlib import Path
+from typing import Any
+from uuid import uuid4
+
+from .schemas import ActionItem, ActionItemCreate, Ticket, TicketCreate, TicketStatus, TicketUpdate
+
+DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "tickets_store.json"
+DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+
+class TicketNotFoundError(Exception):
+    pass
+
+
+class TicketStore:
+    def __init__(self, path: Path = DATA_PATH) -> None:
+        self.path = path
+        self._lock = threading.Lock()
+        self._data: dict[str, Any] = {"next_id": 1, "tickets": []}
+        self._load()
+        if not self._data["tickets"]:
+            self._seed()
+
+    def _load(self) -> None:
+        if not self.path.exists():
+            return
+        try:
+            payload = json.loads(self.path.read_text())
+            if isinstance(payload, dict):
+                self._data.update(payload)
+        except json.JSONDecodeError:
+            self._data = {"next_id": 1, "tickets": []}
+
+    def _persist(self) -> None:
+        serialized = json.dumps(self._data, indent=2)
+        self.path.write_text(serialized)
+
+    def _seed(self) -> None:
+        now = datetime.utcnow().isoformat()
+        samples = [
+            {
+                "id": 1,
+                "subject": "Retoure – Sneaker zu klein",
+                "summary": "Kundin benötigt ein Retourenlabel für Bestellung 10023421.",
+                "customer": "Lena M.",
+                "domain": "ecommerce",
+                "description": "Kundin bittet um Retourenlabel, Ware ungetragen.",
+                "priority": "high",
+                "status": TicketStatus.TODO.value,
+                "policy_number": None,
+                "claim_type": "return",
+                "missing_fields": ["order_number"],
+                "action_items": [
+                    {
+                        "id": self._generate_action_id(),
+                        "title": "Retoure freigeben",
+                        "details": "Label erstellen und an kundin@example.com senden",
+                        "suggested_by": "agent",
+                        "status": "open",
+                    }
+                ],
+                "source_job_id": None,
+                "source_model_id": None,
+                "raw_payload": None,
+                "created_at": now,
+                "updated_at": now,
+            },
+            {
+                "id": 2,
+                "subject": "Versicherungsschaden – Wasser im Keller",
+                "summary": "Hausratversicherung: Wasserschaden gemeldet, Gutachten benötigt.",
+                "customer": "Familie König",
+                "domain": "insurance",
+                "description": "Keller nach Unwetter geflutet, Kunde bittet um schnelle Hilfe.",
+                "priority": "urgent",
+                "status": TicketStatus.IN_PROGRESS.value,
+                "policy_number": "HZ-88923",
+                "claim_type": "water_damage",
+                "missing_fields": ["damage_estimate", "iban"],
+                "action_items": [
+                    {
+                        "id": self._generate_action_id(),
+                        "title": "Gutachter zuweisen",
+                        "details": "Partnerdienstleister in Köln informieren",
+                        "suggested_by": "llm",
+                        "status": "open",
+                    }
+                ],
+                "source_job_id": None,
+                "source_model_id": None,
+                "raw_payload": None,
+                "created_at": now,
+                "updated_at": now,
+            },
+        ]
+        self._data = {"next_id": 3, "tickets": samples}
+        self._persist()
+
+    def _generate_action_id(self) -> str:
+        return f"ACT-{uuid4().hex[:8].upper()}"
+
+    def list_tickets(self) -> list[Ticket]:
+        with self._lock:
+            tickets = [Ticket(**ticket) for ticket in self._data["tickets"]]
+        tickets.sort(key=lambda t: t.created_at, reverse=True)
+        return tickets
+
+    def get_ticket(self, ticket_id: int) -> Ticket:
+        with self._lock:
+            for ticket in self._data["tickets"]:
+                if ticket["id"] == ticket_id:
+                    return Ticket(**ticket)
+        raise TicketNotFoundError(f"Ticket {ticket_id} not found")
+
+    def create_ticket(self, ticket_in: TicketCreate) -> Ticket:
+        with self._lock:
+            ticket_dict = self._ticket_dict_from_create(ticket_in)
+            ticket_dict["id"] = self._data["next_id"]
+            self._data["next_id"] += 1
+            self._data["tickets"].append(ticket_dict)
+            self._persist()
+            return Ticket(**ticket_dict)
+
+    def update_ticket(self, ticket_id: int, update: TicketUpdate) -> Ticket:
+        with self._lock:
+            for index, stored in enumerate(self._data["tickets"]):
+                if stored["id"] != ticket_id:
+                    continue
+                updated = self._apply_update(stored, update)
+                self._data["tickets"][index] = updated
+                self._persist()
+                return Ticket(**updated)
+        raise TicketNotFoundError(f"Ticket {ticket_id} not found")
+
+    def _ticket_dict_from_create(self, ticket_in: TicketCreate) -> dict[str, Any]:
+        now = datetime.utcnow().isoformat()
+        action_items = [self._build_action_item(item) for item in ticket_in.action_items]
+        return {
+            "subject": ticket_in.subject,
+            "summary": ticket_in.summary,
+            "customer": ticket_in.customer,
+            "domain": ticket_in.domain,
+            "description": ticket_in.description,
+            "priority": ticket_in.priority.value,
+            "status": ticket_in.status.value,
+            "policy_number": ticket_in.policy_number,
+            "claim_type": ticket_in.claim_type,
+            "missing_fields": ticket_in.missing_fields,
+            "action_items": action_items,
+            "source_job_id": ticket_in.source_job_id,
+            "source_model_id": ticket_in.source_model_id,
+            "raw_payload": ticket_in.raw_payload,
+            "created_at": now,
+            "updated_at": now,
+        }
+
+    def _build_action_item(self, payload: ActionItemCreate) -> dict[str, Any]:
+        identifier = payload.id or self._generate_action_id()
+        return {
+            "id": identifier,
+            "title": payload.title,
+            "details": payload.details,
+            "suggested_by": payload.suggested_by,
+            "status": payload.status or "open",
+        }
+
+    def _apply_update(self, stored: dict[str, Any], update: TicketUpdate) -> dict[str, Any]:
+        ticket = Ticket(**stored)
+        data = ticket.model_dump()
+        for field in (
+            "subject",
+            "summary",
+            "customer",
+            "domain",
+            "description",
+            "priority",
+            "status",
+            "policy_number",
+            "claim_type",
+            "missing_fields",
+        ):
+            value = getattr(update, field)
+            if value is not None:
+                if field in {"priority", "status"} and hasattr(value, "value"):
+                    data[field] = value.value
+                else:
+                    data[field] = value
+        if update.action_items is not None:
+            data["action_items"] = [self._build_action_item(item) for item in update.action_items]
+        data["updated_at"] = datetime.utcnow().isoformat()
+        return data
+
+
+store = TicketStore()
+
+
+__all__ = ["TicketStore", "TicketNotFoundError", "store"]

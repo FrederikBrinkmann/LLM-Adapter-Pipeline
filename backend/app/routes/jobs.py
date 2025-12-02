@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime
-from typing import Optional
+from typing import Any, Optional
 
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel
@@ -10,6 +10,85 @@ from ..config import settings
 from ..db import Job, JobStatus, get_session
 from ..db import crud as job_crud
 from ..ticketing import TargetAPIError, submit_ticket
+
+ACTION_SOURCES = {"llm", "agent", "system"}
+
+
+def _derive_priority(claim_type: str | None, missing_fields: list[str]) -> str:
+    if claim_type:
+        claim = claim_type.lower()
+        if claim in {"injury", "fraud", "legal", "emergency"}:
+            return "urgent"
+        if claim in {"water_damage", "accident", "liability"}:
+            return "high"
+    if len(missing_fields) >= 3:
+        return "high"
+    if len(missing_fields) == 0:
+        return "medium"
+    return "medium"
+
+
+def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dict[str, Any]:
+    summary = str(structured_payload.get("summary") or "").strip() or job.input_text.strip()
+    if not summary:
+        summary = f"Ticket für Job #{job.id}"
+    subject = str(structured_payload.get("subject") or summary).strip()
+    missing_fields: list[str] = []
+    raw_missing = structured_payload.get("missing_fields") or []
+    if isinstance(raw_missing, list):
+        for entry in raw_missing:
+            if isinstance(entry, str) and entry.strip():
+                missing_fields.append(entry.strip())
+
+    raw_actions = structured_payload.get("action_items") or []
+    action_items: list[dict[str, Any]] = []
+    if isinstance(raw_actions, list):
+        for entry in raw_actions:
+            if isinstance(entry, str):
+                text = entry.strip()
+                if not text:
+                    continue
+                action_items.append(
+                    {
+                        "title": text[:80],
+                        "details": text,
+                        "suggested_by": "llm",
+                    }
+                )
+            elif isinstance(entry, dict):
+                title = str(entry.get("title") or entry.get("label") or "").strip()
+                if not title:
+                    continue
+                details_value = entry.get("details") or entry.get("description") or entry.get("text") or title
+                suggested_by = str(entry.get("suggested_by") or "llm").lower()
+                action_items.append(
+                    {
+                        "title": title[:80],
+                        "details": str(details_value),
+                        "suggested_by": suggested_by if suggested_by in ACTION_SOURCES else "llm",
+                        "status": entry.get("status") if entry.get("status") in {"open", "done"} else "open",
+                    }
+                )
+
+    claim_type = structured_payload.get("claim_type")
+    priority = _derive_priority(claim_type, missing_fields)
+
+    return {
+        "subject": subject or summary,
+        "summary": summary,
+        "customer": structured_payload.get("customer"),
+        "domain": structured_payload.get("domain") or ("insurance" if claim_type else None),
+        "description": structured_payload.get("description") or job.input_text,
+        "priority": priority,
+        "status": "todo",
+        "policy_number": structured_payload.get("policy_number"),
+        "claim_type": claim_type,
+        "missing_fields": missing_fields,
+        "action_items": action_items,
+        "source_job_id": job.id,
+        "source_model_id": job.model_id,
+        "raw_payload": structured_payload,
+    }
 
 router = APIRouter(prefix="/jobs", tags=["jobs"])
 
@@ -98,7 +177,7 @@ async def submit_job(job_id: int) -> JobSubmitResponse:
                 detail="Job is not completed yet or missing result",
             )
 
-        payload = job.result_json
+        structured_payload = job.result_json
 
     if settings.target_api_base_url is None:
         raise HTTPException(
@@ -107,7 +186,8 @@ async def submit_job(job_id: int) -> JobSubmitResponse:
         )
 
     try:
-        target_response = await submit_ticket(payload)
+        ticket_payload = _prepare_ticket_payload(job, structured_payload)
+        target_response = await submit_ticket(ticket_payload)
     except TargetAPIError as exc:
         with get_session() as session:
             job_crud.mark_job_submitted(

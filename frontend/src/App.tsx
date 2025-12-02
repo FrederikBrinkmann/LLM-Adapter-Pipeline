@@ -2,6 +2,8 @@ import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, "") ?? "http://127.0.0.1:8000";
+const TICKETS_UI_URL =
+  import.meta.env.VITE_TICKETS_UI_URL?.replace(/\/$/, "") ?? "http://127.0.0.1:5174";
 
 interface ModelInfo {
   model_id: string;
@@ -245,9 +247,15 @@ function App() {
       <header>
         <h1>LLM Adapter Pipeline</h1>
         <p>Schicke Freitexte an das FastAPI-Backend, verarbeite sie mit einem Modell und verfolge den Status.</p>
+        <p className="tickets-link">
+          Die Ticket-Demo läuft jetzt als eigener Service.{" "}
+          <a href={TICKETS_UI_URL} target="_blank" rel="noreferrer">
+            Ticket-Dashboard öffnen
+          </a>
+        </p>
       </header>
 
-      <main>
+      <main className="pipeline-view">
         <form onSubmit={handleSubmit}>
           <label htmlFor="payload">Freitext / E-Mail-Inhalt</label>
           <textarea
