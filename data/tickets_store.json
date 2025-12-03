@@ -1,294 +1,52 @@
 {
-  "next_id": 10,
+  "next_id": 2,
   "tickets": [
     {
-      "id": 1,
-      "subject": "Retoure \u2013 Sneaker zu klein",
-      "summary": "Kundin ben\u00f6tigt ein Retourenlabel f\u00fcr Bestellung 10023421.",
-      "customer": "Lena M.",
-      "domain": "ecommerce",
-      "description": "Kundin bittet um Retourenlabel, Ware ungetragen.",
-      "priority": "high",
+      "subject": "Return of Pullover #45892317",
+      "summary": "Return of Pullover #45892317",
+      "customer": "Max Mustermann",
+      "description": "Betreff: R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317\n\nSehr geehrtes Kundenservice-Team,\n\nich m\u00f6chte hiermit gerne den folgenden Artikel aus meiner Bestellung zur\u00fccksenden:\n\nBestellnummer: #45892317\n\nArtikel: Pullover \u201eNordic Knit\u201c\n\nGr\u00f6\u00dfe: L\n\nFarbe: Dunkelblau\n\nBestelldatum: 12. Februar 2025\n\nDer Pullover entspricht leider nicht meinen Erwartungen und ich m\u00f6chte daher mein Widerrufsrecht nutzen. Bitte senden Sie mir die entsprechenden R\u00fccksendeunterlagen sowie weitere Informationen zum R\u00fccksendeprozess zu.\n\nVielen Dank im Voraus f\u00fcr Ihre Unterst\u00fctzung.\n\nMit freundlichen Gr\u00fc\u00dfen\nMax Mustermann",
+      "priority": "medium",
       "status": "todo",
-      "policy_number": null,
+      "policy_number": "#45892317",
       "claim_type": "return",
-      "missing_fields": [
-        "order_number"
-      ],
+      "missing_fields": [],
       "action_items": [
         {
-          "id": "ACT-C850C29F",
-          "title": "Retoure freigeben",
-          "details": "Label erstellen und an kundin@example.com senden",
-          "suggested_by": "agent",
+          "id": "ACT-7255D2E5",
+          "title": "send return shipping instructions",
+          "details": "send return shipping instructions",
+          "suggested_by": "llm",
           "status": "open"
-        }
-      ],
-      "source_job_id": null,
-      "source_model_id": null,
-      "raw_payload": null,
-      "created_at": "2025-11-18T12:59:29.775037",
-      "updated_at": "2025-11-18T12:59:29.775037"
-    },
-    {
-      "id": 2,
-      "subject": "Versicherungsschaden \u2013 Wasser im Keller",
-      "summary": "Hausratversicherung: Wasserschaden gemeldet, Gutachten ben\u00f6tigt.",
-      "customer": "Familie K\u00f6nig",
-      "domain": "insurance",
-      "description": "Keller nach Unwetter geflutet, Kunde bittet um schnelle Hilfe.",
-      "priority": "urgent",
-      "status": "in_progress",
-      "policy_number": "HZ-88923",
-      "claim_type": "water_damage",
-      "missing_fields": [
-        "damage_estimate",
-        "iban"
-      ],
-      "action_items": [
+        },
         {
-          "id": "ACT-F910FAD4",
-          "title": "Gutachter zuweisen",
-          "details": "Partnerdienstleister in K\u00f6ln informieren",
+          "id": "ACT-29F4EB1F",
+          "title": "provide further information on return process",
+          "details": "provide further information on return process",
           "suggested_by": "llm",
           "status": "open"
         }
       ],
-      "source_job_id": null,
-      "source_model_id": null,
-      "raw_payload": null,
-      "created_at": "2025-11-18T12:59:29.775037",
-      "updated_at": "2025-11-18T12:59:29.775037"
-    },
-    {
-      "subject": "No summary provided",
-      "summary": "No summary provided",
-      "customer": null,
-      "domain": null,
-      "description": "dasd",
-      "priority": "medium",
-      "status": "todo",
-      "policy_number": null,
-      "claim_type": null,
-      "missing_fields": [
-        "unknown"
-      ],
-      "action_items": [],
-      "source_job_id": 132,
+      "source_job_id": 148,
       "source_model_id": "llama3",
       "raw_payload": {
-        "model_id": "",
-        "summary": "No summary provided",
-        "policy_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "unknown"
+        "summary": "Return of Pullover #45892317",
+        "subject": null,
+        "customer": "Max Mustermann",
+        "description": null,
+        "priority": "medium",
+        "policy_number": "#45892317",
+        "claim_type": "return",
+        "missing_fields": [],
+        "action_items": [
+          "send return shipping instructions",
+          "provide further information on return process"
         ],
-        "action_items": []
+        "model_id": "llama3"
       },
-      "created_at": "2025-11-18T13:02:40.989630",
-      "updated_at": "2025-11-18T13:02:40.989630",
-      "id": 3
-    },
-    {
-      "subject": "No summary provided",
-      "summary": "No summary provided",
-      "customer": null,
-      "domain": null,
-      "description": "dasd",
-      "priority": "medium",
-      "status": "todo",
-      "policy_number": null,
-      "claim_type": null,
-      "missing_fields": [
-        "unknown"
-      ],
-      "action_items": [],
-      "source_job_id": 133,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "model_id": "",
-        "summary": "No summary provided",
-        "policy_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "unknown"
-        ],
-        "action_items": []
-      },
-      "created_at": "2025-11-18T13:06:19.367242",
-      "updated_at": "2025-11-18T13:06:19.367242",
-      "id": 4
-    },
-    {
-      "subject": "No summary provided.",
-      "summary": "No summary provided.",
-      "customer": null,
-      "domain": null,
-      "description": " m,mkn",
-      "priority": "high",
-      "status": "todo",
-      "policy_number": null,
-      "claim_type": null,
-      "missing_fields": [
-        "model_id",
-        "summary",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [],
-      "source_job_id": 135,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "model_id": "unknown",
-        "summary": "No summary provided.",
-        "policy_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "model_id",
-          "summary",
-          "policy_number",
-          "claim_type"
-        ],
-        "action_items": []
-      },
-      "created_at": "2025-11-18T13:21:14.778471",
-      "updated_at": "2025-11-18T13:21:14.778471",
-      "id": 5
-    },
-    {
-      "subject": "No summary provided",
-      "summary": "No summary provided",
-      "customer": null,
-      "domain": null,
-      "description": "dasdas",
-      "priority": "medium",
-      "status": "todo",
-      "policy_number": null,
-      "claim_type": null,
-      "missing_fields": [
-        "unknown"
-      ],
-      "action_items": [],
-      "source_job_id": 137,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "model_id": "",
-        "summary": "No summary provided",
-        "policy_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "unknown"
-        ],
-        "action_items": []
-      },
-      "created_at": "2025-12-02T13:40:24.126825",
-      "updated_at": "2025-12-02T13:40:24.126825",
-      "id": 6
-    },
-    {
-      "subject": "No summary provided. Please provide a brief overview of the email.",
-      "summary": "No summary provided. Please provide a brief overview of the email.",
-      "customer": null,
-      "domain": null,
-      "description": "asdfghjsfg",
-      "priority": "high",
-      "status": "todo",
-      "policy_number": null,
-      "claim_type": null,
-      "missing_fields": [
-        "model_id",
-        "summary",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [],
-      "source_job_id": 138,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "model_id": "Unknown",
-        "summary": "No summary provided. Please provide a brief overview of the email.",
-        "policy_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "model_id",
-          "summary",
-          "policy_number",
-          "claim_type"
-        ],
-        "action_items": []
-      },
-      "created_at": "2025-12-02T13:42:13.967509",
-      "updated_at": "2025-12-02T13:42:13.967509",
-      "id": 7
-    },
-    {
-      "subject": "No summary provided. Please provide a brief overview of the email.",
-      "summary": "No summary provided. Please provide a brief overview of the email.",
-      "customer": null,
-      "domain": null,
-      "description": "fdasdfsdf",
-      "priority": "high",
-      "status": "todo",
-      "policy_number": null,
-      "claim_type": null,
-      "missing_fields": [
-        "model_id",
-        "summary",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [],
-      "source_job_id": 139,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "model_id": "Unknown",
-        "summary": "No summary provided. Please provide a brief overview of the email.",
-        "policy_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "model_id",
-          "summary",
-          "policy_number",
-          "claim_type"
-        ],
-        "action_items": []
-      },
-      "created_at": "2025-12-02T13:49:18.285695",
-      "updated_at": "2025-12-02T13:49:18.285695",
-      "id": 8
-    },
-    {
-      "subject": "Test email with unknown purpose",
-      "summary": "Test email with unknown purpose",
-      "customer": null,
-      "domain": null,
-      "description": "DAS IST EIN TEST AMK ",
-      "priority": "medium",
-      "status": "todo",
-      "policy_number": null,
-      "claim_type": null,
-      "missing_fields": [
-        "model_id",
-        "summary"
-      ],
-      "action_items": [],
-      "source_job_id": 140,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "model_id": "unknown",
-        "summary": "Test email with unknown purpose",
-        "policy_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "model_id",
-          "summary"
-        ],
-        "action_items": []
-      },
-      "created_at": "2025-12-02T13:52:33.629109",
-      "updated_at": "2025-12-02T13:52:33.629109",
-      "id": 9
+      "created_at": "2025-12-03T17:07:57.060083",
+      "updated_at": "2025-12-03T17:07:57.060083",
+      "id": 1
     }
   ]
 }

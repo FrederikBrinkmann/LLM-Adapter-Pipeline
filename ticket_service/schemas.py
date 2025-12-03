@@ -42,7 +42,6 @@ class Ticket(BaseModel):
     subject: str
     summary: str
     customer: str | None = None
-    domain: str | None = None
     description: str | None = None
     priority: TicketPriority
     status: TicketStatus
@@ -61,7 +60,6 @@ class TicketCreate(BaseModel):
     summary: str = Field(..., min_length=1)
     subject: str | None = None
     customer: str | None = None
-    domain: str | None = None
     description: str | None = None
     priority: TicketPriority = TicketPriority.MEDIUM
     status: TicketStatus = TicketStatus.TODO
@@ -87,7 +85,6 @@ class TicketUpdate(BaseModel):
     subject: str | None = None
     summary: str | None = None
     customer: str | None = None
-    domain: str | None = None
     description: str | None = None
     priority: TicketPriority | None = None
     status: TicketStatus | None = None

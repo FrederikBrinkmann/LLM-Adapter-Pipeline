@@ -33,12 +33,20 @@ def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dic
     if not summary:
         summary = f"Ticket für Job #{job.id}"
     subject = str(structured_payload.get("subject") or summary).strip()
+    priority_raw = structured_payload.get("priority")
+    valid_priorities = {"low", "medium", "high", "urgent"}
+    priority: str | None = None
+    if isinstance(priority_raw, str) and priority_raw.lower() in valid_priorities:
+        priority = priority_raw.lower()
+
     missing_fields: list[str] = []
     raw_missing = structured_payload.get("missing_fields") or []
     if isinstance(raw_missing, list):
         for entry in raw_missing:
-            if isinstance(entry, str) and entry.strip():
-                missing_fields.append(entry.strip())
+            if isinstance(entry, str):
+                cleaned = entry.strip()
+                if cleaned and cleaned.lower() not in {"model_id"}:
+                    missing_fields.append(cleaned)
 
     raw_actions = structured_payload.get("action_items") or []
     action_items: list[dict[str, Any]] = []
@@ -71,13 +79,13 @@ def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dic
                 )
 
     claim_type = structured_payload.get("claim_type")
-    priority = _derive_priority(claim_type, missing_fields)
+    if priority is None:
+        priority = _derive_priority(claim_type, missing_fields)
 
     return {
         "subject": subject or summary,
         "summary": summary,
         "customer": structured_payload.get("customer"),
-        "domain": structured_payload.get("domain") or ("insurance" if claim_type else None),
         "description": structured_payload.get("description") or job.input_text,
         "priority": priority,
         "status": "todo",

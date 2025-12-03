@@ -22,8 +22,9 @@ class TicketStore:
         self.path = path
         self._lock = threading.Lock()
         self._data: dict[str, Any] = {"next_id": 1, "tickets": []}
+        file_existed = self.path.exists()
         self._load()
-        if not self._data["tickets"]:
+        if not self._data["tickets"] and not file_existed:
             self._seed()
 
     def _load(self) -> None:
@@ -48,7 +49,6 @@ class TicketStore:
                 "subject": "Retoure – Sneaker zu klein",
                 "summary": "Kundin benötigt ein Retourenlabel für Bestellung 10023421.",
                 "customer": "Lena M.",
-                "domain": "ecommerce",
                 "description": "Kundin bittet um Retourenlabel, Ware ungetragen.",
                 "priority": "high",
                 "status": TicketStatus.TODO.value,
@@ -75,7 +75,6 @@ class TicketStore:
                 "subject": "Versicherungsschaden – Wasser im Keller",
                 "summary": "Hausratversicherung: Wasserschaden gemeldet, Gutachten benötigt.",
                 "customer": "Familie König",
-                "domain": "insurance",
                 "description": "Keller nach Unwetter geflutet, Kunde bittet um schnelle Hilfe.",
                 "priority": "urgent",
                 "status": TicketStatus.IN_PROGRESS.value,
@@ -144,7 +143,6 @@ class TicketStore:
             "subject": ticket_in.subject,
             "summary": ticket_in.summary,
             "customer": ticket_in.customer,
-            "domain": ticket_in.domain,
             "description": ticket_in.description,
             "priority": ticket_in.priority.value,
             "status": ticket_in.status.value,
@@ -176,7 +174,6 @@ class TicketStore:
             "subject",
             "summary",
             "customer",
-            "domain",
             "description",
             "priority",
             "status",

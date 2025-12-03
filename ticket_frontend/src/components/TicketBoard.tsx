@@ -5,10 +5,8 @@ const TICKETS_API_BASE_URL =
 
 type TicketStatus = "todo" | "in_progress" | "waiting_for_customer" | "done";
 type TicketPriority = "low" | "medium" | "high" | "urgent";
-type TicketDomain = "insurance" | "ecommerce" | "logistics" | "general";
 
 type StatusFilter = TicketStatus | "all";
-type DomainFilter = TicketDomain | "all";
 
 type ActionSource = "llm" | "agent" | "system";
 
@@ -25,7 +23,6 @@ interface Ticket {
   subject: string;
   summary: string;
   customer: string | null;
-  domain: string | null;
   description: string | null;
   priority: TicketPriority;
   status: TicketStatus;
@@ -53,41 +50,10 @@ const PRIORITY_LABELS: Record<TicketPriority, string> = {
   urgent: "Dringend",
 };
 
-const DOMAIN_LABELS: Record<TicketDomain, string> = {
-  insurance: "Versicherung",
-  ecommerce: "E-Commerce",
-  logistics: "Logistik",
-  general: "Allgemein",
-};
-
-const ACTION_PRESETS: Record<
-  TicketDomain,
-  { type: string; title: string; details: string; suggested_by?: ActionSource }[]
-> = {
-  insurance: [
-    {
-      type: "survey",
-      title: "Schadensprüfung",
-      details: "Gutachter zuweisen und Kontakt herstellen",
-    },
-    {
-      type: "documents",
-      title: "Dokumente anfordern",
-      details: "Fehlende Nachweise bei Kundin erfragen",
-    },
-  ],
-  ecommerce: [
-    { type: "return", title: "Retoure freigeben", details: "Retourenlabel erstellen" },
-    { type: "exchange", title: "Umtausch vorbereiten", details: "Ersatzprodukt reservieren" },
-  ],
-  logistics: [
-    { type: "tracking", title: "Sendung verfolgen", details: "Carrier kontaktieren" },
-    { type: "pickup", title: "Abholung planen", details: "Slot mit Kunde abstimmen" },
-  ],
-  general: [
-    { type: "follow_up", title: "Rückfrage senden", details: "Kund:in um mehr Infos bitten" },
-  ],
-};
+const ACTION_PRESETS = [
+  { type: "return", title: "Retoure freigeben", details: "Retourenlabel erstellen" },
+  { type: "exchange", title: "Umtausch vorbereiten", details: "Ersatzprodukt reservieren" },
+];
 
 const statusOrder: TicketStatus[] = ["todo", "in_progress", "waiting_for_customer", "done"];
 
@@ -103,26 +69,21 @@ const TicketBoard = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
-  const [domainFilter, setDomainFilter] = useState<DomainFilter>("all");
   const [formState, setFormState] = useState({
     subject: "",
     customer: "",
-    domain: "insurance" as TicketDomain,
     priority: "medium" as TicketPriority,
     description: "",
-    actionType: ACTION_PRESETS.insurance[0]?.type ?? "survey",
+    actionType: ACTION_PRESETS[0]?.type ?? "return",
   });
 
   const filteredTickets = useMemo(() => {
     return tickets
       .filter((ticket) => (statusFilter === "all" ? true : ticket.status === statusFilter))
-      .filter((ticket) =>
-        domainFilter === "all" ? true : (ticket.domain ?? "general") === domainFilter
-      )
       .sort((a, b) => statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status));
-  }, [tickets, statusFilter, domainFilter]);
+  }, [tickets, statusFilter]);
 
-  const actionOptions = useMemo(() => ACTION_PRESETS[formState.domain], [formState.domain]);
+  const actionOptions = useMemo(() => ACTION_PRESETS, []);
 
   const fetchTickets = useCallback(async () => {
     setLoading(true);
@@ -156,7 +117,6 @@ const TicketBoard = () => {
       subject: formState.subject.trim(),
       summary: formState.subject.trim(),
       customer: formState.customer.trim() || null,
-      domain: formState.domain,
       description: formState.description.trim() || null,
       priority: formState.priority,
       action_items: preset
@@ -256,25 +216,6 @@ const TicketBoard = () => {
             />
           </label>
           <label>
-            Domäne
-            <select
-              value={formState.domain}
-              onChange={(event) =>
-                setFormState((prev) => ({
-                  ...prev,
-                  domain: event.target.value as TicketDomain,
-                  actionType: ACTION_PRESETS[event.target.value as TicketDomain][0]?.type ?? prev.actionType,
-                }))
-              }
-            >
-              {Object.entries(DOMAIN_LABELS).map(([domain, label]) => (
-                <option key={domain} value={domain}>
-                  {label}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
             Priorität
             <select
               value={formState.priority}
@@ -327,17 +268,6 @@ const TicketBoard = () => {
             ))}
           </select>
         </label>
-        <label>
-          Domäne
-          <select value={domainFilter} onChange={(event) => setDomainFilter(event.target.value as DomainFilter)}>
-            <option value="all">Alle Bereiche</option>
-            {Object.entries(DOMAIN_LABELS).map(([domain, label]) => (
-              <option key={domain} value={domain}>
-                {label}
-              </option>
-            ))}
-          </select>
-        </label>
       </div>
 
       {error && <div className="result error">{error}</div>}
@@ -347,7 +277,7 @@ const TicketBoard = () => {
           <thead>
             <tr>
               <th>Ticket</th>
-              <th>Kunde / Domäne</th>
+              <th>Kunde</th>
               <th>Status</th>
               <th>Priorität</th>
               <th>Action Items & fehlende Felder</th>
@@ -373,8 +303,7 @@ const TicketBoard = () => {
                 <td>
                   <div className="ticket-meta">
                     <span>{ticket.customer ?? "–"}</span>
-                    <small>{ticket.domain ? DOMAIN_LABELS[ticket.domain as TicketDomain] ?? ticket.domain : "Allgemein"}</small>
-                    {ticket.policy_number && <small>Police: {ticket.policy_number}</small>}
+                    {ticket.policy_number && <small>Referenz: {ticket.policy_number}</small>}
                   </div>
                 </td>
                 <td>

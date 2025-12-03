@@ -11,24 +11,26 @@ from ..config import settings
 
 PROMPT_TEMPLATE = dedent(
     """
-    You are an assistant that converts insurance-related emails into structured JSON.
-    Extract the key information and highlight missing essentials. Return **only** valid JSON
-    with the following shape:
+    You turn e-commerce customer emails (returns, exchanges, delivery issues) into strict JSON for a ticket system.
+    Return ONLY valid JSON with this shape:
     {
-      "model_id": string,
-      "summary": string,
-      "policy_number": string | null,
-      "claim_type": string | null,
-      "missing_fields": string[],
-      "action_items": string[]
+      "summary": string,                      // short title
+      "subject": string | null,               // optional, can reuse summary
+      "customer": string | null,
+      "description": string | null,           // optional short description
+      "priority": "low" | "medium" | "high" | "urgent",
+      "policy_number": string | null,         // use order number here
+      "claim_type": string | null,            // e.g. "return", "exchange", "delivery_issue"
+      "missing_fields": string[],             // only real gaps (e.g. "address", "iban", "order_number")
+      "action_items": string[]                // concrete next steps
     }
 
     Rules:
-    - Keep summary concise (max 3 sentences).
-    - If a field is unknown, use null and mention it in "missing_fields".
-    - "missing_fields" should only include keys that truly lack information.
-    - Provide actionable follow-up steps in "action_items" (empty list if none).
-    - Do not add extra keys.
+    - Keep summary concise (<=120 chars).
+    - If a value is unknown, set it to null and add the field name to missing_fields.
+    - Choose priority based on the email’s urgency; must be one of the four enum values.
+    - Action items should be actionable, not empty bullet points.
+    - No extra keys, no comments.
 
     Email:
     ---
@@ -71,31 +73,24 @@ class OpenAIAdapter:
             "response_format": {
                 "type": "json_schema",
                 "json_schema": {
-                    "name": "insurance_ticket",
+                    "name": "ecommerce_ticket",
                     "schema": {
                         "type": "object",
                         "properties": {
-                            "model_id": {"type": "string"},
                             "summary": {"type": "string"},
+                            "subject": {"type": ["string", "null"]},
+                            "customer": {"type": ["string", "null"]},
+                            "description": {"type": ["string", "null"]},
+                            "priority": {
+                                "type": "string",
+                                "enum": ["low", "medium", "high", "urgent"],
+                            },
                             "policy_number": {"type": ["string", "null"]},
                             "claim_type": {"type": ["string", "null"]},
-                            "missing_fields": {
-                                "type": "array",
-                                "items": {"type": "string"},
-                            },
-                            "action_items": {
-                                "type": "array",
-                                "items": {"type": "string"},
-                            },
+                            "missing_fields": {"type": "array", "items": {"type": "string"}},
+                            "action_items": {"type": "array", "items": {"type": "string"}},
                         },
-                        "required": [
-                            "model_id",
-                            "summary",
-                            "policy_number",
-                            "claim_type",
-                            "missing_fields",
-                            "action_items",
-                        ],
+                        "required": ["summary", "priority", "missing_fields", "action_items"],
                         "additionalProperties": False,
                     },
                 },
