@@ -62,6 +62,53 @@ MODEL_REGISTRY: dict[str, ModelDefinition] = {
             "max_completion_tokens": 1200,
         },
     ),
+    "gpt-4.1": ModelDefinition(
+        model_id="gpt-4.1",
+        display_name="OpenAI GPT-4.1",
+        provider="openai",
+        parameters={
+            "temperature": 0.0,
+            "max_completion_tokens": 1200,
+        },
+    ),
+    "gpt-4.1-mini": ModelDefinition(
+        model_id="gpt-4.1-mini",
+        display_name="OpenAI GPT-4.1 mini",
+        provider="openai",
+        parameters={
+            "temperature": 0.0,
+            "max_completion_tokens": 900,
+        },
+    ),
+    "gpt-3.5-turbo": ModelDefinition(
+        model_id="gpt-3.5-turbo",
+        display_name="OpenAI GPT-3.5 Turbo",
+        provider="openai",
+        parameters={
+            "temperature": 0.2,
+            "max_completion_tokens": 700,
+        },
+    ),
+    "mistral": ModelDefinition(
+        model_id="mistral",
+        display_name="Mistral 7B (Ollama)",
+        provider="ollama",
+        parameters={
+            "temperature": 0.2,
+            "top_p": 0.9,
+            "max_tokens": 700,
+        },
+    ),
+    "phi3": ModelDefinition(
+        model_id="phi3",
+        display_name="Phi-3 (Ollama)",
+        provider="ollama",
+        parameters={
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "max_tokens": 700,
+        },
+    ),
 }
 
 
