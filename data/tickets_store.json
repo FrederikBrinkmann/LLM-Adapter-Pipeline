@@ -1,5 +1,5 @@
 {
-  "next_id": 4,
+  "next_id": 7,
   "tickets": [
     {
       "subject": "Return of Pullover #45892317",
@@ -34,14 +34,14 @@
         "customer": "Max Mustermann",
         "description": null,
         "priority": "medium",
+        "policy_number": "#45892317",
         "claim_type": "return",
         "missing_fields": [],
         "action_items": [
           "send return shipping instructions",
           "provide further information on return process"
         ],
-        "model_id": "llama3",
-        "order_number": "#45892317"
+        "model_id": "llama3"
       },
       "created_at": "2025-12-03T17:07:57.060083",
       "updated_at": "2025-12-03T17:07:57.060083",
@@ -81,14 +81,14 @@
         "customer": "Max Mustermann",
         "description": null,
         "priority": "medium",
+        "policy_number": "#45892317",
         "claim_type": "return",
         "missing_fields": [],
         "action_items": [
           "send return shipping instructions",
           "provide further information on return process"
         ],
-        "model_id": "llama3",
-        "order_number": "#45892317"
+        "model_id": "llama3"
       },
       "created_at": "2025-12-04T12:54:10.047034",
       "updated_at": "2025-12-04T12:54:10.047034",
@@ -128,19 +128,176 @@
         "customer": "Max Mustermann",
         "description": "Kunde m\u00f6chte Pullover aus Bestellung #45892317 zur\u00fccksenden und bittet um R\u00fccksendeunterlagen.",
         "priority": "medium",
+        "policy_number": "#45892317",
         "claim_type": "return",
         "missing_fields": [],
         "action_items": [
           "Sende R\u00fccksendeunterlagen an den Kunden",
           "Informiere den Kunden \u00fcber den R\u00fccksendeprozess"
         ],
-        "model_id": "gpt-4.1",
-        "order_number": "#45892317"
+        "model_id": "gpt-4.1"
       },
       "created_at": "2025-12-04T13:23:58.395649",
       "updated_at": "2025-12-04T13:23:58.395649",
       "id": 3,
       "order_number": "#45892317"
+    },
+    {
+      "subject": "Return of Pullover #45892317",
+      "summary": "Return of Pullover #45892317",
+      "customer": "Max Mustermann",
+      "description": "### Testmail\n\nBetreff: R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317\n\nSehr geehrtes Kundenservice-Team,\n\nich m\u00f6chte hiermit gerne den folgenden Artikel aus meiner Bestellung zur\u00fccksenden:\n\nBestellnummer: #45892317\n\nArtikel: Pullover \u201eNordic Knit\u201c\n\nGr\u00f6\u00dfe: L\n\nFarbe: Dunkelblau\n\nBestelldatum: 12. Februar 2025\n\nDer Pullover entspricht leider nicht meinen Erwartungen und ich m\u00f6chte daher mein Widerrufsrecht nutzen. Bitte senden Sie mir die entsprechenden R\u00fccksendeunterlagen sowie weitere Informationen zum R\u00fccksendeprozess zu.\n\nVielen Dank im Voraus f\u00fcr Ihre Unterst\u00fctzung.\n\nMit freundlichen Gr\u00fc\u00dfen\nMax Mustermann",
+      "priority": "medium",
+      "status": "todo",
+      "order_number": "#45892317",
+      "claim_type": "return",
+      "missing_fields": [],
+      "action_items": [
+        {
+          "id": "ACT-2F16BC6B",
+          "title": "send return shipping instructions",
+          "details": "send return shipping instructions",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-DD48D07B",
+          "title": "provide further information on the return process",
+          "details": "provide further information on the return process",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 6,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "summary": "Return of Pullover #45892317",
+        "subject": null,
+        "customer": "Max Mustermann",
+        "description": null,
+        "priority": "medium",
+        "policy_number": "#45892317",
+        "claim_type": "return",
+        "missing_fields": [],
+        "action_items": [
+          "send return shipping instructions",
+          "provide further information on the return process"
+        ],
+        "model_id": "llama3"
+      },
+      "created_at": "2025-12-04T13:40:01.729410",
+      "updated_at": "2025-12-04T13:40:01.729410",
+      "id": 4
+    },
+    {
+      "subject": "API request failure for ticket processing",
+      "summary": "Error processing e-commerce ticket due to invalid API request",
+      "customer": null,
+      "description": "The system encountered a 400 Bad Request error due to an unsupported 'response_format' parameter when processing the ticket.",
+      "priority": "high",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "policy_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-24320794",
+          "title": "Investigate and fix the API request to comply with supported parameters",
+          "details": "Investigate and fix the API request to comply with supported parameters",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-47353C83",
+          "title": "Retry processing the ticket after fixing the request",
+          "details": "Retry processing the ticket after fixing the request",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-9FC16A3C",
+          "title": "Notify technical team about the API compatibility issue",
+          "details": "Notify technical team about the API compatibility issue",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 7,
+      "source_model_id": "gpt-4.1-mini",
+      "raw_payload": {
+        "summary": "Error processing e-commerce ticket due to invalid API request",
+        "subject": "API request failure for ticket processing",
+        "customer": null,
+        "description": "The system encountered a 400 Bad Request error due to an unsupported 'response_format' parameter when processing the ticket.",
+        "priority": "high",
+        "policy_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "policy_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Investigate and fix the API request to comply with supported parameters",
+          "Retry processing the ticket after fixing the request",
+          "Notify technical team about the API compatibility issue"
+        ],
+        "model_id": "gpt-4.1-mini"
+      },
+      "created_at": "2025-12-04T13:41:41.990807",
+      "updated_at": "2025-12-04T13:41:41.990807",
+      "id": 5
+    },
+    {
+      "subject": "R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317",
+      "summary": "R\u00fccksendung Pullover aus Bestellung #45892317",
+      "customer": "Max Mustermann",
+      "description": "Kunde m\u00f6chte Pullover \"Nordic Knit\" Gr\u00f6\u00dfe L, Farbe Dunkelblau aus Bestellung #45892317 zur\u00fccksenden und bittet um R\u00fccksendeunterlagen.",
+      "priority": "medium",
+      "status": "todo",
+      "order_number": "45892317",
+      "claim_type": "return",
+      "missing_fields": [],
+      "action_items": [
+        {
+          "id": "ACT-6460A208",
+          "title": "R\u00fccksendeunterlagen an Max Mustermann senden",
+          "details": "R\u00fccksendeunterlagen an Max Mustermann senden",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-B952E12A",
+          "title": "Informationen zum R\u00fccksendeprozess bereitstellen",
+          "details": "Informationen zum R\u00fccksendeprozess bereitstellen",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 8,
+      "source_model_id": "gpt-4.1-mini",
+      "raw_payload": {
+        "summary": "R\u00fccksendung Pullover aus Bestellung #45892317",
+        "subject": "R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317",
+        "customer": "Max Mustermann",
+        "description": "Kunde m\u00f6chte Pullover \"Nordic Knit\" Gr\u00f6\u00dfe L, Farbe Dunkelblau aus Bestellung #45892317 zur\u00fccksenden und bittet um R\u00fccksendeunterlagen.",
+        "priority": "medium",
+        "order_number": "45892317",
+        "claim_type": "return",
+        "missing_fields": [],
+        "action_items": [
+          "R\u00fccksendeunterlagen an Max Mustermann senden",
+          "Informationen zum R\u00fccksendeprozess bereitstellen"
+        ],
+        "model_id": "gpt-4.1-mini"
+      },
+      "created_at": "2025-12-04T14:02:25.093297",
+      "updated_at": "2025-12-04T14:02:25.093297",
+      "id": 6
     }
   ]
 }

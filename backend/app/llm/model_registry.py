@@ -80,15 +80,6 @@ MODEL_REGISTRY: dict[str, ModelDefinition] = {
             "max_completion_tokens": 900,
         },
     ),
-    "gpt-3.5-turbo": ModelDefinition(
-        model_id="gpt-3.5-turbo",
-        display_name="OpenAI GPT-3.5 Turbo",
-        provider="openai",
-        parameters={
-            "temperature": 0.2,
-            "max_completion_tokens": 700,
-        },
-    ),
     "mistral": ModelDefinition(
         model_id="mistral",
         display_name="Mistral 7B (Ollama)",
