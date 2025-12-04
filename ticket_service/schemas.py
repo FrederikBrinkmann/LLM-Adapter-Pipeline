@@ -45,7 +45,7 @@ class Ticket(BaseModel):
     description: str | None = None
     priority: TicketPriority
     status: TicketStatus
-    policy_number: str | None = None
+    order_number: str | None = None
     claim_type: str | None = None
     missing_fields: list[str] = Field(default_factory=list)
     action_items: list[ActionItem] = Field(default_factory=list)
@@ -63,7 +63,7 @@ class TicketCreate(BaseModel):
     description: str | None = None
     priority: TicketPriority = TicketPriority.MEDIUM
     status: TicketStatus = TicketStatus.TODO
-    policy_number: str | None = None
+    order_number: str | None = None
     claim_type: str | None = None
     missing_fields: list[str] = Field(default_factory=list)
     action_items: list[ActionItemCreate] = Field(default_factory=list)
@@ -88,7 +88,7 @@ class TicketUpdate(BaseModel):
     description: str | None = None
     priority: TicketPriority | None = None
     status: TicketStatus | None = None
-    policy_number: str | None = None
+    order_number: str | None = None
     claim_type: str | None = None
     missing_fields: list[str] | None = None
     action_items: list[ActionItemCreate] | None = None

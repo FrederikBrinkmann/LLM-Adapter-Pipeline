@@ -26,7 +26,7 @@ interface Ticket {
   description: string | null;
   priority: TicketPriority;
   status: TicketStatus;
-  policy_number: string | null;
+  order_number: string | null;
   claim_type: string | null;
   missing_fields: string[];
   action_items: ActionItem[];
@@ -303,7 +303,7 @@ const TicketBoard = () => {
                 <td>
                   <div className="ticket-meta">
                     <span>{ticket.customer ?? "–"}</span>
-                    {ticket.policy_number && <small>Referenz: {ticket.policy_number}</small>}
+                    {ticket.order_number && <small>Bestellung: {ticket.order_number}</small>}
                   </div>
                 </td>
                 <td>

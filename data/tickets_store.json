@@ -8,7 +8,6 @@
       "description": "Betreff: R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317\n\nSehr geehrtes Kundenservice-Team,\n\nich m\u00f6chte hiermit gerne den folgenden Artikel aus meiner Bestellung zur\u00fccksenden:\n\nBestellnummer: #45892317\n\nArtikel: Pullover \u201eNordic Knit\u201c\n\nGr\u00f6\u00dfe: L\n\nFarbe: Dunkelblau\n\nBestelldatum: 12. Februar 2025\n\nDer Pullover entspricht leider nicht meinen Erwartungen und ich m\u00f6chte daher mein Widerrufsrecht nutzen. Bitte senden Sie mir die entsprechenden R\u00fccksendeunterlagen sowie weitere Informationen zum R\u00fccksendeprozess zu.\n\nVielen Dank im Voraus f\u00fcr Ihre Unterst\u00fctzung.\n\nMit freundlichen Gr\u00fc\u00dfen\nMax Mustermann",
       "priority": "medium",
       "status": "todo",
-      "policy_number": "#45892317",
       "claim_type": "return",
       "missing_fields": [],
       "action_items": [
@@ -35,18 +34,19 @@
         "customer": "Max Mustermann",
         "description": null,
         "priority": "medium",
-        "policy_number": "#45892317",
         "claim_type": "return",
         "missing_fields": [],
         "action_items": [
           "send return shipping instructions",
           "provide further information on return process"
         ],
-        "model_id": "llama3"
+        "model_id": "llama3",
+        "order_number": "#45892317"
       },
       "created_at": "2025-12-03T17:07:57.060083",
       "updated_at": "2025-12-03T17:07:57.060083",
-      "id": 1
+      "id": 1,
+      "order_number": "#45892317"
     },
     {
       "subject": "Return of Pullover #45892317",
@@ -55,7 +55,6 @@
       "description": "### Testmail\n\nBetreff: R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317\n\nSehr geehrtes Kundenservice-Team,\n\nich m\u00f6chte hiermit gerne den folgenden Artikel aus meiner Bestellung zur\u00fccksenden:\n\nBestellnummer: #45892317\n\nArtikel: Pullover \u201eNordic Knit\u201c\n\nGr\u00f6\u00dfe: L\n\nFarbe: Dunkelblau\n\nBestelldatum: 12. Februar 2025\n\nDer Pullover entspricht leider nicht meinen Erwartungen und ich m\u00f6chte daher mein Widerrufsrecht nutzen. Bitte senden Sie mir die entsprechenden R\u00fccksendeunterlagen sowie weitere Informationen zum R\u00fccksendeprozess zu.\n\nVielen Dank im Voraus f\u00fcr Ihre Unterst\u00fctzung.\n\nMit freundlichen Gr\u00fc\u00dfen\nMax Mustermann",
       "priority": "medium",
       "status": "todo",
-      "policy_number": "#45892317",
       "claim_type": "return",
       "missing_fields": [],
       "action_items": [
@@ -82,18 +81,19 @@
         "customer": "Max Mustermann",
         "description": null,
         "priority": "medium",
-        "policy_number": "#45892317",
         "claim_type": "return",
         "missing_fields": [],
         "action_items": [
           "send return shipping instructions",
           "provide further information on return process"
         ],
-        "model_id": "llama3"
+        "model_id": "llama3",
+        "order_number": "#45892317"
       },
       "created_at": "2025-12-04T12:54:10.047034",
       "updated_at": "2025-12-04T12:54:10.047034",
-      "id": 2
+      "id": 2,
+      "order_number": "#45892317"
     },
     {
       "subject": "R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317",
@@ -102,7 +102,6 @@
       "description": "Kunde m\u00f6chte Pullover aus Bestellung #45892317 zur\u00fccksenden und bittet um R\u00fccksendeunterlagen.",
       "priority": "medium",
       "status": "todo",
-      "policy_number": "#45892317",
       "claim_type": "return",
       "missing_fields": [],
       "action_items": [
@@ -129,18 +128,19 @@
         "customer": "Max Mustermann",
         "description": "Kunde m\u00f6chte Pullover aus Bestellung #45892317 zur\u00fccksenden und bittet um R\u00fccksendeunterlagen.",
         "priority": "medium",
-        "policy_number": "#45892317",
         "claim_type": "return",
         "missing_fields": [],
         "action_items": [
           "Sende R\u00fccksendeunterlagen an den Kunden",
           "Informiere den Kunden \u00fcber den R\u00fccksendeprozess"
         ],
-        "model_id": "gpt-4.1"
+        "model_id": "gpt-4.1",
+        "order_number": "#45892317"
       },
       "created_at": "2025-12-04T13:23:58.395649",
       "updated_at": "2025-12-04T13:23:58.395649",
-      "id": 3
+      "id": 3,
+      "order_number": "#45892317"
     }
   ]
 }

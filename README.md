@@ -78,7 +78,7 @@ Der LLM-Adapter soll JSON mit folgenden Schlüsseln liefern (keine Domäne mehr)
 - `summary` (Pflicht), optional `subject`
 - `customer` (optional), `description` (optional)
 - `priority`: `low|medium|high|urgent` (Pflicht)
-- `policy_number`: für Bestellreferenz nutzen (optional)
+- `order_number`: Bestellreferenz (optional)
 - `claim_type`: z. B. `return`, `exchange`, `delivery_issue` (optional)
 - `missing_fields`: nur echte Lücken (z. B. `address`, `iban`, `order_number`)
 - `action_items`: konkrete nächste Schritte (Strings oder Objekte)

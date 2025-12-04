@@ -34,6 +34,13 @@ class TicketStore:
             payload = json.loads(self.path.read_text())
             if isinstance(payload, dict):
                 self._data.update(payload)
+                changed = False
+                for ticket in self._data.get("tickets", []):
+                    if isinstance(ticket, dict) and "order_number" not in ticket and "policy_number" in ticket:
+                        ticket["order_number"] = ticket.pop("policy_number")
+                        changed = True
+                if changed:
+                    self._persist()
         except json.JSONDecodeError:
             self._data = {"next_id": 1, "tickets": []}
 
@@ -52,7 +59,7 @@ class TicketStore:
                 "description": "Kundin bittet um Retourenlabel, Ware ungetragen.",
                 "priority": "high",
                 "status": TicketStatus.TODO.value,
-                "policy_number": None,
+                "order_number": None,
                 "claim_type": "return",
                 "missing_fields": ["order_number"],
                 "action_items": [
@@ -78,7 +85,7 @@ class TicketStore:
                 "description": "Keller nach Unwetter geflutet, Kunde bittet um schnelle Hilfe.",
                 "priority": "urgent",
                 "status": TicketStatus.IN_PROGRESS.value,
-                "policy_number": "HZ-88923",
+                "order_number": "HZ-88923",
                 "claim_type": "water_damage",
                 "missing_fields": ["damage_estimate", "iban"],
                 "action_items": [
@@ -146,7 +153,7 @@ class TicketStore:
             "description": ticket_in.description,
             "priority": ticket_in.priority.value,
             "status": ticket_in.status.value,
-            "policy_number": ticket_in.policy_number,
+            "order_number": ticket_in.order_number,
             "claim_type": ticket_in.claim_type,
             "missing_fields": ticket_in.missing_fields,
             "action_items": action_items,
@@ -177,7 +184,7 @@ class TicketStore:
             "description",
             "priority",
             "status",
-            "policy_number",
+            "order_number",
             "claim_type",
             "missing_fields",
         ):

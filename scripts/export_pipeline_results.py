@@ -100,6 +100,7 @@ def build_csv_rows(jobs: list[JobRecord]) -> list[dict[str, Any]]:
         result = job.result or {}
         missing_fields = result.get("missing_fields") or []
         action_items = result.get("action_items") or []
+        order_number = result.get("order_number") or result.get("policy_number")
         rows.append(
             {
                 "job_id": job.job_id,
@@ -110,7 +111,7 @@ def build_csv_rows(jobs: list[JobRecord]) -> list[dict[str, Any]]:
                 "completed_at": job.completed_at or "",
                 "submitted_at": job.submitted_at or "",
                 "summary": result.get("summary", ""),
-                "policy_number": result.get("policy_number"),
+                "order_number": order_number,
                 "claim_type": result.get("claim_type"),
                 "missing_fields": ", ".join(missing_fields),
                 "action_items": "; ".join(action_items),
@@ -132,7 +133,7 @@ def write_csv(rows: list[dict[str, Any]], path: Path) -> None:
         "completed_at",
         "submitted_at",
         "summary",
-        "policy_number",
+        "order_number",
         "claim_type",
         "missing_fields",
         "action_items",

@@ -19,7 +19,7 @@ PROMPT_TEMPLATE = dedent(
       "customer": string | null,
       "description": string | null,           // optional short description
       "priority": "low" | "medium" | "high" | "urgent",
-      "policy_number": string | null,         // use order number here
+      "order_number": string | null,          // bestellreferenz
       "claim_type": string | null,            // e.g. "return", "exchange", "delivery_issue"
       "missing_fields": string[],             // only real gaps (e.g. "address", "iban", "order_number")
       "action_items": string[]                // concrete next steps
@@ -85,7 +85,7 @@ class OpenAIAdapter:
                                 "type": "string",
                                 "enum": ["low", "medium", "high", "urgent"],
                             },
-                            "policy_number": {"type": ["string", "null"]},
+                            "order_number": {"type": ["string", "null"]},
                             "claim_type": {"type": ["string", "null"]},
                             "missing_fields": {"type": "array", "items": {"type": "string"}},
                             "action_items": {"type": "array", "items": {"type": "string"}},

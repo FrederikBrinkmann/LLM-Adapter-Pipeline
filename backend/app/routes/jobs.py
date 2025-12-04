@@ -82,6 +82,8 @@ def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dic
     if priority is None:
         priority = _derive_priority(claim_type, missing_fields)
 
+    order_number = structured_payload.get("order_number") or structured_payload.get("policy_number")
+
     return {
         "subject": subject or summary,
         "summary": summary,
@@ -89,7 +91,7 @@ def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dic
         "description": structured_payload.get("description") or job.input_text,
         "priority": priority,
         "status": "todo",
-        "policy_number": structured_payload.get("policy_number"),
+        "order_number": order_number,
         "claim_type": claim_type,
         "missing_fields": missing_fields,
         "action_items": action_items,
