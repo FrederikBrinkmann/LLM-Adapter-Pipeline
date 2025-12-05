@@ -6,6 +6,8 @@ import signal
 import sys
 from pathlib import Path
 
+import httpx
+
 ROOT_DIR = Path(__file__).resolve().parents[1]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
@@ -42,6 +44,31 @@ async def process_job(job) -> None:
     with get_session() as session:
         job_crud.mark_job_completed(session, job_id, result=result)
     logger.info("Job %s completed", job_id)
+
+    await maybe_auto_submit(job_id, result)
+
+
+async def maybe_auto_submit(job_id: int, result: dict) -> None:
+    if not settings.auto_submit_enabled:
+        return
+    if settings.target_api_base_url is None:
+        logger.info("Skipping auto-submit for job %s: target API not configured", job_id)
+        return
+
+    missing = result.get("missing_fields") or []
+    if missing and not settings.auto_submit_allow_missing_fields:
+        logger.info("Skipping auto-submit for job %s: missing_fields present", job_id)
+        return
+
+    api_base = settings.auto_submit_api_base.rstrip("/")
+    url = f"{api_base}/jobs/{job_id}/submit"
+    try:
+        async with httpx.AsyncClient(timeout=15.0) as client:
+            response = await client.post(url)
+            response.raise_for_status()
+        logger.info("Auto-submit for job %s succeeded (status %s)", job_id, response.status_code)
+    except Exception:  # noqa: BLE001
+        logger.exception("Auto-submit for job %s failed", job_id)
 
 
 async def worker_loop() -> None:

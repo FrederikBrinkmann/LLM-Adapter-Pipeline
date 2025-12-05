@@ -1,5 +1,5 @@
 {
-  "next_id": 8,
+  "next_id": 10,
   "tickets": [
     {
       "subject": "Return of Pullover #45892317",
@@ -345,6 +345,96 @@
       "created_at": "2025-12-05T10:01:37.815919",
       "updated_at": "2025-12-05T10:01:37.815919",
       "id": 7
+    },
+    {
+      "subject": "Urgent: Account Update Required",
+      "summary": "Urgent: Account Update Required",
+      "customer": null,
+      "description": "TEST TEST WIRKLICH DRINGEND KONTONUMMER AKTUALISIEREN",
+      "priority": "urgent",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": "delivery_issue",
+      "missing_fields": [
+        "kontonummer"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-A6C050D4",
+          "title": "update account information",
+          "details": "update account information",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 11,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "summary": "Urgent: Account Update Required",
+        "subject": null,
+        "customer": null,
+        "description": null,
+        "priority": "urgent",
+        "order_number": null,
+        "claim_type": "delivery_issue",
+        "missing_fields": [
+          "kontonummer"
+        ],
+        "action_items": [
+          "update account information"
+        ],
+        "model_id": "llama3"
+      },
+      "created_at": "2025-12-05T10:48:06.736815",
+      "updated_at": "2025-12-05T10:48:06.736815",
+      "id": 8
+    },
+    {
+      "subject": "Request for return of item from order #45892317",
+      "summary": "Request for return of item from order #45892317",
+      "customer": "Max Mustermann",
+      "description": "Customer wants to return the 'Nordic Knit' sweater due to dissatisfaction.",
+      "priority": "medium",
+      "status": "todo",
+      "order_number": "#45892317",
+      "claim_type": "return",
+      "missing_fields": [],
+      "action_items": [
+        {
+          "id": "ACT-8D322D08",
+          "title": "Send return shipping documents to the customer",
+          "details": "Send return shipping documents to the customer",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-E6574082",
+          "title": "Provide information on the return process",
+          "details": "Provide information on the return process",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 12,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Request for return of item from order #45892317",
+        "subject": null,
+        "customer": "Max Mustermann",
+        "description": "Customer wants to return the 'Nordic Knit' sweater due to dissatisfaction.",
+        "priority": "medium",
+        "order_number": "#45892317",
+        "claim_type": "return",
+        "missing_fields": [],
+        "action_items": [
+          "Send return shipping documents to the customer",
+          "Provide information on the return process"
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2025-12-05T10:51:39.021574",
+      "updated_at": "2025-12-05T10:51:39.021574",
+      "id": 9
     }
   ]
 }

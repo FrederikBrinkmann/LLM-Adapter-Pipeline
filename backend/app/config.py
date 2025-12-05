@@ -65,6 +65,14 @@ class Settings(BaseSettings):
     target_timeout_seconds: float = Field(default=10.0)
 
     worker_poll_interval: float = Field(default=1.0)
+    auto_submit_enabled: bool = Field(default=False, description="Submit completed jobs automatically")
+    auto_submit_api_base: str = Field(
+        default="http://127.0.0.1:8000",
+        description="Base URL of the pipeline API for auto-submit",
+    )
+    auto_submit_allow_missing_fields: bool = Field(
+        default=False, description="Submit even if missing_fields are present"
+    )
 
     @computed_field
     @property

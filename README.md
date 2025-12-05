@@ -35,6 +35,12 @@ MAIL_POLL_INTERVAL=30
 MAIL_MODEL_ID=gpt-4o-mini
 ```
 
+## Auto-Submit (optional)
+- `LLM_PIPELINE_AUTO_SUBMIT_ENABLED=true` schaltet automatisches Submit fertig verarbeiteter Jobs ein (Worker ruft `/jobs/{id}/submit` auf).
+- `LLM_PIPELINE_AUTO_SUBMIT_ALLOW_MISSING_FIELDS` (default false) steuert, ob Jobs mit `missing_fields` trotzdem submitted werden.
+- `LLM_PIPELINE_AUTO_SUBMIT_API_BASE` (default `http://127.0.0.1:8000`) legt fest, wohin der Worker den Submit-Call sendet.
+- Voraussetzung: Ticket-Target konfiguriert (`LLM_PIPELINE_TARGET_API_BASE_URL`), sonst wird Submit übersprungen.
+
 ## Datenablage
 - Tickets: `data/tickets_store.json` (leer ausgeliefert, keine Auto-Seeds). Datei löschen, um den Ticket-Bestand zu resetten.
 - Pipeline-Jobs: `data/pipeline.db` (SQLite, wird beim Start neu angelegt, falls gelöscht).
