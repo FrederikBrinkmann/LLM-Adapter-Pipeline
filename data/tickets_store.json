@@ -1,5 +1,5 @@
 {
-  "next_id": 7,
+  "next_id": 8,
   "tickets": [
     {
       "subject": "Return of Pullover #45892317",
@@ -298,6 +298,53 @@
       "created_at": "2025-12-04T14:02:25.093297",
       "updated_at": "2025-12-04T14:02:25.093297",
       "id": 6
+    },
+    {
+      "subject": "Retourenanfrage f\u00fcr Pullover \u201eNordic Knit\u201c",
+      "summary": "Retourenanfrage f\u00fcr Pullover \u201eNordic Knit\u201c",
+      "customer": "Frederik Brinkmann",
+      "description": "R\u00fccksendung des Artikels aufgrund von Nicht\u00fcbereinstimmung mit Erwartungen.",
+      "priority": "medium",
+      "status": "todo",
+      "order_number": "#45892317",
+      "claim_type": "return",
+      "missing_fields": [],
+      "action_items": [
+        {
+          "id": "ACT-9E98D47D",
+          "title": "Senden Sie die R\u00fccksendeunterlagen an den Kunden.",
+          "details": "Senden Sie die R\u00fccksendeunterlagen an den Kunden.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-37759417",
+          "title": "Geben Sie Informationen zum R\u00fccksendeprozess an.",
+          "details": "Geben Sie Informationen zum R\u00fccksendeprozess an.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 10,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Retourenanfrage f\u00fcr Pullover \u201eNordic Knit\u201c",
+        "subject": null,
+        "customer": "Frederik Brinkmann",
+        "description": "R\u00fccksendung des Artikels aufgrund von Nicht\u00fcbereinstimmung mit Erwartungen.",
+        "priority": "medium",
+        "order_number": "#45892317",
+        "claim_type": "return",
+        "missing_fields": [],
+        "action_items": [
+          "Senden Sie die R\u00fccksendeunterlagen an den Kunden.",
+          "Geben Sie Informationen zum R\u00fccksendeprozess an."
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2025-12-05T10:01:37.815919",
+      "updated_at": "2025-12-05T10:01:37.815919",
+      "id": 7
     }
   ]
 }

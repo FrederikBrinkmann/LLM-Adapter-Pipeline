@@ -18,6 +18,23 @@ Modellagnostische LLM-Pipeline, die unstrukturierte E-Mails in ein JSON überfü
   - `source .venv/bin/activate && uvicorn ticket_service.main:app --reload --port 9000`
   - `cd ticket_frontend && npm run dev -- --host --port 5174`
 
+## E-Mail-Ingest (optional)
+- Script: `python scripts/mail_ingest.py` pollt ein IMAP-Postfach und legt Mails via `POST /ingest/` als Jobs an.
+- Env-Variablen (Beispiel in `.env`):
+  - `MAIL_IMAP_HOST`, `MAIL_IMAP_USER`, `MAIL_IMAP_PASSWORD` (erforderlich)
+  - `MAIL_IMAP_PORT=993`, `MAIL_IMAP_FOLDER=INBOX`, `MAIL_POLL_INTERVAL=30`
+  - `MAIL_API_BASE=http://127.0.0.1:8000`, `MAIL_MODEL_ID=<optional>`
+-.env-Beispiel:
+```bash
+MAIL_IMAP_HOST=imap.example.com
+MAIL_IMAP_USER=support@example.com
+MAIL_IMAP_PASSWORD=...
+MAIL_IMAP_FOLDER=INBOX
+MAIL_API_BASE=http://127.0.0.1:8000
+MAIL_POLL_INTERVAL=30
+MAIL_MODEL_ID=gpt-4o-mini
+```
+
 ## Datenablage
 - Tickets: `data/tickets_store.json` (leer ausgeliefert, keine Auto-Seeds). Datei löschen, um den Ticket-Bestand zu resetten.
 - Pipeline-Jobs: `data/pipeline.db` (SQLite, wird beim Start neu angelegt, falls gelöscht).

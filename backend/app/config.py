@@ -23,6 +23,7 @@ class Settings(BaseSettings):
         env_prefix="LLM_PIPELINE_",
         case_sensitive=False,
         env_file=(".env",),
+        extra="ignore",  # allow unrelated env vars (z. B. MAIL_* für mail_ingest.py)
     )
 
     api_title: str = Field(default="LLM Adapter Pipeline API")
