@@ -63,7 +63,7 @@ class OpenAIAdapter:
             "messages": [
                 {
                     "role": "system",
-                    "content": "You are an assistant that converts insurance-related emails into structured JSON outputs following a strict schema.",
+                    "content": "You are an assistant that converts e-commerce-related emails into structured JSON outputs following a strict schema.",
                 },
                 {
                     "role": "user",

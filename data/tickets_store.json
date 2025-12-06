@@ -1,5 +1,5 @@
 {
-  "next_id": 10,
+  "next_id": 13,
   "tickets": [
     {
       "subject": "Return of Pullover #45892317",
@@ -435,6 +435,141 @@
       "created_at": "2025-12-05T10:51:39.021574",
       "updated_at": "2025-12-05T10:51:39.021574",
       "id": 9
+    },
+    {
+      "subject": "Request for return of item from order #45892317",
+      "summary": "Request for return of item from order #45892317",
+      "customer": "Frederik Brinkmann",
+      "description": "Customer wants to return the 'Nordic Knit' sweater due to dissatisfaction.",
+      "priority": "medium",
+      "status": "todo",
+      "order_number": "#45892317",
+      "claim_type": "return",
+      "missing_fields": [],
+      "action_items": [
+        {
+          "id": "ACT-BBAE8A0E",
+          "title": "Send return shipping documents to the customer.",
+          "details": "Send return shipping documents to the customer.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-A88A7B5E",
+          "title": "Provide information on the return process.",
+          "details": "Provide information on the return process.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 13,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Request for return of item from order #45892317",
+        "subject": null,
+        "customer": "Frederik Brinkmann",
+        "description": "Customer wants to return the 'Nordic Knit' sweater due to dissatisfaction.",
+        "priority": "medium",
+        "order_number": "#45892317",
+        "claim_type": "return",
+        "missing_fields": [],
+        "action_items": [
+          "Send return shipping documents to the customer.",
+          "Provide information on the return process."
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2025-12-05T16:15:28.288150",
+      "updated_at": "2025-12-05T16:15:28.288150",
+      "id": 10
+    },
+    {
+      "subject": "Unknown issue",
+      "summary": "Unknown issue",
+      "customer": null,
+      "description": "hjgghjghj",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number"
+      ],
+      "action_items": [],
+      "source_job_id": 15,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "summary": "Unknown issue",
+        "subject": null,
+        "customer": null,
+        "description": null,
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number"
+        ],
+        "action_items": [],
+        "model_id": "llama3"
+      },
+      "created_at": "2025-12-05T20:02:16.406889",
+      "updated_at": "2025-12-05T20:02:16.406889",
+      "id": 11
+    },
+    {
+      "subject": "IT Support Request - Technical Issue",
+      "summary": "IT Support Request - Technical Issue",
+      "customer": "Peter Lustig",
+      "description": "Technical issue with login, unable to access system.",
+      "priority": "high",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-63CBFEEE",
+          "title": "Request additional details or screenshots from the customer.",
+          "details": "Request additional details or screenshots from the customer.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-D39030F2",
+          "title": "Investigate the login issue reported by the customer.",
+          "details": "Investigate the login issue reported by the customer.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 16,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "IT Support Request - Technical Issue",
+        "subject": null,
+        "customer": "Peter Lustig",
+        "description": "Technical issue with login, unable to access system.",
+        "priority": "high",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Request additional details or screenshots from the customer.",
+          "Investigate the login issue reported by the customer."
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2025-12-05T20:07:35.436157",
+      "updated_at": "2025-12-05T20:07:35.436157",
+      "id": 12
     }
   ]
 }
