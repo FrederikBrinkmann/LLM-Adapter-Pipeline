@@ -1,5 +1,5 @@
 {
-  "next_id": 13,
+  "next_id": 23,
   "tickets": [
     {
       "subject": "Return of Pullover #45892317",
@@ -570,6 +570,510 @@
       "created_at": "2025-12-05T20:07:35.436157",
       "updated_at": "2025-12-05T20:07:35.436157",
       "id": 12
+    },
+    {
+      "subject": "Unknown issue",
+      "summary": "Unknown issue",
+      "customer": null,
+      "description": "dasd",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "subject",
+        "description"
+      ],
+      "action_items": [],
+      "source_job_id": 19,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "summary": "Unknown issue",
+        "subject": null,
+        "customer": null,
+        "description": null,
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "subject",
+          "description"
+        ],
+        "action_items": [],
+        "model_id": "llama3"
+      },
+      "created_at": "2026-01-11T17:51:38.962189",
+      "updated_at": "2026-01-11T17:51:38.962189",
+      "id": 13
+    },
+    {
+      "subject": "Permanent Discount on Email Packages",
+      "summary": "Newsletter about permanent discount on email packages",
+      "customer": null,
+      "description": "Information about discounts on PlusMail, ProMail, and PowerMail packages.",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-E66E4D40",
+          "title": "Review the email packages for potential discounts",
+          "details": "Review the email packages for potential discounts",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-BA5E6F21",
+          "title": "Consider updating the website with the new pricing information",
+          "details": "Consider updating the website with the new pricing information",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 20,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Newsletter about permanent discount on email packages",
+        "subject": "Permanent Discount on Email Packages",
+        "customer": null,
+        "description": "Information about discounts on PlusMail, ProMail, and PowerMail packages.",
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number"
+        ],
+        "action_items": [
+          "Review the email packages for potential discounts",
+          "Consider updating the website with the new pricing information"
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2026-01-11T18:04:04.835457",
+      "updated_at": "2026-01-11T18:04:04.835457",
+      "id": 14
+    },
+    {
+      "subject": "Promotional email for discounted red wine tasting package",
+      "summary": "Promotional email for discounted red wine tasting package",
+      "customer": null,
+      "description": "Email promoting a red wine tasting package at a 58% discount with free shipping.",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-F0D76206",
+          "title": "Consider sending a follow-up email to customers about the promotion.",
+          "details": "Consider sending a follow-up email to customers about the promotion.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 21,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Promotional email for discounted red wine tasting package",
+        "subject": "Promotional email for discounted red wine tasting package",
+        "customer": null,
+        "description": "Email promoting a red wine tasting package at a 58% discount with free shipping.",
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number"
+        ],
+        "action_items": [
+          "Consider sending a follow-up email to customers about the promotion."
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2026-01-11T18:04:07.299472",
+      "updated_at": "2026-01-11T18:04:07.299472",
+      "id": 15
+    },
+    {
+      "subject": "Weihnachtszauber: Angebote zum Fest",
+      "summary": "Newsletter from mail.de regarding Christmas offers",
+      "customer": null,
+      "description": "This is a newsletter that is only readable in HTML format.",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-62EFDD26",
+          "title": "Review the newsletter content",
+          "details": "Review the newsletter content",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-4DF83FC9",
+          "title": "Ensure HTML format is accessible",
+          "details": "Ensure HTML format is accessible",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 22,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Newsletter from mail.de regarding Christmas offers",
+        "subject": "Weihnachtszauber: Angebote zum Fest",
+        "customer": null,
+        "description": "This is a newsletter that is only readable in HTML format.",
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Review the newsletter content",
+          "Ensure HTML format is accessible"
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2026-01-11T18:04:10.418491",
+      "updated_at": "2026-01-11T18:04:10.418491",
+      "id": 16
+    },
+    {
+      "subject": "LOTTO 6aus49 Jackpot and voucher",
+      "summary": "Newsletter about LOTTO 6aus49 Jackpot and voucher",
+      "customer": null,
+      "description": "Information about the highest LOTTO 6aus49 Jackpot and a 5\u20ac voucher.",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-A16AD2AB",
+          "title": "Review the newsletter content",
+          "details": "Review the newsletter content",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-355ECAE0",
+          "title": "Consider promotional strategies for the jackpot and voucher",
+          "details": "Consider promotional strategies for the jackpot and voucher",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 23,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Newsletter about LOTTO 6aus49 Jackpot and voucher",
+        "subject": "LOTTO 6aus49 Jackpot and voucher",
+        "customer": null,
+        "description": "Information about the highest LOTTO 6aus49 Jackpot and a 5\u20ac voucher.",
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Review the newsletter content",
+          "Consider promotional strategies for the jackpot and voucher"
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2026-01-11T18:04:13.776742",
+      "updated_at": "2026-01-11T18:04:13.776742",
+      "id": 17
+    },
+    {
+      "subject": "Zauberhafte Weihnachtsdeals: Nur f\u00fcr Sie!",
+      "summary": "Newsletter from mail.de",
+      "customer": null,
+      "description": "Dieser Newsletter von mail.de ist nur in der HTML-Ansicht lesbar.",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-687BDEE4",
+          "title": "Review the newsletter content",
+          "details": "Review the newsletter content",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-26A87A89",
+          "title": "Ensure HTML view compatibility",
+          "details": "Ensure HTML view compatibility",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 24,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Newsletter from mail.de",
+        "subject": "Zauberhafte Weihnachtsdeals: Nur f\u00fcr Sie!",
+        "customer": null,
+        "description": "Dieser Newsletter von mail.de ist nur in der HTML-Ansicht lesbar.",
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Review the newsletter content",
+          "Ensure HTML view compatibility"
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2026-01-11T18:04:15.608597",
+      "updated_at": "2026-01-11T18:04:15.608597",
+      "id": 18
+    },
+    {
+      "subject": "LOTTO 6aus49 Jackpot Announcement",
+      "summary": "LOTTO 6aus49 Jackpot Announcement",
+      "customer": null,
+      "description": "Announcement of the highest LOTTO 6aus49 jackpot and a 5\u20ac voucher.",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-77F24B17",
+          "title": "Review the jackpot announcement",
+          "details": "Review the jackpot announcement",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-A18F3C6D",
+          "title": "Consider using the 5\u20ac voucher",
+          "details": "Consider using the 5\u20ac voucher",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 25,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "LOTTO 6aus49 Jackpot Announcement",
+        "subject": null,
+        "customer": null,
+        "description": "Announcement of the highest LOTTO 6aus49 jackpot and a 5\u20ac voucher.",
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number"
+        ],
+        "action_items": [
+          "Review the jackpot announcement",
+          "Consider using the 5\u20ac voucher"
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2026-01-11T18:04:17.298483",
+      "updated_at": "2026-01-11T18:04:17.298483",
+      "id": 19
+    },
+    {
+      "subject": "Permanent discount on all premium email packages",
+      "summary": "Permanent discount on all premium email packages",
+      "customer": null,
+      "description": "Dauerhafter Rabatt auf alle Premium E-Mail-Pakete\n\nDieser Newsletter von mail.de ist nur in der HTML-Ansicht lesbar.",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-44B66A81",
+          "title": "Review the newsletter content for clarity",
+          "details": "Review the newsletter content for clarity",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-CA954C51",
+          "title": "Consider implementing the discount offer",
+          "details": "Consider implementing the discount offer",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 26,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Permanent discount on all premium email packages",
+        "subject": "Permanent discount on all premium email packages",
+        "customer": null,
+        "description": null,
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Review the newsletter content for clarity",
+          "Consider implementing the discount offer"
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2026-01-11T18:04:20.101266",
+      "updated_at": "2026-01-11T18:04:20.101266",
+      "id": 20
+    },
+    {
+      "subject": "Newsletter Subscription",
+      "summary": "Newsletter about weight loss tips for 2026",
+      "customer": null,
+      "description": "Newsletter from mail.de regarding weight loss without diet stress.",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-C4017A5F",
+          "title": "Review newsletter content",
+          "details": "Review newsletter content",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-3DB9413F",
+          "title": "Consider subscribing to the newsletter",
+          "details": "Consider subscribing to the newsletter",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 27,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Newsletter about weight loss tips for 2026",
+        "subject": "Newsletter Subscription",
+        "customer": null,
+        "description": "Newsletter from mail.de regarding weight loss without diet stress.",
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Review newsletter content",
+          "Consider subscribing to the newsletter"
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2026-01-11T18:04:22.034202",
+      "updated_at": "2026-01-11T18:04:22.034202",
+      "id": 21
+    },
+    {
+      "subject": "Test email received",
+      "summary": "Test email received",
+      "customer": null,
+      "description": "This is a test email.",
+      "priority": "low",
+      "status": "todo",
+      "order_number": "1871871",
+      "claim_type": null,
+      "missing_fields": [
+        "customer"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-25D67C68",
+          "title": "Acknowledge receipt of the test email.",
+          "details": "Acknowledge receipt of the test email.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 28,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Test email received",
+        "subject": "Test email received",
+        "customer": null,
+        "description": "This is a test email.",
+        "priority": "low",
+        "order_number": "1871871",
+        "claim_type": null,
+        "missing_fields": [
+          "customer"
+        ],
+        "action_items": [
+          "Acknowledge receipt of the test email."
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2026-01-11T18:06:35.474368",
+      "updated_at": "2026-01-11T18:06:35.474368",
+      "id": 22
     }
   ]
 }

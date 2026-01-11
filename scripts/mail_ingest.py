@@ -21,6 +21,7 @@ import ssl
 import sys
 import time
 from email.header import decode_header
+from pathlib import Path
 from typing import Optional
 
 import httpx
@@ -31,6 +32,20 @@ def env(key: str, default: Optional[str] = None, required: bool = False) -> str 
     if required and not value:
         raise RuntimeError(f"Environment variable {key} is required")
     return value
+
+
+def load_dotenv() -> None:
+    env_path = Path(__file__).resolve().parents[1] / ".env"
+    if not env_path.exists():
+        return
+    for line in env_path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or "=" not in stripped:
+            continue
+        key, value = stripped.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        os.environ.setdefault(key, value)
 
 
 def decode_subject(msg: email.message.Message) -> str:
@@ -95,6 +110,7 @@ def submit_ingest(api_base: str, text: str, model_id: Optional[str]) -> int:
 
 
 def main() -> None:
+    load_dotenv()
     host = env("MAIL_IMAP_HOST", required=True)
     port = int(env("MAIL_IMAP_PORT", "993"))
     user = env("MAIL_IMAP_USER", required=True)
