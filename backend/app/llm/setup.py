@@ -1,28 +1,11 @@
 from __future__ import annotations
 
-from typing import Callable
-
 from ..config import settings
-from .base import BaseLLM, LLMError
+from .adapter import LLMAdapter, supports_provider
+from .base import LLMError
 from .model_config import MODEL_CONFIG_BY_ID
-from .model_spec import ModelSpec, resolve_model_spec
-from .ollama_adapter import OllamaAdapter
-from .openai_adapter import OpenAIAdapter
+from .model_spec import resolve_model_spec
 from .registry import clear_registry, register_model
-
-
-PROVIDERS: dict[str, Callable[[ModelSpec], BaseLLM]] = {
-    "openai": lambda definition: OpenAIAdapter(
-        model_id=definition.model_id,
-        display_name=definition.display_name,
-        parameters=definition.parameters,
-    ),
-    "ollama": lambda definition: OllamaAdapter(
-        model_id=definition.model_id,
-        display_name=definition.display_name,
-        parameters=definition.parameters,
-    ),
-}
 
 
 def initialize_models() -> None:
@@ -39,12 +22,15 @@ def initialize_models() -> None:
         overrides = settings.llm_model_overrides.get(model_id)
         definition = resolve_model_spec(base_config, overrides)
 
-        factory = PROVIDERS.get(definition.provider)
-        if factory is None:
+        if not supports_provider(definition.provider):
             raise ValueError(f"Provider '{definition.provider}' not supported yet.")
-
         try:
-            model = factory(definition)
+            model = LLMAdapter(
+                model_id=definition.model_id,
+                display_name=definition.display_name,
+                provider=definition.provider,
+                parameters=definition.parameters,
+            )
         except LLMError as exc:
             raise ValueError(
                 f"Failed to initialise model '{definition.model_id}': {exc}"

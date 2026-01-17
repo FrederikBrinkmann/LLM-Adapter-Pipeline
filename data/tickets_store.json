@@ -1,5 +1,5 @@
 {
-  "next_id": 30,
+  "next_id": 31,
   "tickets": [
     {
       "subject": "Return of Pullover #45892317",
@@ -1376,6 +1376,53 @@
       "created_at": "2026-01-17T18:44:36.244825",
       "updated_at": "2026-01-17T18:44:36.244825",
       "id": 29
+    },
+    {
+      "subject": "Unclear customer email received",
+      "summary": "Unclear customer email received",
+      "customer": null,
+      "description": "dasdasdasddasddasdas",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-6DB32C52",
+          "title": "Contact customer for more information.",
+          "details": "Contact customer for more information.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 35,
+      "source_model_id": "gpt-4o",
+      "raw_payload": {
+        "summary": "Unclear customer email received",
+        "subject": null,
+        "customer": null,
+        "description": null,
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Contact customer for more information."
+        ],
+        "model_id": "gpt-4o"
+      },
+      "created_at": "2026-01-17T18:49:45.282969",
+      "updated_at": "2026-01-17T18:49:45.282969",
+      "id": 30
     }
   ]
 }
