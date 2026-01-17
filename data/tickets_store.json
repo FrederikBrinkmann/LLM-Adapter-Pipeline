@@ -1,5 +1,5 @@
 {
-  "next_id": 26,
+  "next_id": 27,
   "tickets": [
     {
       "subject": "Return of Pullover #45892317",
@@ -1198,6 +1198,55 @@
       "created_at": "2026-01-16T09:28:05.544754",
       "updated_at": "2026-01-16T09:28:05.544754",
       "id": 25
+    },
+    {
+      "subject": "Unclear customer request",
+      "summary": "Unclear customer request",
+      "customer": null,
+      "description": "dasd",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "description",
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-AC99ACE6",
+          "title": "Request more information from the customer to clarify their issue.",
+          "details": "Request more information from the customer to clarify their issue.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 31,
+      "source_model_id": "gpt-4.1",
+      "raw_payload": {
+        "summary": "Unclear customer request",
+        "subject": "Unclear customer request",
+        "customer": null,
+        "description": null,
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "description",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Request more information from the customer to clarify their issue."
+        ],
+        "model_id": "gpt-4.1"
+      },
+      "created_at": "2026-01-17T18:35:22.121697",
+      "updated_at": "2026-01-17T18:35:22.121697",
+      "id": 26
     }
   ]
 }

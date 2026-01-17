@@ -54,7 +54,7 @@ MAIL_MODEL_ID=gpt-4o-mini
 Die SQLite-Datenbank liegt standardmäßig unter `data/pipeline.db`. Sie enthält die `jobs`-Tabelle (Status, Modell, Ergebnis, Target-Response). Über die Umgebungsvariable `LLM_PIPELINE_DATABASE_URL` kannst du z. B. auf Postgres wechseln; `LLM_PIPELINE_DATABASE_PATH` steuert die lokale SQLite-Datei.
 
 ## LLM-Konfiguration
-Die verfügbaren Modelle werden über Umgebungsvariablen bzw. `.env`-Datei gesteuert. In `backend/app/llm/model_registry.py` sind alle bekannten Modelle samt Default-Parametern (Temperatur, Token-Limits etc.) hinterlegt. Aktiviere sie per ID-Liste:
+Die verfügbaren Modelle werden über Umgebungsvariablen bzw. `.env`-Datei gesteuert. In `backend/app/llm/model_config.py` sind alle bekannten Modelle hinterlegt, während die providerweiten Default-Parameter (Temperatur, Token-Limits etc.) in `backend/app/llm/model_spec.py` zentral gepflegt werden. Aktiviere sie per ID-Liste:
 ```bash
 export LLM_PIPELINE_LLM_MODEL_IDS='["llama3", "gpt-4o-mini"]'
 export LLM_PIPELINE_LLM_DEFAULT_MODEL="llama3"
@@ -67,7 +67,7 @@ export LLM_PIPELINE_LLM_MODEL_OVERRIDES='{
   }
 }'
 ```
-Die Registry lässt sich erweitern, indem du in `model_registry.py` weitere Einträge ergänzt und – falls nötig – einen passenden Adapter unter `backend/app/llm/` implementierst.
+Die Registry lässt sich erweitern, indem du in `model_config.py` weitere Einträge ergänzt und – falls nötig – einen passenden Adapter unter `backend/app/llm/` implementierst.
 
 ## Target-Ticketsystem konfigurieren
 Setze folgende Variablen, damit `POST /jobs/{job_id}/submit` dein Ticket-Backend (Standard: interner Ticket-Service auf Port 9000) anspricht:

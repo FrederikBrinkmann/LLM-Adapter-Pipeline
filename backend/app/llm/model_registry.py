@@ -34,8 +34,7 @@ class ModelDefinition:
 
 
 MODEL_REGISTRY: dict[str, ModelDefinition] = {
-    "llama3": ModelDefinition(
-        model_id="llama3",
+    "llama3": ModelDefinition(model_id="llama3",
         display_name="LLaMA 3 (Ollama)",
         provider="ollama",
         parameters={

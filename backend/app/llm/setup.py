@@ -4,13 +4,14 @@ from typing import Callable
 
 from ..config import settings
 from .base import BaseLLM, LLMError
-from .model_registry import MODEL_REGISTRY, ModelDefinition
+from .model_config import MODEL_CONFIG_BY_ID
+from .model_spec import ModelSpec, resolve_model_spec
 from .ollama_adapter import OllamaAdapter
 from .openai_adapter import OpenAIAdapter
 from .registry import clear_registry, register_model
 
 
-PROVIDERS: dict[str, Callable[[ModelDefinition], BaseLLM]] = {
+PROVIDERS: dict[str, Callable[[ModelSpec], BaseLLM]] = {
     "openai": lambda definition: OpenAIAdapter(
         model_id=definition.model_id,
         display_name=definition.display_name,
@@ -31,14 +32,12 @@ def initialize_models() -> None:
 
     for model_id in settings.llm_model_ids:
         try:
-            base_definition = MODEL_REGISTRY[model_id]
+            base_config = MODEL_CONFIG_BY_ID[model_id]
         except KeyError as exc:
-            raise ValueError(
-                f"Model id '{model_id}' not found in registry."
-            ) from exc
+            raise ValueError(f"Model id '{model_id}' not found in config.") from exc
 
         overrides = settings.llm_model_overrides.get(model_id)
-        definition = base_definition.apply_overrides(overrides)
+        definition = resolve_model_spec(base_config, overrides)
 
         factory = PROVIDERS.get(definition.provider)
         if factory is None:
