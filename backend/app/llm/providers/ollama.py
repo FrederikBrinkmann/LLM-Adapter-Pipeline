@@ -4,7 +4,7 @@ from typing import Any
 
 import httpx
 
-from ..config import settings
+from ...config import settings
 from ..base import LLMError
 from .common import ProviderHandler, RequestSpec, format_http_error, parse_json_text
 

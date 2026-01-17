@@ -1,5 +1,5 @@
 {
-  "next_id": 31,
+  "next_id": 33,
   "tickets": [
     {
       "subject": "Return of Pullover #45892317",
@@ -1423,6 +1423,100 @@
       "created_at": "2026-01-17T18:49:45.282969",
       "updated_at": "2026-01-17T18:49:45.282969",
       "id": 30
+    },
+    {
+      "subject": "Unclear customer message received",
+      "summary": "Unclear customer message received",
+      "customer": null,
+      "description": "Customer sent an unclear message: dasdasdasddasddasdasadsas",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-80BF6C7F",
+          "title": "Request clarification from customer regarding their issue",
+          "details": "Request clarification from customer regarding their issue",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 36,
+      "source_model_id": "gpt-4.1-mini",
+      "raw_payload": {
+        "summary": "Unclear customer message received",
+        "subject": "Unclear customer message received",
+        "customer": null,
+        "description": "Customer sent an unclear message: dasdasdasddasddasdasadsas",
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Request clarification from customer regarding their issue"
+        ],
+        "model_id": "gpt-4.1-mini"
+      },
+      "created_at": "2026-01-17T18:59:58.346750",
+      "updated_at": "2026-01-17T18:59:58.346750",
+      "id": 31
+    },
+    {
+      "subject": "Unclear customer message",
+      "summary": "Unclear customer message",
+      "customer": null,
+      "description": "Customer message content: eqwe",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-248F3EBD",
+          "title": "Request clarification from customer regarding their message",
+          "details": "Request clarification from customer regarding their message",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 37,
+      "source_model_id": "gpt-4.1-mini",
+      "raw_payload": {
+        "summary": "Unclear customer message",
+        "subject": "Unclear customer message",
+        "customer": null,
+        "description": "Customer message content: eqwe",
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Request clarification from customer regarding their message"
+        ],
+        "model_id": "gpt-4.1-mini"
+      },
+      "created_at": "2026-01-17T18:59:59.833690",
+      "updated_at": "2026-01-17T18:59:59.833690",
+      "id": 32
     }
   ]
 }
