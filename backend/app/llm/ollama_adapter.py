@@ -11,28 +11,35 @@ from .base import BaseLLM, LLMError
 
 PROMPT_TEMPLATE = dedent(
     """
-    You turn e-commerce customer emails (returns, exchanges, delivery issues) into strict JSON for a ticket system.
-    Reply ONLY with valid JSON shaped like:
+    You are a customer service ticket classifier for e-commerce.
+    
+    CONTEXT: Extract structured data from customer emails about returns, exchanges, or delivery issues.
+    
+    INPUT: Customer email text
+    OUTPUT: Valid JSON only, no additional text
+    
+    REQUIRED JSON SCHEMA:
     {
-      "summary": string,                      // short title
-      "subject": string | null,               // optional, can reuse summary
-      "customer": string | null,
-      "description": string | null,           // optional short description
-      "priority": "low" | "medium" | "high" | "urgent",
-      "order_number": string | null,          // bestellreferenz
-      "claim_type": string | null,            // e.g. "return", "exchange", "delivery_issue"
-      "missing_fields": string[],             // only real gaps (e.g. "address", "iban", "order_number")
-      "action_items": string[]                // concrete next steps
+      "summary": string,                      // max 120 chars, captures core issue
+      "subject": string | null,               // ticket subject line or null
+      "customer": string | null,              // customer name if present
+      "description": string | null,           // detailed issue description or null
+      "priority": "low" | "medium" | "high" | "urgent",  // MUST be one of these four
+      "order_number": string | null,          // order/bestellreferenz or null
+      "claim_type": "return" | "exchange" | "delivery_issue" | null,  // MUST be one of these or null
+      "missing_fields": string[],             // list only critical missing fields
+      "action_items": string[]                // 2-3 specific, actionable next steps
     }
-
-    Rules:
-    - Keep summary concise (<=120 chars).
-    - If a value is unknown, set it to null and add the field name to missing_fields.
-    - Choose priority based on the email’s urgency; must be one of the four enum values.
-    - Action items should be actionable, not empty bullet points.
-    - No extra keys, no comments.
-
-    Email:
+    
+    RULES:
+    1. Output ONLY valid JSON. No markdown, no explanation.
+    2. For unknown values, use null and add field name to missing_fields.
+    3. Priority must be exactly one of: low, medium, high, urgent.
+    4. claim_type must be exactly one of: return, exchange, delivery_issue, or null.
+    5. Action items must be concrete and specific (e.g., "Send return label to customer").
+    6. Do not invent data not present in the email.
+    
+    EMAIL:
     ---
     {email_text}
     ---

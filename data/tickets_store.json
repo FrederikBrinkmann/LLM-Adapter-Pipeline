@@ -1,5 +1,5 @@
 {
-  "next_id": 23,
+  "next_id": 26,
   "tickets": [
     {
       "subject": "Return of Pullover #45892317",
@@ -1074,6 +1074,130 @@
       "created_at": "2026-01-11T18:06:35.474368",
       "updated_at": "2026-01-11T18:06:35.474368",
       "id": 22
+    },
+    {
+      "subject": "uzzz",
+      "summary": "uzzz",
+      "customer": "zztt",
+      "description": "uzfuzfz",
+      "priority": "urgent",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [],
+      "action_items": [
+        {
+          "id": "ACT-20FE6BA3",
+          "title": "Umtausch vorbereiten",
+          "details": "Ersatzprodukt reservieren",
+          "suggested_by": "agent",
+          "status": "open"
+        }
+      ],
+      "source_job_id": null,
+      "source_model_id": null,
+      "raw_payload": null,
+      "created_at": "2026-01-16T09:07:01.970383",
+      "updated_at": "2026-01-16T09:07:01.970383",
+      "id": 23
+    },
+    {
+      "subject": "Unintelligible email received",
+      "summary": "Unintelligible email received",
+      "customer": null,
+      "description": "Hasudhjashdjasfwf",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-52A0DF85",
+          "title": "Request clarification from the sender.",
+          "details": "Request clarification from the sender.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 29,
+      "source_model_id": "gpt-4o",
+      "raw_payload": {
+        "summary": "Unintelligible email received",
+        "subject": null,
+        "customer": null,
+        "description": null,
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Request clarification from the sender."
+        ],
+        "model_id": "gpt-4o"
+      },
+      "created_at": "2026-01-16T09:22:53.957059",
+      "updated_at": "2026-01-16T09:22:53.957059",
+      "id": 24
+    },
+    {
+      "subject": "Unintelligible email received",
+      "summary": "Unintelligible email received",
+      "customer": null,
+      "description": "Hasudhjashdjasfwf",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "subject",
+        "customer",
+        "description",
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-95F65319",
+          "title": "Request clarification from the customer.",
+          "details": "Request clarification from the customer.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 30,
+      "source_model_id": "gpt-4o",
+      "raw_payload": {
+        "summary": "Unintelligible email received",
+        "subject": null,
+        "customer": null,
+        "description": null,
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "subject",
+          "customer",
+          "description",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Request clarification from the customer."
+        ],
+        "model_id": "gpt-4o"
+      },
+      "created_at": "2026-01-16T09:28:05.544754",
+      "updated_at": "2026-01-16T09:28:05.544754",
+      "id": 25
     }
   ]
 }

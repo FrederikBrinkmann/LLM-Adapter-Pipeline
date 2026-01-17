@@ -105,7 +105,3 @@ Der LLM-Adapter soll JSON mit folgenden Schlüsseln liefern (keine Domäne mehr)
 - `claim_type`: z. B. `return`, `exchange`, `delivery_issue` (optional)
 - `missing_fields`: nur echte Lücken (z. B. `address`, `iban`, `order_number`)
 - `action_items`: konkrete nächste Schritte (Strings oder Objekte)
-
-## Optionale Tools
-- Synthetic-E-Mails erzeugen (nur bei Bedarf): `python scripts/generate_synthetic_emails.py` (legt Dateien unter `data/emails/` an).
-- Pipeline-Export (nur bei Bedarf): `python scripts/export_pipeline_results.py` (liest `data/pipeline.db`, erzeugt CSV/JSON unter `evaluation/`).
