@@ -2,6 +2,31 @@ from __future__ import annotations
 
 from textwrap import dedent
 
+SYSTEM_MESSAGE = (
+    "You are an assistant that converts e-commerce-related emails into structured JSON outputs "
+    "following a strict schema."
+)
+
+JSON_SCHEMA = {
+    "name": "ecommerce_ticket",
+    "schema": {
+        "type": "object",
+        "properties": {
+            "summary": {"type": "string"},
+            "subject": {"type": ["string", "null"]},
+            "customer": {"type": ["string", "null"]},
+            "description": {"type": ["string", "null"]},
+            "priority": {"type": "string", "enum": ["low", "medium", "high", "urgent"]},
+            "order_number": {"type": ["string", "null"]},
+            "claim_type": {"type": ["string", "null"]},
+            "missing_fields": {"type": "array", "items": {"type": "string"}},
+            "action_items": {"type": "array", "items": {"type": "string"}},
+        },
+        "required": ["summary", "priority", "missing_fields", "action_items"],
+        "additionalProperties": False,
+    },
+}
+
 PROMPT_TEMPLATE = dedent(
     """
     You turn e-commerce customer emails (returns, exchanges, delivery issues) into strict JSON for a ticket system.
@@ -37,4 +62,4 @@ def build_email_prompt(email_text: str) -> str:
     return PROMPT_TEMPLATE.replace("{email_text}", email_text)
 
 
-__all__ = ["PROMPT_TEMPLATE", "build_email_prompt"]
+__all__ = ["SYSTEM_MESSAGE", "JSON_SCHEMA", "PROMPT_TEMPLATE", "build_email_prompt"]

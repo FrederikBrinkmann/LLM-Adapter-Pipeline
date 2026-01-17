@@ -6,7 +6,7 @@ from typing import Any
 import httpx
 
 from .base import BaseLLM, LLMError
-from .prompting import build_email_prompt
+from .prompting import JSON_SCHEMA, SYSTEM_MESSAGE, build_email_prompt
 from ..config import settings
 
 
@@ -33,7 +33,7 @@ class OpenAIAdapter:
             "messages": [
                 {
                     "role": "system",
-                    "content": "You are an assistant that converts e-commerce-related emails into structured JSON outputs following a strict schema.",
+                    "content": SYSTEM_MESSAGE,
                 },
                 {
                     "role": "user",
@@ -42,28 +42,7 @@ class OpenAIAdapter:
             ],
             "response_format": {
                 "type": "json_schema",
-                "json_schema": {
-                    "name": "ecommerce_ticket",
-                    "schema": {
-                        "type": "object",
-                        "properties": {
-                            "summary": {"type": "string"},
-                            "subject": {"type": ["string", "null"]},
-                            "customer": {"type": ["string", "null"]},
-                            "description": {"type": ["string", "null"]},
-                            "priority": {
-                                "type": "string",
-                                "enum": ["low", "medium", "high", "urgent"],
-                            },
-                            "order_number": {"type": ["string", "null"]},
-                            "claim_type": {"type": ["string", "null"]},
-                            "missing_fields": {"type": "array", "items": {"type": "string"}},
-                            "action_items": {"type": "array", "items": {"type": "string"}},
-                        },
-                        "required": ["summary", "priority", "missing_fields", "action_items"],
-                        "additionalProperties": False,
-                    },
-                },
+                "json_schema": JSON_SCHEMA,
             },
         }
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 27,
+  "next_id": 30,
   "tickets": [
     {
       "subject": "Return of Pullover #45892317",
@@ -1247,6 +1247,135 @@
       "created_at": "2026-01-17T18:35:22.121697",
       "updated_at": "2026-01-17T18:35:22.121697",
       "id": 26
+    },
+    {
+      "subject": "Unknown issue",
+      "summary": "Unknown issue",
+      "customer": null,
+      "description": "dasdasdasd",
+      "priority": "medium",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "subject"
+      ],
+      "action_items": [],
+      "source_job_id": 32,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "summary": "Unknown issue",
+        "subject": null,
+        "customer": null,
+        "description": null,
+        "priority": "medium",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "subject"
+        ],
+        "action_items": [],
+        "model_id": "llama3"
+      },
+      "created_at": "2026-01-17T18:39:34.889676",
+      "updated_at": "2026-01-17T18:39:34.889676",
+      "id": 27
+    },
+    {
+      "subject": "Unclear customer email received",
+      "summary": "Unclear customer email received",
+      "customer": null,
+      "description": "dasdasdasd",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-707A95A8",
+          "title": "Contact customer for more information.",
+          "details": "Contact customer for more information.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 33,
+      "source_model_id": "gpt-4o",
+      "raw_payload": {
+        "summary": "Unclear customer email received",
+        "subject": null,
+        "customer": null,
+        "description": null,
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Contact customer for more information."
+        ],
+        "model_id": "gpt-4o"
+      },
+      "created_at": "2026-01-17T18:39:53.915274",
+      "updated_at": "2026-01-17T18:39:53.915274",
+      "id": 28
+    },
+    {
+      "subject": "Unclear customer message",
+      "summary": "Unclear customer message",
+      "customer": null,
+      "description": "Customer message content: dasdasdasddasd",
+      "priority": "low",
+      "status": "todo",
+      "order_number": null,
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "order_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-F8EE0853",
+          "title": "Request clarification from customer regarding their issue",
+          "details": "Request clarification from customer regarding their issue",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 34,
+      "source_model_id": "gpt-4.1-mini",
+      "raw_payload": {
+        "summary": "Unclear customer message",
+        "subject": "Unclear customer message",
+        "customer": null,
+        "description": "Customer message content: dasdasdasddasd",
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Request clarification from customer regarding their issue"
+        ],
+        "model_id": "gpt-4.1-mini"
+      },
+      "created_at": "2026-01-17T18:44:36.244825",
+      "updated_at": "2026-01-17T18:44:36.244825",
+      "id": 29
     }
   ]
 }
