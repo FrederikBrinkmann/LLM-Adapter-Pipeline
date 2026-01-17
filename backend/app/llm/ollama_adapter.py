@@ -1,50 +1,13 @@
 from __future__ import annotations
 
 import json
-from textwrap import dedent
 from typing import Any
 
 import httpx
 
 from ..config import settings
 from .base import BaseLLM, LLMError
-
-PROMPT_TEMPLATE = dedent(
-    """
-    You are a customer service ticket classifier for e-commerce.
-    
-    CONTEXT: Extract structured data from customer emails about returns, exchanges, or delivery issues.
-    
-    INPUT: Customer email text
-    OUTPUT: Valid JSON only, no additional text
-    
-    REQUIRED JSON SCHEMA:
-    {
-      "summary": string,                      // max 120 chars, captures core issue
-      "subject": string | null,               // ticket subject line or null
-      "customer": string | null,              // customer name if present
-      "description": string | null,           // detailed issue description or null
-      "priority": "low" | "medium" | "high" | "urgent",  // MUST be one of these four
-      "order_number": string | null,          // order/bestellreferenz or null
-      "claim_type": "return" | "exchange" | "delivery_issue" | null,  // MUST be one of these or null
-      "missing_fields": string[],             // list only critical missing fields
-      "action_items": string[]                // 2-3 specific, actionable next steps
-    }
-    
-    RULES:
-    1. Output ONLY valid JSON. No markdown, no explanation.
-    2. For unknown values, use null and add field name to missing_fields.
-    3. Priority must be exactly one of: low, medium, high, urgent.
-    4. claim_type must be exactly one of: return, exchange, delivery_issue, or null.
-    5. Action items must be concrete and specific (e.g., "Send return label to customer").
-    6. Do not invent data not present in the email.
-    
-    EMAIL:
-    ---
-    {email_text}
-    ---
-    """
-)
+from .prompting import build_email_prompt
 
 
 class OllamaAdapter:
@@ -64,7 +27,7 @@ class OllamaAdapter:
         self.parameters = parameters or {}
 
     async def generate_structured(self, *, text: str) -> dict[str, Any]:
-        prompt_text = PROMPT_TEMPLATE.replace("{email_text}", text)
+        prompt_text = build_email_prompt(text)
 
         payload: dict[str, Any] = {
             "model": self.model_id,

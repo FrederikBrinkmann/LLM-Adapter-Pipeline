@@ -1,43 +1,13 @@
 from __future__ import annotations
 
 import json
-from textwrap import dedent
 from typing import Any
 
 import httpx
 
 from .base import BaseLLM, LLMError
+from .prompting import build_email_prompt
 from ..config import settings
-
-PROMPT_TEMPLATE = dedent(
-    """
-    You turn e-commerce customer emails (returns, exchanges, delivery issues) into strict JSON for a ticket system.
-    Return ONLY valid JSON with this shape:
-    {
-      "summary": string,                      // short title
-      "subject": string | null,               // optional, can reuse summary
-      "customer": string | null,
-      "description": string | null,           // optional short description
-      "priority": "low" | "medium" | "high" | "urgent",
-      "order_number": string | null,          // bestellreferenz
-      "claim_type": string | null,            // e.g. "return", "exchange", "delivery_issue"
-      "missing_fields": string[],             // only real gaps (e.g. "address", "iban", "order_number")
-      "action_items": string[]                // concrete next steps
-    }
-
-    Rules:
-    - Keep summary concise (<=120 chars).
-    - If a value is unknown, set it to null and add the field name to missing_fields.
-    - Choose priority based on the email’s urgency; must be one of the four enum values.
-    - Action items should be actionable, not empty bullet points.
-    - No extra keys, no comments.
-
-    Email:
-    ---
-    {email_text}
-    ---
-    """
-)
 
 
 class OpenAIAdapter:
@@ -57,7 +27,7 @@ class OpenAIAdapter:
             raise LLMError("OpenAI API key is not configured")
 
     async def generate_structured(self, *, text: str) -> dict:
-        prompt_text = PROMPT_TEMPLATE.replace("{email_text}", text)
+        prompt_text = build_email_prompt(text)
         payload = {
             "model": self.model_id,
             "messages": [
