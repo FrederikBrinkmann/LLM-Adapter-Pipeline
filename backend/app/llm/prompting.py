@@ -3,58 +3,81 @@ from __future__ import annotations
 from textwrap import dedent
 
 SYSTEM_MESSAGE = (
-    "You are an assistant that converts e-commerce-related emails into structured JSON outputs "
-    "following a strict schema."
+  "You are an expert insurance claims processor. Convert insurance-related emails into "
+  "structured JSON tickets with high accuracy. Extract all relevant information, validate "
+  "data types, and flag missing critical fields. Your output drives automated ticket creation."
 )
 
 JSON_SCHEMA = {
-    "name": "ecommerce_ticket",
-    "schema": {
-        "type": "object",
-        "properties": {
-            "summary": {"type": "string"},
-            "subject": {"type": ["string", "null"]},
-            "customer": {"type": ["string", "null"]},
-            "description": {"type": ["string", "null"]},
-            "priority": {"type": "string", "enum": ["low", "medium", "high", "urgent"]},
-            "order_number": {"type": ["string", "null"]},
-            "claim_type": {"type": ["string", "null"]},
-            "missing_fields": {"type": "array", "items": {"type": "string"}},
-            "action_items": {"type": "array", "items": {"type": "string"}},
-        },
-        "required": ["summary", "priority", "missing_fields", "action_items"],
-        "additionalProperties": False,
+  "name": "insurance_ticket",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "ticket_id": {"type": "string"},
+      "summary": {"type": "string"},
+      "subject": {"type": ["string", "null"]},
+      "claimant_name": {"type": ["string", "null"]},
+      "claimant_email": {"type": ["string", "null"]},
+      "claimant_phone": {"type": ["string", "null"]},
+      "description": {"type": ["string", "null"]},
+      "priority": {"type": "string", "enum": ["low", "medium", "high", "urgent"]},
+      "policy_number": {"type": ["string", "null"]},
+      "claim_type": {"type": "string", "enum": ["damage", "medical", "liability", "death", "other"]},
+      "claim_date": {"type": ["string", "null"]},
+      "incident_date": {"type": ["string", "null"]},
+      "incident_location": {"type": ["string", "null"]},
+      "claim_amount": {"type": ["number", "null"]},
+      "missing_fields": {"type": "array", "items": {"type": "string"}},
+      "action_items": {"type": "array", "items": {"type": "string"}},
+      "next_steps": {"type": "string"},
+      "created_timestamp": {"type": "string"},
     },
+    "required": ["ticket_id", "summary", "priority", "claim_type", "missing_fields", "action_items", "next_steps"],
+    "additionalProperties": False,
+  },
 }
 
 PROMPT_TEMPLATE = dedent(
-    """
-    You turn e-commerce customer emails (returns, exchanges, delivery issues) into strict JSON for a ticket system.
-    Return ONLY valid JSON with this shape:
-    {
-      "summary": string,                      // short title
-      "subject": string | null,               // optional, can reuse summary
-      "customer": string | null,
-      "description": string | null,           // optional short description
-      "priority": "low" | "medium" | "high" | "urgent",
-      "order_number": string | null,          // bestellreferenz
-      "claim_type": string | null,            // e.g. "return", "exchange", "delivery_issue"
-      "missing_fields": string[],             // only real gaps (e.g. "address", "iban", "order_number")
-      "action_items": string[]                // concrete next steps
-    }
-
-    Rules:
-    - Keep summary concise (<=120 chars).
-    - If a value is unknown, set it to null and add the field name to missing_fields.
-    - Choose priority based on the email’s urgency; must be one of the four enum values.
-    - Action items should be actionable, not empty bullet points.
-    - No extra keys, no comments.
-
-    Email:
-    ---
-    {email_text}
-    ---
-    """
+  """
+  You are processing an insurance claim email into a ticket system. Be precise and extract ALL relevant data.
+  
+  Return ONLY valid JSON matching this exact schema:
+  {
+    "ticket_id": "AUTO_GENERATED",
+    "summary": string (max 120 chars, clear title),
+    "subject": string | null,
+    "claimant_name": string | null,
+    "claimant_email": string | null,
+    "claimant_phone": string | null,
+    "description": string | null (detailed summary),
+    "priority": "low" | "medium" | "high" | "urgent",
+    "policy_number": string | null,
+    "claim_type": "damage" | "medical" | "liability" | "death" | "other",
+    "claim_date": string | null (YYYY-MM-DD),
+    "incident_date": string | null (YYYY-MM-DD),
+    "incident_location": string | null,
+    "claim_amount": number | null,
+    "missing_fields": string[] (critical gaps only),
+    "action_items": string[] (specific, actionable tasks),
+    "next_steps": string (clear instructions for ticket handler),
+    "created_timestamp": string (ISO 8601 format)
+  }
+  
+  Processing rules:
+  - Extract contact information precisely (name, email, phone).
+  - Validate claim_date and incident_date in YYYY-MM-DD format.
+  - Set unknown values to null, then add field name to missing_fields.
+  - Priority: urgent (life/health risk, > €50k), high (> €10k), medium (standard), low (inquiry).
+  - Claim type: must match exactly one enum value.
+  - Action items: numbered list of concrete next steps.
+  - next_steps: brief instruction for the support team on how to proceed.
+  - No comments, no extra keys, valid JSON only.
+  
+  Email:
+  ---
+  {email_text}
+  ---
+  """
 )
 
 
