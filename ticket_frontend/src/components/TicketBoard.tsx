@@ -20,16 +20,25 @@ interface ActionItem {
 
 interface Ticket {
   id: number;
+  ticket_id: string | null;
   subject: string;
   summary: string;
-  customer: string | null;
+  claimant_name: string | null;
+  claimant_email: string | null;
+  claimant_phone: string | null;
   description: string | null;
   priority: TicketPriority;
   status: TicketStatus;
-  order_number: string | null;
+  policy_number: string | null;
   claim_type: string | null;
+  claim_date: string | null;
+  incident_date: string | null;
+  incident_location: string | null;
+  claim_amount: number | null;
   missing_fields: string[];
   action_items: ActionItem[];
+  next_steps: string | null;
+  created_timestamp: string | null;
   source_job_id: number | null;
   source_model_id: string | null;
   created_at: string;
@@ -51,8 +60,21 @@ const PRIORITY_LABELS: Record<TicketPriority, string> = {
 };
 
 const ACTION_PRESETS = [
-  { type: "return", title: "Retoure freigeben", details: "Retourenlabel erstellen" },
-  { type: "exchange", title: "Umtausch vorbereiten", details: "Ersatzprodukt reservieren" },
+  {
+    type: "request_documents",
+    title: "Unterlagen anfordern",
+    details: "Arztbericht, Fotos oder Rechnungen beim Kunden anfordern",
+  },
+  {
+    type: "assign_adjuster",
+    title: "Gutachter beauftragen",
+    details: "Termin zur Schadenaufnahme vereinbaren",
+  },
+  {
+    type: "validate_claim",
+    title: "Schaden prüfen",
+    details: "Deckung und Schadenshöhe prüfen",
+  },
 ];
 
 const statusOrder: TicketStatus[] = ["todo", "in_progress", "waiting_for_customer", "done"];
@@ -63,6 +85,9 @@ const formatDate = (isoDate: string) =>
     timeStyle: "short",
   }).format(new Date(isoDate));
 
+const formatCurrency = (amount: number) =>
+  new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(amount);
+
 const TicketBoard = () => {
   const [tickets, setTickets] = useState<Ticket[]>([]);
   const [loading, setLoading] = useState(false);
@@ -71,10 +96,10 @@ const TicketBoard = () => {
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
   const [formState, setFormState] = useState({
     subject: "",
-    customer: "",
+    claimantName: "",
     priority: "medium" as TicketPriority,
     description: "",
-    actionType: ACTION_PRESETS[0]?.type ?? "return",
+    actionType: ACTION_PRESETS[0]?.type ?? "request_documents",
   });
 
   const filteredTickets = useMemo(() => {
@@ -116,7 +141,7 @@ const TicketBoard = () => {
     const payload = {
       subject: formState.subject.trim(),
       summary: formState.subject.trim(),
-      customer: formState.customer.trim() || null,
+      claimant_name: formState.claimantName.trim() || null,
       description: formState.description.trim() || null,
       priority: formState.priority,
       action_items: preset
@@ -149,7 +174,7 @@ const TicketBoard = () => {
       setFormState((prev) => ({
         ...prev,
         subject: "",
-        customer: "",
+        claimantName: "",
         description: "",
       }));
     } catch (err) {
@@ -186,7 +211,7 @@ const TicketBoard = () => {
       <div className="ticket-board__intro">
         <h2>Tickets & Aktionen</h2>
         <p>
-          Dieser Service zeigt sowohl manuell erstellte Tickets als auch Einträge, die aus der LLM-Pipeline stammen.
+          Dieser Service zeigt sowohl manuell erstellte Schadenfälle als auch Einträge, die aus der LLM-Pipeline stammen.
         </p>
         <button className="secondary" type="button" onClick={() => fetchTickets()} disabled={loading}>
           {loading ? "Aktualisiere…" : "Tickets neu laden"}
@@ -202,17 +227,17 @@ const TicketBoard = () => {
               type="text"
               value={formState.subject}
               onChange={(event) => setFormState((prev) => ({ ...prev, subject: event.target.value }))}
-              placeholder="z.B. Retoure oder Schadensmeldung"
+              placeholder="z.B. Wasserschaden oder Unfall"
               required
             />
           </label>
           <label>
-            Kunde / Team
+            Versicherungsnehmer
             <input
               type="text"
-              value={formState.customer}
-              onChange={(event) => setFormState((prev) => ({ ...prev, customer: event.target.value }))}
-              placeholder="Name oder Company"
+              value={formState.claimantName}
+              onChange={(event) => setFormState((prev) => ({ ...prev, claimantName: event.target.value }))}
+              placeholder="Name des Versicherten"
             />
           </label>
           <label>
@@ -277,7 +302,7 @@ const TicketBoard = () => {
           <thead>
             <tr>
               <th>Ticket</th>
-              <th>Kunde</th>
+              <th>Versicherungsnehmer</th>
               <th>Status</th>
               <th>Priorität</th>
               <th>Action Items & fehlende Felder</th>
@@ -291,6 +316,7 @@ const TicketBoard = () => {
                   <div className="ticket-title">
                     <strong>#{ticket.id}</strong>
                     <span>{ticket.subject}</span>
+                    {ticket.ticket_id && <small>Ticket-ID: {ticket.ticket_id}</small>}
                     {ticket.claim_type && <small>Typ: {ticket.claim_type}</small>}
                   </div>
                   {ticket.summary && <p className="ticket-description">{ticket.summary}</p>}
@@ -302,8 +328,11 @@ const TicketBoard = () => {
                 </td>
                 <td>
                   <div className="ticket-meta">
-                    <span>{ticket.customer ?? "–"}</span>
-                    {ticket.order_number && <small>Bestellung: {ticket.order_number}</small>}
+                    <span>{ticket.claimant_name ?? "–"}</span>
+                    {ticket.policy_number && <small>Police: {ticket.policy_number}</small>}
+                    {typeof ticket.claim_amount === "number" && (
+                      <small>Schaden: {formatCurrency(ticket.claim_amount)}</small>
+                    )}
                   </div>
                 </td>
                 <td>
@@ -334,6 +363,12 @@ const TicketBoard = () => {
                       </div>
                     ))}
                     {ticket.action_items.length === 0 && <span className="muted">Keine Vorschläge</span>}
+                    {ticket.next_steps && (
+                      <div className="missing-fields">
+                        <strong>Nächste Schritte:</strong>
+                        <p>{ticket.next_steps}</p>
+                      </div>
+                    )}
                     {ticket.missing_fields.length > 0 && (
                       <div className="missing-fields">
                         <strong>Fehlende Angaben:</strong>

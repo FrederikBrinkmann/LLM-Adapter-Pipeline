@@ -14,17 +14,24 @@ from ..ticketing import TargetAPIError, submit_ticket
 ACTION_SOURCES = {"llm", "agent", "system"}
 
 
-def _derive_priority(claim_type: str | None, missing_fields: list[str]) -> str:
+def _derive_priority(
+    claim_type: str | None,
+    claim_amount: float | None,
+    missing_fields: list[str],
+) -> str:
+    if isinstance(claim_amount, (int, float)):
+        if claim_amount >= 50000:
+            return "urgent"
+        if claim_amount >= 10000:
+            return "high"
     if claim_type:
         claim = claim_type.lower()
-        if claim in {"injury", "fraud", "legal", "emergency"}:
+        if claim in {"death", "medical"}:
             return "urgent"
-        if claim in {"water_damage", "accident", "liability"}:
+        if claim in {"liability", "damage"}:
             return "high"
-    if len(missing_fields) >= 3:
+    if len(missing_fields) >= 4:
         return "high"
-    if len(missing_fields) == 0:
-        return "medium"
     return "medium"
 
 
@@ -46,6 +53,8 @@ def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dic
             if isinstance(entry, str):
                 cleaned = entry.strip()
                 if cleaned and cleaned.lower() not in {"model_id"}:
+                    if cleaned == "order_number":
+                        cleaned = "policy_number"
                     missing_fields.append(cleaned)
 
     raw_actions = structured_payload.get("action_items") or []
@@ -79,22 +88,42 @@ def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dic
                 )
 
     claim_type = structured_payload.get("claim_type")
-    if priority is None:
-        priority = _derive_priority(claim_type, missing_fields)
+    claim_amount_raw = structured_payload.get("claim_amount")
+    claim_amount: float | None = None
+    if isinstance(claim_amount_raw, (int, float)):
+        claim_amount = float(claim_amount_raw)
+    elif isinstance(claim_amount_raw, str):
+        try:
+            claim_amount = float(claim_amount_raw.replace(",", "."))
+        except ValueError:
+            claim_amount = None
 
-    order_number = structured_payload.get("order_number") or structured_payload.get("policy_number")
+    if priority is None:
+        priority = _derive_priority(claim_type, claim_amount, missing_fields)
+
+    claimant_name = structured_payload.get("claimant_name") or structured_payload.get("customer")
+    policy_number = structured_payload.get("policy_number") or structured_payload.get("order_number")
 
     return {
         "subject": subject or summary,
         "summary": summary,
-        "customer": structured_payload.get("customer"),
+        "ticket_id": structured_payload.get("ticket_id"),
+        "claimant_name": claimant_name,
+        "claimant_email": structured_payload.get("claimant_email"),
+        "claimant_phone": structured_payload.get("claimant_phone"),
         "description": structured_payload.get("description") or job.input_text,
         "priority": priority,
         "status": "todo",
-        "order_number": order_number,
+        "policy_number": policy_number,
         "claim_type": claim_type,
+        "claim_date": structured_payload.get("claim_date"),
+        "incident_date": structured_payload.get("incident_date"),
+        "incident_location": structured_payload.get("incident_location"),
+        "claim_amount": claim_amount,
         "missing_fields": missing_fields,
         "action_items": action_items,
+        "next_steps": structured_payload.get("next_steps"),
+        "created_timestamp": structured_payload.get("created_timestamp"),
         "source_job_id": job.id,
         "source_model_id": job.model_id,
         "raw_payload": structured_payload,

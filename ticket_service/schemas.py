@@ -39,16 +39,25 @@ class ActionItemCreate(ActionItemBase):
 
 class Ticket(BaseModel):
     id: int
+    ticket_id: str | None = None
     subject: str
     summary: str
-    customer: str | None = None
+    claimant_name: str | None = None
+    claimant_email: str | None = None
+    claimant_phone: str | None = None
     description: str | None = None
     priority: TicketPriority
     status: TicketStatus
-    order_number: str | None = None
+    policy_number: str | None = None
     claim_type: str | None = None
+    claim_date: str | None = None
+    incident_date: str | None = None
+    incident_location: str | None = None
+    claim_amount: float | None = None
     missing_fields: list[str] = Field(default_factory=list)
     action_items: list[ActionItem] = Field(default_factory=list)
+    next_steps: str | None = None
+    created_timestamp: str | None = None
     source_job_id: int | None = None
     source_model_id: str | None = None
     raw_payload: dict[str, Any] | None = None
@@ -59,14 +68,23 @@ class Ticket(BaseModel):
 class TicketCreate(BaseModel):
     summary: str = Field(..., min_length=1)
     subject: str | None = None
-    customer: str | None = None
+    ticket_id: str | None = None
+    claimant_name: str | None = None
+    claimant_email: str | None = None
+    claimant_phone: str | None = None
     description: str | None = None
     priority: TicketPriority = TicketPriority.MEDIUM
     status: TicketStatus = TicketStatus.TODO
-    order_number: str | None = None
+    policy_number: str | None = None
     claim_type: str | None = None
+    claim_date: str | None = None
+    incident_date: str | None = None
+    incident_location: str | None = None
+    claim_amount: float | None = None
     missing_fields: list[str] = Field(default_factory=list)
     action_items: list[ActionItemCreate] = Field(default_factory=list)
+    next_steps: str | None = None
+    created_timestamp: str | None = None
     source_job_id: int | None = None
     source_model_id: str | None = None
     raw_payload: dict[str, Any] | None = None
@@ -84,14 +102,23 @@ class TicketCreate(BaseModel):
 class TicketUpdate(BaseModel):
     subject: str | None = None
     summary: str | None = None
-    customer: str | None = None
+    ticket_id: str | None = None
+    claimant_name: str | None = None
+    claimant_email: str | None = None
+    claimant_phone: str | None = None
     description: str | None = None
     priority: TicketPriority | None = None
     status: TicketStatus | None = None
-    order_number: str | None = None
+    policy_number: str | None = None
     claim_type: str | None = None
+    claim_date: str | None = None
+    incident_date: str | None = None
+    incident_location: str | None = None
+    claim_amount: float | None = None
     missing_fields: list[str] | None = None
     action_items: list[ActionItemCreate] | None = None
+    next_steps: str | None = None
+    created_timestamp: str | None = None
 
     @model_validator(mode="after")
     def normalize_subject(self) -> "TicketUpdate":

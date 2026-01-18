@@ -99,8 +99,14 @@ def build_csv_rows(jobs: list[JobRecord]) -> list[dict[str, Any]]:
     for job in jobs:
         result = job.result or {}
         missing_fields = result.get("missing_fields") or []
+        if isinstance(missing_fields, list):
+            missing_fields = [
+                "policy_number" if field == "order_number" else field for field in missing_fields
+            ]
         action_items = result.get("action_items") or []
-        order_number = result.get("order_number") or result.get("policy_number")
+        policy_number = result.get("policy_number") or result.get("order_number")
+        claim_amount = result.get("claim_amount")
+        claimant_name = result.get("claimant_name") or result.get("customer")
         rows.append(
             {
                 "job_id": job.job_id,
@@ -111,8 +117,10 @@ def build_csv_rows(jobs: list[JobRecord]) -> list[dict[str, Any]]:
                 "completed_at": job.completed_at or "",
                 "submitted_at": job.submitted_at or "",
                 "summary": result.get("summary", ""),
-                "order_number": order_number,
+                "policy_number": policy_number,
                 "claim_type": result.get("claim_type"),
+                "claim_amount": claim_amount,
+                "claimant_name": claimant_name,
                 "missing_fields": ", ".join(missing_fields),
                 "action_items": "; ".join(action_items),
                 "target_status": job.target_status or "",
@@ -133,8 +141,10 @@ def write_csv(rows: list[dict[str, Any]], path: Path) -> None:
         "completed_at",
         "submitted_at",
         "summary",
-        "order_number",
+        "policy_number",
         "claim_type",
+        "claim_amount",
+        "claimant_name",
         "missing_fields",
         "action_items",
         "target_status",

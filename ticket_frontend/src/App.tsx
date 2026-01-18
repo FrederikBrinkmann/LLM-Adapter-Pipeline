@@ -8,7 +8,7 @@ function App() {
     <div className="app-container">
       <header>
         <h1>Ticket-Dashboard</h1>
-        <p>Eigenständiger Service für Ticket- und Action-Item-Übersichten.</p>
+        <p>Eigenständiger Service für Schadenfälle und Action-Item-Übersichten.</p>
         <p className="ticket-api-hint">
           API: <code>{TICKETS_API_BASE_URL}</code>
         </p>

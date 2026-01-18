@@ -1,10 +1,9 @@
 {
-  "next_id": 33,
+  "next_id": 39,
   "tickets": [
     {
       "subject": "Return of Pullover #45892317",
       "summary": "Return of Pullover #45892317",
-      "customer": "Max Mustermann",
       "description": "Betreff: R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317\n\nSehr geehrtes Kundenservice-Team,\n\nich m\u00f6chte hiermit gerne den folgenden Artikel aus meiner Bestellung zur\u00fccksenden:\n\nBestellnummer: #45892317\n\nArtikel: Pullover \u201eNordic Knit\u201c\n\nGr\u00f6\u00dfe: L\n\nFarbe: Dunkelblau\n\nBestelldatum: 12. Februar 2025\n\nDer Pullover entspricht leider nicht meinen Erwartungen und ich m\u00f6chte daher mein Widerrufsrecht nutzen. Bitte senden Sie mir die entsprechenden R\u00fccksendeunterlagen sowie weitere Informationen zum R\u00fccksendeprozess zu.\n\nVielen Dank im Voraus f\u00fcr Ihre Unterst\u00fctzung.\n\nMit freundlichen Gr\u00fc\u00dfen\nMax Mustermann",
       "priority": "medium",
       "status": "todo",
@@ -46,12 +45,12 @@
       "created_at": "2025-12-03T17:07:57.060083",
       "updated_at": "2025-12-03T17:07:57.060083",
       "id": 1,
-      "order_number": "#45892317"
+      "policy_number": "#45892317",
+      "claimant_name": "Max Mustermann"
     },
     {
       "subject": "Return of Pullover #45892317",
       "summary": "Return of Pullover #45892317",
-      "customer": "Max Mustermann",
       "description": "### Testmail\n\nBetreff: R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317\n\nSehr geehrtes Kundenservice-Team,\n\nich m\u00f6chte hiermit gerne den folgenden Artikel aus meiner Bestellung zur\u00fccksenden:\n\nBestellnummer: #45892317\n\nArtikel: Pullover \u201eNordic Knit\u201c\n\nGr\u00f6\u00dfe: L\n\nFarbe: Dunkelblau\n\nBestelldatum: 12. Februar 2025\n\nDer Pullover entspricht leider nicht meinen Erwartungen und ich m\u00f6chte daher mein Widerrufsrecht nutzen. Bitte senden Sie mir die entsprechenden R\u00fccksendeunterlagen sowie weitere Informationen zum R\u00fccksendeprozess zu.\n\nVielen Dank im Voraus f\u00fcr Ihre Unterst\u00fctzung.\n\nMit freundlichen Gr\u00fc\u00dfen\nMax Mustermann",
       "priority": "medium",
       "status": "todo",
@@ -93,12 +92,12 @@
       "created_at": "2025-12-04T12:54:10.047034",
       "updated_at": "2025-12-04T12:54:10.047034",
       "id": 2,
-      "order_number": "#45892317"
+      "policy_number": "#45892317",
+      "claimant_name": "Max Mustermann"
     },
     {
       "subject": "R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317",
       "summary": "R\u00fccksendung Pullover Nordic Knit \u2013 Bestellung #45892317",
-      "customer": "Max Mustermann",
       "description": "Kunde m\u00f6chte Pullover aus Bestellung #45892317 zur\u00fccksenden und bittet um R\u00fccksendeunterlagen.",
       "priority": "medium",
       "status": "todo",
@@ -140,16 +139,15 @@
       "created_at": "2025-12-04T13:23:58.395649",
       "updated_at": "2025-12-04T13:23:58.395649",
       "id": 3,
-      "order_number": "#45892317"
+      "policy_number": "#45892317",
+      "claimant_name": "Max Mustermann"
     },
     {
       "subject": "Return of Pullover #45892317",
       "summary": "Return of Pullover #45892317",
-      "customer": "Max Mustermann",
       "description": "### Testmail\n\nBetreff: R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317\n\nSehr geehrtes Kundenservice-Team,\n\nich m\u00f6chte hiermit gerne den folgenden Artikel aus meiner Bestellung zur\u00fccksenden:\n\nBestellnummer: #45892317\n\nArtikel: Pullover \u201eNordic Knit\u201c\n\nGr\u00f6\u00dfe: L\n\nFarbe: Dunkelblau\n\nBestelldatum: 12. Februar 2025\n\nDer Pullover entspricht leider nicht meinen Erwartungen und ich m\u00f6chte daher mein Widerrufsrecht nutzen. Bitte senden Sie mir die entsprechenden R\u00fccksendeunterlagen sowie weitere Informationen zum R\u00fccksendeprozess zu.\n\nVielen Dank im Voraus f\u00fcr Ihre Unterst\u00fctzung.\n\nMit freundlichen Gr\u00fc\u00dfen\nMax Mustermann",
       "priority": "medium",
       "status": "todo",
-      "order_number": "#45892317",
       "claim_type": "return",
       "missing_fields": [],
       "action_items": [
@@ -187,16 +185,16 @@
       },
       "created_at": "2025-12-04T13:40:01.729410",
       "updated_at": "2025-12-04T13:40:01.729410",
-      "id": 4
+      "id": 4,
+      "policy_number": "#45892317",
+      "claimant_name": "Max Mustermann"
     },
     {
       "subject": "API request failure for ticket processing",
       "summary": "Error processing e-commerce ticket due to invalid API request",
-      "customer": null,
       "description": "The system encountered a 400 Bad Request error due to an unsupported 'response_format' parameter when processing the ticket.",
       "priority": "high",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
@@ -250,16 +248,16 @@
       },
       "created_at": "2025-12-04T13:41:41.990807",
       "updated_at": "2025-12-04T13:41:41.990807",
-      "id": 5
+      "id": 5,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317",
       "summary": "R\u00fccksendung Pullover aus Bestellung #45892317",
-      "customer": "Max Mustermann",
       "description": "Kunde m\u00f6chte Pullover \"Nordic Knit\" Gr\u00f6\u00dfe L, Farbe Dunkelblau aus Bestellung #45892317 zur\u00fccksenden und bittet um R\u00fccksendeunterlagen.",
       "priority": "medium",
       "status": "todo",
-      "order_number": "45892317",
       "claim_type": "return",
       "missing_fields": [],
       "action_items": [
@@ -297,16 +295,16 @@
       },
       "created_at": "2025-12-04T14:02:25.093297",
       "updated_at": "2025-12-04T14:02:25.093297",
-      "id": 6
+      "id": 6,
+      "policy_number": "45892317",
+      "claimant_name": "Max Mustermann"
     },
     {
       "subject": "Retourenanfrage f\u00fcr Pullover \u201eNordic Knit\u201c",
       "summary": "Retourenanfrage f\u00fcr Pullover \u201eNordic Knit\u201c",
-      "customer": "Frederik Brinkmann",
       "description": "R\u00fccksendung des Artikels aufgrund von Nicht\u00fcbereinstimmung mit Erwartungen.",
       "priority": "medium",
       "status": "todo",
-      "order_number": "#45892317",
       "claim_type": "return",
       "missing_fields": [],
       "action_items": [
@@ -344,16 +342,16 @@
       },
       "created_at": "2025-12-05T10:01:37.815919",
       "updated_at": "2025-12-05T10:01:37.815919",
-      "id": 7
+      "id": 7,
+      "policy_number": "#45892317",
+      "claimant_name": "Frederik Brinkmann"
     },
     {
       "subject": "Urgent: Account Update Required",
       "summary": "Urgent: Account Update Required",
-      "customer": null,
       "description": "TEST TEST WIRKLICH DRINGEND KONTONUMMER AKTUALISIEREN",
       "priority": "urgent",
       "status": "todo",
-      "order_number": null,
       "claim_type": "delivery_issue",
       "missing_fields": [
         "kontonummer"
@@ -387,16 +385,16 @@
       },
       "created_at": "2025-12-05T10:48:06.736815",
       "updated_at": "2025-12-05T10:48:06.736815",
-      "id": 8
+      "id": 8,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Request for return of item from order #45892317",
       "summary": "Request for return of item from order #45892317",
-      "customer": "Max Mustermann",
       "description": "Customer wants to return the 'Nordic Knit' sweater due to dissatisfaction.",
       "priority": "medium",
       "status": "todo",
-      "order_number": "#45892317",
       "claim_type": "return",
       "missing_fields": [],
       "action_items": [
@@ -434,16 +432,16 @@
       },
       "created_at": "2025-12-05T10:51:39.021574",
       "updated_at": "2025-12-05T10:51:39.021574",
-      "id": 9
+      "id": 9,
+      "policy_number": "#45892317",
+      "claimant_name": "Max Mustermann"
     },
     {
       "subject": "Request for return of item from order #45892317",
       "summary": "Request for return of item from order #45892317",
-      "customer": "Frederik Brinkmann",
       "description": "Customer wants to return the 'Nordic Knit' sweater due to dissatisfaction.",
       "priority": "medium",
       "status": "todo",
-      "order_number": "#45892317",
       "claim_type": "return",
       "missing_fields": [],
       "action_items": [
@@ -481,20 +479,20 @@
       },
       "created_at": "2025-12-05T16:15:28.288150",
       "updated_at": "2025-12-05T16:15:28.288150",
-      "id": 10
+      "id": 10,
+      "policy_number": "#45892317",
+      "claimant_name": "Frederik Brinkmann"
     },
     {
       "subject": "Unknown issue",
       "summary": "Unknown issue",
-      "customer": null,
       "description": "hjgghjghj",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number"
+        "policy_number"
       ],
       "action_items": [],
       "source_job_id": 15,
@@ -516,19 +514,19 @@
       },
       "created_at": "2025-12-05T20:02:16.406889",
       "updated_at": "2025-12-05T20:02:16.406889",
-      "id": 11
+      "id": 11,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "IT Support Request - Technical Issue",
       "summary": "IT Support Request - Technical Issue",
-      "customer": "Peter Lustig",
       "description": "Technical issue with login, unable to access system.",
       "priority": "high",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -569,16 +567,16 @@
       },
       "created_at": "2025-12-05T20:07:35.436157",
       "updated_at": "2025-12-05T20:07:35.436157",
-      "id": 12
+      "id": 12,
+      "policy_number": null,
+      "claimant_name": "Peter Lustig"
     },
     {
       "subject": "Unknown issue",
       "summary": "Unknown issue",
-      "customer": null,
       "description": "dasd",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
@@ -606,20 +604,20 @@
       },
       "created_at": "2026-01-11T17:51:38.962189",
       "updated_at": "2026-01-11T17:51:38.962189",
-      "id": 13
+      "id": 13,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Permanent Discount on Email Packages",
       "summary": "Newsletter about permanent discount on email packages",
-      "customer": null,
       "description": "Information about discounts on PlusMail, ProMail, and PowerMail packages.",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number"
+        "policy_number"
       ],
       "action_items": [
         {
@@ -659,20 +657,20 @@
       },
       "created_at": "2026-01-11T18:04:04.835457",
       "updated_at": "2026-01-11T18:04:04.835457",
-      "id": 14
+      "id": 14,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Promotional email for discounted red wine tasting package",
       "summary": "Promotional email for discounted red wine tasting package",
-      "customer": null,
       "description": "Email promoting a red wine tasting package at a 58% discount with free shipping.",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number"
+        "policy_number"
       ],
       "action_items": [
         {
@@ -704,20 +702,20 @@
       },
       "created_at": "2026-01-11T18:04:07.299472",
       "updated_at": "2026-01-11T18:04:07.299472",
-      "id": 15
+      "id": 15,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Weihnachtszauber: Angebote zum Fest",
       "summary": "Newsletter from mail.de regarding Christmas offers",
-      "customer": null,
       "description": "This is a newsletter that is only readable in HTML format.",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -759,19 +757,19 @@
       },
       "created_at": "2026-01-11T18:04:10.418491",
       "updated_at": "2026-01-11T18:04:10.418491",
-      "id": 16
+      "id": 16,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "LOTTO 6aus49 Jackpot and voucher",
       "summary": "Newsletter about LOTTO 6aus49 Jackpot and voucher",
-      "customer": null,
       "description": "Information about the highest LOTTO 6aus49 Jackpot and a 5\u20ac voucher.",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -812,20 +810,20 @@
       },
       "created_at": "2026-01-11T18:04:13.776742",
       "updated_at": "2026-01-11T18:04:13.776742",
-      "id": 17
+      "id": 17,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Zauberhafte Weihnachtsdeals: Nur f\u00fcr Sie!",
       "summary": "Newsletter from mail.de",
-      "customer": null,
       "description": "Dieser Newsletter von mail.de ist nur in der HTML-Ansicht lesbar.",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -867,20 +865,20 @@
       },
       "created_at": "2026-01-11T18:04:15.608597",
       "updated_at": "2026-01-11T18:04:15.608597",
-      "id": 18
+      "id": 18,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "LOTTO 6aus49 Jackpot Announcement",
       "summary": "LOTTO 6aus49 Jackpot Announcement",
-      "customer": null,
       "description": "Announcement of the highest LOTTO 6aus49 jackpot and a 5\u20ac voucher.",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number"
+        "policy_number"
       ],
       "action_items": [
         {
@@ -920,20 +918,20 @@
       },
       "created_at": "2026-01-11T18:04:17.298483",
       "updated_at": "2026-01-11T18:04:17.298483",
-      "id": 19
+      "id": 19,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Permanent discount on all premium email packages",
       "summary": "Permanent discount on all premium email packages",
-      "customer": null,
       "description": "Dauerhafter Rabatt auf alle Premium E-Mail-Pakete\n\nDieser Newsletter von mail.de ist nur in der HTML-Ansicht lesbar.",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -975,20 +973,20 @@
       },
       "created_at": "2026-01-11T18:04:20.101266",
       "updated_at": "2026-01-11T18:04:20.101266",
-      "id": 20
+      "id": 20,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Newsletter Subscription",
       "summary": "Newsletter about weight loss tips for 2026",
-      "customer": null,
       "description": "Newsletter from mail.de regarding weight loss without diet stress.",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -1030,16 +1028,16 @@
       },
       "created_at": "2026-01-11T18:04:22.034202",
       "updated_at": "2026-01-11T18:04:22.034202",
-      "id": 21
+      "id": 21,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Test email received",
       "summary": "Test email received",
-      "customer": null,
       "description": "This is a test email.",
       "priority": "low",
       "status": "todo",
-      "order_number": "1871871",
       "claim_type": null,
       "missing_fields": [
         "customer"
@@ -1073,16 +1071,16 @@
       },
       "created_at": "2026-01-11T18:06:35.474368",
       "updated_at": "2026-01-11T18:06:35.474368",
-      "id": 22
+      "id": 22,
+      "policy_number": "1871871",
+      "claimant_name": null
     },
     {
       "subject": "uzzz",
       "summary": "uzzz",
-      "customer": "zztt",
       "description": "uzfuzfz",
       "priority": "urgent",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [],
       "action_items": [
@@ -1099,20 +1097,20 @@
       "raw_payload": null,
       "created_at": "2026-01-16T09:07:01.970383",
       "updated_at": "2026-01-16T09:07:01.970383",
-      "id": 23
+      "id": 23,
+      "policy_number": null,
+      "claimant_name": "zztt"
     },
     {
       "subject": "Unintelligible email received",
       "summary": "Unintelligible email received",
-      "customer": null,
       "description": "Hasudhjashdjasfwf",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -1146,22 +1144,22 @@
       },
       "created_at": "2026-01-16T09:22:53.957059",
       "updated_at": "2026-01-16T09:22:53.957059",
-      "id": 24
+      "id": 24,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Unintelligible email received",
       "summary": "Unintelligible email received",
-      "customer": null,
       "description": "Hasudhjashdjasfwf",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "subject",
         "customer",
         "description",
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -1197,21 +1195,21 @@
       },
       "created_at": "2026-01-16T09:28:05.544754",
       "updated_at": "2026-01-16T09:28:05.544754",
-      "id": 25
+      "id": 25,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Unclear customer request",
       "summary": "Unclear customer request",
-      "customer": null,
       "description": "dasd",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
         "description",
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -1246,16 +1244,16 @@
       },
       "created_at": "2026-01-17T18:35:22.121697",
       "updated_at": "2026-01-17T18:35:22.121697",
-      "id": 26
+      "id": 26,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Unknown issue",
       "summary": "Unknown issue",
-      "customer": null,
       "description": "dasdasdasd",
       "priority": "medium",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
@@ -1281,20 +1279,20 @@
       },
       "created_at": "2026-01-17T18:39:34.889676",
       "updated_at": "2026-01-17T18:39:34.889676",
-      "id": 27
+      "id": 27,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Unclear customer email received",
       "summary": "Unclear customer email received",
-      "customer": null,
       "description": "dasdasdasd",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -1328,20 +1326,20 @@
       },
       "created_at": "2026-01-17T18:39:53.915274",
       "updated_at": "2026-01-17T18:39:53.915274",
-      "id": 28
+      "id": 28,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Unclear customer message",
       "summary": "Unclear customer message",
-      "customer": null,
       "description": "Customer message content: dasdasdasddasd",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -1375,20 +1373,20 @@
       },
       "created_at": "2026-01-17T18:44:36.244825",
       "updated_at": "2026-01-17T18:44:36.244825",
-      "id": 29
+      "id": 29,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Unclear customer email received",
       "summary": "Unclear customer email received",
-      "customer": null,
       "description": "dasdasdasddasddasdas",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -1422,20 +1420,20 @@
       },
       "created_at": "2026-01-17T18:49:45.282969",
       "updated_at": "2026-01-17T18:49:45.282969",
-      "id": 30
+      "id": 30,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Unclear customer message received",
       "summary": "Unclear customer message received",
-      "customer": null,
       "description": "Customer sent an unclear message: dasdasdasddasddasdasadsas",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -1469,20 +1467,20 @@
       },
       "created_at": "2026-01-17T18:59:58.346750",
       "updated_at": "2026-01-17T18:59:58.346750",
-      "id": 31
+      "id": 31,
+      "policy_number": null,
+      "claimant_name": null
     },
     {
       "subject": "Unclear customer message",
       "summary": "Unclear customer message",
-      "customer": null,
       "description": "Customer message content: eqwe",
       "priority": "low",
       "status": "todo",
-      "order_number": null,
       "claim_type": null,
       "missing_fields": [
         "customer",
-        "order_number",
+        "policy_number",
         "claim_type"
       ],
       "action_items": [
@@ -1516,7 +1514,318 @@
       },
       "created_at": "2026-01-17T18:59:59.833690",
       "updated_at": "2026-01-17T18:59:59.833690",
-      "id": 32
+      "id": 32,
+      "policy_number": null,
+      "claimant_name": null
+    },
+    {
+      "subject": "Return Issue",
+      "summary": "Return Issue",
+      "description": "rwerterterged",
+      "priority": "high",
+      "status": "todo",
+      "claim_type": "return",
+      "missing_fields": [
+        "customer",
+        "policy_number"
+      ],
+      "action_items": [],
+      "source_job_id": 38,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "summary": "Return Issue",
+        "subject": null,
+        "customer": null,
+        "description": null,
+        "priority": "high",
+        "order_number": null,
+        "claim_type": "return",
+        "missing_fields": [
+          "customer",
+          "order_number"
+        ],
+        "action_items": [],
+        "model_id": "llama3"
+      },
+      "created_at": "2026-01-18T15:23:10.949989",
+      "updated_at": "2026-01-18T15:23:10.949989",
+      "id": 33,
+      "policy_number": null,
+      "claimant_name": null
+    },
+    {
+      "subject": "Return Issue",
+      "summary": "Return Issue",
+      "description": "rwerterterged",
+      "priority": "medium",
+      "status": "todo",
+      "claim_type": "return",
+      "missing_fields": [
+        "customer",
+        "policy_number"
+      ],
+      "action_items": [],
+      "source_job_id": 39,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "summary": "Return Issue",
+        "subject": null,
+        "customer": null,
+        "description": null,
+        "priority": "medium",
+        "order_number": null,
+        "claim_type": "return",
+        "missing_fields": [
+          "customer",
+          "order_number"
+        ],
+        "action_items": [],
+        "model_id": "llama3"
+      },
+      "created_at": "2026-01-18T15:25:03.471181",
+      "updated_at": "2026-01-18T15:25:03.471181",
+      "id": 34,
+      "policy_number": null,
+      "claimant_name": null
+    },
+    {
+      "subject": "Unintelligible customer email received",
+      "summary": "Unintelligible customer email received",
+      "description": "The email content is not understandable and does not provide any actionable information.",
+      "priority": "low",
+      "status": "todo",
+      "claim_type": null,
+      "missing_fields": [
+        "customer",
+        "policy_number",
+        "claim_type"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-42F70037",
+          "title": "Request clarification from the customer regarding their inquiry.",
+          "details": "Request clarification from the customer regarding their inquiry.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 40,
+      "source_model_id": "gpt-4.1",
+      "raw_payload": {
+        "summary": "Unintelligible customer email received",
+        "subject": "Unintelligible customer email received",
+        "customer": null,
+        "description": "The email content is not understandable and does not provide any actionable information.",
+        "priority": "low",
+        "order_number": null,
+        "claim_type": null,
+        "missing_fields": [
+          "customer",
+          "order_number",
+          "claim_type"
+        ],
+        "action_items": [
+          "Request clarification from the customer regarding their inquiry."
+        ],
+        "model_id": "gpt-4.1"
+      },
+      "created_at": "2026-01-18T15:25:20.260528",
+      "updated_at": "2026-01-18T15:25:20.260528",
+      "id": 35,
+      "policy_number": null,
+      "claimant_name": null
+    },
+    {
+      "subject": "Schadenmeldung f\u00fcr Versicherungsnummer PN-45873921",
+      "summary": "Schadenmeldung f\u00fcr Versicherungsnummer PN-45873921",
+      "description": "Sachschaden (Fahrzeugbesch\u00e4digung) am 12.01.2026.",
+      "priority": "high",
+      "status": "todo",
+      "claim_type": "return",
+      "missing_fields": [
+        "policy_number"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-EC7AEBA2",
+          "title": "Pr\u00fcfung des Schadenfalls durchf\u00fchren",
+          "details": "Pr\u00fcfung des Schadenfalls durchf\u00fchren",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-7217CAAC",
+          "title": "Weitere Informationen zu den n\u00e4chsten Schritten bereitstellen",
+          "details": "Weitere Informationen zu den n\u00e4chsten Schritten bereitstellen",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "source_job_id": 41,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Schadenmeldung f\u00fcr Versicherungsnummer PN-45873921",
+        "subject": null,
+        "customer": "Max Mustermann",
+        "description": "Sachschaden (Fahrzeugbesch\u00e4digung) am 12.01.2026.",
+        "priority": "high",
+        "order_number": null,
+        "claim_type": "return",
+        "missing_fields": [
+          "order_number"
+        ],
+        "action_items": [
+          "Pr\u00fcfung des Schadenfalls durchf\u00fchren",
+          "Weitere Informationen zu den n\u00e4chsten Schritten bereitstellen"
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2026-01-18T15:33:18.919830",
+      "updated_at": "2026-01-18T15:33:18.919830",
+      "id": 36,
+      "policy_number": null,
+      "claimant_name": "Max Mustermann"
+    },
+    {
+      "ticket_id": null,
+      "subject": "Schadenmeldung f\u00fcr medizinische Behandlung",
+      "summary": "Schadenmeldung f\u00fcr medizinische Behandlung",
+      "claimant_name": "Anna Beispiel",
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "Einreichung einer Schadenmeldung f\u00fcr medizinische Behandlungskosten.",
+      "priority": "medium",
+      "status": "todo",
+      "policy_number": "KV-99218473",
+      "claim_type": "return",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": null,
+      "claim_amount": null,
+      "missing_fields": [],
+      "action_items": [
+        {
+          "id": "ACT-D87003CC",
+          "title": "Pr\u00fcfung der Kosten\u00fcbernahme gem\u00e4\u00df Versicherungsvertrag",
+          "details": "Pr\u00fcfung der Kosten\u00fcbernahme gem\u00e4\u00df Versicherungsvertrag",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-BD43046D",
+          "title": "Anforderung von \u00e4rztlichen Berichten und Rechnungen",
+          "details": "Anforderung von \u00e4rztlichen Berichten und Rechnungen",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": null,
+      "created_timestamp": null,
+      "source_job_id": 42,
+      "source_model_id": "gpt-4o-mini",
+      "raw_payload": {
+        "summary": "Schadenmeldung f\u00fcr medizinische Behandlung",
+        "subject": null,
+        "customer": "Anna Beispiel",
+        "description": "Einreichung einer Schadenmeldung f\u00fcr medizinische Behandlungskosten.",
+        "priority": "medium",
+        "order_number": "KV-99218473",
+        "claim_type": "return",
+        "missing_fields": [],
+        "action_items": [
+          "Pr\u00fcfung der Kosten\u00fcbernahme gem\u00e4\u00df Versicherungsvertrag",
+          "Anforderung von \u00e4rztlichen Berichten und Rechnungen"
+        ],
+        "model_id": "gpt-4o-mini"
+      },
+      "created_at": "2026-01-18T16:00:49.043920",
+      "updated_at": "2026-01-18T16:00:49.043920",
+      "id": 37
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Medizinischer Schaden: Bruch des Handgelenks nach Sportunfall am 05.01.2026",
+      "summary": "Medizinischer Schaden: Bruch des Handgelenks nach Sportunfall am 05.01.2026",
+      "claimant_name": "Anna Beispiel",
+      "claimant_email": "anna.beispiel@example.com",
+      "claimant_phone": "+49 160 7788990",
+      "description": "Anna Beispiel meldet einen medizinischen Schaden nach einem Sportunfall am 05.01.2026 in der Sporthalle S\u00fcd, Berliner Allee 120, 40212 D\u00fcsseldorf. Sie erlitt einen Bruch des rechten Handgelenks, der operativ im St.-Marien-Krankenhaus D\u00fcsseldorf behandelt wurde. Es erfolgte ein zweit\u00e4giger station\u00e4rer Aufenthalt. Die bisherigen Behandlungskosten betragen EUR 12.300,00. \u00c4rztliche Berichte und Rechnungen k\u00f6nnen auf Anfrage bereitgestellt werden.",
+      "priority": "high",
+      "status": "todo",
+      "policy_number": "KV-99218473",
+      "claim_type": "medical",
+      "claim_date": null,
+      "incident_date": "2026-01-05",
+      "incident_location": "Sporthalle S\u00fcd, Berliner Allee 120, 40212 D\u00fcsseldorf, Deutschland",
+      "claim_amount": 12300.0,
+      "missing_fields": [
+        "claim_date"
+      ],
+      "action_items": [
+        {
+          "id": "ACT-358EF94C",
+          "title": "1. Kontaktieren Sie die Anspruchstellerin zur Best\u00e4tigung des Schadeneingangs.",
+          "details": "1. Kontaktieren Sie die Anspruchstellerin zur Best\u00e4tigung des Schadeneingangs.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-8E0E893E",
+          "title": "2. Fordern Sie \u00e4rztliche Berichte und Rechnungen zur Pr\u00fcfung an.",
+          "details": "2. Fordern Sie \u00e4rztliche Berichte und Rechnungen zur Pr\u00fcfung an.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-39CFCBB7",
+          "title": "3. \u00dcberpr\u00fcfen Sie die Versicherungsbedingungen f\u00fcr Kosten\u00fcbernahme.",
+          "details": "3. \u00dcberpr\u00fcfen Sie die Versicherungsbedingungen f\u00fcr Kosten\u00fcbernahme.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-702ED08B",
+          "title": "4. Dokumentieren Sie alle eingereichten Unterlagen im System.",
+          "details": "4. Dokumentieren Sie alle eingereichten Unterlagen im System.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": "Kontaktieren Sie die Anspruchstellerin, fordern Sie die erforderlichen Unterlagen an und pr\u00fcfen Sie die Kosten\u00fcbernahme gem\u00e4\u00df Vertrag.",
+      "created_timestamp": "2024-06-13T12:00:00Z",
+      "source_job_id": 45,
+      "source_model_id": "gpt-4.1",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medizinischer Schaden: Bruch des Handgelenks nach Sportunfall am 05.01.2026",
+        "subject": null,
+        "claimant_name": "Anna Beispiel",
+        "claimant_email": "anna.beispiel@example.com",
+        "claimant_phone": "+49 160 7788990",
+        "description": "Anna Beispiel meldet einen medizinischen Schaden nach einem Sportunfall am 05.01.2026 in der Sporthalle S\u00fcd, Berliner Allee 120, 40212 D\u00fcsseldorf. Sie erlitt einen Bruch des rechten Handgelenks, der operativ im St.-Marien-Krankenhaus D\u00fcsseldorf behandelt wurde. Es erfolgte ein zweit\u00e4giger station\u00e4rer Aufenthalt. Die bisherigen Behandlungskosten betragen EUR 12.300,00. \u00c4rztliche Berichte und Rechnungen k\u00f6nnen auf Anfrage bereitgestellt werden.",
+        "priority": "high",
+        "policy_number": "KV-99218473",
+        "claim_type": "medical",
+        "claim_date": null,
+        "incident_date": "2026-01-05",
+        "incident_location": "Sporthalle S\u00fcd, Berliner Allee 120, 40212 D\u00fcsseldorf, Deutschland",
+        "claim_amount": 12300.0,
+        "missing_fields": [
+          "claim_date"
+        ],
+        "action_items": [
+          "1. Kontaktieren Sie die Anspruchstellerin zur Best\u00e4tigung des Schadeneingangs.",
+          "2. Fordern Sie \u00e4rztliche Berichte und Rechnungen zur Pr\u00fcfung an.",
+          "3. \u00dcberpr\u00fcfen Sie die Versicherungsbedingungen f\u00fcr Kosten\u00fcbernahme.",
+          "4. Dokumentieren Sie alle eingereichten Unterlagen im System."
+        ],
+        "next_steps": "Kontaktieren Sie die Anspruchstellerin, fordern Sie die erforderlichen Unterlagen an und pr\u00fcfen Sie die Kosten\u00fcbernahme gem\u00e4\u00df Vertrag.",
+        "created_timestamp": "2024-06-13T12:00:00Z",
+        "model_id": "gpt-4.1"
+      },
+      "created_at": "2026-01-18T16:09:22.493591",
+      "updated_at": "2026-01-18T16:09:22.493591",
+      "id": 38
     }
   ]
 }

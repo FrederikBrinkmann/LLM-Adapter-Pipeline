@@ -1,5 +1,5 @@
 # LLM-Adapter-Pipeline
-Modellagnostische LLM-Pipeline, die unstrukturierte E-Mails in ein JSON überführt und an eine Ticket-API übergibt. Fokus: strukturierte Ausgaben, Validierung, Mapping, reproduzierbare Evaluation.
+Modellagnostische LLM-Pipeline, die unstrukturierte Versicherungs-E-Mails in ein JSON überführt und an eine Ticket-API übergibt. Fokus: strukturierte Ausgaben, Validierung, Mapping, reproduzierbare Evaluation.
 
 ## Setup (einmalig)
 - `./scripts/setup.sh` legt `.venv` an, installiert Python-Dependencies und Node-Pakete (falls npm vorhanden).
@@ -79,8 +79,8 @@ export LLM_PIPELINE_TARGET_TIMEOUT_SECONDS=10
 ```
 Der Aufruf erfolgt via HTTPX, Antwort und Referenz werden im Job gespeichert (Felder `target_status`, `target_reference`, `target_response`). Ohne konfigurierte URL antwortet der Endpoint mit HTTP 503.
 
-## Ticket-Service (E-Commerce)
-Unter `ticket_service/` liegt ein kleines FastAPI-Projekt, das Tickets in `data/tickets_store.json` persistiert und typische Felder (Status, Priorität, Action Items, fehlende Angaben, Referenz zum Pipeline-Job) verwaltet. Der Service stellt folgende Endpunkte bereit:
+## Ticket-Service (Insurance Claims)
+Unter `ticket_service/` liegt ein kleines FastAPI-Projekt, das Tickets in `data/tickets_store.json` persistiert und typische Felder für Versicherungsfälle (Status, Priorität, Action Items, fehlende Angaben, Referenz zum Pipeline-Job) verwaltet. Der Service stellt folgende Endpunkte bereit:
 
 - `GET /tickets` – Liste aller Tickets (absteigend sortiert)
 - `POST /tickets` – neues Ticket anlegen; wird vom Frontend und vom `/jobs/{id}/submit`-Endpoint benutzt
@@ -96,12 +96,19 @@ Der Service läuft standardmäßig auf Port 9000 und ist komplett vom Haupt-Back
 ## CORS-Konfiguration
 Standardmäßig erlaubt das Backend Anfragen von `http://localhost`, `http://localhost:3000`, `http://localhost:5173` sowie den entsprechenden `127.0.0.1`-Varianten. Weitere Origins können über `LLM_PIPELINE_BACKEND_CORS_ORIGINS` (kommagetrennt) gesetzt werden.
 
-## LLM-Ausgabe (E-Commerce Ticket-Schema)
-Der LLM-Adapter soll JSON mit folgenden Schlüsseln liefern (keine Domäne mehr):
+## LLM-Ausgabe (Insurance Ticket-Schema)
+Der LLM-Adapter soll JSON mit folgenden Schlüsseln liefern:
+- `ticket_id` (Pflicht, String)
 - `summary` (Pflicht), optional `subject`
-- `customer` (optional), `description` (optional)
+- `claimant_name`, `claimant_email`, `claimant_phone` (optional)
+- `description` (optional)
 - `priority`: `low|medium|high|urgent` (Pflicht)
-- `order_number`: Bestellreferenz (optional)
-- `claim_type`: z. B. `return`, `exchange`, `delivery_issue` (optional)
-- `missing_fields`: nur echte Lücken (z. B. `address`, `iban`, `order_number`)
+- `policy_number` (optional)
+- `claim_type`: `damage|medical|liability|death|other` (Pflicht)
+- `claim_date`, `incident_date` (optional, YYYY-MM-DD)
+- `incident_location` (optional)
+- `claim_amount` (optional, Zahl)
+- `missing_fields`: nur echte Lücken (z. B. `policy_number`, `incident_date`)
 - `action_items`: konkrete nächste Schritte (Strings oder Objekte)
+- `next_steps` (Pflicht, String)
+- `created_timestamp` (Pflicht, ISO-8601)

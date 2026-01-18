@@ -8,7 +8,7 @@ from .storage import TicketNotFoundError, store
 
 app = FastAPI(
     title="Ticket Demo Service",
-    description="Lightweight ticket board that accepts structured JSON payloads from the LLM pipeline.",
+    description="Lightweight insurance claim board that accepts structured JSON payloads from the LLM pipeline.",
     version="0.1.0",
 )
 
