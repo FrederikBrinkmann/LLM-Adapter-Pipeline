@@ -35,12 +35,6 @@ class TicketStore:
             if isinstance(payload, dict):
                 self._data.update(payload)
                 changed = False
-                for ticket in self._data.get("tickets", []):
-                    if not isinstance(ticket, dict):
-                        continue
-                    if "claimant_name" not in ticket and "customer" in ticket:
-                        ticket["claimant_name"] = ticket.pop("customer")
-                        changed = True
                 if changed:
                     self._persist()
         except json.JSONDecodeError:

@@ -102,7 +102,7 @@ def build_csv_rows(jobs: list[JobRecord]) -> list[dict[str, Any]]:
         action_items = result.get("action_items") or []
         policy_number = result.get("policy_number")
         claim_amount = result.get("claim_amount")
-        claimant_name = result.get("claimant_name") or result.get("customer")
+        claimant_name = result.get("claimant_name")
         rows.append(
             {
                 "job_id": job.job_id,

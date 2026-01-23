@@ -99,7 +99,7 @@ def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dic
     if priority is None:
         priority = _derive_priority(claim_type, claim_amount, missing_fields)
 
-    claimant_name = structured_payload.get("claimant_name") or structured_payload.get("customer")
+    claimant_name = structured_payload.get("claimant_name")
     policy_number = structured_payload.get("policy_number")
 
     # Markiere wenn kritische Felder fehlen (3+)
