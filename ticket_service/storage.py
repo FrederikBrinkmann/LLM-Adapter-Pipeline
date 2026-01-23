@@ -38,20 +38,9 @@ class TicketStore:
                 for ticket in self._data.get("tickets", []):
                     if not isinstance(ticket, dict):
                         continue
-                    if "policy_number" not in ticket and "order_number" in ticket:
-                        ticket["policy_number"] = ticket.pop("order_number")
-                        changed = True
                     if "claimant_name" not in ticket and "customer" in ticket:
                         ticket["claimant_name"] = ticket.pop("customer")
                         changed = True
-                    missing_fields = ticket.get("missing_fields")
-                    if isinstance(missing_fields, list):
-                        updated_missing = [
-                            "policy_number" if field == "order_number" else field for field in missing_fields
-                        ]
-                        if updated_missing != missing_fields:
-                            ticket["missing_fields"] = updated_missing
-                            changed = True
                 if changed:
                     self._persist()
         except json.JSONDecodeError:

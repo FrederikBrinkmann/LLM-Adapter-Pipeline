@@ -99,12 +99,8 @@ def build_csv_rows(jobs: list[JobRecord]) -> list[dict[str, Any]]:
     for job in jobs:
         result = job.result or {}
         missing_fields = result.get("missing_fields") or []
-        if isinstance(missing_fields, list):
-            missing_fields = [
-                "policy_number" if field == "order_number" else field for field in missing_fields
-            ]
         action_items = result.get("action_items") or []
-        policy_number = result.get("policy_number") or result.get("order_number")
+        policy_number = result.get("policy_number")
         claim_amount = result.get("claim_amount")
         claimant_name = result.get("claimant_name") or result.get("customer")
         rows.append(

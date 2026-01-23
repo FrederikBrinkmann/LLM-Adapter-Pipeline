@@ -53,8 +53,6 @@ def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dic
             if isinstance(entry, str):
                 cleaned = entry.strip()
                 if cleaned and cleaned.lower() not in {"model_id"}:
-                    if cleaned == "order_number":
-                        cleaned = "policy_number"
                     missing_fields.append(cleaned)
 
     raw_actions = structured_payload.get("action_items") or []
@@ -102,7 +100,7 @@ def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dic
         priority = _derive_priority(claim_type, claim_amount, missing_fields)
 
     claimant_name = structured_payload.get("claimant_name") or structured_payload.get("customer")
-    policy_number = structured_payload.get("policy_number") or structured_payload.get("order_number")
+    policy_number = structured_payload.get("policy_number")
 
     # Markiere wenn kritische Felder fehlen (3+)
     critical_fields = {"claimant_name", "policy_number", "claim_date", "incident_date", "claim_type"}
