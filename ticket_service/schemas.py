@@ -39,6 +39,7 @@ class ActionItemCreate(ActionItemBase):
 
 class Ticket(BaseModel):
     id: int
+    # LLM-Output-Felder (vollständige Entsprechung zum Prompt-Schema)
     ticket_id: str | None = None
     subject: str
     summary: str
@@ -54,10 +55,19 @@ class Ticket(BaseModel):
     incident_date: str | None = None
     incident_location: str | None = None
     claim_amount: float | None = None
-    missing_fields: list[str] = Field(default_factory=list)
-    action_items: list[ActionItem] = Field(default_factory=list)
     next_steps: str | None = None
     created_timestamp: str | None = None
+    # Strukturierte Felder für Status und Vollständigkeit
+    missing_fields: list[str] = Field(
+        default_factory=list,
+        description="Felder, die vom LLM als fehlend oder unvollständig gekennzeichnet wurden"
+    )
+    has_missing_critical_fields: bool = Field(
+        default=False,
+        description="true wenn 3+ kritische Felder fehlen (claimant_name, policy_number, claim_date, etc.)"
+    )
+    action_items: list[ActionItem] = Field(default_factory=list)
+    # Referenz-Felder
     source_job_id: int | None = None
     source_model_id: str | None = None
     raw_payload: dict[str, Any] | None = None
@@ -66,6 +76,7 @@ class Ticket(BaseModel):
 
 
 class TicketCreate(BaseModel):
+    # LLM-Output-Felder (vollständige Entsprechung zum Prompt-Schema)
     summary: str = Field(..., min_length=1)
     subject: str | None = None
     ticket_id: str | None = None
@@ -81,25 +92,46 @@ class TicketCreate(BaseModel):
     incident_date: str | None = None
     incident_location: str | None = None
     claim_amount: float | None = None
-    missing_fields: list[str] = Field(default_factory=list)
-    action_items: list[ActionItemCreate] = Field(default_factory=list)
     next_steps: str | None = None
     created_timestamp: str | None = None
+    # Strukturierte Felder für Status und Vollständigkeit
+    missing_fields: list[str] = Field(
+        default_factory=list,
+        description="Felder, die vom LLM als fehlend oder unvollständig gekennzeichnet wurden"
+    )
+    has_missing_critical_fields: bool = Field(
+        default=False,
+        description="true wenn 3+ kritische Felder fehlen"
+    )
+    action_items: list[ActionItemCreate] = Field(default_factory=list)
+    # Referenz-Felder
     source_job_id: int | None = None
     source_model_id: str | None = None
     raw_payload: dict[str, Any] | None = None
 
     @model_validator(mode="after")
-    def ensure_subject(self) -> "TicketCreate":
+    def ensure_subject_and_mark_missing(self) -> "TicketCreate":
+        # Fallback für subject
         subject = self.subject or self.summary
         subject = subject.strip() if subject else "Ticket"
         if len(subject) > 120:
             subject = f"{subject[:117]}..."
         self.subject = subject
+        
+        # Markiere kritische fehlende Felder
+        critical_fields = {"claimant_name", "policy_number", "claim_date", "incident_date", "claim_type"}
+        missing_critical = 0
+        for field in critical_fields:
+            value = getattr(self, field, None)
+            if not value or (isinstance(value, str) and not value.strip()):
+                missing_critical += 1
+        
+        self.has_missing_critical_fields = missing_critical >= 3
         return self
 
 
 class TicketUpdate(BaseModel):
+    # LLM-Output-Felder
     subject: str | None = None
     summary: str | None = None
     ticket_id: str | None = None
@@ -115,10 +147,12 @@ class TicketUpdate(BaseModel):
     incident_date: str | None = None
     incident_location: str | None = None
     claim_amount: float | None = None
-    missing_fields: list[str] | None = None
-    action_items: list[ActionItemCreate] | None = None
     next_steps: str | None = None
     created_timestamp: str | None = None
+    # Strukturierte Felder
+    missing_fields: list[str] | None = None
+    has_missing_critical_fields: bool | None = None
+    action_items: list[ActionItemCreate] | None = None
 
     @model_validator(mode="after")
     def normalize_subject(self) -> "TicketUpdate":

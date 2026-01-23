@@ -206,3 +206,11 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+# Copilot & AI Instructions (local only, not committed)
+.github/copilot-instructions.md
+.github/AGENT.md
+.github/AGENTS.md
+.github/CLAUDE.md
+.cursorrules
+.windsurfrules
+.clinerules

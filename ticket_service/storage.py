@@ -82,6 +82,7 @@ class TicketStore:
                 "incident_location": "Köln",
                 "claim_amount": 18000,
                 "missing_fields": ["damage_estimate", "photos"],
+                "has_missing_critical_fields": False,
                 "action_items": [
                     {
                         "id": self._generate_action_id(),
@@ -117,6 +118,7 @@ class TicketStore:
                 "incident_location": "Hamburg",
                 "claim_amount": 6500,
                 "missing_fields": ["medical_report"],
+                "has_missing_critical_fields": False,
                 "action_items": [
                     {
                         "id": self._generate_action_id(),
@@ -194,6 +196,7 @@ class TicketStore:
             "incident_location": ticket_in.incident_location,
             "claim_amount": ticket_in.claim_amount,
             "missing_fields": ticket_in.missing_fields,
+            "has_missing_critical_fields": ticket_in.has_missing_critical_fields,
             "action_items": action_items,
             "next_steps": ticket_in.next_steps,
             "created_timestamp": ticket_in.created_timestamp,

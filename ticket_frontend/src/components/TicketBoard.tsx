@@ -1,4 +1,5 @@
 import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
+import TicketDetail from "./TicketDetail";
 
 const TICKETS_API_BASE_URL =
   import.meta.env.VITE_TICKETS_API_BASE_URL?.replace(/\/$/, "") ?? "http://127.0.0.1:9000";
@@ -36,6 +37,7 @@ interface Ticket {
   incident_location: string | null;
   claim_amount: number | null;
   missing_fields: string[];
+  has_missing_critical_fields: boolean;
   action_items: ActionItem[];
   next_steps: string | null;
   created_timestamp: string | null;
@@ -64,16 +66,19 @@ const ACTION_PRESETS = [
     type: "request_documents",
     title: "Unterlagen anfordern",
     details: "Arztbericht, Fotos oder Rechnungen beim Kunden anfordern",
+    suggested_by: "agent" as ActionSource,
   },
   {
     type: "assign_adjuster",
     title: "Gutachter beauftragen",
     details: "Termin zur Schadenaufnahme vereinbaren",
+    suggested_by: "agent" as ActionSource,
   },
   {
     type: "validate_claim",
     title: "Schaden prüfen",
     details: "Deckung und Schadenshöhe prüfen",
+    suggested_by: "agent" as ActionSource,
   },
 ];
 
@@ -94,6 +99,7 @@ const TicketBoard = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
+  const [selectedTicket, setSelectedTicket] = useState<Ticket | null>(null);
   const [formState, setFormState] = useState({
     subject: "",
     claimantName: "",
@@ -200,6 +206,10 @@ const TicketBoard = () => {
       }
       const updated = (await response.json()) as Ticket;
       setTickets((prev) => prev.map((ticket) => (ticket.id === ticketId ? updated : ticket)));
+      // Auch selectedTicket aktualisieren, wenn es geöffnet ist
+      if (selectedTicket?.id === ticketId) {
+        setSelectedTicket(updated);
+      }
     } catch (err) {
       const message = err instanceof Error ? err.message : "Unbekannter Fehler";
       setError(message);
@@ -305,83 +315,36 @@ const TicketBoard = () => {
               <th>Versicherungsnehmer</th>
               <th>Status</th>
               <th>Priorität</th>
-              <th>Action Items & fehlende Felder</th>
               <th>Aktualisiert</th>
             </tr>
           </thead>
           <tbody>
             {filteredTickets.map((ticket) => (
-              <tr key={ticket.id}>
+              <tr
+                key={ticket.id}
+                className={`ticket-row ${ticket.has_missing_critical_fields ? "has-critical-missing" : ""}`}
+                onClick={() => setSelectedTicket(ticket)}
+                style={{ cursor: "pointer" }}
+              >
                 <td>
                   <div className="ticket-title">
                     <strong>#{ticket.id}</strong>
                     <span>{ticket.subject}</span>
-                    {ticket.ticket_id && <small>Ticket-ID: {ticket.ticket_id}</small>}
-                    {ticket.claim_type && <small>Typ: {ticket.claim_type}</small>}
+                    {ticket.has_missing_critical_fields && <span className="critical-indicator">⚠️</span>}
                   </div>
-                  {ticket.summary && <p className="ticket-description">{ticket.summary}</p>}
-                  {ticket.source_job_id && (
-                    <small className="muted">
-                      Aus Job #{ticket.source_job_id} ({ticket.source_model_id ?? "unbekannt"})
-                    </small>
-                  )}
                 </td>
                 <td>
-                  <div className="ticket-meta">
+                  <div className="ticket-meta-compact">
                     <span>{ticket.claimant_name ?? "–"}</span>
-                    {ticket.policy_number && <small>Police: {ticket.policy_number}</small>}
-                    {typeof ticket.claim_amount === "number" && (
-                      <small>Schaden: {formatCurrency(ticket.claim_amount)}</small>
-                    )}
                   </div>
                 </td>
                 <td>
-                  <select
-                    className="ticket-status-select"
-                    value={ticket.status}
-                    onChange={(event) => handleStatusChange(ticket.id, event.target.value as TicketStatus)}
-                  >
-                    {statusOrder.map((status) => (
-                      <option key={status} value={status}>
-                        {STATUS_LABELS[status]}
-                      </option>
-                    ))}
-                  </select>
+                  <span className={`status-badge status-${ticket.status}`}>{STATUS_LABELS[ticket.status]}</span>
                 </td>
                 <td>
                   <span className={`priority-pill priority-${ticket.priority}`}>
                     {PRIORITY_LABELS[ticket.priority]}
                   </span>
-                </td>
-                <td>
-                  <div className="action-grid">
-                    {ticket.action_items.map((action) => (
-                      <div key={action.id} className="action-card">
-                        <span className="action-card__label">{action.title}</span>
-                        {action.details && <p>{action.details}</p>}
-                        <small>Quelle: {action.suggested_by.toUpperCase()}</small>
-                      </div>
-                    ))}
-                    {ticket.action_items.length === 0 && <span className="muted">Keine Vorschläge</span>}
-                    {ticket.next_steps && (
-                      <div className="missing-fields">
-                        <strong>Nächste Schritte:</strong>
-                        <p>{ticket.next_steps}</p>
-                      </div>
-                    )}
-                    {ticket.missing_fields.length > 0 && (
-                      <div className="missing-fields">
-                        <strong>Fehlende Angaben:</strong>
-                        <div>
-                          {ticket.missing_fields.map((field) => (
-                            <span key={field} className="missing-pill">
-                              {field}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
                 </td>
                 <td>
                   <span className="ticket-date">{formatDate(ticket.updated_at)}</span>
@@ -391,6 +354,15 @@ const TicketBoard = () => {
           </tbody>
         </table>
       </div>
+
+      {/* Ticket Detail Modal */}
+      {selectedTicket && (
+        <TicketDetail
+          ticket={selectedTicket}
+          onClose={() => setSelectedTicket(null)}
+          onStatusChange={(status) => handleStatusChange(selectedTicket.id, status)}
+        />
+      )}
     </section>
   );
 };

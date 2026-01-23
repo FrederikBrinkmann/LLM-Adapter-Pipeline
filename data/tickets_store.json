@@ -1,1831 +1,264 @@
 {
-  "next_id": 39,
+  "next_id": 5,
   "tickets": [
     {
-      "subject": "Return of Pullover #45892317",
-      "summary": "Return of Pullover #45892317",
-      "description": "Betreff: R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317\n\nSehr geehrtes Kundenservice-Team,\n\nich m\u00f6chte hiermit gerne den folgenden Artikel aus meiner Bestellung zur\u00fccksenden:\n\nBestellnummer: #45892317\n\nArtikel: Pullover \u201eNordic Knit\u201c\n\nGr\u00f6\u00dfe: L\n\nFarbe: Dunkelblau\n\nBestelldatum: 12. Februar 2025\n\nDer Pullover entspricht leider nicht meinen Erwartungen und ich m\u00f6chte daher mein Widerrufsrecht nutzen. Bitte senden Sie mir die entsprechenden R\u00fccksendeunterlagen sowie weitere Informationen zum R\u00fccksendeprozess zu.\n\nVielen Dank im Voraus f\u00fcr Ihre Unterst\u00fctzung.\n\nMit freundlichen Gr\u00fc\u00dfen\nMax Mustermann",
-      "priority": "medium",
-      "status": "todo",
-      "claim_type": "return",
-      "missing_fields": [],
-      "action_items": [
-        {
-          "id": "ACT-7255D2E5",
-          "title": "send return shipping instructions",
-          "details": "send return shipping instructions",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-29F4EB1F",
-          "title": "provide further information on return process",
-          "details": "provide further information on return process",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 148,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "summary": "Return of Pullover #45892317",
-        "subject": null,
-        "customer": "Max Mustermann",
-        "description": null,
-        "priority": "medium",
-        "policy_number": "#45892317",
-        "claim_type": "return",
-        "missing_fields": [],
-        "action_items": [
-          "send return shipping instructions",
-          "provide further information on return process"
-        ],
-        "model_id": "llama3"
-      },
-      "created_at": "2025-12-03T17:07:57.060083",
-      "updated_at": "2025-12-03T17:07:57.060083",
       "id": 1,
-      "policy_number": "#45892317",
-      "claimant_name": "Max Mustermann"
-    },
-    {
-      "subject": "Return of Pullover #45892317",
-      "summary": "Return of Pullover #45892317",
-      "description": "### Testmail\n\nBetreff: R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317\n\nSehr geehrtes Kundenservice-Team,\n\nich m\u00f6chte hiermit gerne den folgenden Artikel aus meiner Bestellung zur\u00fccksenden:\n\nBestellnummer: #45892317\n\nArtikel: Pullover \u201eNordic Knit\u201c\n\nGr\u00f6\u00dfe: L\n\nFarbe: Dunkelblau\n\nBestelldatum: 12. Februar 2025\n\nDer Pullover entspricht leider nicht meinen Erwartungen und ich m\u00f6chte daher mein Widerrufsrecht nutzen. Bitte senden Sie mir die entsprechenden R\u00fccksendeunterlagen sowie weitere Informationen zum R\u00fccksendeprozess zu.\n\nVielen Dank im Voraus f\u00fcr Ihre Unterst\u00fctzung.\n\nMit freundlichen Gr\u00fc\u00dfen\nMax Mustermann",
-      "priority": "medium",
-      "status": "todo",
-      "claim_type": "return",
-      "missing_fields": [],
-      "action_items": [
-        {
-          "id": "ACT-2D3DA86E",
-          "title": "send return shipping instructions",
-          "details": "send return shipping instructions",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-555E0275",
-          "title": "provide further information on return process",
-          "details": "provide further information on return process",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 1,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "summary": "Return of Pullover #45892317",
-        "subject": null,
-        "customer": "Max Mustermann",
-        "description": null,
-        "priority": "medium",
-        "policy_number": "#45892317",
-        "claim_type": "return",
-        "missing_fields": [],
-        "action_items": [
-          "send return shipping instructions",
-          "provide further information on return process"
-        ],
-        "model_id": "llama3"
-      },
-      "created_at": "2025-12-04T12:54:10.047034",
-      "updated_at": "2025-12-04T12:54:10.047034",
-      "id": 2,
-      "policy_number": "#45892317",
-      "claimant_name": "Max Mustermann"
-    },
-    {
-      "subject": "R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317",
-      "summary": "R\u00fccksendung Pullover Nordic Knit \u2013 Bestellung #45892317",
-      "description": "Kunde m\u00f6chte Pullover aus Bestellung #45892317 zur\u00fccksenden und bittet um R\u00fccksendeunterlagen.",
-      "priority": "medium",
-      "status": "todo",
-      "claim_type": "return",
-      "missing_fields": [],
-      "action_items": [
-        {
-          "id": "ACT-F34183B3",
-          "title": "Sende R\u00fccksendeunterlagen an den Kunden",
-          "details": "Sende R\u00fccksendeunterlagen an den Kunden",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-42C9544B",
-          "title": "Informiere den Kunden \u00fcber den R\u00fccksendeprozess",
-          "details": "Informiere den Kunden \u00fcber den R\u00fccksendeprozess",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 4,
-      "source_model_id": "gpt-4.1",
-      "raw_payload": {
-        "summary": "R\u00fccksendung Pullover Nordic Knit \u2013 Bestellung #45892317",
-        "subject": "R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317",
-        "customer": "Max Mustermann",
-        "description": "Kunde m\u00f6chte Pullover aus Bestellung #45892317 zur\u00fccksenden und bittet um R\u00fccksendeunterlagen.",
-        "priority": "medium",
-        "policy_number": "#45892317",
-        "claim_type": "return",
-        "missing_fields": [],
-        "action_items": [
-          "Sende R\u00fccksendeunterlagen an den Kunden",
-          "Informiere den Kunden \u00fcber den R\u00fccksendeprozess"
-        ],
-        "model_id": "gpt-4.1"
-      },
-      "created_at": "2025-12-04T13:23:58.395649",
-      "updated_at": "2025-12-04T13:23:58.395649",
-      "id": 3,
-      "policy_number": "#45892317",
-      "claimant_name": "Max Mustermann"
-    },
-    {
-      "subject": "Return of Pullover #45892317",
-      "summary": "Return of Pullover #45892317",
-      "description": "### Testmail\n\nBetreff: R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317\n\nSehr geehrtes Kundenservice-Team,\n\nich m\u00f6chte hiermit gerne den folgenden Artikel aus meiner Bestellung zur\u00fccksenden:\n\nBestellnummer: #45892317\n\nArtikel: Pullover \u201eNordic Knit\u201c\n\nGr\u00f6\u00dfe: L\n\nFarbe: Dunkelblau\n\nBestelldatum: 12. Februar 2025\n\nDer Pullover entspricht leider nicht meinen Erwartungen und ich m\u00f6chte daher mein Widerrufsrecht nutzen. Bitte senden Sie mir die entsprechenden R\u00fccksendeunterlagen sowie weitere Informationen zum R\u00fccksendeprozess zu.\n\nVielen Dank im Voraus f\u00fcr Ihre Unterst\u00fctzung.\n\nMit freundlichen Gr\u00fc\u00dfen\nMax Mustermann",
-      "priority": "medium",
-      "status": "todo",
-      "claim_type": "return",
-      "missing_fields": [],
-      "action_items": [
-        {
-          "id": "ACT-2F16BC6B",
-          "title": "send return shipping instructions",
-          "details": "send return shipping instructions",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-DD48D07B",
-          "title": "provide further information on the return process",
-          "details": "provide further information on the return process",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 6,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "summary": "Return of Pullover #45892317",
-        "subject": null,
-        "customer": "Max Mustermann",
-        "description": null,
-        "priority": "medium",
-        "policy_number": "#45892317",
-        "claim_type": "return",
-        "missing_fields": [],
-        "action_items": [
-          "send return shipping instructions",
-          "provide further information on the return process"
-        ],
-        "model_id": "llama3"
-      },
-      "created_at": "2025-12-04T13:40:01.729410",
-      "updated_at": "2025-12-04T13:40:01.729410",
-      "id": 4,
-      "policy_number": "#45892317",
-      "claimant_name": "Max Mustermann"
-    },
-    {
-      "subject": "API request failure for ticket processing",
-      "summary": "Error processing e-commerce ticket due to invalid API request",
-      "description": "The system encountered a 400 Bad Request error due to an unsupported 'response_format' parameter when processing the ticket.",
-      "priority": "high",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-24320794",
-          "title": "Investigate and fix the API request to comply with supported parameters",
-          "details": "Investigate and fix the API request to comply with supported parameters",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-47353C83",
-          "title": "Retry processing the ticket after fixing the request",
-          "details": "Retry processing the ticket after fixing the request",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-9FC16A3C",
-          "title": "Notify technical team about the API compatibility issue",
-          "details": "Notify technical team about the API compatibility issue",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 7,
-      "source_model_id": "gpt-4.1-mini",
-      "raw_payload": {
-        "summary": "Error processing e-commerce ticket due to invalid API request",
-        "subject": "API request failure for ticket processing",
-        "customer": null,
-        "description": "The system encountered a 400 Bad Request error due to an unsupported 'response_format' parameter when processing the ticket.",
-        "priority": "high",
-        "policy_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "policy_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Investigate and fix the API request to comply with supported parameters",
-          "Retry processing the ticket after fixing the request",
-          "Notify technical team about the API compatibility issue"
-        ],
-        "model_id": "gpt-4.1-mini"
-      },
-      "created_at": "2025-12-04T13:41:41.990807",
-      "updated_at": "2025-12-04T13:41:41.990807",
-      "id": 5,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317",
-      "summary": "R\u00fccksendung Pullover aus Bestellung #45892317",
-      "description": "Kunde m\u00f6chte Pullover \"Nordic Knit\" Gr\u00f6\u00dfe L, Farbe Dunkelblau aus Bestellung #45892317 zur\u00fccksenden und bittet um R\u00fccksendeunterlagen.",
-      "priority": "medium",
-      "status": "todo",
-      "claim_type": "return",
-      "missing_fields": [],
-      "action_items": [
-        {
-          "id": "ACT-6460A208",
-          "title": "R\u00fccksendeunterlagen an Max Mustermann senden",
-          "details": "R\u00fccksendeunterlagen an Max Mustermann senden",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-B952E12A",
-          "title": "Informationen zum R\u00fccksendeprozess bereitstellen",
-          "details": "Informationen zum R\u00fccksendeprozess bereitstellen",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 8,
-      "source_model_id": "gpt-4.1-mini",
-      "raw_payload": {
-        "summary": "R\u00fccksendung Pullover aus Bestellung #45892317",
-        "subject": "R\u00fccksendung meines Pullovers \u2013 Bestellung Nr. #45892317",
-        "customer": "Max Mustermann",
-        "description": "Kunde m\u00f6chte Pullover \"Nordic Knit\" Gr\u00f6\u00dfe L, Farbe Dunkelblau aus Bestellung #45892317 zur\u00fccksenden und bittet um R\u00fccksendeunterlagen.",
-        "priority": "medium",
-        "order_number": "45892317",
-        "claim_type": "return",
-        "missing_fields": [],
-        "action_items": [
-          "R\u00fccksendeunterlagen an Max Mustermann senden",
-          "Informationen zum R\u00fccksendeprozess bereitstellen"
-        ],
-        "model_id": "gpt-4.1-mini"
-      },
-      "created_at": "2025-12-04T14:02:25.093297",
-      "updated_at": "2025-12-04T14:02:25.093297",
-      "id": 6,
-      "policy_number": "45892317",
-      "claimant_name": "Max Mustermann"
-    },
-    {
-      "subject": "Retourenanfrage f\u00fcr Pullover \u201eNordic Knit\u201c",
-      "summary": "Retourenanfrage f\u00fcr Pullover \u201eNordic Knit\u201c",
-      "description": "R\u00fccksendung des Artikels aufgrund von Nicht\u00fcbereinstimmung mit Erwartungen.",
-      "priority": "medium",
-      "status": "todo",
-      "claim_type": "return",
-      "missing_fields": [],
-      "action_items": [
-        {
-          "id": "ACT-9E98D47D",
-          "title": "Senden Sie die R\u00fccksendeunterlagen an den Kunden.",
-          "details": "Senden Sie die R\u00fccksendeunterlagen an den Kunden.",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-37759417",
-          "title": "Geben Sie Informationen zum R\u00fccksendeprozess an.",
-          "details": "Geben Sie Informationen zum R\u00fccksendeprozess an.",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 10,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Retourenanfrage f\u00fcr Pullover \u201eNordic Knit\u201c",
-        "subject": null,
-        "customer": "Frederik Brinkmann",
-        "description": "R\u00fccksendung des Artikels aufgrund von Nicht\u00fcbereinstimmung mit Erwartungen.",
-        "priority": "medium",
-        "order_number": "#45892317",
-        "claim_type": "return",
-        "missing_fields": [],
-        "action_items": [
-          "Senden Sie die R\u00fccksendeunterlagen an den Kunden.",
-          "Geben Sie Informationen zum R\u00fccksendeprozess an."
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2025-12-05T10:01:37.815919",
-      "updated_at": "2025-12-05T10:01:37.815919",
-      "id": 7,
-      "policy_number": "#45892317",
-      "claimant_name": "Frederik Brinkmann"
-    },
-    {
-      "subject": "Urgent: Account Update Required",
-      "summary": "Urgent: Account Update Required",
-      "description": "TEST TEST WIRKLICH DRINGEND KONTONUMMER AKTUALISIEREN",
+      "ticket_id": "CLM-0001",
+      "subject": "Wasserschaden im Keller",
+      "summary": "Schaden nach Starkregen, Wasser im Keller gemeldet.",
+      "claimant_name": "Familie K\u00f6nig",
+      "claimant_email": "koenig@example.com",
+      "claimant_phone": "+49 221 555 123",
+      "description": "Keller nach Unwetter geflutet, Kunde bittet um schnelle Hilfe.",
       "priority": "urgent",
       "status": "todo",
-      "claim_type": "delivery_issue",
+      "policy_number": "HZ-88923",
+      "claim_type": "damage",
+      "claim_date": "2025-01-12",
+      "incident_date": "2025-01-11",
+      "incident_location": "K\u00f6ln",
+      "claim_amount": 18000,
       "missing_fields": [
-        "kontonummer"
+        "damage_estimate",
+        "photos"
       ],
       "action_items": [
         {
-          "id": "ACT-A6C050D4",
-          "title": "update account information",
-          "details": "update account information",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 11,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "summary": "Urgent: Account Update Required",
-        "subject": null,
-        "customer": null,
-        "description": null,
-        "priority": "urgent",
-        "order_number": null,
-        "claim_type": "delivery_issue",
-        "missing_fields": [
-          "kontonummer"
-        ],
-        "action_items": [
-          "update account information"
-        ],
-        "model_id": "llama3"
-      },
-      "created_at": "2025-12-05T10:48:06.736815",
-      "updated_at": "2025-12-05T10:48:06.736815",
-      "id": 8,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Request for return of item from order #45892317",
-      "summary": "Request for return of item from order #45892317",
-      "description": "Customer wants to return the 'Nordic Knit' sweater due to dissatisfaction.",
-      "priority": "medium",
-      "status": "todo",
-      "claim_type": "return",
-      "missing_fields": [],
-      "action_items": [
-        {
-          "id": "ACT-8D322D08",
-          "title": "Send return shipping documents to the customer",
-          "details": "Send return shipping documents to the customer",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-E6574082",
-          "title": "Provide information on the return process",
-          "details": "Provide information on the return process",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 12,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Request for return of item from order #45892317",
-        "subject": null,
-        "customer": "Max Mustermann",
-        "description": "Customer wants to return the 'Nordic Knit' sweater due to dissatisfaction.",
-        "priority": "medium",
-        "order_number": "#45892317",
-        "claim_type": "return",
-        "missing_fields": [],
-        "action_items": [
-          "Send return shipping documents to the customer",
-          "Provide information on the return process"
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2025-12-05T10:51:39.021574",
-      "updated_at": "2025-12-05T10:51:39.021574",
-      "id": 9,
-      "policy_number": "#45892317",
-      "claimant_name": "Max Mustermann"
-    },
-    {
-      "subject": "Request for return of item from order #45892317",
-      "summary": "Request for return of item from order #45892317",
-      "description": "Customer wants to return the 'Nordic Knit' sweater due to dissatisfaction.",
-      "priority": "medium",
-      "status": "todo",
-      "claim_type": "return",
-      "missing_fields": [],
-      "action_items": [
-        {
-          "id": "ACT-BBAE8A0E",
-          "title": "Send return shipping documents to the customer.",
-          "details": "Send return shipping documents to the customer.",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-A88A7B5E",
-          "title": "Provide information on the return process.",
-          "details": "Provide information on the return process.",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 13,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Request for return of item from order #45892317",
-        "subject": null,
-        "customer": "Frederik Brinkmann",
-        "description": "Customer wants to return the 'Nordic Knit' sweater due to dissatisfaction.",
-        "priority": "medium",
-        "order_number": "#45892317",
-        "claim_type": "return",
-        "missing_fields": [],
-        "action_items": [
-          "Send return shipping documents to the customer.",
-          "Provide information on the return process."
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2025-12-05T16:15:28.288150",
-      "updated_at": "2025-12-05T16:15:28.288150",
-      "id": 10,
-      "policy_number": "#45892317",
-      "claimant_name": "Frederik Brinkmann"
-    },
-    {
-      "subject": "Unknown issue",
-      "summary": "Unknown issue",
-      "description": "hjgghjghj",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number"
-      ],
-      "action_items": [],
-      "source_job_id": 15,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "summary": "Unknown issue",
-        "subject": null,
-        "customer": null,
-        "description": null,
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number"
-        ],
-        "action_items": [],
-        "model_id": "llama3"
-      },
-      "created_at": "2025-12-05T20:02:16.406889",
-      "updated_at": "2025-12-05T20:02:16.406889",
-      "id": 11,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "IT Support Request - Technical Issue",
-      "summary": "IT Support Request - Technical Issue",
-      "description": "Technical issue with login, unable to access system.",
-      "priority": "high",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-63CBFEEE",
-          "title": "Request additional details or screenshots from the customer.",
-          "details": "Request additional details or screenshots from the customer.",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-D39030F2",
-          "title": "Investigate the login issue reported by the customer.",
-          "details": "Investigate the login issue reported by the customer.",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 16,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "IT Support Request - Technical Issue",
-        "subject": null,
-        "customer": "Peter Lustig",
-        "description": "Technical issue with login, unable to access system.",
-        "priority": "high",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Request additional details or screenshots from the customer.",
-          "Investigate the login issue reported by the customer."
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2025-12-05T20:07:35.436157",
-      "updated_at": "2025-12-05T20:07:35.436157",
-      "id": 12,
-      "policy_number": null,
-      "claimant_name": "Peter Lustig"
-    },
-    {
-      "subject": "Unknown issue",
-      "summary": "Unknown issue",
-      "description": "dasd",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "subject",
-        "description"
-      ],
-      "action_items": [],
-      "source_job_id": 19,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "summary": "Unknown issue",
-        "subject": null,
-        "customer": null,
-        "description": null,
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "subject",
-          "description"
-        ],
-        "action_items": [],
-        "model_id": "llama3"
-      },
-      "created_at": "2026-01-11T17:51:38.962189",
-      "updated_at": "2026-01-11T17:51:38.962189",
-      "id": 13,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Permanent Discount on Email Packages",
-      "summary": "Newsletter about permanent discount on email packages",
-      "description": "Information about discounts on PlusMail, ProMail, and PowerMail packages.",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-E66E4D40",
-          "title": "Review the email packages for potential discounts",
-          "details": "Review the email packages for potential discounts",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-BA5E6F21",
-          "title": "Consider updating the website with the new pricing information",
-          "details": "Consider updating the website with the new pricing information",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 20,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Newsletter about permanent discount on email packages",
-        "subject": "Permanent Discount on Email Packages",
-        "customer": null,
-        "description": "Information about discounts on PlusMail, ProMail, and PowerMail packages.",
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number"
-        ],
-        "action_items": [
-          "Review the email packages for potential discounts",
-          "Consider updating the website with the new pricing information"
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2026-01-11T18:04:04.835457",
-      "updated_at": "2026-01-11T18:04:04.835457",
-      "id": 14,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Promotional email for discounted red wine tasting package",
-      "summary": "Promotional email for discounted red wine tasting package",
-      "description": "Email promoting a red wine tasting package at a 58% discount with free shipping.",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-F0D76206",
-          "title": "Consider sending a follow-up email to customers about the promotion.",
-          "details": "Consider sending a follow-up email to customers about the promotion.",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 21,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Promotional email for discounted red wine tasting package",
-        "subject": "Promotional email for discounted red wine tasting package",
-        "customer": null,
-        "description": "Email promoting a red wine tasting package at a 58% discount with free shipping.",
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number"
-        ],
-        "action_items": [
-          "Consider sending a follow-up email to customers about the promotion."
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2026-01-11T18:04:07.299472",
-      "updated_at": "2026-01-11T18:04:07.299472",
-      "id": 15,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Weihnachtszauber: Angebote zum Fest",
-      "summary": "Newsletter from mail.de regarding Christmas offers",
-      "description": "This is a newsletter that is only readable in HTML format.",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-62EFDD26",
-          "title": "Review the newsletter content",
-          "details": "Review the newsletter content",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-4DF83FC9",
-          "title": "Ensure HTML format is accessible",
-          "details": "Ensure HTML format is accessible",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 22,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Newsletter from mail.de regarding Christmas offers",
-        "subject": "Weihnachtszauber: Angebote zum Fest",
-        "customer": null,
-        "description": "This is a newsletter that is only readable in HTML format.",
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Review the newsletter content",
-          "Ensure HTML format is accessible"
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2026-01-11T18:04:10.418491",
-      "updated_at": "2026-01-11T18:04:10.418491",
-      "id": 16,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "LOTTO 6aus49 Jackpot and voucher",
-      "summary": "Newsletter about LOTTO 6aus49 Jackpot and voucher",
-      "description": "Information about the highest LOTTO 6aus49 Jackpot and a 5\u20ac voucher.",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-A16AD2AB",
-          "title": "Review the newsletter content",
-          "details": "Review the newsletter content",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-355ECAE0",
-          "title": "Consider promotional strategies for the jackpot and voucher",
-          "details": "Consider promotional strategies for the jackpot and voucher",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 23,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Newsletter about LOTTO 6aus49 Jackpot and voucher",
-        "subject": "LOTTO 6aus49 Jackpot and voucher",
-        "customer": null,
-        "description": "Information about the highest LOTTO 6aus49 Jackpot and a 5\u20ac voucher.",
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Review the newsletter content",
-          "Consider promotional strategies for the jackpot and voucher"
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2026-01-11T18:04:13.776742",
-      "updated_at": "2026-01-11T18:04:13.776742",
-      "id": 17,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Zauberhafte Weihnachtsdeals: Nur f\u00fcr Sie!",
-      "summary": "Newsletter from mail.de",
-      "description": "Dieser Newsletter von mail.de ist nur in der HTML-Ansicht lesbar.",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-687BDEE4",
-          "title": "Review the newsletter content",
-          "details": "Review the newsletter content",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-26A87A89",
-          "title": "Ensure HTML view compatibility",
-          "details": "Ensure HTML view compatibility",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 24,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Newsletter from mail.de",
-        "subject": "Zauberhafte Weihnachtsdeals: Nur f\u00fcr Sie!",
-        "customer": null,
-        "description": "Dieser Newsletter von mail.de ist nur in der HTML-Ansicht lesbar.",
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Review the newsletter content",
-          "Ensure HTML view compatibility"
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2026-01-11T18:04:15.608597",
-      "updated_at": "2026-01-11T18:04:15.608597",
-      "id": 18,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "LOTTO 6aus49 Jackpot Announcement",
-      "summary": "LOTTO 6aus49 Jackpot Announcement",
-      "description": "Announcement of the highest LOTTO 6aus49 jackpot and a 5\u20ac voucher.",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-77F24B17",
-          "title": "Review the jackpot announcement",
-          "details": "Review the jackpot announcement",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-A18F3C6D",
-          "title": "Consider using the 5\u20ac voucher",
-          "details": "Consider using the 5\u20ac voucher",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 25,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "LOTTO 6aus49 Jackpot Announcement",
-        "subject": null,
-        "customer": null,
-        "description": "Announcement of the highest LOTTO 6aus49 jackpot and a 5\u20ac voucher.",
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number"
-        ],
-        "action_items": [
-          "Review the jackpot announcement",
-          "Consider using the 5\u20ac voucher"
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2026-01-11T18:04:17.298483",
-      "updated_at": "2026-01-11T18:04:17.298483",
-      "id": 19,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Permanent discount on all premium email packages",
-      "summary": "Permanent discount on all premium email packages",
-      "description": "Dauerhafter Rabatt auf alle Premium E-Mail-Pakete\n\nDieser Newsletter von mail.de ist nur in der HTML-Ansicht lesbar.",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-44B66A81",
-          "title": "Review the newsletter content for clarity",
-          "details": "Review the newsletter content for clarity",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-CA954C51",
-          "title": "Consider implementing the discount offer",
-          "details": "Consider implementing the discount offer",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 26,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Permanent discount on all premium email packages",
-        "subject": "Permanent discount on all premium email packages",
-        "customer": null,
-        "description": null,
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Review the newsletter content for clarity",
-          "Consider implementing the discount offer"
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2026-01-11T18:04:20.101266",
-      "updated_at": "2026-01-11T18:04:20.101266",
-      "id": 20,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Newsletter Subscription",
-      "summary": "Newsletter about weight loss tips for 2026",
-      "description": "Newsletter from mail.de regarding weight loss without diet stress.",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-C4017A5F",
-          "title": "Review newsletter content",
-          "details": "Review newsletter content",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-3DB9413F",
-          "title": "Consider subscribing to the newsletter",
-          "details": "Consider subscribing to the newsletter",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 27,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Newsletter about weight loss tips for 2026",
-        "subject": "Newsletter Subscription",
-        "customer": null,
-        "description": "Newsletter from mail.de regarding weight loss without diet stress.",
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Review newsletter content",
-          "Consider subscribing to the newsletter"
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2026-01-11T18:04:22.034202",
-      "updated_at": "2026-01-11T18:04:22.034202",
-      "id": 21,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Test email received",
-      "summary": "Test email received",
-      "description": "This is a test email.",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-25D67C68",
-          "title": "Acknowledge receipt of the test email.",
-          "details": "Acknowledge receipt of the test email.",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 28,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Test email received",
-        "subject": "Test email received",
-        "customer": null,
-        "description": "This is a test email.",
-        "priority": "low",
-        "order_number": "1871871",
-        "claim_type": null,
-        "missing_fields": [
-          "customer"
-        ],
-        "action_items": [
-          "Acknowledge receipt of the test email."
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2026-01-11T18:06:35.474368",
-      "updated_at": "2026-01-11T18:06:35.474368",
-      "id": 22,
-      "policy_number": "1871871",
-      "claimant_name": null
-    },
-    {
-      "subject": "uzzz",
-      "summary": "uzzz",
-      "description": "uzfuzfz",
-      "priority": "urgent",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [],
-      "action_items": [
-        {
-          "id": "ACT-20FE6BA3",
-          "title": "Umtausch vorbereiten",
-          "details": "Ersatzprodukt reservieren",
+          "id": "ACT-3604EDED",
+          "title": "Gutachter zuweisen",
+          "details": "Partnerdienstleister in K\u00f6ln informieren",
           "suggested_by": "agent",
           "status": "open"
         }
       ],
+      "next_steps": "Schaden aufnehmen, Gutachtertermin koordinieren, erste Zahlung pr\u00fcfen.",
+      "created_timestamp": "2025-01-12T08:10:00Z",
       "source_job_id": null,
       "source_model_id": null,
       "raw_payload": null,
-      "created_at": "2026-01-16T09:07:01.970383",
-      "updated_at": "2026-01-16T09:07:01.970383",
-      "id": 23,
-      "policy_number": null,
-      "claimant_name": "zztt"
+      "created_at": "2026-01-23T13:14:20.060801",
+      "updated_at": "2026-01-23T13:14:20.060801"
     },
     {
-      "subject": "Unintelligible email received",
-      "summary": "Unintelligible email received",
-      "description": "Hasudhjashdjasfwf",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-52A0DF85",
-          "title": "Request clarification from the sender.",
-          "details": "Request clarification from the sender.",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 29,
-      "source_model_id": "gpt-4o",
-      "raw_payload": {
-        "summary": "Unintelligible email received",
-        "subject": null,
-        "customer": null,
-        "description": null,
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Request clarification from the sender."
-        ],
-        "model_id": "gpt-4o"
-      },
-      "created_at": "2026-01-16T09:22:53.957059",
-      "updated_at": "2026-01-16T09:22:53.957059",
-      "id": 24,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Unintelligible email received",
-      "summary": "Unintelligible email received",
-      "description": "Hasudhjashdjasfwf",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "subject",
-        "customer",
-        "description",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-95F65319",
-          "title": "Request clarification from the customer.",
-          "details": "Request clarification from the customer.",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 30,
-      "source_model_id": "gpt-4o",
-      "raw_payload": {
-        "summary": "Unintelligible email received",
-        "subject": null,
-        "customer": null,
-        "description": null,
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "subject",
-          "customer",
-          "description",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Request clarification from the customer."
-        ],
-        "model_id": "gpt-4o"
-      },
-      "created_at": "2026-01-16T09:28:05.544754",
-      "updated_at": "2026-01-16T09:28:05.544754",
-      "id": 25,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Unclear customer request",
-      "summary": "Unclear customer request",
-      "description": "dasd",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "description",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-AC99ACE6",
-          "title": "Request more information from the customer to clarify their issue.",
-          "details": "Request more information from the customer to clarify their issue.",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 31,
-      "source_model_id": "gpt-4.1",
-      "raw_payload": {
-        "summary": "Unclear customer request",
-        "subject": "Unclear customer request",
-        "customer": null,
-        "description": null,
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "description",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Request more information from the customer to clarify their issue."
-        ],
-        "model_id": "gpt-4.1"
-      },
-      "created_at": "2026-01-17T18:35:22.121697",
-      "updated_at": "2026-01-17T18:35:22.121697",
-      "id": 26,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Unknown issue",
-      "summary": "Unknown issue",
-      "description": "dasdasdasd",
-      "priority": "medium",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "subject"
-      ],
-      "action_items": [],
-      "source_job_id": 32,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "summary": "Unknown issue",
-        "subject": null,
-        "customer": null,
-        "description": null,
-        "priority": "medium",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "subject"
-        ],
-        "action_items": [],
-        "model_id": "llama3"
-      },
-      "created_at": "2026-01-17T18:39:34.889676",
-      "updated_at": "2026-01-17T18:39:34.889676",
-      "id": 27,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Unclear customer email received",
-      "summary": "Unclear customer email received",
-      "description": "dasdasdasd",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-707A95A8",
-          "title": "Contact customer for more information.",
-          "details": "Contact customer for more information.",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 33,
-      "source_model_id": "gpt-4o",
-      "raw_payload": {
-        "summary": "Unclear customer email received",
-        "subject": null,
-        "customer": null,
-        "description": null,
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Contact customer for more information."
-        ],
-        "model_id": "gpt-4o"
-      },
-      "created_at": "2026-01-17T18:39:53.915274",
-      "updated_at": "2026-01-17T18:39:53.915274",
-      "id": 28,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Unclear customer message",
-      "summary": "Unclear customer message",
-      "description": "Customer message content: dasdasdasddasd",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-F8EE0853",
-          "title": "Request clarification from customer regarding their issue",
-          "details": "Request clarification from customer regarding their issue",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 34,
-      "source_model_id": "gpt-4.1-mini",
-      "raw_payload": {
-        "summary": "Unclear customer message",
-        "subject": "Unclear customer message",
-        "customer": null,
-        "description": "Customer message content: dasdasdasddasd",
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Request clarification from customer regarding their issue"
-        ],
-        "model_id": "gpt-4.1-mini"
-      },
-      "created_at": "2026-01-17T18:44:36.244825",
-      "updated_at": "2026-01-17T18:44:36.244825",
-      "id": 29,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Unclear customer email received",
-      "summary": "Unclear customer email received",
-      "description": "dasdasdasddasddasdas",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-6DB32C52",
-          "title": "Contact customer for more information.",
-          "details": "Contact customer for more information.",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 35,
-      "source_model_id": "gpt-4o",
-      "raw_payload": {
-        "summary": "Unclear customer email received",
-        "subject": null,
-        "customer": null,
-        "description": null,
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Contact customer for more information."
-        ],
-        "model_id": "gpt-4o"
-      },
-      "created_at": "2026-01-17T18:49:45.282969",
-      "updated_at": "2026-01-17T18:49:45.282969",
-      "id": 30,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Unclear customer message received",
-      "summary": "Unclear customer message received",
-      "description": "Customer sent an unclear message: dasdasdasddasddasdasadsas",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-80BF6C7F",
-          "title": "Request clarification from customer regarding their issue",
-          "details": "Request clarification from customer regarding their issue",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 36,
-      "source_model_id": "gpt-4.1-mini",
-      "raw_payload": {
-        "summary": "Unclear customer message received",
-        "subject": "Unclear customer message received",
-        "customer": null,
-        "description": "Customer sent an unclear message: dasdasdasddasddasdasadsas",
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Request clarification from customer regarding their issue"
-        ],
-        "model_id": "gpt-4.1-mini"
-      },
-      "created_at": "2026-01-17T18:59:58.346750",
-      "updated_at": "2026-01-17T18:59:58.346750",
-      "id": 31,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Unclear customer message",
-      "summary": "Unclear customer message",
-      "description": "Customer message content: eqwe",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number",
-        "claim_type"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-248F3EBD",
-          "title": "Request clarification from customer regarding their message",
-          "details": "Request clarification from customer regarding their message",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 37,
-      "source_model_id": "gpt-4.1-mini",
-      "raw_payload": {
-        "summary": "Unclear customer message",
-        "subject": "Unclear customer message",
-        "customer": null,
-        "description": "Customer message content: eqwe",
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Request clarification from customer regarding their message"
-        ],
-        "model_id": "gpt-4.1-mini"
-      },
-      "created_at": "2026-01-17T18:59:59.833690",
-      "updated_at": "2026-01-17T18:59:59.833690",
-      "id": 32,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Return Issue",
-      "summary": "Return Issue",
-      "description": "rwerterterged",
+      "id": 2,
+      "ticket_id": "CLM-0002",
+      "subject": "Sturzverletzung nach Treppensturz",
+      "summary": "Kunde meldet Sturz mit Armverletzung, Arztbericht fehlt.",
+      "claimant_name": "Max Mustermann",
+      "claimant_email": "max.mustermann@example.com",
+      "claimant_phone": "+49 151 234 5678",
+      "description": "Unfall beim Treppenabstieg, Verdacht auf Fraktur.",
       "priority": "high",
-      "status": "todo",
-      "claim_type": "return",
+      "status": "in_progress",
+      "policy_number": "UNF-77210",
+      "claim_type": "medical",
+      "claim_date": "2025-01-10",
+      "incident_date": "2025-01-09",
+      "incident_location": "Hamburg",
+      "claim_amount": 6500,
       "missing_fields": [
-        "customer",
-        "policy_number"
-      ],
-      "action_items": [],
-      "source_job_id": 38,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "summary": "Return Issue",
-        "subject": null,
-        "customer": null,
-        "description": null,
-        "priority": "high",
-        "order_number": null,
-        "claim_type": "return",
-        "missing_fields": [
-          "customer",
-          "order_number"
-        ],
-        "action_items": [],
-        "model_id": "llama3"
-      },
-      "created_at": "2026-01-18T15:23:10.949989",
-      "updated_at": "2026-01-18T15:23:10.949989",
-      "id": 33,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Return Issue",
-      "summary": "Return Issue",
-      "description": "rwerterterged",
-      "priority": "medium",
-      "status": "todo",
-      "claim_type": "return",
-      "missing_fields": [
-        "customer",
-        "policy_number"
-      ],
-      "action_items": [],
-      "source_job_id": 39,
-      "source_model_id": "llama3",
-      "raw_payload": {
-        "summary": "Return Issue",
-        "subject": null,
-        "customer": null,
-        "description": null,
-        "priority": "medium",
-        "order_number": null,
-        "claim_type": "return",
-        "missing_fields": [
-          "customer",
-          "order_number"
-        ],
-        "action_items": [],
-        "model_id": "llama3"
-      },
-      "created_at": "2026-01-18T15:25:03.471181",
-      "updated_at": "2026-01-18T15:25:03.471181",
-      "id": 34,
-      "policy_number": null,
-      "claimant_name": null
-    },
-    {
-      "subject": "Unintelligible customer email received",
-      "summary": "Unintelligible customer email received",
-      "description": "The email content is not understandable and does not provide any actionable information.",
-      "priority": "low",
-      "status": "todo",
-      "claim_type": null,
-      "missing_fields": [
-        "customer",
-        "policy_number",
-        "claim_type"
+        "medical_report"
       ],
       "action_items": [
         {
-          "id": "ACT-42F70037",
-          "title": "Request clarification from the customer regarding their inquiry.",
-          "details": "Request clarification from the customer regarding their inquiry.",
+          "id": "ACT-457998E0",
+          "title": "Unterlagen anfordern",
+          "details": "Arztbericht und Rechnung vom Kunden einholen",
           "suggested_by": "llm",
           "status": "open"
         }
       ],
-      "source_job_id": 40,
-      "source_model_id": "gpt-4.1",
-      "raw_payload": {
-        "summary": "Unintelligible customer email received",
-        "subject": "Unintelligible customer email received",
-        "customer": null,
-        "description": "The email content is not understandable and does not provide any actionable information.",
-        "priority": "low",
-        "order_number": null,
-        "claim_type": null,
-        "missing_fields": [
-          "customer",
-          "order_number",
-          "claim_type"
-        ],
-        "action_items": [
-          "Request clarification from the customer regarding their inquiry."
-        ],
-        "model_id": "gpt-4.1"
-      },
-      "created_at": "2026-01-18T15:25:20.260528",
-      "updated_at": "2026-01-18T15:25:20.260528",
-      "id": 35,
-      "policy_number": null,
-      "claimant_name": null
+      "next_steps": "Medizinische Unterlagen pr\u00fcfen, Anspruchsvoraussetzungen kl\u00e4ren.",
+      "created_timestamp": "2025-01-10T15:45:00Z",
+      "source_job_id": null,
+      "source_model_id": null,
+      "raw_payload": null,
+      "created_at": "2026-01-23T13:14:20.060801",
+      "updated_at": "2026-01-23T13:14:20.060801"
     },
     {
-      "subject": "Schadenmeldung f\u00fcr Versicherungsnummer PN-45873921",
-      "summary": "Schadenmeldung f\u00fcr Versicherungsnummer PN-45873921",
-      "description": "Sachschaden (Fahrzeugbesch\u00e4digung) am 12.01.2026.",
-      "priority": "high",
-      "status": "todo",
-      "claim_type": "return",
-      "missing_fields": [
-        "policy_number"
-      ],
-      "action_items": [
-        {
-          "id": "ACT-EC7AEBA2",
-          "title": "Pr\u00fcfung des Schadenfalls durchf\u00fchren",
-          "details": "Pr\u00fcfung des Schadenfalls durchf\u00fchren",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-7217CAAC",
-          "title": "Weitere Informationen zu den n\u00e4chsten Schritten bereitstellen",
-          "details": "Weitere Informationen zu den n\u00e4chsten Schritten bereitstellen",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "source_job_id": 41,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Schadenmeldung f\u00fcr Versicherungsnummer PN-45873921",
-        "subject": null,
-        "customer": "Max Mustermann",
-        "description": "Sachschaden (Fahrzeugbesch\u00e4digung) am 12.01.2026.",
-        "priority": "high",
-        "order_number": null,
-        "claim_type": "return",
-        "missing_fields": [
-          "order_number"
-        ],
-        "action_items": [
-          "Pr\u00fcfung des Schadenfalls durchf\u00fchren",
-          "Weitere Informationen zu den n\u00e4chsten Schritten bereitstellen"
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2026-01-18T15:33:18.919830",
-      "updated_at": "2026-01-18T15:33:18.919830",
-      "id": 36,
-      "policy_number": null,
-      "claimant_name": "Max Mustermann"
-    },
-    {
-      "ticket_id": null,
-      "subject": "Schadenmeldung f\u00fcr medizinische Behandlung",
-      "summary": "Schadenmeldung f\u00fcr medizinische Behandlung",
-      "claimant_name": "Anna Beispiel",
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Unintelligible claim email received, unable to process",
+      "summary": "Unintelligible claim email received, unable to process",
+      "claimant_name": null,
       "claimant_email": null,
       "claimant_phone": null,
-      "description": "Einreichung einer Schadenmeldung f\u00fcr medizinische Behandlungskosten.",
-      "priority": "medium",
+      "description": "Received an email with no intelligible content. Unable to extract any claim information.",
+      "priority": "low",
       "status": "todo",
-      "policy_number": "KV-99218473",
-      "claim_type": "return",
+      "policy_number": null,
+      "claim_type": "other",
       "claim_date": null,
       "incident_date": null,
       "incident_location": null,
       "claim_amount": null,
-      "missing_fields": [],
-      "action_items": [
-        {
-          "id": "ACT-D87003CC",
-          "title": "Pr\u00fcfung der Kosten\u00fcbernahme gem\u00e4\u00df Versicherungsvertrag",
-          "details": "Pr\u00fcfung der Kosten\u00fcbernahme gem\u00e4\u00df Versicherungsvertrag",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-BD43046D",
-          "title": "Anforderung von \u00e4rztlichen Berichten und Rechnungen",
-          "details": "Anforderung von \u00e4rztlichen Berichten und Rechnungen",
-          "suggested_by": "llm",
-          "status": "open"
-        }
-      ],
-      "next_steps": null,
-      "created_timestamp": null,
-      "source_job_id": 42,
-      "source_model_id": "gpt-4o-mini",
-      "raw_payload": {
-        "summary": "Schadenmeldung f\u00fcr medizinische Behandlung",
-        "subject": null,
-        "customer": "Anna Beispiel",
-        "description": "Einreichung einer Schadenmeldung f\u00fcr medizinische Behandlungskosten.",
-        "priority": "medium",
-        "order_number": "KV-99218473",
-        "claim_type": "return",
-        "missing_fields": [],
-        "action_items": [
-          "Pr\u00fcfung der Kosten\u00fcbernahme gem\u00e4\u00df Versicherungsvertrag",
-          "Anforderung von \u00e4rztlichen Berichten und Rechnungen"
-        ],
-        "model_id": "gpt-4o-mini"
-      },
-      "created_at": "2026-01-18T16:00:49.043920",
-      "updated_at": "2026-01-18T16:00:49.043920",
-      "id": 37
-    },
-    {
-      "ticket_id": "AUTO_GENERATED",
-      "subject": "Medizinischer Schaden: Bruch des Handgelenks nach Sportunfall am 05.01.2026",
-      "summary": "Medizinischer Schaden: Bruch des Handgelenks nach Sportunfall am 05.01.2026",
-      "claimant_name": "Anna Beispiel",
-      "claimant_email": "anna.beispiel@example.com",
-      "claimant_phone": "+49 160 7788990",
-      "description": "Anna Beispiel meldet einen medizinischen Schaden nach einem Sportunfall am 05.01.2026 in der Sporthalle S\u00fcd, Berliner Allee 120, 40212 D\u00fcsseldorf. Sie erlitt einen Bruch des rechten Handgelenks, der operativ im St.-Marien-Krankenhaus D\u00fcsseldorf behandelt wurde. Es erfolgte ein zweit\u00e4giger station\u00e4rer Aufenthalt. Die bisherigen Behandlungskosten betragen EUR 12.300,00. \u00c4rztliche Berichte und Rechnungen k\u00f6nnen auf Anfrage bereitgestellt werden.",
-      "priority": "high",
-      "status": "todo",
-      "policy_number": "KV-99218473",
-      "claim_type": "medical",
-      "claim_date": null,
-      "incident_date": "2026-01-05",
-      "incident_location": "Sporthalle S\u00fcd, Berliner Allee 120, 40212 D\u00fcsseldorf, Deutschland",
-      "claim_amount": 12300.0,
       "missing_fields": [
-        "claim_date"
+        "subject",
+        "claimant_name",
+        "claimant_email",
+        "claimant_phone",
+        "description",
+        "policy_number",
+        "claim_date",
+        "incident_date",
+        "incident_location",
+        "claim_amount"
       ],
+      "has_missing_critical_fields": true,
       "action_items": [
         {
-          "id": "ACT-358EF94C",
-          "title": "1. Kontaktieren Sie die Anspruchstellerin zur Best\u00e4tigung des Schadeneingangs.",
-          "details": "1. Kontaktieren Sie die Anspruchstellerin zur Best\u00e4tigung des Schadeneingangs.",
+          "id": "ACT-FF3038BF",
+          "title": "1. Contact sender to request complete claim details.",
+          "details": "1. Contact sender to request complete claim details.",
           "suggested_by": "llm",
           "status": "open"
         },
         {
-          "id": "ACT-8E0E893E",
-          "title": "2. Fordern Sie \u00e4rztliche Berichte und Rechnungen zur Pr\u00fcfung an.",
-          "details": "2. Fordern Sie \u00e4rztliche Berichte und Rechnungen zur Pr\u00fcfung an.",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-39CFCBB7",
-          "title": "3. \u00dcberpr\u00fcfen Sie die Versicherungsbedingungen f\u00fcr Kosten\u00fcbernahme.",
-          "details": "3. \u00dcberpr\u00fcfen Sie die Versicherungsbedingungen f\u00fcr Kosten\u00fcbernahme.",
-          "suggested_by": "llm",
-          "status": "open"
-        },
-        {
-          "id": "ACT-702ED08B",
-          "title": "4. Dokumentieren Sie alle eingereichten Unterlagen im System.",
-          "details": "4. Dokumentieren Sie alle eingereichten Unterlagen im System.",
+          "id": "ACT-C6F86E43",
+          "title": "2. Verify sender's identity and obtain missing information.",
+          "details": "2. Verify sender's identity and obtain missing information.",
           "suggested_by": "llm",
           "status": "open"
         }
       ],
-      "next_steps": "Kontaktieren Sie die Anspruchstellerin, fordern Sie die erforderlichen Unterlagen an und pr\u00fcfen Sie die Kosten\u00fcbernahme gem\u00e4\u00df Vertrag.",
-      "created_timestamp": "2024-06-13T12:00:00Z",
-      "source_job_id": 45,
+      "next_steps": "Reach out to the sender for clarification and request all required claim details.",
+      "created_timestamp": "2024-06-13T13:44:00Z",
+      "source_job_id": 1,
       "source_model_id": "gpt-4.1",
       "raw_payload": {
         "ticket_id": "AUTO_GENERATED",
-        "summary": "Medizinischer Schaden: Bruch des Handgelenks nach Sportunfall am 05.01.2026",
+        "summary": "Unintelligible claim email received, unable to process",
         "subject": null,
-        "claimant_name": "Anna Beispiel",
-        "claimant_email": "anna.beispiel@example.com",
-        "claimant_phone": "+49 160 7788990",
-        "description": "Anna Beispiel meldet einen medizinischen Schaden nach einem Sportunfall am 05.01.2026 in der Sporthalle S\u00fcd, Berliner Allee 120, 40212 D\u00fcsseldorf. Sie erlitt einen Bruch des rechten Handgelenks, der operativ im St.-Marien-Krankenhaus D\u00fcsseldorf behandelt wurde. Es erfolgte ein zweit\u00e4giger station\u00e4rer Aufenthalt. Die bisherigen Behandlungskosten betragen EUR 12.300,00. \u00c4rztliche Berichte und Rechnungen k\u00f6nnen auf Anfrage bereitgestellt werden.",
-        "priority": "high",
-        "policy_number": "KV-99218473",
-        "claim_type": "medical",
+        "claimant_name": null,
+        "claimant_email": null,
+        "claimant_phone": null,
+        "description": "Received an email with no intelligible content. Unable to extract any claim information.",
+        "priority": "low",
+        "policy_number": null,
+        "claim_type": "other",
         "claim_date": null,
-        "incident_date": "2026-01-05",
-        "incident_location": "Sporthalle S\u00fcd, Berliner Allee 120, 40212 D\u00fcsseldorf, Deutschland",
-        "claim_amount": 12300.0,
+        "incident_date": null,
+        "incident_location": null,
+        "claim_amount": null,
         "missing_fields": [
-          "claim_date"
+          "subject",
+          "claimant_name",
+          "claimant_email",
+          "claimant_phone",
+          "description",
+          "policy_number",
+          "claim_date",
+          "incident_date",
+          "incident_location",
+          "claim_amount"
         ],
         "action_items": [
-          "1. Kontaktieren Sie die Anspruchstellerin zur Best\u00e4tigung des Schadeneingangs.",
-          "2. Fordern Sie \u00e4rztliche Berichte und Rechnungen zur Pr\u00fcfung an.",
-          "3. \u00dcberpr\u00fcfen Sie die Versicherungsbedingungen f\u00fcr Kosten\u00fcbernahme.",
-          "4. Dokumentieren Sie alle eingereichten Unterlagen im System."
+          "1. Contact sender to request complete claim details.",
+          "2. Verify sender's identity and obtain missing information."
         ],
-        "next_steps": "Kontaktieren Sie die Anspruchstellerin, fordern Sie die erforderlichen Unterlagen an und pr\u00fcfen Sie die Kosten\u00fcbernahme gem\u00e4\u00df Vertrag.",
+        "next_steps": "Reach out to the sender for clarification and request all required claim details.",
+        "created_timestamp": "2024-06-13T13:44:00Z",
+        "model_id": "gpt-4.1"
+      },
+      "created_at": "2026-01-23T13:58:23.401093",
+      "updated_at": "2026-01-23T13:58:23.401093",
+      "id": 3
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Schadenmeldung \u2013 Kfz-Haftpflicht / Kennzeichen HH-XX 1234 \u2013 Datum 20.01.2026",
+      "summary": "Kfz-Haftpflichtschaden am 20.01.2026 \u2013 VW Golf, Leitplankenkollision, nicht fahrbereit",
+      "claimant_name": "Frederik Mustermann",
+      "claimant_email": "frederik.mustermann@web.de",
+      "claimant_phone": "0151 / 123 45 678",
+      "description": "Am 20.01.2026 gegen 17:40 Uhr kam es auf der A7 zwischen Hamburg-Schnelsen und Hamburg-Volkspark zu einem Unfall mit einem VW Golf (Kennzeichen HH-XX 1234). Der Fahrer, Frederik Mustermann, wich einem Transporter aus, touchierte dabei die linke Leitplanke. Sch\u00e4den: vordere Sto\u00dfstange gerissen, Kotfl\u00fcgel eingedr\u00fcckt, Felge verbogen, Scheinwerferglas gerissen, Airbag ausgel\u00f6st. Keine weiteren Fahrzeuge oder Personen betroffen. Fahrzeug ist nicht fahrbereit und steht in 22523 Hamburg, Kieler Str. 142.",
+      "priority": "high",
+      "status": "todo",
+      "policy_number": "784512367-004",
+      "claim_type": "damage",
+      "claim_date": null,
+      "incident_date": "2026-01-20",
+      "incident_location": "A7, zwischen Hamburg-Schnelsen und Hamburg-Volkspark, 22523 Hamburg, Kieler Str. 142 (Abstellort)",
+      "claim_amount": null,
+      "missing_fields": [
+        "claim_date",
+        "claim_amount"
+      ],
+      "has_missing_critical_fields": false,
+      "action_items": [
+        {
+          "id": "ACT-1D90D675",
+          "title": "1. Kontaktieren Sie den Anspruchsteller zur Kl\u00e4rung des Schadendatums (Meldedatu",
+          "details": "1. Kontaktieren Sie den Anspruchsteller zur Kl\u00e4rung des Schadendatums (Meldedatum).",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-5EB9327C",
+          "title": "2. Fordern Sie eine Sch\u00e4tzung oder Kostenvoranschlag zur Schadenh\u00f6he an.",
+          "details": "2. Fordern Sie eine Sch\u00e4tzung oder Kostenvoranschlag zur Schadenh\u00f6he an.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-8065371F",
+          "title": "3. Pr\u00fcfen Sie die eingereichten Fotos und Dashcam-Aufnahmen.",
+          "details": "3. Pr\u00fcfen Sie die eingereichten Fotos und Dashcam-Aufnahmen.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-8650AFB1",
+          "title": "4. Entscheiden Sie, ob ein Gutachter bestellt werden soll oder Freigabe zur Werk",
+          "details": "4. Entscheiden Sie, ob ein Gutachter bestellt werden soll oder Freigabe zur Werkstattreparatur erteilt wird.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-F87E7F34",
+          "title": "5. Best\u00e4tigen Sie dem Anspruchsteller den weiteren Ablauf.",
+          "details": "5. Best\u00e4tigen Sie dem Anspruchsteller den weiteren Ablauf.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": "Kontaktieren Sie den Anspruchsteller zur Kl\u00e4rung des Meldedatums und fordern Sie eine Sch\u00e4tzung der Schadenh\u00f6he an. Pr\u00fcfen Sie die Unterlagen und entscheiden Sie \u00fcber das weitere Vorgehen.",
+      "created_timestamp": "2024-06-13T12:00:00Z",
+      "source_job_id": 2,
+      "source_model_id": "gpt-4.1",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Kfz-Haftpflichtschaden am 20.01.2026 \u2013 VW Golf, Leitplankenkollision, nicht fahrbereit",
+        "subject": "Schadenmeldung \u2013 Kfz-Haftpflicht / Kennzeichen HH-XX 1234 \u2013 Datum 20.01.2026",
+        "claimant_name": "Frederik Mustermann",
+        "claimant_email": "frederik.mustermann@web.de",
+        "claimant_phone": "0151 / 123 45 678",
+        "description": "Am 20.01.2026 gegen 17:40 Uhr kam es auf der A7 zwischen Hamburg-Schnelsen und Hamburg-Volkspark zu einem Unfall mit einem VW Golf (Kennzeichen HH-XX 1234). Der Fahrer, Frederik Mustermann, wich einem Transporter aus, touchierte dabei die linke Leitplanke. Sch\u00e4den: vordere Sto\u00dfstange gerissen, Kotfl\u00fcgel eingedr\u00fcckt, Felge verbogen, Scheinwerferglas gerissen, Airbag ausgel\u00f6st. Keine weiteren Fahrzeuge oder Personen betroffen. Fahrzeug ist nicht fahrbereit und steht in 22523 Hamburg, Kieler Str. 142.",
+        "priority": "high",
+        "policy_number": "784512367-004",
+        "claim_type": "damage",
+        "claim_date": null,
+        "incident_date": "2026-01-20",
+        "incident_location": "A7, zwischen Hamburg-Schnelsen und Hamburg-Volkspark, 22523 Hamburg, Kieler Str. 142 (Abstellort)",
+        "claim_amount": null,
+        "missing_fields": [
+          "claim_date",
+          "claim_amount"
+        ],
+        "action_items": [
+          "1. Kontaktieren Sie den Anspruchsteller zur Kl\u00e4rung des Schadendatums (Meldedatum).",
+          "2. Fordern Sie eine Sch\u00e4tzung oder Kostenvoranschlag zur Schadenh\u00f6he an.",
+          "3. Pr\u00fcfen Sie die eingereichten Fotos und Dashcam-Aufnahmen.",
+          "4. Entscheiden Sie, ob ein Gutachter bestellt werden soll oder Freigabe zur Werkstattreparatur erteilt wird.",
+          "5. Best\u00e4tigen Sie dem Anspruchsteller den weiteren Ablauf."
+        ],
+        "next_steps": "Kontaktieren Sie den Anspruchsteller zur Kl\u00e4rung des Meldedatums und fordern Sie eine Sch\u00e4tzung der Schadenh\u00f6he an. Pr\u00fcfen Sie die Unterlagen und entscheiden Sie \u00fcber das weitere Vorgehen.",
         "created_timestamp": "2024-06-13T12:00:00Z",
         "model_id": "gpt-4.1"
       },
-      "created_at": "2026-01-18T16:09:22.493591",
-      "updated_at": "2026-01-18T16:09:22.493591",
-      "id": 38
+      "created_at": "2026-01-23T14:00:42.104440",
+      "updated_at": "2026-01-23T14:00:42.104440",
+      "id": 4
     }
   ]
 }

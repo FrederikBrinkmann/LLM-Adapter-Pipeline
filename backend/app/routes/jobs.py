@@ -104,6 +104,15 @@ def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dic
     claimant_name = structured_payload.get("claimant_name") or structured_payload.get("customer")
     policy_number = structured_payload.get("policy_number") or structured_payload.get("order_number")
 
+    # Markiere wenn kritische Felder fehlen (3+)
+    critical_fields = {"claimant_name", "policy_number", "claim_date", "incident_date", "claim_type"}
+    missing_critical_count = 0
+    for field in critical_fields:
+        value = structured_payload.get(field) if field in critical_fields else None
+        if not value or (isinstance(value, str) and not value.strip()):
+            missing_critical_count += 1
+    has_missing_critical = missing_critical_count >= 3
+
     return {
         "subject": subject or summary,
         "summary": summary,
@@ -121,6 +130,7 @@ def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dic
         "incident_location": structured_payload.get("incident_location"),
         "claim_amount": claim_amount,
         "missing_fields": missing_fields,
+        "has_missing_critical_fields": has_missing_critical,
         "action_items": action_items,
         "next_steps": structured_payload.get("next_steps"),
         "created_timestamp": structured_payload.get("created_timestamp"),
