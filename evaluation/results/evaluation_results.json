@@ -1,0 +1,407 @@
+[
+  {
+    "test_id": "EASY_001",
+    "model_id": "llama3",
+    "difficulty": "easy",
+    "email_length": 272,
+    "timestamp": "2026-01-26T16:39:07.600549",
+    "error": "LLM call failed: Ollama returned invalid JSON content"
+  },
+  {
+    "test_id": "MEDIUM_001",
+    "model_id": "llama3",
+    "difficulty": "medium",
+    "email_length": 203,
+    "timestamp": "2026-01-26T16:39:31.311217",
+    "error": "LLM call failed: Ollama returned invalid JSON content"
+  },
+  {
+    "test_id": "EASY_001",
+    "model_id": "gpt-4o-mini",
+    "difficulty": "easy",
+    "email_length": 272,
+    "timestamp": "2026-01-26T16:39:45.752300",
+    "time_ms": 7973.41,
+    "schema_valid": false,
+    "schema_error": "Additional properties are not allowed ('model_id' was unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'type': 'object',\n     'properties': {'ticket_id': {'type': 'string'},\n                    'summary': {'type': 'string'},\n                    'subject': {'type': ['string', 'null']},\n                    'claimant_name': {'type': ['string', 'null']},\n                    'claimant_email': {'type': ['string', 'null']},\n                    'claimant_phone': {'type': ['string', 'null']},\n                    'description': {'type': ['string', 'null']},\n                    'priority': {'type': 'string',\n                                 'enum': ['low',\n                                          'medium',\n                                          'high',\n                                          'urgent']},\n                    'policy_number': {'type': ['string', 'null']},\n                    'claim_type': {'type': 'string',\n                                   'enum': ['damage',\n                                            'medical',\n                                            'liability',\n                                            'death',\n                                            'other']},\n                    'claim_date': {'type': ['string', 'null']},\n                    'incident_date': {'type': ['string', 'null']},\n                    'incident_location': {'type': ['string', 'null']},\n                    'claim_amount': {'type': ['number', 'null']},\n                    'missing_fields': {'type': 'array',\n                                       'items': {'type': 'string'}},\n                    'action_items': {'type': 'array',\n                                     'items': {'oneOf': [{'type': 'string'},\n                                                         {'type': 'object',\n                                                          'properties': {'title': {'type': 'string'},\n                                                                         'details': {'type': ['string',\n                                                                                              'null']}},\n                                                          'required': ['title'],\n                                                          'additionalProperties': False}]}},\n                    'next_steps': {'type': 'string'},\n                    'created_timestamp': {'type': 'string'}},\n     'required': ['ticket_id',\n                  'summary',\n                  'priority',\n                  'claim_type',\n                  'missing_fields',\n                  'action_items',\n                  'next_steps'],\n     'additionalProperties': False}\n\nOn instance:\n    {'ticket_id': 'AUTO_GENERATED',\n     'summary': 'Water Damage Claim - Keller Flooding',\n     'subject': None,\n     'claimant_name': 'Max Mustermann',\n     'claimant_email': 'max@example.com',\n     'claimant_phone': '+49 123 456789',\n     'description': 'Mein Keller wurde nach dem Unwetter geflutet. Der '\n                    'Schaden betr\u00e4gt ca. 15.000 Euro.',\n     'priority': 'medium',\n     'policy_number': 'POL-2025-001',\n     'claim_type': 'damage',\n     'claim_date': '2025-01-22',\n     'incident_date': '2025-01-22',\n     'incident_location': None,\n     'claim_amount': 15000,\n     'missing_fields': [],\n     'action_items': [],\n     'next_steps': 'Review the claim and initiate processing.',\n     'created_timestamp': '2023-10-01T12:00:00Z',\n     'model_id': 'gpt-4o-mini'}",
+    "field_accuracy": 100.0,
+    "missing_fields_precision": 1.0,
+    "missing_fields_recall": 1.0,
+    "missing_fields_f1": 1.0,
+    "critical_fields_correct": false,
+    "output": {
+      "ticket_id": "AUTO_GENERATED",
+      "summary": "Water Damage Claim - Keller Flooding",
+      "subject": null,
+      "claimant_name": "Max Mustermann",
+      "claimant_email": "max@example.com",
+      "claimant_phone": "+49 123 456789",
+      "description": "Mein Keller wurde nach dem Unwetter geflutet. Der Schaden betr\u00e4gt ca. 15.000 Euro.",
+      "priority": "medium",
+      "policy_number": "POL-2025-001",
+      "claim_type": "damage",
+      "claim_date": "2025-01-22",
+      "incident_date": "2025-01-22",
+      "incident_location": null,
+      "claim_amount": 15000,
+      "missing_fields": [],
+      "action_items": [],
+      "next_steps": "Review the claim and initiate processing.",
+      "created_timestamp": "2023-10-01T12:00:00Z",
+      "model_id": "gpt-4o-mini"
+    }
+  },
+  {
+    "test_id": "MEDIUM_001",
+    "model_id": "gpt-4o-mini",
+    "difficulty": "medium",
+    "email_length": 203,
+    "timestamp": "2026-01-26T16:39:53.742446",
+    "time_ms": 5475.85,
+    "schema_valid": false,
+    "schema_error": "Additional properties are not allowed ('model_id' was unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'type': 'object',\n     'properties': {'ticket_id': {'type': 'string'},\n                    'summary': {'type': 'string'},\n                    'subject': {'type': ['string', 'null']},\n                    'claimant_name': {'type': ['string', 'null']},\n                    'claimant_email': {'type': ['string', 'null']},\n                    'claimant_phone': {'type': ['string', 'null']},\n                    'description': {'type': ['string', 'null']},\n                    'priority': {'type': 'string',\n                                 'enum': ['low',\n                                          'medium',\n                                          'high',\n                                          'urgent']},\n                    'policy_number': {'type': ['string', 'null']},\n                    'claim_type': {'type': 'string',\n                                   'enum': ['damage',\n                                            'medical',\n                                            'liability',\n                                            'death',\n                                            'other']},\n                    'claim_date': {'type': ['string', 'null']},\n                    'incident_date': {'type': ['string', 'null']},\n                    'incident_location': {'type': ['string', 'null']},\n                    'claim_amount': {'type': ['number', 'null']},\n                    'missing_fields': {'type': 'array',\n                                       'items': {'type': 'string'}},\n                    'action_items': {'type': 'array',\n                                     'items': {'oneOf': [{'type': 'string'},\n                                                         {'type': 'object',\n                                                          'properties': {'title': {'type': 'string'},\n                                                                         'details': {'type': ['string',\n                                                                                              'null']}},\n                                                          'required': ['title'],\n                                                          'additionalProperties': False}]}},\n                    'next_steps': {'type': 'string'},\n                    'created_timestamp': {'type': 'string'}},\n     'required': ['ticket_id',\n                  'summary',\n                  'priority',\n                  'claim_type',\n                  'missing_fields',\n                  'action_items',\n                  'next_steps'],\n     'additionalProperties': False}\n\nOn instance:\n    {'ticket_id': 'AUTO_GENERATED',\n     'summary': 'Car accident claim processing request',\n     'subject': None,\n     'claimant_name': 'Anna Schmidt',\n     'claimant_email': None,\n     'claimant_phone': None,\n     'description': 'I had a car accident on the highway. My car is '\n                    'totally damaged. The repair costs are estimated to be '\n                    'approximately \u20ac25,000.',\n     'priority': 'high',\n     'policy_number': None,\n     'claim_type': 'damage',\n     'claim_date': None,\n     'incident_date': None,\n     'incident_location': None,\n     'claim_amount': 25000,\n     'missing_fields': ['policy_number', 'claim_date', 'incident_date'],\n     'action_items': ['Initiate damage claim processing.'],\n     'next_steps': 'Contact the claimant for further details and request '\n                   'policy number, claim date, and incident date.',\n     'created_timestamp': '2023-10-05T12:00:00Z',\n     'model_id': 'gpt-4o-mini'}",
+    "field_accuracy": 75.0,
+    "missing_fields_precision": 0.667,
+    "missing_fields_recall": 0.667,
+    "missing_fields_f1": 0.667,
+    "critical_fields_correct": false,
+    "output": {
+      "ticket_id": "AUTO_GENERATED",
+      "summary": "Car accident claim processing request",
+      "subject": null,
+      "claimant_name": "Anna Schmidt",
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "I had a car accident on the highway. My car is totally damaged. The repair costs are estimated to be approximately \u20ac25,000.",
+      "priority": "high",
+      "policy_number": null,
+      "claim_type": "damage",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": null,
+      "claim_amount": 25000,
+      "missing_fields": [
+        "policy_number",
+        "claim_date",
+        "incident_date"
+      ],
+      "action_items": [
+        "Initiate damage claim processing."
+      ],
+      "next_steps": "Contact the claimant for further details and request policy number, claim date, and incident date.",
+      "created_timestamp": "2023-10-05T12:00:00Z",
+      "model_id": "gpt-4o-mini"
+    }
+  },
+  {
+    "test_id": "EASY_001",
+    "model_id": "gpt-4o",
+    "difficulty": "easy",
+    "email_length": 272,
+    "timestamp": "2026-01-26T16:39:59.229505",
+    "time_ms": 3640.04,
+    "schema_valid": false,
+    "schema_error": "Additional properties are not allowed ('model_id' was unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'type': 'object',\n     'properties': {'ticket_id': {'type': 'string'},\n                    'summary': {'type': 'string'},\n                    'subject': {'type': ['string', 'null']},\n                    'claimant_name': {'type': ['string', 'null']},\n                    'claimant_email': {'type': ['string', 'null']},\n                    'claimant_phone': {'type': ['string', 'null']},\n                    'description': {'type': ['string', 'null']},\n                    'priority': {'type': 'string',\n                                 'enum': ['low',\n                                          'medium',\n                                          'high',\n                                          'urgent']},\n                    'policy_number': {'type': ['string', 'null']},\n                    'claim_type': {'type': 'string',\n                                   'enum': ['damage',\n                                            'medical',\n                                            'liability',\n                                            'death',\n                                            'other']},\n                    'claim_date': {'type': ['string', 'null']},\n                    'incident_date': {'type': ['string', 'null']},\n                    'incident_location': {'type': ['string', 'null']},\n                    'claim_amount': {'type': ['number', 'null']},\n                    'missing_fields': {'type': 'array',\n                                       'items': {'type': 'string'}},\n                    'action_items': {'type': 'array',\n                                     'items': {'oneOf': [{'type': 'string'},\n                                                         {'type': 'object',\n                                                          'properties': {'title': {'type': 'string'},\n                                                                         'details': {'type': ['string',\n                                                                                              'null']}},\n                                                          'required': ['title'],\n                                                          'additionalProperties': False}]}},\n                    'next_steps': {'type': 'string'},\n                    'created_timestamp': {'type': 'string'}},\n     'required': ['ticket_id',\n                  'summary',\n                  'priority',\n                  'claim_type',\n                  'missing_fields',\n                  'action_items',\n                  'next_steps'],\n     'additionalProperties': False}\n\nOn instance:\n    {'ticket_id': 'AUTO_GENERATED',\n     'summary': 'Flood Damage Claim for Basement',\n     'subject': None,\n     'claimant_name': 'Max Mustermann',\n     'claimant_email': 'max@example.com',\n     'claimant_phone': '+49 123 456789',\n     'description': \"Customer's basement was flooded after a storm, damage \"\n                    'estimated at \u20ac15,000.',\n     'priority': 'high',\n     'policy_number': 'POL-2025-001',\n     'claim_type': 'damage',\n     'claim_date': '2025-01-22',\n     'incident_date': '2025-01-22',\n     'incident_location': None,\n     'claim_amount': 15000,\n     'missing_fields': ['incident_location'],\n     'action_items': [{'title': 'Verify Damage Assessment',\n                       'details': 'Contact claimant to confirm the '\n                                  'accuracy of the estimated damage of '\n                                  '\u20ac15,000.'}],\n     'next_steps': 'Verify claimant details and initiate the claim process '\n                   'with an emergency assessment.',\n     'created_timestamp': '2023-11-30T16:34:26Z',\n     'model_id': 'gpt-4o'}",
+    "field_accuracy": 100.0,
+    "missing_fields_precision": 0.0,
+    "missing_fields_recall": 0.0,
+    "missing_fields_f1": 0.0,
+    "critical_fields_correct": false,
+    "output": {
+      "ticket_id": "AUTO_GENERATED",
+      "summary": "Flood Damage Claim for Basement",
+      "subject": null,
+      "claimant_name": "Max Mustermann",
+      "claimant_email": "max@example.com",
+      "claimant_phone": "+49 123 456789",
+      "description": "Customer's basement was flooded after a storm, damage estimated at \u20ac15,000.",
+      "priority": "high",
+      "policy_number": "POL-2025-001",
+      "claim_type": "damage",
+      "claim_date": "2025-01-22",
+      "incident_date": "2025-01-22",
+      "incident_location": null,
+      "claim_amount": 15000,
+      "missing_fields": [
+        "incident_location"
+      ],
+      "action_items": [
+        {
+          "title": "Verify Damage Assessment",
+          "details": "Contact claimant to confirm the accuracy of the estimated damage of \u20ac15,000."
+        }
+      ],
+      "next_steps": "Verify claimant details and initiate the claim process with an emergency assessment.",
+      "created_timestamp": "2023-11-30T16:34:26Z",
+      "model_id": "gpt-4o"
+    }
+  },
+  {
+    "test_id": "MEDIUM_001",
+    "model_id": "gpt-4o",
+    "difficulty": "medium",
+    "email_length": 203,
+    "timestamp": "2026-01-26T16:40:02.879596",
+    "time_ms": 6684.67,
+    "schema_valid": false,
+    "schema_error": "Additional properties are not allowed ('model_id' was unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'type': 'object',\n     'properties': {'ticket_id': {'type': 'string'},\n                    'summary': {'type': 'string'},\n                    'subject': {'type': ['string', 'null']},\n                    'claimant_name': {'type': ['string', 'null']},\n                    'claimant_email': {'type': ['string', 'null']},\n                    'claimant_phone': {'type': ['string', 'null']},\n                    'description': {'type': ['string', 'null']},\n                    'priority': {'type': 'string',\n                                 'enum': ['low',\n                                          'medium',\n                                          'high',\n                                          'urgent']},\n                    'policy_number': {'type': ['string', 'null']},\n                    'claim_type': {'type': 'string',\n                                   'enum': ['damage',\n                                            'medical',\n                                            'liability',\n                                            'death',\n                                            'other']},\n                    'claim_date': {'type': ['string', 'null']},\n                    'incident_date': {'type': ['string', 'null']},\n                    'incident_location': {'type': ['string', 'null']},\n                    'claim_amount': {'type': ['number', 'null']},\n                    'missing_fields': {'type': 'array',\n                                       'items': {'type': 'string'}},\n                    'action_items': {'type': 'array',\n                                     'items': {'oneOf': [{'type': 'string'},\n                                                         {'type': 'object',\n                                                          'properties': {'title': {'type': 'string'},\n                                                                         'details': {'type': ['string',\n                                                                                              'null']}},\n                                                          'required': ['title'],\n                                                          'additionalProperties': False}]}},\n                    'next_steps': {'type': 'string'},\n                    'created_timestamp': {'type': 'string'}},\n     'required': ['ticket_id',\n                  'summary',\n                  'priority',\n                  'claim_type',\n                  'missing_fields',\n                  'action_items',\n                  'next_steps'],\n     'additionalProperties': False}\n\nOn instance:\n    {'ticket_id': 'AUTO_GENERATED',\n     'summary': 'Car accident with total damage',\n     'subject': None,\n     'claimant_name': 'Anna Schmidt',\n     'claimant_email': None,\n     'claimant_phone': None,\n     'description': 'Anna Schmidt reports a car accident on the highway '\n                    'with total damage to the vehicle. Estimated repair '\n                    'costs are around \u20ac25,000.',\n     'priority': 'high',\n     'policy_number': None,\n     'claim_type': 'damage',\n     'claim_date': None,\n     'incident_date': None,\n     'incident_location': 'Autobahn',\n     'claim_amount': 25000,\n     'missing_fields': ['policy_number',\n                        'claim_date',\n                        'incident_date',\n                        'claimant_email',\n                        'claimant_phone'],\n     'action_items': [{'title': 'Contact claimant for missing information',\n                       'details': 'Obtain policy number, claim date, '\n                                  'incident date, email, and phone number '\n                                  'from Anna Schmidt.'}],\n     'next_steps': 'Contact the claimant to collect missing information '\n                   'and proceed with claim processing.',\n     'created_timestamp': '2023-11-03T12:00:00Z',\n     'model_id': 'gpt-4o'}",
+    "field_accuracy": 75.0,
+    "missing_fields_precision": 0.6,
+    "missing_fields_recall": 1.0,
+    "missing_fields_f1": 0.75,
+    "critical_fields_correct": false,
+    "output": {
+      "ticket_id": "AUTO_GENERATED",
+      "summary": "Car accident with total damage",
+      "subject": null,
+      "claimant_name": "Anna Schmidt",
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "Anna Schmidt reports a car accident on the highway with total damage to the vehicle. Estimated repair costs are around \u20ac25,000.",
+      "priority": "high",
+      "policy_number": null,
+      "claim_type": "damage",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": "Autobahn",
+      "claim_amount": 25000,
+      "missing_fields": [
+        "policy_number",
+        "claim_date",
+        "incident_date",
+        "claimant_email",
+        "claimant_phone"
+      ],
+      "action_items": [
+        {
+          "title": "Contact claimant for missing information",
+          "details": "Obtain policy number, claim date, incident date, email, and phone number from Anna Schmidt."
+        }
+      ],
+      "next_steps": "Contact the claimant to collect missing information and proceed with claim processing.",
+      "created_timestamp": "2023-11-03T12:00:00Z",
+      "model_id": "gpt-4o"
+    }
+  },
+  {
+    "test_id": "EASY_001",
+    "model_id": "gpt-4.1",
+    "difficulty": "easy",
+    "email_length": 272,
+    "timestamp": "2026-01-26T16:40:09.575254",
+    "time_ms": 4967.52,
+    "schema_valid": false,
+    "schema_error": "Additional properties are not allowed ('model_id' was unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'type': 'object',\n     'properties': {'ticket_id': {'type': 'string'},\n                    'summary': {'type': 'string'},\n                    'subject': {'type': ['string', 'null']},\n                    'claimant_name': {'type': ['string', 'null']},\n                    'claimant_email': {'type': ['string', 'null']},\n                    'claimant_phone': {'type': ['string', 'null']},\n                    'description': {'type': ['string', 'null']},\n                    'priority': {'type': 'string',\n                                 'enum': ['low',\n                                          'medium',\n                                          'high',\n                                          'urgent']},\n                    'policy_number': {'type': ['string', 'null']},\n                    'claim_type': {'type': 'string',\n                                   'enum': ['damage',\n                                            'medical',\n                                            'liability',\n                                            'death',\n                                            'other']},\n                    'claim_date': {'type': ['string', 'null']},\n                    'incident_date': {'type': ['string', 'null']},\n                    'incident_location': {'type': ['string', 'null']},\n                    'claim_amount': {'type': ['number', 'null']},\n                    'missing_fields': {'type': 'array',\n                                       'items': {'type': 'string'}},\n                    'action_items': {'type': 'array',\n                                     'items': {'oneOf': [{'type': 'string'},\n                                                         {'type': 'object',\n                                                          'properties': {'title': {'type': 'string'},\n                                                                         'details': {'type': ['string',\n                                                                                              'null']}},\n                                                          'required': ['title'],\n                                                          'additionalProperties': False}]}},\n                    'next_steps': {'type': 'string'},\n                    'created_timestamp': {'type': 'string'}},\n     'required': ['ticket_id',\n                  'summary',\n                  'priority',\n                  'claim_type',\n                  'missing_fields',\n                  'action_items',\n                  'next_steps'],\n     'additionalProperties': False}\n\nOn instance:\n    {'ticket_id': 'AUTO_GENERATED',\n     'summary': 'Kellerflutung nach Unwetter, ca. 15.000 Euro Schaden',\n     'subject': None,\n     'claimant_name': 'Max Mustermann',\n     'claimant_email': 'max@example.com',\n     'claimant_phone': '+49 123 456789',\n     'description': 'Nach einem Unwetter wurde der Keller von Max '\n                    'Mustermann geflutet. Es entstand ein Schaden in H\u00f6he '\n                    'von etwa 15.000 Euro am 22.01.2025.',\n     'priority': 'high',\n     'policy_number': 'POL-2025-001',\n     'claim_type': 'damage',\n     'claim_date': '2025-01-22',\n     'incident_date': '2025-01-22',\n     'incident_location': None,\n     'claim_amount': 15000,\n     'missing_fields': ['incident_location'],\n     'action_items': [{'title': 'Kontaktaufnahme mit dem Versicherten',\n                       'details': 'R\u00fcckfragen zur genauen Schadensursache, '\n                                  'Schadensh\u00f6he und betroffenen '\n                                  'Gegenst\u00e4nden stellen.'},\n                      {'title': 'Anforderung von Fotos und Belegen',\n                       'details': 'Fordern Sie Fotos des Schadens und ggf. '\n                                  'Belege/Sch\u00e4tzungen f\u00fcr die H\u00f6he des '\n                                  'Schadens an.'}],\n     'next_steps': 'Kontaktieren Sie den Kunden zur Kl\u00e4rung des genauen '\n                   'Schadensorts und fordern Sie Belege an.',\n     'created_timestamp': '2024-06-14T12:00:00Z',\n     'model_id': 'gpt-4.1'}",
+    "field_accuracy": 100.0,
+    "missing_fields_precision": 0.0,
+    "missing_fields_recall": 0.0,
+    "missing_fields_f1": 0.0,
+    "critical_fields_correct": false,
+    "output": {
+      "ticket_id": "AUTO_GENERATED",
+      "summary": "Kellerflutung nach Unwetter, ca. 15.000 Euro Schaden",
+      "subject": null,
+      "claimant_name": "Max Mustermann",
+      "claimant_email": "max@example.com",
+      "claimant_phone": "+49 123 456789",
+      "description": "Nach einem Unwetter wurde der Keller von Max Mustermann geflutet. Es entstand ein Schaden in H\u00f6he von etwa 15.000 Euro am 22.01.2025.",
+      "priority": "high",
+      "policy_number": "POL-2025-001",
+      "claim_type": "damage",
+      "claim_date": "2025-01-22",
+      "incident_date": "2025-01-22",
+      "incident_location": null,
+      "claim_amount": 15000,
+      "missing_fields": [
+        "incident_location"
+      ],
+      "action_items": [
+        {
+          "title": "Kontaktaufnahme mit dem Versicherten",
+          "details": "R\u00fcckfragen zur genauen Schadensursache, Schadensh\u00f6he und betroffenen Gegenst\u00e4nden stellen."
+        },
+        {
+          "title": "Anforderung von Fotos und Belegen",
+          "details": "Fordern Sie Fotos des Schadens und ggf. Belege/Sch\u00e4tzungen f\u00fcr die H\u00f6he des Schadens an."
+        }
+      ],
+      "next_steps": "Kontaktieren Sie den Kunden zur Kl\u00e4rung des genauen Schadensorts und fordern Sie Belege an.",
+      "created_timestamp": "2024-06-14T12:00:00Z",
+      "model_id": "gpt-4.1"
+    }
+  },
+  {
+    "test_id": "MEDIUM_001",
+    "model_id": "gpt-4.1",
+    "difficulty": "medium",
+    "email_length": 203,
+    "timestamp": "2026-01-26T16:40:14.554850",
+    "time_ms": 6842.26,
+    "schema_valid": false,
+    "schema_error": "Additional properties are not allowed ('model_id' was unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'type': 'object',\n     'properties': {'ticket_id': {'type': 'string'},\n                    'summary': {'type': 'string'},\n                    'subject': {'type': ['string', 'null']},\n                    'claimant_name': {'type': ['string', 'null']},\n                    'claimant_email': {'type': ['string', 'null']},\n                    'claimant_phone': {'type': ['string', 'null']},\n                    'description': {'type': ['string', 'null']},\n                    'priority': {'type': 'string',\n                                 'enum': ['low',\n                                          'medium',\n                                          'high',\n                                          'urgent']},\n                    'policy_number': {'type': ['string', 'null']},\n                    'claim_type': {'type': 'string',\n                                   'enum': ['damage',\n                                            'medical',\n                                            'liability',\n                                            'death',\n                                            'other']},\n                    'claim_date': {'type': ['string', 'null']},\n                    'incident_date': {'type': ['string', 'null']},\n                    'incident_location': {'type': ['string', 'null']},\n                    'claim_amount': {'type': ['number', 'null']},\n                    'missing_fields': {'type': 'array',\n                                       'items': {'type': 'string'}},\n                    'action_items': {'type': 'array',\n                                     'items': {'oneOf': [{'type': 'string'},\n                                                         {'type': 'object',\n                                                          'properties': {'title': {'type': 'string'},\n                                                                         'details': {'type': ['string',\n                                                                                              'null']}},\n                                                          'required': ['title'],\n                                                          'additionalProperties': False}]}},\n                    'next_steps': {'type': 'string'},\n                    'created_timestamp': {'type': 'string'}},\n     'required': ['ticket_id',\n                  'summary',\n                  'priority',\n                  'claim_type',\n                  'missing_fields',\n                  'action_items',\n                  'next_steps'],\n     'additionalProperties': False}\n\nOn instance:\n    {'ticket_id': 'AUTO_GENERATED',\n     'summary': 'Autounfall auf der Autobahn \u2013 Totalschaden, 25.000 Euro',\n     'subject': None,\n     'claimant_name': 'Anna Schmidt',\n     'claimant_email': None,\n     'claimant_phone': None,\n     'description': 'Anna Schmidt meldet einen Autounfall auf der Autobahn '\n                    'mit Totalschaden. Die gesch\u00e4tzten Reparaturkosten '\n                    'belaufen sich auf etwa 25.000 Euro. '\n                    'Schadensbearbeitung wird erbeten.',\n     'priority': 'high',\n     'policy_number': None,\n     'claim_type': 'damage',\n     'claim_date': None,\n     'incident_date': None,\n     'incident_location': 'Autobahn',\n     'claim_amount': 25000,\n     'missing_fields': ['claimant_email',\n                        'claimant_phone',\n                        'policy_number',\n                        'claim_date',\n                        'incident_date'],\n     'action_items': [{'title': 'Kontaktaufnahme mit der Kundin',\n                       'details': 'E-Mail-Adresse und Telefonnummer von '\n                                  'Anna Schmidt erfragen.'},\n                      {'title': 'Policynummer anfordern',\n                       'details': 'Policynummer zur Zuordnung des '\n                                  'Schadensfalls erfragen.'},\n                      {'title': 'Unfalldatum und Schadensmeldedatum '\n                                'anfordern',\n                       'details': 'Erfragen, wann der Unfall stattgefunden '\n                                  'hat und wann der Schaden gemeldet '\n                                  'wurde.'}],\n     'next_steps': 'Kundin zur Erg\u00e4nzung der fehlenden Angaben '\n                   'kontaktieren und Schadensfall im System anlegen.',\n     'created_timestamp': '2024-06-14T10:27:00Z',\n     'model_id': 'gpt-4.1'}",
+    "field_accuracy": 75.0,
+    "missing_fields_precision": 0.6,
+    "missing_fields_recall": 1.0,
+    "missing_fields_f1": 0.75,
+    "critical_fields_correct": false,
+    "output": {
+      "ticket_id": "AUTO_GENERATED",
+      "summary": "Autounfall auf der Autobahn \u2013 Totalschaden, 25.000 Euro",
+      "subject": null,
+      "claimant_name": "Anna Schmidt",
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "Anna Schmidt meldet einen Autounfall auf der Autobahn mit Totalschaden. Die gesch\u00e4tzten Reparaturkosten belaufen sich auf etwa 25.000 Euro. Schadensbearbeitung wird erbeten.",
+      "priority": "high",
+      "policy_number": null,
+      "claim_type": "damage",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": "Autobahn",
+      "claim_amount": 25000,
+      "missing_fields": [
+        "claimant_email",
+        "claimant_phone",
+        "policy_number",
+        "claim_date",
+        "incident_date"
+      ],
+      "action_items": [
+        {
+          "title": "Kontaktaufnahme mit der Kundin",
+          "details": "E-Mail-Adresse und Telefonnummer von Anna Schmidt erfragen."
+        },
+        {
+          "title": "Policynummer anfordern",
+          "details": "Policynummer zur Zuordnung des Schadensfalls erfragen."
+        },
+        {
+          "title": "Unfalldatum und Schadensmeldedatum anfordern",
+          "details": "Erfragen, wann der Unfall stattgefunden hat und wann der Schaden gemeldet wurde."
+        }
+      ],
+      "next_steps": "Kundin zur Erg\u00e4nzung der fehlenden Angaben kontaktieren und Schadensfall im System anlegen.",
+      "created_timestamp": "2024-06-14T10:27:00Z",
+      "model_id": "gpt-4.1"
+    }
+  },
+  {
+    "test_id": "EASY_001",
+    "model_id": "gpt-4.1-mini",
+    "difficulty": "easy",
+    "email_length": 272,
+    "timestamp": "2026-01-26T16:40:21.405916",
+    "time_ms": 3890.19,
+    "schema_valid": false,
+    "schema_error": "Additional properties are not allowed ('model_id' was unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'type': 'object',\n     'properties': {'ticket_id': {'type': 'string'},\n                    'summary': {'type': 'string'},\n                    'subject': {'type': ['string', 'null']},\n                    'claimant_name': {'type': ['string', 'null']},\n                    'claimant_email': {'type': ['string', 'null']},\n                    'claimant_phone': {'type': ['string', 'null']},\n                    'description': {'type': ['string', 'null']},\n                    'priority': {'type': 'string',\n                                 'enum': ['low',\n                                          'medium',\n                                          'high',\n                                          'urgent']},\n                    'policy_number': {'type': ['string', 'null']},\n                    'claim_type': {'type': 'string',\n                                   'enum': ['damage',\n                                            'medical',\n                                            'liability',\n                                            'death',\n                                            'other']},\n                    'claim_date': {'type': ['string', 'null']},\n                    'incident_date': {'type': ['string', 'null']},\n                    'incident_location': {'type': ['string', 'null']},\n                    'claim_amount': {'type': ['number', 'null']},\n                    'missing_fields': {'type': 'array',\n                                       'items': {'type': 'string'}},\n                    'action_items': {'type': 'array',\n                                     'items': {'oneOf': [{'type': 'string'},\n                                                         {'type': 'object',\n                                                          'properties': {'title': {'type': 'string'},\n                                                                         'details': {'type': ['string',\n                                                                                              'null']}},\n                                                          'required': ['title'],\n                                                          'additionalProperties': False}]}},\n                    'next_steps': {'type': 'string'},\n                    'created_timestamp': {'type': 'string'}},\n     'required': ['ticket_id',\n                  'summary',\n                  'priority',\n                  'claim_type',\n                  'missing_fields',\n                  'action_items',\n                  'next_steps'],\n     'additionalProperties': False}\n\nOn instance:\n    {'ticket_id': 'AUTO_GENERATED',\n     'summary': 'Flood damage claim for basement by Max Mustermann',\n     'subject': None,\n     'claimant_name': 'Max Mustermann',\n     'claimant_email': 'max@example.com',\n     'claimant_phone': '+49 123 456789',\n     'description': 'The claimant reports flood damage to the basement due '\n                    'to a storm. Estimated damage: \u20ac15,000. Claim and '\n                    'incident date: 2025-01-22.',\n     'priority': 'high',\n     'policy_number': 'POL-2025-001',\n     'claim_type': 'damage',\n     'claim_date': '2025-01-22',\n     'incident_date': '2025-01-22',\n     'incident_location': None,\n     'claim_amount': 15000,\n     'missing_fields': ['incident_location'],\n     'action_items': ['Verify policy coverage details for flood damage',\n                      'Assess claim and arrange for damage inspection'],\n     'next_steps': 'Contact claimant to schedule damage assessment and '\n                   'verify policy coverage. Prepare claim documentation '\n                   'for processing.',\n     'created_timestamp': '2024-06-10T12:00:00Z',\n     'model_id': 'gpt-4.1-mini'}",
+    "field_accuracy": 100.0,
+    "missing_fields_precision": 0.0,
+    "missing_fields_recall": 0.0,
+    "missing_fields_f1": 0.0,
+    "critical_fields_correct": false,
+    "output": {
+      "ticket_id": "AUTO_GENERATED",
+      "summary": "Flood damage claim for basement by Max Mustermann",
+      "subject": null,
+      "claimant_name": "Max Mustermann",
+      "claimant_email": "max@example.com",
+      "claimant_phone": "+49 123 456789",
+      "description": "The claimant reports flood damage to the basement due to a storm. Estimated damage: \u20ac15,000. Claim and incident date: 2025-01-22.",
+      "priority": "high",
+      "policy_number": "POL-2025-001",
+      "claim_type": "damage",
+      "claim_date": "2025-01-22",
+      "incident_date": "2025-01-22",
+      "incident_location": null,
+      "claim_amount": 15000,
+      "missing_fields": [
+        "incident_location"
+      ],
+      "action_items": [
+        "Verify policy coverage details for flood damage",
+        "Assess claim and arrange for damage inspection"
+      ],
+      "next_steps": "Contact claimant to schedule damage assessment and verify policy coverage. Prepare claim documentation for processing.",
+      "created_timestamp": "2024-06-10T12:00:00Z",
+      "model_id": "gpt-4.1-mini"
+    }
+  },
+  {
+    "test_id": "MEDIUM_001",
+    "model_id": "gpt-4.1-mini",
+    "difficulty": "medium",
+    "email_length": 203,
+    "timestamp": "2026-01-26T16:40:25.306054",
+    "time_ms": 3033.68,
+    "schema_valid": false,
+    "schema_error": "Additional properties are not allowed ('model_id' was unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'type': 'object',\n     'properties': {'ticket_id': {'type': 'string'},\n                    'summary': {'type': 'string'},\n                    'subject': {'type': ['string', 'null']},\n                    'claimant_name': {'type': ['string', 'null']},\n                    'claimant_email': {'type': ['string', 'null']},\n                    'claimant_phone': {'type': ['string', 'null']},\n                    'description': {'type': ['string', 'null']},\n                    'priority': {'type': 'string',\n                                 'enum': ['low',\n                                          'medium',\n                                          'high',\n                                          'urgent']},\n                    'policy_number': {'type': ['string', 'null']},\n                    'claim_type': {'type': 'string',\n                                   'enum': ['damage',\n                                            'medical',\n                                            'liability',\n                                            'death',\n                                            'other']},\n                    'claim_date': {'type': ['string', 'null']},\n                    'incident_date': {'type': ['string', 'null']},\n                    'incident_location': {'type': ['string', 'null']},\n                    'claim_amount': {'type': ['number', 'null']},\n                    'missing_fields': {'type': 'array',\n                                       'items': {'type': 'string'}},\n                    'action_items': {'type': 'array',\n                                     'items': {'oneOf': [{'type': 'string'},\n                                                         {'type': 'object',\n                                                          'properties': {'title': {'type': 'string'},\n                                                                         'details': {'type': ['string',\n                                                                                              'null']}},\n                                                          'required': ['title'],\n                                                          'additionalProperties': False}]}},\n                    'next_steps': {'type': 'string'},\n                    'created_timestamp': {'type': 'string'}},\n     'required': ['ticket_id',\n                  'summary',\n                  'priority',\n                  'claim_type',\n                  'missing_fields',\n                  'action_items',\n                  'next_steps'],\n     'additionalProperties': False}\n\nOn instance:\n    {'ticket_id': 'AUTO_GENERATED',\n     'summary': 'Auto accident on highway resulting in total car damage',\n     'subject': None,\n     'claimant_name': 'Anna Schmidt',\n     'claimant_email': None,\n     'claimant_phone': None,\n     'description': 'Anna Schmidt reported a car accident on the highway. '\n                    'The car is totally damaged and repair costs are '\n                    'estimated at approximately 25,000 Euro.',\n     'priority': 'high',\n     'policy_number': None,\n     'claim_type': 'damage',\n     'claim_date': None,\n     'incident_date': None,\n     'incident_location': 'highway',\n     'claim_amount': 25000,\n     'missing_fields': ['policy_number',\n                        'claim_date',\n                        'incident_date',\n                        'claimant_email',\n                        'claimant_phone'],\n     'action_items': ['Contact claimant for missing policy number and '\n                      'incident dates',\n                      'Verify insurance policy details',\n                      'Assess vehicle damage and repair estimate validity'],\n     'next_steps': 'Contact Anna Schmidt to obtain missing policy number '\n                   'and incident date details, then proceed with damage '\n                   'verification and claim assessment.',\n     'created_timestamp': '2024-06-05T12:00:00Z',\n     'model_id': 'gpt-4.1-mini'}",
+    "field_accuracy": 75.0,
+    "missing_fields_precision": 0.6,
+    "missing_fields_recall": 1.0,
+    "missing_fields_f1": 0.75,
+    "critical_fields_correct": false,
+    "output": {
+      "ticket_id": "AUTO_GENERATED",
+      "summary": "Auto accident on highway resulting in total car damage",
+      "subject": null,
+      "claimant_name": "Anna Schmidt",
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "Anna Schmidt reported a car accident on the highway. The car is totally damaged and repair costs are estimated at approximately 25,000 Euro.",
+      "priority": "high",
+      "policy_number": null,
+      "claim_type": "damage",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": "highway",
+      "claim_amount": 25000,
+      "missing_fields": [
+        "policy_number",
+        "claim_date",
+        "incident_date",
+        "claimant_email",
+        "claimant_phone"
+      ],
+      "action_items": [
+        "Contact claimant for missing policy number and incident dates",
+        "Verify insurance policy details",
+        "Assess vehicle damage and repair estimate validity"
+      ],
+      "next_steps": "Contact Anna Schmidt to obtain missing policy number and incident date details, then proceed with damage verification and claim assessment.",
+      "created_timestamp": "2024-06-05T12:00:00Z",
+      "model_id": "gpt-4.1-mini"
+    }
+  },
+  {
+    "test_id": "EASY_001",
+    "model_id": "mistral",
+    "difficulty": "easy",
+    "email_length": 272,
+    "timestamp": "2026-01-26T16:40:28.351490",
+    "error": "LLM call failed: Ollama request failed: 404 Not Found: {\"error\":\"model 'mistral' not found\"}"
+  },
+  {
+    "test_id": "MEDIUM_001",
+    "model_id": "mistral",
+    "difficulty": "medium",
+    "email_length": 203,
+    "timestamp": "2026-01-26T16:40:28.371569",
+    "error": "LLM call failed: Ollama request failed: 404 Not Found: {\"error\":\"model 'mistral' not found\"}"
+  },
+  {
+    "test_id": "EASY_001",
+    "model_id": "phi3",
+    "difficulty": "easy",
+    "email_length": 272,
+    "timestamp": "2026-01-26T16:40:28.383880",
+    "error": "LLM call failed: Ollama request failed: 404 Not Found: {\"error\":\"model 'phi3' not found\"}"
+  },
+  {
+    "test_id": "MEDIUM_001",
+    "model_id": "phi3",
+    "difficulty": "medium",
+    "email_length": 203,
+    "timestamp": "2026-01-26T16:40:28.393036",
+    "error": "LLM call failed: Ollama request failed: 404 Not Found: {\"error\":\"model 'phi3' not found\"}"
+  }
+]

@@ -28,7 +28,23 @@ JSON_SCHEMA = {
       "incident_location": {"type": ["string", "null"]},
       "claim_amount": {"type": ["number", "null"]},
       "missing_fields": {"type": "array", "items": {"type": "string"}},
-      "action_items": {"type": "array", "items": {"type": "string"}},
+      "action_items": {
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {"type": "string"},
+            {
+              "type": "object",
+              "properties": {
+                "title": {"type": "string"},
+                "details": {"type": ["string", "null"]}
+              },
+              "required": ["title"],
+              "additionalProperties": False
+            }
+          ]
+        }
+      },
       "next_steps": {"type": "string"},
       "created_timestamp": {"type": "string"},
     },
@@ -58,18 +74,19 @@ PROMPT_TEMPLATE = dedent(
     "incident_location": string | null,
     "claim_amount": number | null,
     "missing_fields": string[] (critical gaps only),
-    "action_items": string[] (specific, actionable tasks),
+    "action_items": [string | {title: string, details?: string}] (specific, actionable tasks),
     "next_steps": string (clear instructions for ticket handler),
     "created_timestamp": string (ISO 8601 format)
   }
   
   Processing rules:
   - Extract contact information precisely (name, email, phone).
+  - Critical fields to prioritize: claimant_name, policy_number, claim_date, incident_date, claim_type
   - Validate claim_date and incident_date in YYYY-MM-DD format.
   - Set unknown values to null, then add field name to missing_fields.
   - Priority: urgent (life/health risk, > €50k), high (> €10k), medium (standard), low (inquiry).
   - Claim type: must match exactly one enum value.
-  - Action items: numbered list of concrete next steps.
+  - Action items: can be simple strings OR objects with {title, details}. Include details for complex tasks.
   - next_steps: brief instruction for the support team on how to proceed.
   - No comments, no extra keys, valid JSON only.
   

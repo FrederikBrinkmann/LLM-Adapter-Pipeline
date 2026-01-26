@@ -1,5 +1,5 @@
 {
-  "next_id": 5,
+  "next_id": 6,
   "tickets": [
     {
       "id": 1,
@@ -259,6 +259,82 @@
       "created_at": "2026-01-23T14:00:42.104440",
       "updated_at": "2026-01-23T14:00:42.104440",
       "id": 4
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Unclear insurance claim request received",
+      "summary": "Unclear insurance claim request received",
+      "claimant_name": null,
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "Received an email with the content 'asd'. No further information provided regarding the claim.",
+      "priority": "low",
+      "status": "todo",
+      "policy_number": null,
+      "claim_type": "other",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": null,
+      "claim_amount": null,
+      "missing_fields": [
+        "claimant_name",
+        "claimant_email",
+        "claimant_phone",
+        "policy_number",
+        "claim_date",
+        "incident_date",
+        "incident_location",
+        "claim_amount"
+      ],
+      "has_missing_critical_fields": true,
+      "action_items": [
+        {
+          "id": "ACT-112B6F0C",
+          "title": "1. Contact the sender to request full claim details including claimant informati",
+          "details": "1. Contact the sender to request full claim details including claimant information, policy number, and incident specifics.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": "Reach out to the sender for missing claim information before proceeding.",
+      "created_timestamp": "2024-06-13T12:00:00Z",
+      "source_job_id": 3,
+      "source_model_id": "gpt-4.1",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Unclear insurance claim request received",
+        "subject": null,
+        "claimant_name": null,
+        "claimant_email": null,
+        "claimant_phone": null,
+        "description": "Received an email with the content 'asd'. No further information provided regarding the claim.",
+        "priority": "low",
+        "policy_number": null,
+        "claim_type": "other",
+        "claim_date": null,
+        "incident_date": null,
+        "incident_location": null,
+        "claim_amount": null,
+        "missing_fields": [
+          "claimant_name",
+          "claimant_email",
+          "claimant_phone",
+          "policy_number",
+          "claim_date",
+          "incident_date",
+          "incident_location",
+          "claim_amount"
+        ],
+        "action_items": [
+          "1. Contact the sender to request full claim details including claimant information, policy number, and incident specifics."
+        ],
+        "next_steps": "Reach out to the sender for missing claim information before proceeding.",
+        "created_timestamp": "2024-06-13T12:00:00Z",
+        "model_id": "gpt-4.1"
+      },
+      "created_at": "2026-01-26T15:32:28.576909",
+      "updated_at": "2026-01-26T15:32:28.576909",
+      "id": 5
     }
   ]
 }

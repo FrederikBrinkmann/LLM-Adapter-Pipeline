@@ -58,6 +58,8 @@ def _prepare_ticket_payload(job: Job, structured_payload: dict[str, Any]) -> dic
     raw_actions = structured_payload.get("action_items") or []
     action_items: list[dict[str, Any]] = []
     if isinstance(raw_actions, list):
+        # Normalize both string and object formats to uniform structure
+        # Supports hybrid: LLM can return ["string"] or [{"title": "...", "details": "..."}]
         for entry in raw_actions:
             if isinstance(entry, str):
                 text = entry.strip()

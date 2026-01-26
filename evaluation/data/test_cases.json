@@ -1,0 +1,106 @@
+{
+  "test_cases": [
+    {
+      "id": "EASY_001",
+      "difficulty": "easy",
+      "email": "Guten Tag,\n\nmein Keller wurde nach dem Unwetter geflutet. Der Schaden beträgt ca. 15.000 Euro.\n\nVersicherungsnehmer: Max Mustermann\nVersicherungsnummer: POL-2025-001\nE-Mail: max@example.com\nTelefon: +49 123 456789\n\nSchadendatum: 2025-01-22\nEreignistag: 2025-01-22\n\nMfG\nMax",
+      "expected": {
+        "claimant_name": "Max Mustermann",
+        "claimant_email": "max@example.com",
+        "claimant_phone": "+49 123 456789",
+        "policy_number": "POL-2025-001",
+        "claim_type": "damage",
+        "claim_amount": 15000,
+        "claim_date": "2025-01-22",
+        "incident_date": "2025-01-22",
+        "missing_fields": [],
+        "has_missing_critical_fields": false
+      }
+    },
+    {
+      "id": "MEDIUM_001",
+      "difficulty": "medium",
+      "email": "Hallo,\n\nich hatte einen Autounfall auf der Autobahn. Mein Auto ist total beschädigt.\n\nMein Name ist Anna Schmidt.\nDie Reparaturkosten werden auf etwa 25.000 Euro geschätzt.\n\nBitte um Schadensbearbeitung.",
+      "expected": {
+        "claimant_name": "Anna Schmidt",
+        "claimant_email": null,
+        "claimant_phone": null,
+        "policy_number": null,
+        "claim_type": "liability",
+        "claim_amount": 25000,
+        "claim_date": null,
+        "incident_date": null,
+        "missing_fields": ["policy_number", "claimant_email", "incident_date"],
+        "has_missing_critical_fields": true
+      }
+    },
+    {
+      "id": "MEDIUM_002",
+      "difficulty": "medium",
+      "email": "Schadensmeldung:\n\nVersicherte Person: Peter Wagner\nVersicherungsnummer: VN-1234-5678\n\nIch hatte einen medizinischen Notfall und musste ins Krankenhaus. Die Kosten betragen 8.500 Euro.\n\nSchadendatum: 23. Januar 2025",
+      "expected": {
+        "claimant_name": "Peter Wagner",
+        "claimant_email": null,
+        "claimant_phone": null,
+        "policy_number": "VN-1234-5678",
+        "claim_type": "medical",
+        "claim_amount": 8500,
+        "claim_date": "2025-01-23",
+        "incident_date": "2025-01-23",
+        "missing_fields": ["claimant_email", "claimant_phone"],
+        "has_missing_critical_fields": false
+      }
+    },
+    {
+      "id": "HARD_001",
+      "difficulty": "hard",
+      "email": "Guten Tag,\n\nEs ist etwas Schlimmes passiert und ich weiß nicht mehr, wo meine Versicherungsunterlagen sind. Ich benötige dringend Hilfe.\n\nKönnten Sie mich bitte kontaktieren?\n\nDanke",
+      "expected": {
+        "claimant_name": null,
+        "claimant_email": null,
+        "claimant_phone": null,
+        "policy_number": null,
+        "claim_type": "other",
+        "claim_amount": null,
+        "claim_date": null,
+        "incident_date": null,
+        "missing_fields": ["claimant_name", "policy_number", "claim_date", "incident_date", "claim_type"],
+        "has_missing_critical_fields": true
+      }
+    },
+    {
+      "id": "HARD_002",
+      "difficulty": "hard",
+      "email": "Betreff: DRINGEND - Todefall\n\nMein Ehemann ist gestern überraschend gestorben. Ich bin völlig verzweifelt.\n\nEr hatte eine Versicherung bei Ihnen, aber ich finde die Nummer nicht. Die Kosten für die Bestattung betragen ca. 8.000 Euro.\n\nDatum: Gestern\n\nBitte helfen Sie mir.\n\nSabine K.",
+      "expected": {
+        "claimant_name": "Sabine K.",
+        "claimant_email": null,
+        "claimant_phone": null,
+        "policy_number": null,
+        "claim_type": "death",
+        "claim_amount": 8000,
+        "claim_date": null,
+        "incident_date": null,
+        "missing_fields": ["policy_number", "claim_date", "incident_date", "claimant_email"],
+        "has_missing_critical_fields": true
+      }
+    },
+    {
+      "id": "HARD_003",
+      "difficulty": "hard",
+      "email": "Die Wohnung ist überschwemmt. 50.000€ Schaden mindestens. Es ist eine Katastrophe.\n\nJohn Smith\njohn@mail.de\n+49 987 654321\n\nVersicherung: ???\nWann: Heute\nWo: Köln",
+      "expected": {
+        "claimant_name": "John Smith",
+        "claimant_email": "john@mail.de",
+        "claimant_phone": "+49 987 654321",
+        "policy_number": null,
+        "claim_type": "damage",
+        "claim_amount": 50000,
+        "claim_date": null,
+        "incident_date": null,
+        "missing_fields": ["policy_number", "claim_date", "incident_date"],
+        "has_missing_critical_fields": true
+      }
+    }
+  ]
+}
