@@ -1,5 +1,5 @@
 {
-  "next_id": 6,
+  "next_id": 8,
   "tickets": [
     {
       "id": 1,
@@ -335,6 +335,196 @@
       "created_at": "2026-01-26T15:32:28.576909",
       "updated_at": "2026-01-26T15:32:28.576909",
       "id": 5
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Krankhausaufenthalt und OP \u2013 medizinische Notlage, Forderung auf Auszahlung",
+      "summary": "Krankhausaufenthalt und OP \u2013 medizinische Notlage, Forderung auf Auszahlung",
+      "claimant_name": "Hannah M\u00fcller",
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "Die Kundin Hannah M\u00fcller berichtet von einem Krankenhausaufenthalt mit Operation aufgrund einer medizinischen Notlage. Sie \u00e4u\u00dfert Unmut \u00fcber die bisherige Bearbeitung und fordert die Auszahlung ihrer Anspr\u00fcche unter Angabe der Policennummer POL-2025-1234. Sie droht mit weiteren Schritten, falls keine zeitnahe Bearbeitung erfolgt.",
+      "priority": "medium",
+      "status": "todo",
+      "policy_number": "POL-2025-1234",
+      "claim_type": "medical",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": null,
+      "claim_amount": null,
+      "missing_fields": [
+        "claimant_email",
+        "claimant_phone",
+        "claim_date",
+        "incident_date",
+        "incident_location",
+        "claim_amount"
+      ],
+      "has_missing_critical_fields": false,
+      "action_items": [
+        {
+          "id": "ACT-8D07CB6E",
+          "title": "1. Kontaktieren Sie Hannah M\u00fcller zur Kl\u00e4rung der fehlenden Kontaktdaten.",
+          "details": "1. Kontaktieren Sie Hannah M\u00fcller zur Kl\u00e4rung der fehlenden Kontaktdaten.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-629E0DA5",
+          "title": "2. Erfragen Sie das genaue Datum des Vorfalls und des Krankenhausaufenthalts.",
+          "details": "2. Erfragen Sie das genaue Datum des Vorfalls und des Krankenhausaufenthalts.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-2BCEDBF1",
+          "title": "3. Fordern Sie Nachweise zur medizinischen Notlage und zur OP an.",
+          "details": "3. Fordern Sie Nachweise zur medizinischen Notlage und zur OP an.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-84C01F34",
+          "title": "4. Kl\u00e4ren Sie die geforderte Anspruchssumme.",
+          "details": "4. Kl\u00e4ren Sie die geforderte Anspruchssumme.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-FB08E223",
+          "title": "5. Pr\u00fcfen Sie die Police POL-2025-1234 auf Leistungsanspruch.",
+          "details": "5. Pr\u00fcfen Sie die Police POL-2025-1234 auf Leistungsanspruch.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": "Kontaktieren Sie die Kundin, erfassen Sie alle fehlenden Angaben und pr\u00fcfen Sie die Anspruchsberechtigung.",
+      "created_timestamp": "2024-06-13T12:00:00Z",
+      "source_job_id": 4,
+      "source_model_id": "gpt-4.1",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Krankhausaufenthalt und OP \u2013 medizinische Notlage, Forderung auf Auszahlung",
+        "subject": null,
+        "claimant_name": "Hannah M\u00fcller",
+        "claimant_email": null,
+        "claimant_phone": null,
+        "description": "Die Kundin Hannah M\u00fcller berichtet von einem Krankenhausaufenthalt mit Operation aufgrund einer medizinischen Notlage. Sie \u00e4u\u00dfert Unmut \u00fcber die bisherige Bearbeitung und fordert die Auszahlung ihrer Anspr\u00fcche unter Angabe der Policennummer POL-2025-1234. Sie droht mit weiteren Schritten, falls keine zeitnahe Bearbeitung erfolgt.",
+        "priority": "medium",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "medical",
+        "claim_date": null,
+        "incident_date": null,
+        "incident_location": null,
+        "claim_amount": null,
+        "missing_fields": [
+          "claimant_email",
+          "claimant_phone",
+          "claim_date",
+          "incident_date",
+          "incident_location",
+          "claim_amount"
+        ],
+        "action_items": [
+          "1. Kontaktieren Sie Hannah M\u00fcller zur Kl\u00e4rung der fehlenden Kontaktdaten.",
+          "2. Erfragen Sie das genaue Datum des Vorfalls und des Krankenhausaufenthalts.",
+          "3. Fordern Sie Nachweise zur medizinischen Notlage und zur OP an.",
+          "4. Kl\u00e4ren Sie die geforderte Anspruchssumme.",
+          "5. Pr\u00fcfen Sie die Police POL-2025-1234 auf Leistungsanspruch."
+        ],
+        "next_steps": "Kontaktieren Sie die Kundin, erfassen Sie alle fehlenden Angaben und pr\u00fcfen Sie die Anspruchsberechtigung.",
+        "created_timestamp": "2024-06-13T12:00:00Z",
+        "model_id": "gpt-4.1"
+      },
+      "created_at": "2026-01-27T18:04:44.227617",
+      "updated_at": "2026-01-27T18:04:44.227617",
+      "id": 6
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Meldung eines Wasserschadens - Versicherungsnummer POL-2025-2345",
+      "summary": "Wasserschaden am 10.10.2023 in Keller \u2013 POL-2025-2345, ca. 20.000 Euro",
+      "claimant_name": "Max Mustermann",
+      "claimant_email": "max.mustermann@email.de",
+      "claimant_phone": "0176-12345678",
+      "description": "Max Mustermann meldet einen Wasserschaden durch Rohrbruch am 10.10.2023 im Keller seines Hauses (Musterstra\u00dfe 1, 12345 Musterstadt). Der Schaden betrifft W\u00e4nde, B\u00f6den und gelagerte Gegenst\u00e4nde. Die Schadensh\u00f6he wird auf ca. 20.000 Euro gesch\u00e4tzt. Ein Sanit\u00e4rfachmann wurde bereits beauftragt, um den Rohrbruch zu beheben und das Wasser abzupumpen. Schadensaufstellung und Fotos wurden beigef\u00fcgt.",
+      "priority": "high",
+      "status": "todo",
+      "policy_number": "POL-2025-2345",
+      "claim_type": "damage",
+      "claim_date": null,
+      "incident_date": "2023-10-10",
+      "incident_location": "Musterstra\u00dfe 1, 12345 Musterstadt",
+      "claim_amount": 20000.0,
+      "missing_fields": [
+        "claim_date"
+      ],
+      "has_missing_critical_fields": false,
+      "action_items": [
+        {
+          "id": "ACT-5395ADA5",
+          "title": "1. Pr\u00fcfen der beigef\u00fcgten Schadensaufstellung und Fotos.",
+          "details": "1. Pr\u00fcfen der beigef\u00fcgten Schadensaufstellung und Fotos.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-B48B880D",
+          "title": "2. Kontaktaufnahme mit Max Mustermann zur Best\u00e4tigung des Schadens und Kl\u00e4rung o",
+          "details": "2. Kontaktaufnahme mit Max Mustermann zur Best\u00e4tigung des Schadens und Kl\u00e4rung offener Fragen.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-2BB2DDBC",
+          "title": "3. Anfordern des Reparaturberichts vom Sanit\u00e4rfachmann.",
+          "details": "3. Anfordern des Reparaturberichts vom Sanit\u00e4rfachmann.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-F65E6028",
+          "title": "4. Erfassung des offiziellen Schadendatums im System.",
+          "details": "4. Erfassung des offiziellen Schadendatums im System.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": "Kontaktieren Sie den Kunden, pr\u00fcfen Sie die Unterlagen und fordern Sie das Schadendatum nach.",
+      "created_timestamp": "2024-06-13T12:00:00Z",
+      "source_job_id": 5,
+      "source_model_id": "gpt-4.1",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden am 10.10.2023 in Keller \u2013 POL-2025-2345, ca. 20.000 Euro",
+        "subject": "Meldung eines Wasserschadens - Versicherungsnummer POL-2025-2345",
+        "claimant_name": "Max Mustermann",
+        "claimant_email": "max.mustermann@email.de",
+        "claimant_phone": "0176-12345678",
+        "description": "Max Mustermann meldet einen Wasserschaden durch Rohrbruch am 10.10.2023 im Keller seines Hauses (Musterstra\u00dfe 1, 12345 Musterstadt). Der Schaden betrifft W\u00e4nde, B\u00f6den und gelagerte Gegenst\u00e4nde. Die Schadensh\u00f6he wird auf ca. 20.000 Euro gesch\u00e4tzt. Ein Sanit\u00e4rfachmann wurde bereits beauftragt, um den Rohrbruch zu beheben und das Wasser abzupumpen. Schadensaufstellung und Fotos wurden beigef\u00fcgt.",
+        "priority": "high",
+        "policy_number": "POL-2025-2345",
+        "claim_type": "damage",
+        "claim_date": null,
+        "incident_date": "2023-10-10",
+        "incident_location": "Musterstra\u00dfe 1, 12345 Musterstadt",
+        "claim_amount": 20000,
+        "missing_fields": [
+          "claim_date"
+        ],
+        "action_items": [
+          "1. Pr\u00fcfen der beigef\u00fcgten Schadensaufstellung und Fotos.",
+          "2. Kontaktaufnahme mit Max Mustermann zur Best\u00e4tigung des Schadens und Kl\u00e4rung offener Fragen.",
+          "3. Anfordern des Reparaturberichts vom Sanit\u00e4rfachmann.",
+          "4. Erfassung des offiziellen Schadendatums im System."
+        ],
+        "next_steps": "Kontaktieren Sie den Kunden, pr\u00fcfen Sie die Unterlagen und fordern Sie das Schadendatum nach.",
+        "created_timestamp": "2024-06-13T12:00:00Z",
+        "model_id": "gpt-4.1"
+      },
+      "created_at": "2026-01-27T18:09:11.105955",
+      "updated_at": "2026-01-27T18:09:11.105955",
+      "id": 7
     }
   ]
 }
