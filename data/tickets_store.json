@@ -1,5 +1,5 @@
 {
-  "next_id": 8,
+  "next_id": 10,
   "tickets": [
     {
       "id": 1,
@@ -525,6 +525,126 @@
       "created_at": "2026-01-27T18:09:11.105955",
       "updated_at": "2026-01-27T18:09:11.105955",
       "id": 7
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Insurance Claim",
+      "summary": "Insurance Claim",
+      "claimant_name": "dad",
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "dad",
+      "priority": "low",
+      "status": "todo",
+      "policy_number": null,
+      "claim_type": "other",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": null,
+      "claim_amount": null,
+      "missing_fields": [
+        "subject",
+        "email",
+        "phone"
+      ],
+      "has_missing_critical_fields": true,
+      "action_items": [],
+      "next_steps": "Please contact the claimant to gather more information.",
+      "created_timestamp": "2023-03-16T14:30:00.000Z",
+      "source_job_id": 14,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Insurance Claim",
+        "subject": null,
+        "claimant_name": "dad",
+        "claimant_email": null,
+        "claimant_phone": null,
+        "description": "",
+        "priority": "low",
+        "policy_number": null,
+        "claim_type": "other",
+        "claim_date": null,
+        "incident_date": null,
+        "incident_location": null,
+        "claim_amount": null,
+        "missing_fields": [
+          "subject",
+          "email",
+          "phone"
+        ],
+        "action_items": [],
+        "next_steps": "Please contact the claimant to gather more information.",
+        "created_timestamp": "2023-03-16T14:30:00.000Z",
+        "model_id": "llama3"
+      },
+      "created_at": "2026-01-27T19:05:23.333006",
+      "updated_at": "2026-01-27T19:05:23.333006",
+      "id": 8
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Wasserschadenmeldung POL-2025-2345",
+      "summary": "Wasserschadenmeldung POL-2025-2345",
+      "claimant_name": "Max Mustermann",
+      "claimant_email": "max.mustermann@email.de",
+      "claimant_phone": "+49 176 12345678",
+      "description": "Rohrbruch im Keller, \u00dcberflutung, Sch\u00e4den an W\u00e4nden, B\u00f6den und gelagerten Gegenst\u00e4nden. Sanit\u00e4rfachmann beauftragt, Rohrbruch zu beheben und Wasser abzupumpen.",
+      "priority": "high",
+      "status": "todo",
+      "policy_number": "POL-2025-2345",
+      "claim_type": "damage",
+      "claim_date": null,
+      "incident_date": "2023-10-10",
+      "incident_location": "Musterstra\u00dfe 1, 12345 Musterstadt",
+      "claim_amount": 20000.0,
+      "missing_fields": [
+        "claim_date"
+      ],
+      "has_missing_critical_fields": false,
+      "action_items": [
+        {
+          "id": "ACT-0DC9A991",
+          "title": "Request detailed damage assessment and photos from claimant",
+          "details": "Request detailed damage assessment and photos from claimant",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": "Please review the attached photos and request a detailed damage assessment from the claimant.",
+      "created_timestamp": "2023-10-12T14:30:00.000Z",
+      "source_job_id": 15,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschadenmeldung POL-2025-2345",
+        "subject": null,
+        "claimant_name": "Max Mustermann",
+        "claimant_email": "max.mustermann@email.de",
+        "claimant_phone": "+49 176 12345678",
+        "description": "Rohrbruch im Keller, \u00dcberflutung, Sch\u00e4den an W\u00e4nden, B\u00f6den und gelagerten Gegenst\u00e4nden. Sanit\u00e4rfachmann beauftragt, Rohrbruch zu beheben und Wasser abzupumpen.",
+        "priority": "high",
+        "policy_number": "POL-2025-2345",
+        "claim_type": "damage",
+        "claim_date": null,
+        "incident_date": "2023-10-10",
+        "incident_location": "Musterstra\u00dfe 1, 12345 Musterstadt",
+        "claim_amount": 20000,
+        "missing_fields": [
+          "claim_date"
+        ],
+        "action_items": [
+          {
+            "title": "Request detailed damage assessment and photos from claimant"
+          }
+        ],
+        "next_steps": "Please review the attached photos and request a detailed damage assessment from the claimant.",
+        "created_timestamp": "2023-10-12T14:30:00.000Z",
+        "model_id": "llama3"
+      },
+      "created_at": "2026-01-27T19:08:18.929532",
+      "updated_at": "2026-01-27T19:08:18.929532",
+      "id": 9
     }
   ]
 }

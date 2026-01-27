@@ -14,6 +14,8 @@ def _build_request(prompt_text: str, model_id: str, parameters: dict[str, Any]) 
         "model": model_id,
         "prompt": prompt_text,
         "stream": False,
+        # Enforce JSON mode so models like llama/mistral return strict JSON
+        "format": "json",
     }
 
     options: dict[str, Any] = {}

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from typing import Any, Callable
 
@@ -40,13 +41,37 @@ def format_http_error(provider: str, exc: httpx.HTTPError) -> str:
 
 
 def parse_json_text(text: str, *, provider: str, empty_error: str) -> dict[str, Any]:
+    def _try_load(payload: str) -> dict[str, Any] | None:
+        try:
+            return json.loads(payload)
+        except json.JSONDecodeError:
+            return None
+
     content = text.strip()
     if not content:
         raise LLMError(empty_error)
-    try:
-        return json.loads(content)
-    except json.JSONDecodeError as exc:  # noqa: B904
-        raise LLMError(f"{provider} returned invalid JSON content") from exc
+
+    # 1) Plain JSON
+    parsed = _try_load(content)
+    if parsed is not None:
+        return parsed
+
+    # 2) Code-fence wrapped ```json ... ```
+    fenced = re.match(r"^```(?:json)?\s*(.*)```$", content, flags=re.DOTALL)
+    if fenced:
+        parsed = _try_load(fenced.group(1).strip())
+        if parsed is not None:
+            return parsed
+
+    # 3) Fallback: grab the first {...} block
+    start = content.find("{")
+    end = content.rfind("}")
+    if start != -1 and end != -1 and end > start:
+        parsed = _try_load(content[start : end + 1])
+        if parsed is not None:
+            return parsed
+
+    raise LLMError(f"{provider} returned invalid JSON content")
 
 
 __all__ = [

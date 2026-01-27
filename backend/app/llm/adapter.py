@@ -36,6 +36,7 @@ class LLMAdapter:
             raise LLMError(f"Provider '{self.provider}' is not supported")
 
         prompt_text = build_email_prompt(text)
+
         request_spec = handler.build_request(prompt_text, self.model_id, self.parameters)
 
         async with httpx.AsyncClient(timeout=request_spec.timeout) as client:
@@ -48,6 +49,14 @@ class LLMAdapter:
                 response.raise_for_status()
             except httpx.HTTPError as exc:  # noqa: BLE001
                 raise LLMError(handler.format_http_error(exc)) from exc
+
+        # Log raw Ollama response for debugging JSON parsing issues
+        if self.provider == "ollama":
+            try:
+                raw_text = response.text
+                print("OLLAMA RAW RESPONSE (first 2KB):", raw_text[:2000])
+            except Exception:
+                pass
 
         try:
             data = response.json()
