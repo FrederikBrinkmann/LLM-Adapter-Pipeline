@@ -1,5 +1,5 @@
 {
-  "next_id": 10,
+  "next_id": 13,
   "tickets": [
     {
       "id": 1,
@@ -645,6 +645,195 @@
       "created_at": "2026-01-27T19:08:18.929532",
       "updated_at": "2026-01-27T19:08:18.929532",
       "id": 9
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "das",
+      "summary": "das",
+      "claimant_name": null,
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "das",
+      "priority": "low",
+      "status": "todo",
+      "policy_number": null,
+      "claim_type": "other",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": null,
+      "claim_amount": null,
+      "missing_fields": [
+        "claimant_name",
+        "policy_number",
+        "claim_date",
+        "incident_date"
+      ],
+      "has_missing_critical_fields": true,
+      "action_items": [],
+      "next_steps": "Please contact the claimant to gather more information.",
+      "created_timestamp": "",
+      "source_job_id": 16,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "",
+        "subject": null,
+        "claimant_name": null,
+        "claimant_email": null,
+        "claimant_phone": null,
+        "description": "",
+        "priority": "low",
+        "policy_number": null,
+        "claim_type": "other",
+        "claim_date": null,
+        "incident_date": null,
+        "incident_location": null,
+        "claim_amount": null,
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "action_items": [],
+        "next_steps": "Please contact the claimant to gather more information.",
+        "created_timestamp": "",
+        "model_id": "llama3"
+      },
+      "created_at": "2026-01-27T19:51:55.010177",
+      "updated_at": "2026-01-27T19:51:55.010177",
+      "id": 10
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Incomplete insurance claim email received",
+      "summary": "Incomplete insurance claim email received",
+      "claimant_name": null,
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "Received an email with no claim details or contact information. The content was 'dssda'.",
+      "priority": "low",
+      "status": "todo",
+      "policy_number": null,
+      "claim_type": "other",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": null,
+      "claim_amount": null,
+      "missing_fields": [
+        "claimant_name",
+        "policy_number",
+        "claim_date",
+        "incident_date"
+      ],
+      "has_missing_critical_fields": true,
+      "action_items": [
+        {
+          "id": "ACT-2293EEE7",
+          "title": "Request complete claim information",
+          "details": "Contact the sender to obtain claimant name, policy number, claim and incident dates, and claim details.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": "Reach out to the sender for all missing critical claim information before proceeding.",
+      "created_timestamp": "2024-06-13T12:00:00Z",
+      "source_job_id": 17,
+      "source_model_id": "gpt-4.1",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Incomplete insurance claim email received",
+        "subject": null,
+        "claimant_name": null,
+        "claimant_email": null,
+        "claimant_phone": null,
+        "description": "Received an email with no claim details or contact information. The content was 'dssda'.",
+        "priority": "low",
+        "policy_number": null,
+        "claim_type": "other",
+        "claim_date": null,
+        "incident_date": null,
+        "incident_location": null,
+        "claim_amount": null,
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "action_items": [
+          {
+            "title": "Request complete claim information",
+            "details": "Contact the sender to obtain claimant name, policy number, claim and incident dates, and claim details."
+          }
+        ],
+        "next_steps": "Reach out to the sender for all missing critical claim information before proceeding.",
+        "created_timestamp": "2024-06-13T12:00:00Z",
+        "model_id": "gpt-4.1"
+      },
+      "created_at": "2026-02-01T18:53:41.146992",
+      "updated_at": "2026-02-01T18:53:41.146992",
+      "id": 11
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "dadasd",
+      "summary": "dadasd",
+      "claimant_name": null,
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "dadasd",
+      "priority": "low",
+      "status": "todo",
+      "policy_number": null,
+      "claim_type": null,
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": null,
+      "claim_amount": null,
+      "missing_fields": [
+        "claimant_name",
+        "policy_number",
+        "claim_date",
+        "incident_date",
+        "claim_type"
+      ],
+      "has_missing_critical_fields": true,
+      "action_items": [],
+      "next_steps": "",
+      "created_timestamp": "",
+      "source_job_id": 18,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "",
+        "subject": null,
+        "claimant_name": null,
+        "claimant_email": null,
+        "claimant_phone": null,
+        "description": "",
+        "priority": "low",
+        "policy_number": null,
+        "claim_type": null,
+        "claim_date": null,
+        "incident_date": null,
+        "incident_location": null,
+        "claim_amount": null,
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date",
+          "claim_type"
+        ],
+        "action_items": [],
+        "next_steps": "",
+        "created_timestamp": "",
+        "model_id": "llama3"
+      },
+      "created_at": "2026-02-02T18:20:11.182464",
+      "updated_at": "2026-02-02T18:20:11.182464",
+      "id": 12
     }
   ]
 }
