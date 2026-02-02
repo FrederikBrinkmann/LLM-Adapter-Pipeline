@@ -84,7 +84,11 @@ PROMPT_TEMPLATE = dedent(
   - Critical fields to prioritize: claimant_name, policy_number, claim_date, incident_date, claim_type
   - Validate claim_date and incident_date in YYYY-MM-DD format.
   - Set unknown values to null, then add field name to missing_fields.
-  - Priority: urgent (life/health risk, > €50k), high (> €10k), medium (standard), low (inquiry).
+  - Priority (EXACT RULES):
+    - urgent: amount >= 50,000 OR claim_type in {death, medical}
+    - high: if not urgent, amount 10,000–49,999 OR claim_type in {liability, damage}
+    - low: if not urgent/high, amount < 3,000 AND claim_type NOT in {liability, medical, death, damage}
+    - medium: otherwise (default)
   - Claim type: must match exactly one enum value.
   - Action items: can be simple strings OR objects with {title, details}. Include details for complex tasks.
   - next_steps: brief instruction for the support team on how to proceed.
