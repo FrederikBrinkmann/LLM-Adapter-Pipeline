@@ -19,19 +19,33 @@ def _derive_priority(
     claim_amount: float | None,
     missing_fields: list[str],
 ) -> str:
+    """
+    Priority rules (final):
+    1) Urgent: amount >= 50k OR claim_type in {death, medical}
+    2) High: if not urgent, amount 10k-49,999 OR claim_type in {liability, damage}
+    3) Low:  if not urgent/high, amount < 3k AND claim_type not in {liability, medical, death, damage}
+    4) Medium: otherwise
+    """
     if isinstance(claim_amount, (int, float)):
         if claim_amount >= 50000:
             return "urgent"
-        if claim_amount >= 10000:
-            return "high"
     if claim_type:
         claim = claim_type.lower()
         if claim in {"death", "medical"}:
             return "urgent"
+    if isinstance(claim_amount, (int, float)):
+        if 10000 <= claim_amount < 50000:
+            return "high"
+    if claim_type:
+        claim = claim_type.lower()
         if claim in {"liability", "damage"}:
             return "high"
-    if len(missing_fields) >= 4:
-        return "high"
+    if (
+        isinstance(claim_amount, (int, float))
+        and claim_amount < 3000
+        and (not claim_type or claim_type.lower() not in {"liability", "medical", "death", "damage"})
+    ):
+        return "low"
     return "medium"
 
 
