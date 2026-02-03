@@ -48,6 +48,16 @@ MODEL_CONFIGS: tuple[ModelConfig, ...] = (
         display_name="OpenAI GPT-4.1 mini",
         provider="openai",
     ),
+
+    ModelConfig(
+    model_id="gpt-5.2",
+    display_name="OpenAI GPT-5.2",
+    provider="openai",
+    parameters={
+        "temperature": 0.2,
+        "max_tokens": 1200,
+    },
+  ),
     ModelConfig(
         model_id="mistral",
         display_name="Mistral 7B (Ollama)",

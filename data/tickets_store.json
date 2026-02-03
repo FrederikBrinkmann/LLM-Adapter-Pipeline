@@ -1,5 +1,5 @@
 {
-  "next_id": 13,
+  "next_id": 17,
   "tickets": [
     {
       "id": 1,
@@ -834,6 +834,297 @@
       "created_at": "2026-02-02T18:20:11.182464",
       "updated_at": "2026-02-02T18:20:11.182464",
       "id": 12
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Dringender Wasserschaden durch Rohrbruch im Keller \u2013 Hilfe ben\u00f6tigt",
+      "summary": "Dringender Wasserschaden durch Rohrbruch im Keller \u2013 Hilfe ben\u00f6tigt",
+      "claimant_name": "Markus M\u00fcller",
+      "claimant_email": null,
+      "claimant_phone": "0171 1234567",
+      "description": "Markus M\u00fcller meldet einen schweren Wasserschaden durch einen Rohrbruch im Keller seines Hauses. Der Keller steht unter Wasser, die Situation verschlimmert sich und der Schaden nimmt zu. Der Versicherungsnehmer ist \u00fcberfordert und ben\u00f6tigt dringend Unterst\u00fctzung und Anweisungen zum weiteren Vorgehen. Die Versicherungsnummer ist vermutlich POL-2025-5678.",
+      "priority": "urgent",
+      "status": "todo",
+      "policy_number": "POL-2025-5678",
+      "claim_type": "damage",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": "Zuhause (Keller)",
+      "claim_amount": null,
+      "missing_fields": [
+        "claimant_email",
+        "claim_date",
+        "incident_date",
+        "claim_amount"
+      ],
+      "has_missing_critical_fields": false,
+      "action_items": [
+        {
+          "id": "ACT-27F37577",
+          "title": "Kontaktaufnahme mit Markus M\u00fcller",
+          "details": "Rufen Sie den Kunden umgehend unter 0171 1234567 an, um Details zu kl\u00e4ren und Soforthilfe zu organisieren.",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-AFE83CA5",
+          "title": "Notfallservice beauftragen",
+          "details": "Organisieren Sie einen Notdienst zur Schadensbegrenzung (z.B. Wasser abpumpen, weitere Sch\u00e4den verhindern).",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-FA5CD8A4",
+          "title": "Versicherungsnummer und weitere Kontaktdaten verifizieren",
+          "details": "Versicherungsnummer und weitere Kontaktdaten verifizieren",
+          "suggested_by": "llm",
+          "status": "open"
+        },
+        {
+          "id": "ACT-D2C9313B",
+          "title": "Erfragen Sie das genaue Schadendatum und den Schadensumfang",
+          "details": "Erfragen Sie das genaue Schadendatum und den Schadensumfang",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": "Kontaktieren Sie den Kunden sofort telefonisch, veranlassen Sie einen Notdienst und fordern Sie fehlende Angaben (E-Mail, Schadendatum, Schadensh\u00f6he) an.",
+      "created_timestamp": "2024-06-13T12:00:00Z",
+      "source_job_id": 19,
+      "source_model_id": "gpt-4.1",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Dringender Wasserschaden durch Rohrbruch im Keller \u2013 Hilfe ben\u00f6tigt",
+        "subject": null,
+        "claimant_name": "Markus M\u00fcller",
+        "claimant_email": null,
+        "claimant_phone": "0171 1234567",
+        "description": "Markus M\u00fcller meldet einen schweren Wasserschaden durch einen Rohrbruch im Keller seines Hauses. Der Keller steht unter Wasser, die Situation verschlimmert sich und der Schaden nimmt zu. Der Versicherungsnehmer ist \u00fcberfordert und ben\u00f6tigt dringend Unterst\u00fctzung und Anweisungen zum weiteren Vorgehen. Die Versicherungsnummer ist vermutlich POL-2025-5678.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-5678",
+        "claim_type": "damage",
+        "claim_date": null,
+        "incident_date": null,
+        "incident_location": "Zuhause (Keller)",
+        "claim_amount": null,
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date",
+          "claim_amount"
+        ],
+        "action_items": [
+          {
+            "title": "Kontaktaufnahme mit Markus M\u00fcller",
+            "details": "Rufen Sie den Kunden umgehend unter 0171 1234567 an, um Details zu kl\u00e4ren und Soforthilfe zu organisieren."
+          },
+          {
+            "title": "Notfallservice beauftragen",
+            "details": "Organisieren Sie einen Notdienst zur Schadensbegrenzung (z.B. Wasser abpumpen, weitere Sch\u00e4den verhindern)."
+          },
+          "Versicherungsnummer und weitere Kontaktdaten verifizieren",
+          "Erfragen Sie das genaue Schadendatum und den Schadensumfang"
+        ],
+        "next_steps": "Kontaktieren Sie den Kunden sofort telefonisch, veranlassen Sie einen Notdienst und fordern Sie fehlende Angaben (E-Mail, Schadendatum, Schadensh\u00f6he) an.",
+        "created_timestamp": "2024-06-13T12:00:00Z",
+        "model_id": "gpt-4.1"
+      },
+      "created_at": "2026-02-02T20:03:11.771197",
+      "updated_at": "2026-02-02T20:03:11.771197",
+      "id": 13
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Water damage claim - POL-2025-5678",
+      "summary": "Water damage claim - POL-2025-5678",
+      "claimant_name": "Markus M\u00fcller",
+      "claimant_email": null,
+      "claimant_phone": "0171 1234567",
+      "description": "Rohrbruch in the Keller, water damage, unsure what to do next. Need help with claim process.",
+      "priority": "high",
+      "status": "todo",
+      "policy_number": "POL-2025-5678",
+      "claim_type": "damage",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": "Home (Keller)",
+      "claim_amount": null,
+      "missing_fields": [
+        "claim_date",
+        "incident_date"
+      ],
+      "has_missing_critical_fields": false,
+      "action_items": [
+        {
+          "id": "ACT-7759A64D",
+          "title": "Contact Markus M\u00fcller to clarify claim details",
+          "details": "Contact Markus M\u00fcller to clarify claim details",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": "Please contact Markus M\u00fcller to discuss the claim and schedule an inspection.",
+      "created_timestamp": "2023-03-16T14:30:00.000Z",
+      "source_job_id": 20,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Water damage claim - POL-2025-5678",
+        "subject": null,
+        "claimant_name": "Markus M\u00fcller",
+        "claimant_email": null,
+        "claimant_phone": "0171 1234567",
+        "description": "Rohrbruch in the Keller, water damage, unsure what to do next. Need help with claim process.",
+        "priority": "high",
+        "policy_number": "POL-2025-5678",
+        "claim_type": "damage",
+        "claim_date": null,
+        "incident_date": null,
+        "incident_location": "Home (Keller)",
+        "claim_amount": null,
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "action_items": [
+          {
+            "title": "Contact Markus M\u00fcller to clarify claim details"
+          }
+        ],
+        "next_steps": "Please contact Markus M\u00fcller to discuss the claim and schedule an inspection.",
+        "created_timestamp": "2023-03-16T14:30:00.000Z",
+        "model_id": "llama3"
+      },
+      "created_at": "2026-02-02T20:06:19.740058",
+      "updated_at": "2026-02-02T20:06:19.740058",
+      "id": 14
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Incomplete insurance claim email received",
+      "summary": "Incomplete insurance claim email received",
+      "claimant_name": null,
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "Received an email with the content 'cvcvx' but no claim details or contact information provided.",
+      "priority": "low",
+      "status": "todo",
+      "policy_number": null,
+      "claim_type": "other",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": null,
+      "claim_amount": null,
+      "missing_fields": [
+        "claimant_name",
+        "policy_number",
+        "claim_date",
+        "incident_date"
+      ],
+      "has_missing_critical_fields": true,
+      "action_items": [
+        {
+          "id": "ACT-021E2513",
+          "title": "Request complete claim information",
+          "details": "Contact the sender to obtain claimant name, policy number, claim date, incident date, and claim details.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": "Reach out to the sender for all missing critical claim information before proceeding.",
+      "created_timestamp": "2024-06-13T12:00:00Z",
+      "source_job_id": 21,
+      "source_model_id": "gpt-4.1",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Incomplete insurance claim email received",
+        "subject": null,
+        "claimant_name": null,
+        "claimant_email": null,
+        "claimant_phone": null,
+        "description": "Received an email with the content 'cvcvx' but no claim details or contact information provided.",
+        "priority": "low",
+        "policy_number": null,
+        "claim_type": "other",
+        "claim_date": null,
+        "incident_date": null,
+        "incident_location": null,
+        "claim_amount": null,
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "action_items": [
+          {
+            "title": "Request complete claim information",
+            "details": "Contact the sender to obtain claimant name, policy number, claim date, incident date, and claim details."
+          }
+        ],
+        "next_steps": "Reach out to the sender for all missing critical claim information before proceeding.",
+        "created_timestamp": "2024-06-13T12:00:00Z",
+        "model_id": "gpt-4.1"
+      },
+      "created_at": "2026-02-03T19:23:19.576835",
+      "updated_at": "2026-02-03T19:23:19.576835",
+      "id": 15
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Insurance Claim Processing",
+      "summary": "Insurance Claim Processing",
+      "claimant_name": null,
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "cvcvx",
+      "priority": "low",
+      "status": "todo",
+      "policy_number": null,
+      "claim_type": "other",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": null,
+      "claim_amount": null,
+      "missing_fields": [
+        "claimant_name",
+        "policy_number",
+        "claim_date",
+        "incident_date"
+      ],
+      "has_missing_critical_fields": true,
+      "action_items": [],
+      "next_steps": "Please review the claim details and contact the claimant for further information.",
+      "created_timestamp": "2023-03-16T14:30:00.000Z",
+      "source_job_id": 22,
+      "source_model_id": "llama3",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Insurance Claim Processing",
+        "subject": null,
+        "claimant_name": null,
+        "description": null,
+        "priority": "low",
+        "policy_number": null,
+        "claim_type": "other",
+        "claim_date": null,
+        "incident_date": null,
+        "incident_location": null,
+        "claim_amount": null,
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "action_items": [],
+        "next_steps": "Please review the claim details and contact the claimant for further information.",
+        "created_timestamp": "2023-03-16T14:30:00.000Z",
+        "model_id": "llama3"
+      },
+      "created_at": "2026-02-03T19:23:55.707663",
+      "updated_at": "2026-02-03T19:23:55.707663",
+      "id": 16
     }
   ]
 }

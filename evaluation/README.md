@@ -1,138 +1,117 @@
 # Evaluation Framework
 
-Framework für die Evaluierung verschiedener LLM-Modelle und Prompts bei der Extraktion strukturierter Versicherungschadendaten.
+Dieses Modul dient zur systematischen Evaluation verschiedener LLM-Modelle bei der Extraktion strukturierter Daten aus Versicherungs-E-Mails.
 
-## 📊 Struktur
+## 📁 Struktur
 
 ```
 evaluation/
-├── data/
-│   └── test_cases.json           # Test-Mails mit erwarteten Outputs
-├── results/
-│   ├── evaluation_results.json   # Rohe Ergebnisse
-│   └── EVALUATION_REPORT.md      # Generierter Report
-├── metrics.py                    # Bewertungsmetriken
-├── run_evaluation.py             # Evaluation Executor
-├── generate_report.py            # Report Generator
-└── README.md                     # Diese Datei
+├── __init__.py
+├── config.py                    # Zentrale Konfiguration
+├── metrics.py                   # Bewertungsmetriken
+├── runner.py                    # Evaluation durchführen
+├── report.py                    # Report generieren
+├── README.md
+│
+├── datengenerierung/            # Synthetische Testdaten
+│   ├── __init__.py
+│   └── generate_dataset.py
+│
+├── data/                        # Input-Daten
+│   ├── synthetic_test_emails.json
+│   └── synthetic_test_emails_gold.json
+│
+└── results/                     # Output
+    ├── evaluation_results.json
+    └── EVALUATION_REPORT.md
 ```
 
-## 🎯 Schnelleinstieg
+## 🚀 Nutzung
 
-### 1. Test-Cases laden
+### 1. Synthetische E-Mails generieren (einmalig)
+
 ```bash
-# Bereits vorhanden in evaluation/data/test_cases.json
-# Enthält 6 Test-Cases (easy, medium, hard)
+python -m evaluation.datengenerierung.generate_dataset
 ```
 
 ### 2. Evaluation durchführen
+
 ```bash
-python -m evaluation.run_evaluation
-```
+# Alle Modelle testen
+python -m evaluation.runner
 
-Output:
-```
-🚀 Starting Evaluation
-   Models: ['gpt-4o-mini']
-   Test Cases: 6
-   Total runs: 6
+# Nur bestimmte Modelle
+python -m evaluation.runner --models gpt-4o claude-3-opus
 
-📊 Testing Model: gpt-4o-mini
-  [1/6] EASY_001       ✅ Accuracy: 100.0%
-  [2/6] MEDIUM_001    ✅ Accuracy: 75.0%
-  [3/6] MEDIUM_002    ✅ Accuracy: 100.0%
-  [4/6] HARD_001      ✅ Accuracy: 25.0%
-  [5/6] HARD_002      ❌ Error: Timeout
-  [6/6] HARD_003      ✅ Accuracy: 80.0%
-
-💾 Results saved to: evaluation/results/evaluation_results.json
+# Quick-Test mit 10 E-Mails
+python -m evaluation.runner --limit 10
 ```
 
 ### 3. Report generieren
+
 ```bash
-python -m evaluation.generate_report
+python -m evaluation.report
 ```
 
-Output: `evaluation/results/EVALUATION_REPORT.md`
+## 📊 Metriken
 
-## 📐 Metriken
+| Metrik | Beschreibung |
+|--------|--------------|
+| **Field Accuracy** | % der Felder die exakt mit Gold-Standard übereinstimmen |
+| **Critical Accuracy** | Accuracy nur für kritische Felder |
+| **Schema Valid** | Output entspricht dem erwarteten JSON-Schema |
+| **Time (ms)** | Antwortzeit des Modells |
 
-### Field Accuracy
-- Prozentsatz korrekter kritischer Felder
-- Kritische Felder: `claimant_name`, `policy_number`, `claim_type`, `claim_amount`
-- Numerische Werte mit 1% Toleranz
+### Kritische Felder
 
-### Schema Compliance
-- Entspricht Output dem JSON_SCHEMA?
-- Validierung gegen OpenAI JSON Schema Format
+Die folgenden Felder werden bei der Critical Accuracy besonders bewertet:
 
-### Missing Fields Detection
-- **Precision**: Wie viele erkannten Felder sind wirklich fehlend?
-- **Recall**: Wie viele fehlenden Felder wurden erkannt?
-- **F1-Score**: Harmonisches Mittel (für Balance)
+- `claimant_name` - Name des Antragstellers
+- `policy_number` - Versicherungsnummer
+- `claim_type` - Art des Schadens
+- `incident_date` - Datum des Vorfalls
+- `claim_amount` - Schadenshöhe
+- `priority` - Priorität des Tickets
 
-### Critical Fields Detection
-- Wurde `has_missing_critical_fields` korrekt erkannt?
-- Boolean: True wenn 3+ kritische Felder fehlen
+### Missing Fields Erkennung
 
-## 📝 Test-Cases
+Zusätzlich wird bewertet, wie gut das Modell fehlende Felder erkennt:
 
-### EASY (Vollständige Info)
-- Alle kritischen Felder vorhanden
-- Klare Formatierung
-- Erwartet: 90%+ Accuracy
+- **Precision** - Wie viele der erkannten fehlenden Felder sind tatsächlich fehlend?
+- **Recall** - Wie viele der tatsächlich fehlenden Felder wurden erkannt?
+- **F1-Score** - Harmonisches Mittel aus Precision und Recall
 
-### MEDIUM (Ein kritisches Feld fehlt)
-- 1-2 wichtige Felder fehlen
-- Teilweise unformatiert
-- Erwartet: 70-90% Accuracy
+## 📄 Output
 
-### HARD (Mehrere kritische Felder fehlen)
-- 2+ kritische Felder fehlen
-- Emotional/unstrukturiert
-- Erwartet: 40-70% Accuracy
+Der generierte Report (`EVALUATION_REPORT.md`) enthält:
 
-## 🔧 Eigene Test-Cases hinzufügen
+1. **Modellvergleichstabelle** - Alle Modelle sortiert nach Performance
+2. **Fehlerübersicht** - Fehlgeschlagene Tests
+3. **Beste/Schlechteste Ergebnisse** - Pro Modell
+4. **Metrik-Erklärungen**
 
-Bearbeite `evaluation/data/test_cases.json`:
+## 🔧 Konfiguration
 
-```json
-{
-  "id": "CUSTOM_001",
-  "difficulty": "easy",
-  "email": "Ihre Test-Email hier...",
-  "expected": {
-    "claimant_name": "Name",
-    "policy_number": "ABC123",
-    "claim_type": "damage",
-    "claim_amount": 5000,
-    "missing_fields": [],
-    "has_missing_critical_fields": false
-  }
+Die zentrale Konfiguration befindet sich in `config.py`:
+
+```python
+# Timeout für einzelne LLM-Anfragen
+DEFAULT_TIMEOUT_SECONDS = 60
+
+# Kritische Felder für Bewertung
+CRITICAL_FIELDS = {
+    "claimant_name",
+    "policy_number",
+    "claim_type",
+    ...
 }
-```
 
-## 📊 Report Struktur
-
-Der generierte Report enthält:
-
-1. **Model Comparison** - Tabelle mit allen Modellen und Metrics
-2. **Performance by Difficulty** - Breakdown nach Schwierigkeit
-3. **Detailed Results** - Einzelne Test-Resultate
-4. **Conclusion** - Zusammenfassung und Empfehlungen
-
-## 🚀 Für Masterarbeit
-
-```markdown
-## Evaluation Kapitel
-
-Die Evaluation zeigt:
-- GPT-4o erreicht 95.2% Accuracy bei einfachen Fällen
-- Performance sinkt auf 72.3% bei komplexen Fällen
-- Schema Compliance bei allen Modellen >95%
-- Ollama Mistral 30% schneller aber 20% weniger akkurat
-
-→ Recommendation: GPT-4o für Production, Ollama für Cost-Optimization
+# Felder die beim Vergleich ignoriert werden
+IGNORE_FIELDS = {
+    "ticket_id",
+    "created_timestamp",
+    "model_id",
+}
 ```
 
 ## 📌 Nächste Schritte

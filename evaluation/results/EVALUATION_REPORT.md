@@ -1,125 +1,62 @@
 # LLM Evaluation Report
-Generated: 2026-01-26 16:40:52
-Total Test Runs: 14
 
-## Overview
+**Generiert:** 2026-02-03 20:32:15  
+**Tests:** 50 (50 erfolgreich, 0 fehlgeschlagen)  
+**Modelle:** 5
 
-This report evaluates different LLM models and prompts on their ability to extract
-structured insurance claim data from unstructured emails.
+---
 
-### Metrics Explained
+## 📊 Modellvergleich
 
-- **Accuracy**: Percentage of critical fields correctly extracted
-- **Schema Valid**: Output matches the required JSON schema
-- **Critical Fields**: Correct identification of has_missing_critical_fields
-- **F1 Score**: Balanced metric for missing fields detection (Precision + Recall)
+| Modell | Tests | Field Acc. | Critical Acc. | Schema | Ø Zeit |
+|--------|------:|----------:|-------------:|-------:|-------:|
+| `gpt-5.2` | 10 | 86.1% | 100.0% | 0% | 11387ms |
+| `gpt-4.1` | 10 | 81.5% | 95.0% | 0% | 6915ms |
+| `gpt-4.1-mini` | 10 | 77.7% | 91.7% | 0% | 5580ms |
+| `gpt-4o` | 10 | 80.0% | 90.0% | 0% | 5562ms |
+| `gpt-4o-mini` | 10 | 72.3% | 86.7% | 0% | 5359ms |
 
-## Model Comparison
-
-| Model | Runs | Avg Accuracy | Avg Time | Critical Fields | Passed |
-|-------|------|--------------|----------|-----------------|--------|
-| gpt-4.1 | 2 | 87.5% | 5905ms | 0% | 0% |
-| gpt-4.1-mini | 2 | 87.5% | 3462ms | 0% | 0% |
-| gpt-4o | 2 | 87.5% | 5162ms | 0% | 0% |
-| gpt-4o-mini | 2 | 87.5% | 6725ms | 0% | 0% |
-
-## Performance by Difficulty
-
-| Difficulty | Cases | Avg Accuracy | Avg F1 (Missing Fields) |
-|------------|-------|--------------|-------------------------|
-| Easy       |     4 |        100.0% |                    0.25 |
-| Medium     |     4 |         75.0% |                    0.73 |
-
-## Detailed Results
-
-### gpt-4.1 - EASY_001
-- **Difficulty**: easy
-- **Accuracy**: 100.0%
-- **Schema Valid**: ❌
-- **Critical Fields**: ❌
-- **Missing Fields F1**: 0.00
-- **Response Time**: 4968ms
-
-### gpt-4.1 - MEDIUM_001
-- **Difficulty**: medium
-- **Accuracy**: 75.0%
-- **Schema Valid**: ❌
-- **Critical Fields**: ❌
-- **Missing Fields F1**: 0.75
-- **Response Time**: 6842ms
-
-### gpt-4.1-mini - EASY_001
-- **Difficulty**: easy
-- **Accuracy**: 100.0%
-- **Schema Valid**: ❌
-- **Critical Fields**: ❌
-- **Missing Fields F1**: 0.00
-- **Response Time**: 3890ms
-
-### gpt-4.1-mini - MEDIUM_001
-- **Difficulty**: medium
-- **Accuracy**: 75.0%
-- **Schema Valid**: ❌
-- **Critical Fields**: ❌
-- **Missing Fields F1**: 0.75
-- **Response Time**: 3034ms
-
-### gpt-4o - EASY_001
-- **Difficulty**: easy
-- **Accuracy**: 100.0%
-- **Schema Valid**: ❌
-- **Critical Fields**: ❌
-- **Missing Fields F1**: 0.00
-- **Response Time**: 3640ms
-
-### gpt-4o - MEDIUM_001
-- **Difficulty**: medium
-- **Accuracy**: 75.0%
-- **Schema Valid**: ❌
-- **Critical Fields**: ❌
-- **Missing Fields F1**: 0.75
-- **Response Time**: 6685ms
-
-### gpt-4o-mini - EASY_001
-- **Difficulty**: easy
-- **Accuracy**: 100.0%
-- **Schema Valid**: ❌
-- **Critical Fields**: ❌
-- **Missing Fields F1**: 1.00
-- **Response Time**: 7973ms
-
-### gpt-4o-mini - MEDIUM_001
-- **Difficulty**: medium
-- **Accuracy**: 75.0%
-- **Schema Valid**: ❌
-- **Critical Fields**: ❌
-- **Missing Fields F1**: 0.67
-- **Response Time**: 5476ms
-
-### llama3 - EASY_001
-❌ Error: LLM call failed: Ollama returned invalid JSON content
-
-### llama3 - MEDIUM_001
-❌ Error: LLM call failed: Ollama returned invalid JSON content
-
-### mistral - EASY_001
-❌ Error: LLM call failed: Ollama request failed: 404 Not Found: {"error":"model 'mistral' not found"}
-
-### mistral - MEDIUM_001
-❌ Error: LLM call failed: Ollama request failed: 404 Not Found: {"error":"model 'mistral' not found"}
-
-### phi3 - EASY_001
-❌ Error: LLM call failed: Ollama request failed: 404 Not Found: {"error":"model 'phi3' not found"}
-
-### phi3 - MEDIUM_001
-❌ Error: LLM call failed: Ollama request failed: 404 Not Found: {"error":"model 'phi3' not found"}
+---
 
 
-## Conclusion
 
-This evaluation demonstrates the effectiveness of different LLM models
-in extracting structured data from insurance claim emails.
+---
 
-- **Best Model**: Determined by average accuracy across all test cases
-- **Difficulty Analysis**: Harder cases show the model's capability with incomplete data
-- **Schema Compliance**: All models should produce valid JSON output
+## 🏆 Beste & Schlechteste Ergebnisse
+
+### gpt-4.1
+
+- **Beste:** EMAIL_GEN_011 (85%)
+- **Schlechteste:** EMAIL_GEN_002 (77%)
+
+### gpt-4.1-mini
+
+- **Beste:** EMAIL_GEN_011 (85%)
+- **Schlechteste:** EMAIL_GEN_005 (69%)
+
+### gpt-4o
+
+- **Beste:** EMAIL_GEN_011 (85%)
+- **Schlechteste:** EMAIL_GEN_008 (69%)
+
+### gpt-4o-mini
+
+- **Beste:** EMAIL_GEN_011 (85%)
+- **Schlechteste:** EMAIL_GEN_004 (62%)
+
+### gpt-5.2
+
+- **Beste:** EMAIL_GEN_006 (92%)
+- **Schlechteste:** EMAIL_GEN_009 (77%)
+
+
+---
+
+## 📖 Metriken
+
+| Metrik | Beschreibung |
+|--------|--------------|
+| **Field Acc.** | % der Felder die exakt mit Gold-Standard übereinstimmen |
+| **Critical Acc.** | % der *kritischen* Felder (Name, Policy, Datum, Betrag, etc.) |
+| **Schema** | Output entspricht dem erwarteten JSON-Schema |
+| **Ø Zeit** | Durchschnittliche Antwortzeit in Millisekunden |

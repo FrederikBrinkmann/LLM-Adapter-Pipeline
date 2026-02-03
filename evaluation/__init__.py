@@ -1,15 +1,29 @@
 """
-Evaluation Module - LLM Model & Prompt Comparison Framework
+Evaluation Framework für LLM-Pipeline.
 
-This module provides tools for evaluating different LLM models and prompts
-on their ability to extract structured insurance claim data from emails.
+Dieses Modul dient zur systematischen Evaluation verschiedener LLM-Modelle
+bei der Extraktion strukturierter Daten aus Versicherungs-E-Mails.
 
 Usage:
-    python -m evaluation.run_evaluation
-    python -m evaluation.generate_report
+    # Synthetische E-Mails generieren (einmalig)
+    python -m evaluation.datengenerierung.generate_dataset
+
+    # Evaluation durchführen
+    python -m evaluation.runner
+
+    # Report generieren
+    python -m evaluation.report
 """
 
-from evaluation.metrics import EvaluationMetrics
-from evaluation.run_evaluation import EvaluationRunner
+from .config import CRITICAL_FIELDS, IGNORE_FIELDS
+from .metrics import EvaluationMetrics
+from .runner import EvaluationRunner
+from .report import ReportGenerator
 
-__all__ = ["EvaluationMetrics", "EvaluationRunner"]
+__all__ = [
+    "EvaluationMetrics",
+    "EvaluationRunner",
+    "ReportGenerator",
+    "CRITICAL_FIELDS",
+    "IGNORE_FIELDS",
+]
