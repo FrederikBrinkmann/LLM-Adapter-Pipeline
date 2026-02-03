@@ -16,7 +16,7 @@ RESULTS_FILE = RESULTS_DIR / "evaluation_results.json"
 REPORT_FILE = RESULTS_DIR / "EVALUATION_REPORT.md"
 
 # Evaluation Settings
-DEFAULT_TIMEOUT_SECONDS = 120  # Erhöht für lokale Modelle (Ollama)
+DEFAULT_TIMEOUT_SECONDS = 120  
 MAX_CONCURRENT_REQUESTS = 5
 
 # Kritische Felder für Bewertung (alle verglichenen Felder)

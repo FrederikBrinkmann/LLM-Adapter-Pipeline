@@ -1,5 +1,5 @@
 {
-  "next_id": 17,
+  "next_id": 18,
   "tickets": [
     {
       "id": 1,
@@ -1125,6 +1125,74 @@
       "created_at": "2026-02-03T19:23:55.707663",
       "updated_at": "2026-02-03T19:23:55.707663",
       "id": 16
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Unprocessable Claim Email",
+      "summary": "Unprocessable Claim Email",
+      "claimant_name": null,
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "The email content is unprocessable and does not contain any relevant claim information.",
+      "priority": "low",
+      "status": "todo",
+      "policy_number": null,
+      "claim_type": "other",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": null,
+      "claim_amount": null,
+      "missing_fields": [
+        "claimant_name",
+        "policy_number",
+        "claim_date",
+        "incident_date"
+      ],
+      "has_missing_critical_fields": true,
+      "action_items": [
+        {
+          "id": "ACT-89B47F26",
+          "title": "Review the email content for any overlooked information.",
+          "details": "Review the email content for any overlooked information.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": "Contact the sender for more information or clarification on the claim details.",
+      "created_timestamp": "2023-11-01T12:00:00Z",
+      "source_job_id": 23,
+      "source_model_id": "gpt-4o",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Unprocessable Claim Email",
+        "subject": null,
+        "claimant_name": null,
+        "claimant_email": null,
+        "claimant_phone": null,
+        "description": "The email content is unprocessable and does not contain any relevant claim information.",
+        "priority": "low",
+        "policy_number": null,
+        "claim_type": "other",
+        "claim_date": null,
+        "incident_date": null,
+        "incident_location": null,
+        "claim_amount": null,
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "action_items": [
+          "Review the email content for any overlooked information."
+        ],
+        "next_steps": "Contact the sender for more information or clarification on the claim details.",
+        "created_timestamp": "2023-11-01T12:00:00Z",
+        "model_id": "gpt-4o"
+      },
+      "created_at": "2026-02-03T19:44:48.738688",
+      "updated_at": "2026-02-03T19:44:48.738688",
+      "id": 17
     }
   ]
 }
