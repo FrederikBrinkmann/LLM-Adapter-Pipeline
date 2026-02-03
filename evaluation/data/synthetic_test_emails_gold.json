@@ -2,2308 +2,2642 @@
   "metadata": {
     "source": "synthetic_test_emails.json",
     "total_emails": 100,
-    "note": "Fill 'expected' with gold labels; unknown -> null and missing_fields include field names."
+    "model_id": "gpt-5.2",
+    "note": "Diese Datei enthält den Gold-Standard und ist manuell verifiziert/angepasst worden"
   },
   "labels": [
     {
       "id": "EMAIL_GEN_001",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
-        "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch am 2023-10-10 – ca. 20.000 EUR (POL-2025-2345)",
+        "subject": "Meldung eines Wasserschadens",
+        "claimant_name": "Max Mustermann",
+        "claimant_email": "max.mustermann@email.de",
+        "claimant_phone": "0176-12345678",
+        "description": "Der Versicherungsnehmer Max Mustermann meldet einen Wasserschaden im Haus. Am 10. Oktober 2023 kam es aufgrund eines Rohrbruchs zu einer Überflutung im Keller. Es entstanden Schäden an Wänden, Böden sowie an gelagerten Gegenständen. Erste Schätzung der Schadenhöhe: ca. 20.000 EUR. Ein Sanitärfachmann wurde bereits beauftragt, den Rohrbruch zu beheben und Wasser abzupumpen. Eine detaillierte Schadensaufstellung sowie Fotos wurden laut E-Mail beigefügt. Kundenadresse: Musterstraße 1, 12345 Musterstadt.",
+        "priority": "high",
+        "policy_number": "POL-2025-2345",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-10-10",
+        "incident_location": "Musterstraße 1, 12345 Musterstadt",
+        "claim_amount": 20000,
+        "missing_fields": [
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_002",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch in Wohnung (POL-2025-1234) am 2023-10-05",
+        "subject": "Schadensmeldung Wasserschaden - Versicherungsnummer POL-2025-1234",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0151-23456789",
+        "description": "Der Versicherungsnehmer meldet einen Wasserschaden in seiner Wohnung. Am 5. Oktober 2023 kam es in der Wohnung in der Musterstraße 12, 12345 Musterdorf durch einen plötzlichen Rohrbruch zu erheblichem Wassereintritt und Überflutung weiter Teile der Wohnung. Ein Fachbetrieb hat den Vorfall dokumentiert; erste Trocknungsmaßnahmen wurden eingeleitet. Erwartete Schadenskosten ca. 10.000 bis 20.000 EUR, abhängig von weiteren Sanierungsarbeiten.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-10-05",
+        "incident_location": "Musterstraße 12, 12345 Musterdorf",
+        "claim_amount": 15000,
+        "missing_fields": [
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_003",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch im Haus – Schadensmeldung",
+        "subject": "Schadensmeldung - Wasserschaden",
+        "claimant_name": "Anna Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0171-23456789",
+        "description": "Meldung eines Wasserschadens im Haus: Überflutung durch Rohrbruch, entdeckt am vergangenen Wochenende. Schaden betrifft mehrere Räume; Risiko weiterer Folgeschäden bei verzögerter Bearbeitung. Claimant wartet noch auf vollständige Schadensbewertung und bittet um Einleitung der Regulierung sowie Information, welche Unterlagen/Informationen benötigt werden, um den Prozess zu beschleunigen.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_004",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch – Bitte um zeitnahe Schadeninspektion",
+        "subject": "Schadensmeldung Wasserschaden",
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0123-456789",
+        "description": "Der Absender meldet einen Wasserschaden durch Rohrbruch mit erheblichem Wassereintritt und Überflutung. Es liegen noch keine genauen Schadensbewertungen vor; es wird um eine zeitnahe Besichtigung/Inspektion durch einen Versicherungsvertreter gebeten, um den Umfang abzuschätzen. Geschätzter Schaden: mehrere Tausend Euro (keine konkrete Summe genannt). Der Absender fragt nach den nächsten Schritten und benötigten Unterlagen.",
+        "priority": "high",
+        "policy_number": "POL-2025-XXXX",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_005",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Emergency water damage claim: burst pipes causing major flooding",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Max Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-1234567",
+        "description": "Claimant reports an emergency water damage incident at their house. Water is entering throughout the home; pipes appear to have burst. Claimant attempted to stop the water without success and requests immediate assistance/dispatch. Estimated loss stated as between 5,000 and 50,000 EUR (uncertain).",
+        "priority": "high",
+        "policy_number": "POL-2025-4567",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
+        "incident_date": "2023-10-13",
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_006",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Kellerüberflutung durch vermuteten Rohrbruch – Soforthilfe angefordert",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Thomas Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0172-5556678",
+        "description": "Der Versicherungsnehmer Thomas Müller meldet eine akute, totale Überflutung im Keller. Er vermutet einen Rohrbruch; Wasser dringt überall ein und steht bereits hoch. Betroffen/geschädigt seien u. a. Wände, Möbel und weitere Gegenstände. Er bittet dringend um schnelle Hilfe und eine Besichtigung vor Ort. Schadenhöhe ist unbekannt, könnte jedoch sehr hoch sein. Angegebene Versicherungsnummer/Policennummer: POL-2025-7453.",
+        "priority": "high",
+        "policy_number": "POL-2025-7453",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_007",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
-        "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
-        "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+      "suggested": null,
+      "status": "error",
+      "error": "OpenAI request failed: 503 Service Unavailable: upstream connect error or disconnect/reset before headers. reset reason: connection termination"
     },
     {
       "id": "EMAIL_GEN_008",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Akuter Wasserschaden in Wohnung – laufender Wasseraustritt, sofortige Hilfe benötigt",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Der Absender meldet einen akuten Wasserschaden: \"Überall ist Wasser, alles ist nass und es läuft immer weiter\". Vermutet wird ein Rohrbruch oder ein gebrochenes Rohr/Leitung (\"Ich glaube, dass irgendetwas gebrochen ist, ein Rohr oder so??\"). Wasser tritt offenbar an mehreren Stellen aus (Boden, Wände) und steigt weiter. Der Absender ist überfordert und bittet um schnellstmögliche Hilfe. Eine Versicherungsnummer wird unsicher angegeben: \"POL-2025-5678? Oder so ähnlich.\"",
+        "priority": "high",
+        "policy_number": "POL-2025-5678?",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_009",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch am 2023-09-15 – Rückmeldung ausstehend (POL-2025-4711)",
+        "subject": "Wasserschaden – Warten auf Hilfe oder auf das nächste Hochwasser?",
+        "claimant_name": "Klaus Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0151-12345678",
+        "description": "Der Versicherungsnehmer meldet einen erheblichen Wasserschaden in seiner Wohnung (Wohnzimmer betroffen), verursacht durch einen Rohrbruch am 15.09.2023. Er gibt an, bereits alle Unterlagen eingereicht zu haben, inklusive Policynummer POL-2025-4711 und einer geschätzten Schadenshöhe von mindestens 25.000 EUR. Er beklagt ausbleibende Reaktion/Kommunikation seitens der Versicherung und fordert eine schnelle Rückmeldung sowie eine Lösung. Kontaktaufnahme per Telefon wird ausdrücklich gewünscht.",
+        "priority": "high",
+        "policy_number": "POL-2025-4711",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
+        "incident_date": "2023-09-15",
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 25000,
+        "missing_fields": [
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_010",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch im Wohnzimmer – Soforthilfe angefordert",
+        "subject": "Wasserschaden - Soforthilfe erforderlich!",
+        "claimant_name": "Markus Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
+        "claimant_phone": "0171-2345678",
+        "description": "Der Versicherungsnehmer meldet einen Wasserschaden durch Rohrbruch. Seit Tagen steht Wasser im Wohnzimmer; Teppich wurde ruiniert, Möbel müssen entsorgt/weggeräumt, Einsatz einer Wasserpumpe. Der Absender fordert schnelle Reaktion/Soforthilfe und bietet an, weitere Fotos zu schicken. Referenz genannt: POL-2025-1234 (vom Absender als „Polizei“ bezeichnet).",
+        "priority": "high",
         "policy_number": null,
-        "claim_type": null,
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_011",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch in Wohnung, geschätzter Schaden 50.000 EUR",
+        "subject": "Wasserschaden, den ich Ihnen zu verdanken habe",
         "claimant_name": null,
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
+        "description": "Kunde meldet erheblichen Wasserschaden in der Wohnung (ehem. Wohnzimmer), verursacht durch Rohrbruch. Wasser sei überall; Möbel und Boden seien beschädigt. Kunde ist frustriert und fordert schnellstmögliche Reaktion, einen Plan und konkrete Hilfe/Schadensbehebung. Schadenshöhe unbekannt, Kunde schätzt ca. 50.000 EUR als Startpunkt. Keine Angaben zu Policennummer, Datum des Vorfalls oder genauer Adresse/Ort innerhalb der Wohnung/Immobilie.",
+        "priority": "urgent",
         "policy_number": null,
-        "claim_type": null,
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 50000,
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_012",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch in Wohnung – dringende Bearbeitung gefordert",
+        "subject": "Dringender Handlungsbedarf bei Wasserschaden!!",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "01234-567890",
+        "description": "Der Versicherungsnehmer meldet einen Wasserschaden in seiner Wohnung infolge eines Rohrbruchs. Er beschwert sich über ausbleibende/zu langsame Rückmeldung und fordert eine umgehende Bearbeitung sowie Schadensbehebung. Er erwähnt, dass er seinem Vermieter den Status erklären müsse und setzt eine Frist von einer Woche für Fortschritt. Angegebene Versicherungs-/Policennummer: POL-2025-1234.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_013",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch: Keller überflutet (ca. 20.000 EUR)",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Marie Musterfrau",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Claimant meldet einen schweren Wasserschaden zu Hause: Rohrbruch führte zu Überflutung des Kellers, alles steht unter Wasser. Beginn des Schadens/Incident am 10. Oktober (Jahr nicht genannt). Geschätzte Schadenhöhe ca. 20.000 EUR (evtl. mehr). Claimant bittet um Anleitung zu nächsten Schritten, ob weitere Anrufe nötig sind und ob eine Besichtigung/Beauftragung von Gutachtern erforderlich ist.",
+        "priority": "high",
+        "policy_number": "POL-2025-6789",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 20000,
+        "missing_fields": [
+          "claim_date",
+          "incident_date",
+          "claimant_email",
+          "incident_location"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_014",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Dringender Wasserschaden durch Rohrbruch im Keller (POL-2025-5678)",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Markus Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0171 1234567",
+        "description": "Der Versicherungsnehmer meldet einen schlimmen Wasserschaden zuhause durch einen Rohrbruch. Der Keller steht unter Wasser und das Wasser hört nach Aussage des Meldenden nicht auf; der Schaden scheint größer zu werden. Der Meldende ist unsicher über das weitere Vorgehen, fragt nach Notfallnummer/sofortigem Kontakt und ob jemand zur Besichtigung vorbeikommt sowie nach der voraussichtlichen Bearbeitungsdauer. Angegebene (vermutliche) Versicherungsnummer: POL-2025-5678.",
+        "priority": "high",
+        "policy_number": "POL-2025-5678",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_015",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Possible water damage from suspected pipe burst - policy POL-2025-6789",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Klaus",
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Claimant reports sudden extensive water present throughout the property; cause unknown but suspects a possible pipe burst (Rohrbruch). States the situation looks severe and requests urgent guidance on how to proceed, whether the loss can be reported, what documents/photos are needed, and whether coverage applies. Provided a possible policy number: POL-2025-6789 (uncertain).",
+        "priority": "high",
+        "policy_number": "POL-2025-6789",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claimant_phone",
+          "claim_date",
+          "incident_date",
+          "incident_location",
+          "claim_amount"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_016",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Flooding/water damage suspected pipe burst; policy number unknown",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
+        "claimant_phone": "0171-1234567",
+        "description": "Claimant reports significant flooding/water throughout the property; suspects a pipe burst but is not certain. Situation described as chaotic and claimant is overwhelmed. Claimant is concerned damages may be expensive and asks what the next steps are, whether they must do anything specific, and whether they should call someone. Policy number believed to be in the format \"POL-2025-XXXX\" but claimant cannot locate documents. Claimant asks how long such a claim typically takes to resolve. Contact phone provided for faster coordination.",
+        "priority": "high",
         "policy_number": null,
-        "claim_type": null,
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_017",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch am 2023-10-12 (ca. 20.000 EUR)",
+        "subject": "Schadensmeldung: Wasserschaden am 12. Oktober 2023",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0151-23456789",
+        "description": "Der Versicherungsnehmer meldet einen Wasserschaden in seiner Wohnung, aufgetreten am 12. Oktober 2023. Ursache: Rohrbruch mit erheblicher Überflutung im Badezimmer und Wassereintritt in angrenzende Räume. Beschädigt wurden u. a. Mobiliar und Fußböden. Geschätzte Schadenshöhe ca. 20.000 EUR. Es wurden Fotos des Schadens sowie eine erste Kostenschätzung der beauftragten Reparaturfirma angekündigt/als Anhang beigefügt. Adresse des Claimants: Musterstraße 12, 12345 Musterstadt.",
+        "priority": "high",
+        "policy_number": "POL-2025-7891",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-10-12",
+        "incident_location": "Musterstraße 12, 12345 Musterstadt",
+        "claim_amount": 20000,
+        "missing_fields": [
+          "claimant_email",
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_018",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch in Immobilie – Police POL-2025-6734",
+        "subject": "Schadensmeldung - Wasserschaden",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-1234567",
+        "description": "Der Versicherungsnehmer meldet einen erheblichen Wasserschaden in seiner Immobilie. Am vergangenen Wochenende kam es aufgrund eines Rohrbruchs zu starkem Wassereintritt und einer Überflutung einiger Räume. Die Schadenshöhe wird aktuell auf mehrere zehntausend Euro geschätzt; eine genaue Summe liegt noch nicht vor, da die Begutachtung durch einen Gutachter aussteht. Der Versicherungsnehmer bittet um zeitnahe Bearbeitung und Rückmeldung zu den nächsten Schritten. Anschrift: Hauptstraße 123, 12345 Musterstadt.",
+        "priority": "high",
+        "policy_number": "POL-2025-6734",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
-        "incident_location": null,
+        "incident_location": "Hauptstraße 123, 12345 Musterstadt",
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_019",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch – Schadensmeldung (POL-2025-1234)",
+        "subject": "Schadensmeldung: Wasserschaden",
+        "claimant_name": "Johannes Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Der Versicherungsnehmer meldet einen Wasserschaden in seiner Immobilie, verursacht durch einen Rohrbruch mit anschließender Überflutung und Wassereintritt. Die Schadenshöhe ist noch nicht abschließend feststellbar und wird derzeit auf ca. 5.000 bis 50.000 EUR geschätzt. Der Absender bittet um schnelle Einleitung der Schadensregulierung, um weitere Komplikationen zu vermeiden. Versicherungsnummer: POL-2025-1234. Rückfragen telefonisch möglich.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_020",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Wasserschaden durch Rohrbruch an Immobilie – Police POL-2025-1234",
+        "subject": "Schadensmeldung Wasserschaden",
+        "claimant_name": "Thomas Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0171 2345678",
+        "description": "Johannes Schreiber (Rechtsanwalt und Versicherungsmakler) meldet im Auftrag seines Mandanten Herrn Thomas Müller einen Wasserschaden an dessen Immobilie. Ursache: Rohrbruch mit erheblicher Überflutung/Wassereintritt. Schadenshöhe derzeit unbekannt, voraussichtlich mehrere Tausend Euro. Es wird um zügige Bearbeitung, Übersendung der notwendigen Schadensformulare sowie weitere Instruktionen zur Schadensregulierung gebeten. Rückfragen unter 0171 2345678.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_021",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Schadensmeldung Autounfall 2023-10-12 in München – Fahrzeugschaden ca. 10.000–15.000 EUR",
+        "subject": "Schadensmeldung – Autounfall am 12. Oktober 2023",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0151-23456789",
+        "description": "Der Versicherungsnehmer meldet einen Verkehrsunfall mit erheblichem Fahrzeugschaden. Unfall am 12. Oktober 2023 gegen 15:30 Uhr in der Musterstraße in München, involvierte ein weiteres Fahrzeug. Der Claimant war allein im Auto und fuhr Richtung Innenstadt, als es zu einer Karambolage mit dem anderen Fahrzeug kam. Geschätzte Schadenhöhe: zwischen 10.000 und 15.000 EUR. Relevante Dokumente und Fotos der Schäden sind vorbereitet. Bitte um Eingangsbestätigung und weitere Vorgehensweise.",
+        "priority": "high",
+        "policy_number": "POL-2025-7843",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-10-12",
+        "incident_location": "Musterstraße, München",
+        "claim_amount": 15000,
+        "missing_fields": [
+          "claimant_email",
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_022",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Schadensmeldung Autounfall 2023-10-17 in Berlin (VW Golf)",
+        "subject": "Schadensmeldung - Autounfall vom 17. Oktober 2023",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-1234567",
+        "description": "Der Versicherungsnehmer meldet einen Schaden am eigenen Fahrzeug durch einen Verkehrsunfall mit Karambolage am 17. Oktober 2023 in Berlin. Es war neben dem eigenen Fahrzeug noch ein weiteres Fahrzeug beteiligt. Unfallort: Nähe Kreuzung Kurfürstendamm und Uhlandstraße. Fahrzeug: VW Golf, Baujahr 2018. Der Meldende ist Halter und war Fahrer zum Unfallzeitpunkt. Er bietet an, weitere Unterlagen/Fotos bereitzustellen und ist telefonisch erreichbar.",
+        "priority": "high",
+        "policy_number": "POL-2025-4823",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
+        "incident_date": "2023-10-17",
+        "incident_location": "Berlin, Nähe Kreuzung Kurfürstendamm und Uhlandstraße",
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_023",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Schadensmeldung Autounfall mit Fremdbeteiligung in Berlin am 2023-10-15",
+        "subject": "Schadensmeldung: Autounfall mit Fremdbeteiligung",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "030-12345678",
+        "description": "Der Versicherungsnehmer meldet einen Verkehrsunfall (Karambolage) mit mehreren beteiligten Fahrzeugen. Unfallzeitpunkt: 15. Oktober 2023 gegen 14:30 Uhr. Unfallort: Kreuzung Musterstraße / Beispielweg, Berlin. Geschätzte Schadenshöhe: zwischen 2.000 und 100.000 EUR (Spanne, genaue Summe unklar). Bitte um Eingangsbestätigung und Information zu weiteren erforderlichen Schritten. Policennummer: POL-2025-1234.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
+        "incident_date": "2023-10-15",
+        "incident_location": "Kreuzung Musterstraße / Beispielweg, Berlin",
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_024",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Auto-Unfall mit Fremdbeteiligung – erheblicher Fahrzeugschaden (POL-2025-1234)",
+        "subject": "Schadensmeldung: Autounfall mit Fremdbeteiligung",
+        "claimant_name": "Max Musterkunde",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0123-4567890",
+        "description": "Der Versicherungsnehmer Max Musterkunde meldet einen Verkehrsunfall mit Fremdbeteiligung (Karambolage) im Stadtgebiet. Sein Fahrzeug wurde erheblich beschädigt. Genaue Angaben zur Schadenshöhe liegen derzeit nicht vor; der Schaden wird als beträchtlich eingeschätzt. Zum Unfallzeitpunkt war der Versicherungsnehmer allein im Auto. Weitere Beteiligte gibt es; deren Daten sollen nachgereicht werden. Es wird um Information zu den weiteren Schritten gebeten.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
-        "incident_location": null,
+        "incident_location": "Stadtgebiet (genauer Ort unbekannt)",
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date",
+          "claim_amount"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_025",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Auto-Unfall in Innenstadt am 2023-10-15 – Seitlicher Zusammenstoß, hoher Schaden befürchtet",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Der/die Versicherungsnehmer:in meldet einen Verkehrsunfall und bittet dringend um Hilfe. Unfallhergang: Am 15. Oktober 2023 gegen ca. 14:30 Uhr in der Innenstadt fuhr ein anderes Auto seitlich in das Fahrzeug der/des Meldenden, als diese/r bei grüner Ampel anfuhr. Es wird von einer Karambolage/mehreren beteiligten Autos berichtet. Fahrzeug des/der Meldenden: VW Passat. Gegenseite: BMW. Es wird ein erheblicher Sachschaden am eigenen Fahrzeug beschrieben (\"viele Tausende Euro\"); genaue Schadenshöhe unbekannt. Kontaktaufnahme erbeten per Telefon.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
+        "incident_date": "2023-10-15",
+        "incident_location": "Innenstadt",
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_026",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Auto accident on highway; vehicle heavily damaged; claimant requests urgent contact",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Anna Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176 12345678",
+        "description": "Claimant reports a recent car accident on the Autobahn (exact location unknown). Claimant is distressed and cannot clearly recall what happened. Vehicle is described as \"totally damaged\" and \"everything is broken.\" There are other involved parties; claimant believes the other vehicle may have been a BMW but is not certain. Claimant requests urgent assistance and immediate contact by phone. Estimated cost/claim amount unknown at this time; claimant will provide more details later when able.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
-        "incident_location": null,
+        "incident_location": "Autobahn (exact location unknown)",
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_027",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Auto accident report; vehicle heavily damaged; policy POL-2025-2345; callback requested",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Claimant reports being in a car accident (\"Unfall\"). Vehicle is severely damaged (\"Mein Auto ist total im Eimer\"). Mentions another vehicle involved and confusion about what happened. Claimant is distressed and requests urgent guidance and a phone call. Policy number provided as \"POL-2025-2345\" (stated as believed correct). No incident date, location, injuries, or estimated amount provided.",
+        "priority": "high",
+        "policy_number": "POL-2025-2345",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_028",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Multi-vehicle crash: vehicle total loss reported; claimant requests immediate assistance",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0173-456789",
+        "description": "Claimant reports a severe multi-vehicle accident that occurred today. Vehicle is described as completely destroyed/total loss. Claimant is distressed, unsure of next steps, and requests an immediate call. Fault/parties involved are unclear; claimant does not know who is responsible or the identities of other drivers. Claimant asks what happens next, who will handle the claim, where to take the vehicle, and how repairs/towing will be arranged. Policy number provided uncertainly as \"POL-2025-7348\" (claimant not fully sure). Phone number provided with uncertainty as \"0173-456789\".",
+        "priority": "high",
+        "policy_number": "POL-2025-7348",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_029",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Autounfall auf Autobahn – Schaden 25.000 EUR (POL-2025-1234)",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0151-23456789",
+        "description": "Der Versicherungsnehmer meldet einen Verkehrsunfall mit einem anderen Fahrzeug auf der Autobahn. Incident-Datum wurde als „15. Oktober“ angegeben (Jahr nicht genannt). Fahrzeug weist erhebliche Schäden auf. Angegebene Policynummer: POL-2025-1234. Geschätzter Schadenbetrag: 25.000 EUR. Kein weiterer Unfallbericht/Unterlagen wurden beigefügt. Rückrufnummer vorhanden.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_location": "Autobahn",
+        "claim_amount": 25000,
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_030",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Schadensmeldung Verkehrsunfall (Karambolage) – Kostenvoranschlag 12.000 EUR",
+        "subject": "Schadensmeldung - Verkehrsunfall mit Karambolage",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176 12345678",
+        "description": "Der Versicherungsnehmer meldet einen Verkehrsunfall mit Karambolage (Auffahr-/Mehrfachkollision). Er gibt an, am Freitag in den Unfall geraten zu sein. Eine Autowerkstatt hat einen Kostenvoranschlag über 12.000 EUR erstellt; Fahrzeug stark beschädigt. Der andere Fahrer habe behauptet, den Versicherer ebenfalls informiert zu haben. Angaben zum genauen Unfallhergang/Ort liegen nicht vor. Mitgeteilt: Policennummer POL-2025-4738, Kennzeichen B-XY 1234, Telefonnummer 0176 12345678.",
+        "priority": "high",
+        "policy_number": "POL-2025-4738",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 12000,
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_031",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Verkehrsunfall/Karambolage – Schadenmeldung über 14.000 EUR (POL-2025-1234)",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Der Absender meldet einen Verkehrsunfall (Karambolage). Der andere Fahrer ist offenbar nicht auffindbar/\"fehlt jede Spur\". Angegebene Police: POL-2025-1234. Genannte Schadenssumme: 14.000 EUR. Keine Angaben zu Datum des Unfalls, Ort, Beteiligten, Fahrzeugdaten oder Kontaktdaten des Anspruchstellers.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 14000,
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_032",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Auto-Karambolage im Stau – Schadenmeldung, Policy beginnt mit POL-2025",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Der Absender meldet einen Verkehrsunfall (Karambolage im Stau) mit beschädigtem Auto und bittet um schnelle, unkomplizierte Hilfe. Es wird erwähnt, dass der Absender nicht allein schuld sei, Details zum Hergang/Schuldfrage fehlen. Als Versicherungsnummer wird nur ein unvollständiger Hinweis genannt: \"irgendwas mit POL-2025\". Keine Kontaktdaten (Name, E-Mail, Telefonnummer) wurden angegeben; Telefonnummer sei angeblich in Unterlagen vorhanden. Kein Datum, Ort oder Schadenshöhe genannt.",
+        "priority": "high",
+        "policy_number": "POL-2025",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_033",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Auto-Unfall mit Karambolage (mehrere Fahrzeuge) – Schadenmeldung POL-2025-4887",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Max Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0151 23456789",
+        "description": "Der Versicherungsnehmer meldet einen Autounfall mit Beteiligung eines weiteren Fahrzeugs bzw. einer Karambolage mit mehreren involvierten Autos. Unfall ereignete sich laut E-Mail „gestern, am 12. Oktober“. Der Hergang ist dem Melder unklar/unsicher. Er fragt nach den nächsten Schritten, Dauer der Bearbeitung und ob der Schaden abgedeckt ist. Er hat Fotos vom Unfallort gemacht und fragt, ob er diese senden soll, ob ein Gutachter beauftragt werden muss (durch ihn oder die Versicherung) und ob ein Kostenvoranschlag der Werkstatt erforderlich ist. Sorge wegen möglicher hoher Kosten. Policy/Versicherungsnummer: POL-2025-4887.",
+        "priority": "high",
+        "policy_number": "POL-2025-4887",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_034",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Auto-Unfall mit Zusammenstoß; Schadensmeldung zu Police POL-2025-3789",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Der Versicherungsnehmer meldet einen Unfall am heutigen Tag mit Zusammenstoß mit einem anderen Fahrzeug. Situation war chaotisch; Name des anderen Fahrers ist nicht bekannt/erinnert. Fahrzeug des Claimants ist stark beschädigt. Es waren weitere Fahrzeuge beteiligt. Claimant ist verunsichert und bittet um Anleitung zur weiteren Vorgehensweise und Schadensabwicklung sowie um Rückruf. Vermutete Versicherungs-/Policennummer: POL-2025-3789 (nicht 100% sicher laut Claimant).",
+        "priority": "high",
+        "policy_number": "POL-2025-3789",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_035",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Auto-Unfall (mögliche Karambolage) – Unterstützung bei Schadensmeldung angefragt",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Der Absender meldet einen Unfall mit dem Auto (vermutlich Karambolage/Mehrfachkollision). Details sind unklar; der Absender kann sich nicht an alles erinnern. Fahrzeug wirkt sichtbar beschädigt („sieht nicht gut aus“), Schweregrad unbekannt. Der Absender ist unsicher, wie der Schadenprozess abläuft, wer die Regulierung übernimmt und ob Formulare auszufüllen sind. Mögliche Versicherungs-/Policennummer: POL-2025-1543 (vom Absender als unsicher angegeben).",
+        "priority": "high",
+        "policy_number": "POL-2025-1543",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_036",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Unfallmeldung: mutmaßliche Police POL-2025-1234, erheblicher Kfz-Schaden, weitere Fahrzeuge beteiligt",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Der Absender meldet, dass er heute einen Unfall hatte und überfordert ist. Es gab ein \"Riesendurcheinander\" auf der Straße und andere Autos waren verwickelt. Am eigenen Auto besteht offenbar erheblicher Schaden, genaue Schadenshöhe/Schwere unbekannt. Der Absender fragt, ob der Schaden abgesichert ist, wie der Schaden korrekt gemeldet wird und ob Fristen einzuhalten sind. Als mögliche Versicherungs-/Policennummer wird \"POL-2025-1234\" genannt, jedoch mit Unsicherheit. Kontaktdaten und Name wurden nicht angegeben (Signatur: \"[Ihr Name]\").",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_037",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
-        "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
-        "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+      "suggested": null,
+      "status": "error",
+      "error": "OpenAI request failed: "
     },
     {
       "id": "EMAIL_GEN_038",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Schadensmeldung Verkehrsunfall mit Fremdbeteiligung in Berlin (VW Golf)",
+        "subject": "Schadensmeldung – Verkehrsunfall mit Fremdbeteiligung",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Schadensmeldung zu einem Verkehrsunfall mit Fremdbeteiligung und mehreren involvierten Fahrzeugen (Karambolage). Unfall am 10. Oktober 2023 gegen ca. 14:30 Uhr an der Kreuzung Musterstraße/Musterallee in Berlin. Versicherungsnummer/Policennummer: POL-2025-4678. Fahrzeug des Claimants: blauer VW Golf, erhebliche Schäden. Schadenshöhe derzeit nicht bezifferbar, vermutlich mehrere tausend Euro. Claimant bittet um zügige Begutachtung und Regulierung und fragt nach benötigten Unterlagen/Informationen.",
+        "priority": "high",
+        "policy_number": "POL-2025-4678",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
+        "incident_date": "2023-10-10",
+        "incident_location": "Kreuzung Musterstraße/Musterallee, Berlin",
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "claim_amount"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_039",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Kfz-Unfall (Karambolage) mit Fremdbeteiligung – Schadenmeldung für Stefan Müller",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Stefan Müller",
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Michael Beck (Kanzlei Beck & Partner) meldet im Namen seines Mandanten Herrn Stefan Müller einen Verkehrsunfall (Karambolage mit Fremdbeteiligung). Der Unfall ereignete sich am 14. Oktober 2023; der genaue Unfallhergang wird noch aufgearbeitet. Es wird um Aufnahme des Vorfalls und Einleitung aller notwendigen Schritte zur Schadensbearbeitung gebeten. Die Schadenshöhe wird derzeit evaluiert; aktuell wird von einem erheblichen Schaden ausgegangen, geschätzt zwischen 2.000 und 100.000 EUR. Versicherungsnummer/Policennummer des Mandanten: POL-2025-7436. Rückfragen sollen per E-Mail an den Absender erfolgen; telefonisch erreichbar unter 0123-456789.",
+        "priority": "high",
+        "policy_number": "POL-2025-7436",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
+        "incident_date": "2023-10-14",
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_location",
+          "claim_amount"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_040",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Schadensmeldung: Autounfall mit Fremdbeteiligung (Kfz-Haftpflicht)",
+        "subject": "Schadensmeldung - Autounfall mit Fremdbeteiligung",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176 12345678",
+        "description": "Der Versicherungsnehmer meldet einen kürzlich erlittenen Verkehrsunfall (Karambolage) unter Beteiligung eines anderen Fahrzeugs. Er ist über eine Kfz-Haftpflichtversicherung versichert (Versicherungsnummer: POL-2025-1743). Der Unfallhergang ist noch nicht vollständig geklärt. Es sind Schäden entstanden; die Schadenshöhe ist derzeit nicht genau bezifferbar und wird nur grob im üblichen Rahmen eingeschätzt. Der Versicherungsnehmer bittet um zügige Bearbeitung und Informationen zum weiteren Vorgehen. Rückfragen telefonisch möglich.",
+        "priority": "high",
+        "policy_number": "POL-2025-1743",
+        "claim_type": "liability",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_041",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
-        "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
-        "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medical emergency claim for surgery costs (POL-2025-1234)",
+        "subject": "Schadensmeldung - Policenummer POL-2025-1234",
+        "claimant_name": "Max Mustermann",
+        "claimant_email": "max.mustermann@email.de",
+        "claimant_phone": "0176-12345678",
+        "description": "Claimant Max Mustermann reports a medical emergency under health insurance policy POL-2025-1234. On 2023-10-14, claimant was admitted to Städtische Krankenhaus due to an unexpected medical emergency and required immediate surgery. Claimed amount is 18,450 EUR. Claimant states invoices and medical reports are available/provided upon request and asks for guidance on any additional information or documents needed to continue processing.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "medical",
+        "claim_date": "2023-10-14",
+        "incident_date": "2023-10-14",
+        "incident_location": "Städtische Krankenhaus",
+        "claim_amount": 18450,
         "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_042",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medical claim: hospital admission and emergency surgery on 2025-10-12 (POL-2025-1234)",
+        "subject": "Schadensmeldung - Krankenhausaufenthalt",
+        "claimant_name": "Max Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "01234-567890",
+        "description": "Claimant reports a medical incident requiring hospital admission and immediate surgery. On 12 October (year not stated), claimant was admitted to the Städtische Krankenhaus due to a sudden medical emergency; after examination, immediate operation was necessary. Policy/insurance number provided: POL-2025-1234. Treatment costs not yet fully known; estimated between 10,000 and 15,000 EUR. Claimant expects to receive detailed documents and invoices from the hospital in the coming days and requests guidance on required information/documents and any specific claim form to complete. Contact phone provided.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_location": "Städtische Krankenhaus",
+        "claim_amount": 15000,
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_043",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medizinischer Notfall mit OP und Krankenhausaufenthalt – Schadensmeldung",
+        "subject": "Schadensmeldung – Medizinischer Notfall",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "01234-567890",
+        "description": "Der Versicherte meldet einen medizinischen Notfall, der einen Krankenhausaufenthalt und eine Operation erforderte. Es liegen derzeit nur wenige Informationen zum genauen Umfang vor; Unterlagen vom Krankenhaus sollen nach Erhalt nachgereicht werden. Die Schadenshöhe wird im vier- bis fünfstelligen Bereich vermutet, genaue Beträge sind noch nicht bekannt. Der Versicherte bittet um Rückmeldung, welche Dokumente/Informationen für die Bearbeitung benötigt werden und wie der weitere Ablauf ist.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_044",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medical emergency claim: hospitalization and surgery",
+        "subject": "Schadensmeldung - medizinischer Notfall",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0172 1234567",
+        "description": "Claim notification for a medical incident involving hospitalization due to a medical emergency that required surgery. Claimant states full details are not yet available and will be provided as soon as possible. Requests expedited handling and guidance on next steps. Policy/insurance number provided as POL-2025-XXXX.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-XXXX",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_045",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medical claim: spouse accident with urgent surgery; est. €20,000 (POL-2025-1234)",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Thomas Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0171-1234567",
+        "description": "Claimant Thomas Müller reports his wife had an accident and required immediate hospitalization; doctors state surgery is unavoidable. Estimated medical costs are about EUR 20,000 and may increase. Claimant requests urgent assistance and a call back.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 20000,
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_046",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Notfall: Tochter Julia Müller im Krankenhaus nach Unfall (POL-2025-1234)",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Absender meldet einen Notfall: Tochter Julia Müller ist nach einem schlimmen Unfall im Krankenhaus. Es werden voraussichtlich hohe medizinische Kosten (\"tausende Euros\") erwartet, inkl. Operation und intensiver Betreuung. Versicherungs-/Policenangabe: POL-2025-1234. Absender bittet um schnelle Kontaktaufnahme und Unterstützung; weitere Details sind derzeit unklar.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_047",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medical emergency hospitalization; urgent assistance requested (possible policy POL-2025-1234)",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Claimant reports spouse had a medical emergency and is currently in the hospital. Surgery is required and the situation escalated quickly. Claimant states costs are very high and requests immediate support. Policy number is uncertain but provided as possible \"POL-2025-1234\". Claimant indicates limited availability to answer calls but provided phone number.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_048",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medical emergency hospitalization and surgery—assistance needed to file claim",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Claimant reports their mother had a sudden medical emergency requiring immediate hospitalization and urgent surgery. Claimant is overwhelmed and requests help on how to report/file the claim and what steps to take. Policy number is uncertain (\"something like POL-2025\"). Claim amount unknown; claimant estimates broadly between EUR 1,000 and 50,000. No dates, location, or contact details provided.",
+        "priority": "urgent",
+        "policy_number": "POL-2025",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_049",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Escalation: Medical claim delay for policy POL-2025-3786 (EUR 12,400)",
+        "subject": "Unfassbare Verzögerung bei meinem Schadensfall! POL-2025-3786",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Claimant Max Mustermann complains of significant delay and excessive paperwork regarding a medical emergency claim. States hospital has already performed surgery. Incident occurred on 15 September 2023. Invoice amount is 12,400 EUR and claimant says it was submitted three weeks ago. Claimant demands immediate clarification and prompt payout/transfer of the amount.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-3786",
+        "claim_type": "medical",
         "claim_date": null,
-        "incident_date": null,
+        "incident_date": "2023-09-15",
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 12400,
+        "missing_fields": [
+          "claimant_email",
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_050",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Beschwerde: Verzögerte Bearbeitung medizinischer Schadenmeldung (ca. 30.000 EUR)",
+        "subject": "Beschwerde über Ihre unverschämte Verzögerung!!",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0171-12345678",
+        "description": "Der Versicherungsnehmer beschwert sich über eine seit Wochen andauernde Verzögerung/fehlende Bearbeitung seiner Versicherungsanfrage/Schadensabwicklung. Es handelt sich laut E-Mail um einen medizinischen Notfall mit voraussichtlichen Kosten von fast 30.000 EUR. Der Absender gibt an, alle angeforderten Unterlagen bereits eingereicht zu haben, fordert umgehende Rückmeldung und schnelle Bearbeitung und droht andernfalls mit rechtlichen Schritten. Angegebene Versicherungsnummer: POL-2025-9873.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-9873",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 30000,
+        "missing_fields": [
+          "claim_date",
+          "incident_date",
+          "claimant_email"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_051",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Beschwerde zu medizinischer Notlage/OP – Erstattung zu POL-2025-1234",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Hannah Müller",
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Claimant beschwert sich über ausstehende/unklare Auszahlung/Erstattung nach medizinischer Notlage mit Krankenhausaufenthalt und Operation. Verweist auf Police/Referenz POL-2025-1234 und fordert umgehende Regulierung/Überweisung. Keine konkreten Daten zu Schadenereignisdatum, Anspruchsdatum, Betrag oder Ort genannt. Kontaktaufnahme per Telefon wird angeboten, Nummer jedoch nicht angegeben.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_052",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Beschwerde: Verzögerte Bearbeitung nach Krankenhaus/Operation (POL-2025-1234)",
+        "subject": "Was ist Ihre Definition von „Sicherheit“??",
         "claimant_name": null,
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Der Absender beschwert sich über eine aus seiner Sicht stark verzögerte bzw. ausbleibende Bearbeitung eines Versicherungsfalls nach einem medizinischen Notfall mit Krankenhausaufenthalt und Operation. Er fordert eine zeitnahe Rückmeldung und Bearbeitung. Genannte Versicherungs-/Policennummer: POL-2025-1234. Keine weiteren konkreten Angaben zu Datum, Ort oder Kosten werden genannt.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_053",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Hospital emergency surgery claim - Anna Müller (POL-2025-6789)",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Anna Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176 12345678",
+        "description": "Claimant Anna Müller reports a sudden medical emergency requiring hospitalization and surgery. She is seeking guidance on how to file the claim and what documents are required. She states she has some invoices and hospital reports available. Policy number provided: POL-2025-6789. Incident date reported as 12 October 2023. Estimated costs approximately EUR 18,500.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-6789",
+        "claim_type": "medical",
         "claim_date": null,
-        "incident_date": null,
+        "incident_date": "2023-10-12",
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 18500,
+        "missing_fields": [
+          "claimant_email",
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_054",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medizinischer Notfall: Anna Müller bittet um Hilfe zur Kostenübernahme/Abwicklung",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Anna Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176 12345678",
+        "description": "Anna Müller (Police POL-2025-3741) meldet einen medizinischen Notfall mit Krankenhausaufenthalt und Operation. Sie fragt, ob und wie die Operations-/Behandlungskosten über die Versicherung abgewickelt werden können, welche Belege/Unterlagen einzureichen sind und ob es ein Formular gibt. Sie bittet um schnelle Rückmeldung und Anleitung zum weiteren Vorgehen, da sie überfordert ist.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-3741",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_055",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Anfrage zu medizinischem Notfall/Operation – Unterstützung bei Schadenmeldung benötigt",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
+        "description": "Der Absender meldet einen medizinischen Notfall mit Krankenhausaufenthalt und Operation und ist unsicher, wie er/sie eine Schadenmeldung starten soll. Es liegen aktuell keine Unterlagen oder weiteren Details vor; der/die Absender:in bittet um Anleitung zu den nächsten Schritten bzw. zuständiger Kontaktstelle.",
+        "priority": "urgent",
         "policy_number": null,
-        "claim_type": null,
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_056",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medical emergency claim inquiry: hospital stay and surgery, invoices received",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Max Müller",
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
+        "description": "Claimant Max Müller reports a sudden medical emergency requiring hospitalization and an operation. He has received medical invoices and is unsure how to proceed or whether he can send the bills for coverage review. Policy number not found; claimant believes it may resemble \"POL-2025-XXXX\". Claim amount is unclear; claimant estimates total costs somewhere between 1,000 and 50,000 EUR. Claimant requests guidance on next steps, required forms, and what information/documents to submit.",
+        "priority": "urgent",
         "policy_number": null,
-        "claim_type": null,
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_057",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medical emergency claim for Thomas Weber (POL-2025-7356) – €12,300",
+        "subject": "Schadensmeldung – Medizinischer Notfall",
+        "claimant_name": "Thomas Weber",
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Attorney Karsten Müller (Müller & Partner Rechtsanwälte) reports a medical claim on behalf of his client, Mr. Thomas Weber, under health insurance policy POL-2025-7356. Incident: On 2023-10-15 Mr. Weber suffered an acute medical emergency requiring immediate admission to St. Marien Krankenhaus München. During the hospital stay, a surgical procedure was necessary to stabilize his condition. Preliminary medical costs are stated as EUR 12,300. Request for prompt processing and coverage of costs per policy terms. Contact for questions: Karsten Müller, phone 089-6543210.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-7356",
+        "claim_type": "medical",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-10-15",
+        "incident_location": "St. Marien Krankenhaus München, München",
+        "claim_amount": 12300,
+        "missing_fields": [
+          "claim_date",
+          "claimant_email",
+          "claimant_phone"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_058",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medizinische Schadensmeldung: Krankenhausaufenthalt/Operation (POL-2025-1234)",
+        "subject": "Schadensmeldung – Versicherungsnummer POL-2025-1234",
+        "claimant_name": "Paul Schmidt",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0151-2345678",
+        "description": "Der Absender meldet einen medizinischen Schaden: Krankenhausaufenthalt aufgrund eines medizinischen Notfalls, der in einer notwendigen Operation endete. Details zur Behandlung sind noch nicht vollständig bekannt. Vorläufige Kosten werden auf 1.000 bis 50.000 EUR geschätzt. Es wird um Eingangsbestätigung sowie eine Liste der benötigten Informationen/Dokumente zur weiteren Bearbeitung gebeten. Versicherungs-/Kundennummer: POL-2025-1234. Kontakt telefonisch möglich.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_059",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medical claim for hospitalization/operation under policy POL-2025-3478 (~€20,000)",
+        "subject": "Schadensmeldung – POL-2025-3478",
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Email from Klaus Meier (Versicherungsmakler) on behalf of a client regarding a medical emergency that resulted in hospitalization and subsequent surgery/operation. Requesting prompt processing of the health insurance reimbursement claim. Estimated claim amount is approximately EUR 20,000 based on initial hospital cost estimates. Caller requests urgent handling and feedback; offers phone contact for additional information/documents.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-3478",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 20000,
+        "missing_fields": [
+          "claimant_name",
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_060",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Medical emergency claim notice for policy POL-2025-1234 (operative hospital treatment)",
+        "subject": "Schadensmeldung - Polizzenummer POL-2025-1234",
         "claimant_name": null,
-        "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_email": "maximilian.fischer@kanzlei-fischer.de",
+        "claimant_phone": "+49 123 456789",
+        "description": "Attorney Maximilian Fischer reports on behalf of his client (name not provided) a medical emergency that required urgent hospital treatment including an operative intervention. Claim amount not yet available. Request for prompt processing, confirmation of receipt, and guidance on next required steps.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "medical",
         "claim_date": null,
         "incident_date": null,
-        "incident_location": null,
+        "incident_location": "Hospital (location not specified)",
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_061",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden am Wohnhaus (Hagel) vom 2023-10-15 – ca. 12.000 EUR",
+        "subject": "Schadensmeldung: Sturmschaden am 15. Oktober 2023",
+        "claimant_name": "Max Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0151-23456789",
+        "description": "Der Versicherungsnehmer meldet einen Sturmschaden/Hagelschaden am Wohnhaus vom 15.10.2023. Durch heftigen Hagelschlag wurden Dachziegel beschädigt und teilweise abgerissen; dadurch kam es zu Wassereintritt in den Dachboden. Vorläufig geschätzter Schaden: ca. 12.000 EUR. Fotos des Schadens sind vorhanden und können auf Wunsch übermittelt werden. Anschrift: Hauptstraße 45, 12345 Musterstadt.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-10-15",
+        "incident_location": "Hauptstraße 45, 12345 Musterstadt",
+        "claim_amount": 12000,
+        "missing_fields": [
+          "claimant_email",
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_062",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden am Wohnhausdach (Hagel) – POL-2025-8347",
+        "subject": "Sturmschadenmeldung - POL-2025-8347",
+        "claimant_name": "Anna Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0151-2345678",
+        "description": "Claimant meldet Sturmschaden am Wohnhaus: In der Nacht vom 12. auf den 13. Oktober verursachte ein heftiger Sturm/Hagelschlag erhebliche Schäden am Dach. Mehrere Dachziegel sind beschädigt; Feuchtigkeit dringt ein. Schadenshöhe derzeit unbekannt, vermutlich beträchtlich. Schadensobjekt ist der Hauptwohnsitz; genaue Adresse nicht angegeben. Claimant bittet um Informationen zu nächsten Schritten sowie benötigten Dokumenten/Belegen. Hinweis: Unterlagen aktuell nicht zur Hand (unterwegs).",
+        "priority": "high",
+        "policy_number": "POL-2025-8347",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date",
+          "claimant_email",
+          "incident_location"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_063",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden: Dachschaden durch Hagelschlag (Policen-Nr. POL-2025-XXXX)",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Der Absender meldet einen erheblichen Dachschaden infolge von Hagelschlag durch den letzten Sturm. Der Schaden müsse dringend behoben werden. Es liegen aktuell nur minimale Informationen vor; weitere Details sollen zeitnah nachgereicht werden. Policennummer angegeben: POL-2025-XXXX. Der Absender bittet um Rückmeldung zur weiteren Vorgehensweise und benötigten Unterlagen.",
+        "priority": "high",
+        "policy_number": "POL-2025-XXXX",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claimant_phone",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_064",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Schadensanzeige Sturmschaden: Dachschäden durch Hagel und starken Wind",
+        "subject": "Schadensanzeige – Sturmschaden",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0171-12345678",
+        "description": "Der Versicherungsnehmer meldet einen Sturmschaden am Haus. Betroffen ist das Dach; Ursache laut Schilderung Hagelschlag und starker Wind in den letzten Tagen. Eine konkrete Schadenshöhe kann derzeit nicht angegeben werden, da eine genaue Begutachtung noch aussteht; der Schaden wird als erheblich eingeschätzt. Rückrufmöglichkeit telefonisch angegeben. Bitte um Mitteilung des weiteren Vorgehens und schnelle Rückmeldung.",
+        "priority": "high",
+        "policy_number": "POL-2025-4732",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date",
+          "incident_location"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_065",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden: Dach zerstört, Wassereintritt – geschätzte Kosten 30.000 EUR",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Der Absender meldet einen schweren Sturmschaden am Haus: Dach vollständig zerstört, Hagelkörner (tennisballgroß) sind durch die Ziegel gegangen. Es regnet bereits ins Haus (akuter Wassereintritt). Schadenereignis am 19. Oktober (Jahr nicht genannt). Geschätzte Reparaturkosten mindestens 30.000 EUR. Bitte um sofortige Unterstützung/Rückmeldung.",
+        "priority": "high",
+        "policy_number": "POL-2025-4731",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 30000,
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_066",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Urgent storm/hail roof damage with water ingress; estimated €100,000",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Lisa",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
+        "claimant_phone": "0171-1234567",
+        "description": "Claimant reports a severe storm and hail event today causing major roof damage with large holes and active water leaking/dripping into the property. Claimant is overwhelmed and requests immediate help. Claimant states they have a policy with the insurer but cannot find the policy number at this time. Estimated loss mentioned: approximately 100,000 EUR.",
+        "priority": "urgent",
         "policy_number": null,
-        "claim_type": null,
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 100000,
+        "missing_fields": [
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_067",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Hail/rain damage: roof leaking and interior water damage; urgent assistance requested",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0171-1234567",
+        "description": "Claimant reports severe weather event with heavy rain and hail causing major roof damage and subsequent water intrusion. Roof is \"total damaged\" and everything inside is getting wet; requests immediate help and a callback due to high stress. Estimated costs/claim amount unknown. Policy number provided as possibly \"POL-2025-1234\" but claimant is not certain.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_068",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Storm and hail damage: roof destroyed, water ingress, possible window damage (Thomas Müller)",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Thomas Müller",
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
+        "description": "Claimant reports a severe storm with hail causing major property damage. Roof is heavily damaged with roof tiles scattered; rain is entering the building (water ingress). Claimant believes windows are also damaged. Claimant cannot locate the policy number but states they are insured with us. Claimant attempted to reach by phone without success and requests urgent assistance and repairs to prevent further damage.",
+        "priority": "high",
         "policy_number": null,
-        "claim_type": null,
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_069",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden am Dach (Hagel) – POL-2025-7421, geschätzt 50.000–70.000 EUR",
+        "subject": "Katastrophaler (!!) Sturmschaden - POL-2025-7421",
+        "claimant_name": "Klaus Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0151-23456789",
+        "description": "Der Versicherungsnehmer meldet einen schweren Sturmschaden/Hagelschaden am Dach. Hagelkörner \"so groß wie Golfbälle\" hätten Dachziegel zertrümmert; das Dach sei stark beschädigt (\"wie ein Schweizer Käse\"). Geschätzte Schadenhöhe zwischen 50.000 und 70.000 EUR. Der Absender fordert eine zügige Bearbeitung und Rückmeldung.",
+        "priority": "urgent",
+        "policy_number": "POL-2025-7421",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
+        "incident_date": "2023-07-10",
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 70000,
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_location"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_070",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden/Hagel: Dach beschädigt – Meldung zu POL-2025-1234",
+        "subject": "Sturmschaden – wer zahlt jetzt den Schlamassel?",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-123456",
+        "description": "Der Versicherungsnehmer meldet einen Hagel-/Sturmschaden am Dach. Laut E-Mail hat das Dach \"letzte Woche\" durch Hagel erheblich gelitten. Es wird eine Regulierung erwartet; konkrete Schadenshöhe wird nicht beziffert (\"mehrere Tausend Euro\"). Tonfall verärgert, fordert schnelle Bearbeitung.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_071",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Storm and hail damage to roof; claimant requests prompt assistance",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
+        "description": "Claimant reports that a storm with hail and strong wind last week severely damaged/destroyed their roof (\"Dach zerlegt\", \"Dach kaputt\"). They express frustration about delays and indicate they may hire an emergency roofer and submit the invoice. No identifying details, policy number, dates, location, or amount provided.",
+        "priority": "high",
         "policy_number": null,
-        "claim_type": null,
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_072",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden am Dach – Kunde meldet undichte Stelle, Rückruf erbeten",
+        "subject": "Sturmschaden am Dach – was für ein toller Service!",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0151-xxxxxx",
+        "description": "Der Versicherungsnehmer meldet einen Sturmschaden am Dach (beschreibt starke Beschädigung, vergleichbar mit Hagelschaden) und berichtet, dass das Dach tropft/undicht ist. Er fordert eine schnelle Reaktion und bittet um Rückruf. Eine genaue Versicherungsnummer ist nicht bekannt; es wird nur ein unvollständiger Hinweis genannt: \"POL-2025-irgendwas\".",
+        "priority": "high",
+        "policy_number": "POL-2025-irgendwas",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_073",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden am Dach mit beschädigten Fenstern (Hagel) – Besichtigung erbeten",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Anna Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0172-1234567",
+        "description": "Claimant meldet Sturmschaden/Hagelschaden: In der letzten Nacht gab es einen schweren Sturm, Dach stark beschädigt (Ziegel heruntergefallen) und mehrere Fenster beschädigt. Schadenereignis laut E-Mail: gestern am 15. Oktober. Claimant ist unsicher über weiteres Vorgehen und bittet um Anleitung sowie Termin zur Besichtigung/Schadensaufnahme. Kostenhöhe unbekannt.",
+        "priority": "high",
+        "policy_number": "POL-2025-7744",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_074",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden: Hagel beschädigt Hausdach, Loch mit Wassereintritt",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Alex Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176 1234567",
+        "description": "Der Versicherungsnehmer meldet einen Sturmschaden in der letzten Nacht: heftiger Hagel hat das Dach des Hauses stark beschädigt, es gibt ein großes Loch und Wasser dringt ein. Der Absender ist unsicher, wie der Schaden gemeldet werden soll, fragt nach sofortigem Anruf/Notfallvorgehen, ob jemand zur Besichtigung kommen kann, welche Dokumente benötigt werden und wie lange die Bearbeitung dauert. Rückruf wird erbeten.",
+        "priority": "high",
+        "policy_number": "POL-2025-2743",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_075",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden/Hagel: Dach beschädigt – Anna Müller benötigt Unterstützung",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Anna Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
+        "claimant_phone": "0176/12345678",
+        "description": "Claimant reports a major storm; roof was damaged, possibly due to hail (not fully certain). Damage described as severe. Claimant is unsure how to proceed and requests guidance. Policy/contract not available; policy number not provided. Claimant name provided as Anna Müller; phone provided.",
+        "priority": "high",
         "policy_number": null,
-        "claim_type": null,
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_076",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden/Hagel: Dach beschädigt – Kunde bittet um weitere Schritte",
+        "subject": "Hilfe! Sturmschaden an meinem Haus",
+        "claimant_name": "Alex Schmidt",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0123-4567890",
+        "description": "Der Versicherungsnehmer meldet nach einem starken Sturm mit heftigem Hagel in der letzten Nacht einen möglichen Dachschaden am Haus. Dach sieht beschädigt aus; Schadenumfang unklar. Kunde sorgt sich vor Folgeschäden (Regenwasser/Hereinregnen) und fragt nach dem weiteren Vorgehen sowie ob eine Besichtigung/Schadensbegutachtung erforderlich ist. Versicherungsunterlagen aktuell nicht auffindbar; vermutete Policennummer/Versicherungsnummer: \"POL-2025-XXXX\" (unsicher).",
+        "priority": "high",
+        "policy_number": "POL-2025-XXXX",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_077",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden/Hagelschaden am Wohnhausdach (ca. 15.000 EUR)",
+        "subject": "Schadensmeldung – Sturmschaden am 12. Oktober 2023",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0171-1234567",
+        "description": "Der Versicherungsnehmer meldet einen Sturmschaden/Hagelschaden am Wohnhaus. Ereignisdatum: 12. Oktober 2023. Hagelschlag verursachte erhebliche Schäden am Dach. Erste Begutachtungen schätzen die Schadenshöhe auf ca. 15.000 EUR. Versicherungsnummer: POL-2025-3478. Adresse: Beispielstraße 12, 12345 Musterstadt. Bitte um zeitnahe Bearbeitung und Koordinierung eines Gutachtertermins; Kontakt telefonisch oder per E-Mail (E-Mail-Adresse nicht angegeben).",
+        "priority": "high",
+        "policy_number": "POL-2025-3478",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-10-12",
+        "incident_location": "Beispielstraße 12, 12345 Musterstadt",
+        "claim_amount": 15000,
+        "missing_fields": [
+          "claim_date",
+          "claimant_email"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_078",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
-        "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden/Hagelschlag am Dach in Berlin – ca. 15.000 EUR (POL-2025-4687)",
+        "subject": "Schadensmeldung: Sturmschaden am 15. Oktober 2023",
+        "claimant_name": "Wolfgang Müller",
+        "claimant_email": "anwalt@mueller-kanzlei.de",
+        "claimant_phone": "0172 1234568",
+        "description": "Schadensmeldung im Auftrag des Mandanten Herrn Wolfgang Müller (Versicherungsnummer POL-2025-4687). Sturmschaden durch starken Hagelschlag am Dach des Wohnhauses, Kaiserstraße 23, 10115 Berlin. Erhebliche Dachschäden. Erste Schätzung durch örtlichen Dachdecker: ca. 15.000 EUR; weitere Begutachtungen erforderlich. Kontakt erfolgt über den bevollmächtigten Rechtsanwalt Dr. Hans Fischer (Fischer und Partner Kanzlei).",
+        "priority": "high",
+        "policy_number": "POL-2025-4687",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-10-15",
+        "incident_location": "Kaiserstraße 23, 10115 Berlin",
+        "claim_amount": 15000,
+        "missing_fields": [
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_079",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden/Hagel: beschädigte Dachziegel – Begutachtung erbeten",
+        "subject": "Schadensmeldung - Sturmschaden an Dach",
+        "claimant_name": "Paul Wagner",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0171-1234567",
+        "description": "Der Versicherungsnehmer meldet einen durch den jüngsten Sturm verursachten Schaden am Dach des Hauses. Insbesondere Hagel hat mehrere Dachziegel beschädigt. Es wird um schnellstmögliche Begutachtung gebeten, um Folgeschäden zu vermeiden.",
+        "priority": "high",
+        "policy_number": "POL-2025-5783",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_080",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Sturmschaden: Hagelschlag beschädigt Dach an versicherter Immobilie",
+        "subject": "Schadensmeldung - Sturmschaden an Immobilie",
+        "claimant_name": "Klaus Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0172-5555555",
+        "description": "Der Versicherungsnehmer meldet einen Sturmschaden an seiner versicherten Immobilie. Durch ein kürzlich aufgetretenes Sturmereignis kam es zu erheblichen Beschädigungen am Dach durch Hagelschlag. Die genaue Schadenshöhe ist noch nicht bekannt, wird jedoch als signifikant beschrieben. Der Versicherungsnehmer bittet um Zusendung der erforderlichen Formulare zur Schadensaufnahme sowie Informationen zum weiteren Vorgehen. Rückfragen telefonisch möglich.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_081",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Diebstahl aus Auto am 2023-10-14 in Berlin – Schadenshöhe ca. 5.300 EUR",
+        "subject": "Schadensmeldung - Diebstahl aus meinem Auto",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Meldung eines Diebstahls aus einem aufgebrochenen Auto. Vorfall am 14. Oktober 2023 auf dem Parkplatz des Einkaufszentrums, Hauptstraße 12, 10115 Berlin. Entwendet wurden: Laptop Dell XPS 13 (Seriennr. ABC123456), Smartphone Samsung Galaxy S21 (Seriennr. XYZ987654), Samsonite-Tasche mit u.a. Bekleidung und Dokumenten. Schadenshöhe ca. 5.300 EUR. Polizei wurde umgehend informiert; Aktenzeichen AZ-B123-45678. Kopie der Anzeige wird zeitnah nachgereicht. Fotos der beschädigten Autotür sowie Liste der entwendeten Gegenstände vorhanden und auf Wunsch sendbar. Absenderadresse: Musterstraße 10, 12345 Musterstadt.",
+        "priority": "high",
+        "policy_number": "POL-2025-4826",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-10-14",
+        "incident_location": "Parkplatz des Einkaufszentrums, Hauptstraße 12, 10115 Berlin",
+        "claim_amount": 5300,
+        "missing_fields": [
+          "claimant_email",
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_082",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
-        "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Einbruchdiebstahl aus Fahrzeug am 2023-10-14 in Musterstadt (ca. 3.500 EUR)",
+        "subject": "Schadensmeldung: Einbruch und Diebstahl",
+        "claimant_name": "Max Mustermann",
+        "claimant_email": "max.mustermann@email.de",
+        "claimant_phone": "0123-456789",
+        "description": "Meldung eines Einbruchdiebstahls aus einem Fahrzeug. Vorfall am 2023-10-14: Fahrzeug am Straßenrand in der Musterstraße, 12345 Musterstadt abgestellt. Durch Einbruch wurden verschiedene persönliche Gegenstände entwendet. Geschätzter Schadenwert: 3.500 EUR. Versicherungsnummer: POL-2025-1234. Claimant kündigt Nachreichung einer detaillierten Liste der gestohlenen Gegenstände sowie der polizeilichen Bestätigungs-/Vorgangsnummer an.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-10-14",
+        "incident_location": "Musterstraße, 12345 Musterstadt",
+        "claim_amount": 3500,
+        "missing_fields": [
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_083",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Schadenmeldung Diebstahl: Einbruch Auto und Wohnung (vorsorgliche Meldung)",
+        "subject": "Schadenmeldung - Diebstahl",
         "claimant_name": null,
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Der Absender meldet vorsorglich einen Diebstahlschaden nach einem Einbruch. Es wurden persönliche Gegenstände aus dem Auto entwendet sowie Wertsachen aus der Wohnung. Der Absender hat derzeit keine vollständigen Informationen/keine detaillierte Aufstellung und kündigt an, weitere Details nachzureichen. Er bittet um eine Eingangsbestätigung der Schadensmeldung und Informationen zu den nächsten Schritten. Referenz/Angabe im Schreiben: \"POL-2025-XXXX\". Telefon ist als Platzhalter angegeben.",
+        "priority": "medium",
+        "policy_number": "POL-2025-XXXX",
+        "claim_type": "other",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claimant_phone",
+          "claim_date",
+          "incident_date",
+          "incident_location"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_084",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Diebstahlschaden melden: Einbruch mit entwendeten persönlichen Gegenständen",
+        "subject": "Meldung eines Diebstahlschadens",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0123-456789",
+        "description": "Der Versicherungsnehmer meldet einen Diebstahlschaden durch Einbruch, bei dem persönliche Gegenstände entwendet wurden. Genaue Angaben zum Hergang, Datum, Ort und zur Schadenshöhe liegen derzeit noch nicht vor; der Anspruchsteller arbeitet an einer vollständigen Liste der gestohlenen Gegenstände und bittet um Information zum weiteren Ablauf und benötigten Unterlagen.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_085",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Autoeinbruch mit Diebstahl aus Fahrzeug – Schaden ca. 10.000 EUR (POL-2025-4789)",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Emily Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176 12345678",
+        "description": "Claimant berichtet von einem Einbruch in ihr Auto in der Nacht zum 13.10.2023 auf dem Parkplatz vor ihrem Haus. Dabei wurden nach eigener Angabe alle Gegenstände aus dem Fahrzeug gestohlen, u.a. Laptop, Kamera und eine teure Jacke. Geschätzter Schaden: ca. 10.000 EUR. Policy-Nummer: POL-2025-4789. Claimant bittet um sofortige Hilfe/Rückmeldung.",
+        "priority": "high",
+        "policy_number": "POL-2025-4789",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-10-13",
+        "incident_location": "Parkplatz vor dem Haus der Claimant (genaue Adresse nicht angegeben)",
+        "claim_amount": 10000,
+        "missing_fields": [
+          "claim_date",
+          "claimant_email"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_086",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Autoeinbruch mit Diebstahl aus Fahrzeug – dringende Unterstützung erbeten",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
+        "claimant_phone": "0157-1234567",
+        "description": "Der Absender meldet einen Autoeinbruch in der vergangenen Nacht (genaues Datum unklar). Unbekannte sind in das Auto eingebrochen, haben \"alles\" gestohlen, u. a. Laptop, Kamera und wichtige Arbeitssachen. Es wird angegeben, dass in der Straße des Absenders eingebrochen wurde und dabei Schäden entstanden sind (\"alles kaputt gemacht\"). Der Absender bittet dringend um Unterstützung und um schnellen Rückruf, da telefonisch niemand erreichbar sei. Eine Versicherungsnummer ist nicht sicher: genannt werden POL-2025-1234 oder möglicherweise POL-2025-4321.",
+        "priority": "high",
         "policy_number": null,
-        "claim_type": null,
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
-        "incident_location": null,
+        "incident_location": "In der Straße des Absenders (genaue Adresse nicht genannt)",
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_087",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Break-in theft claim: home items and car broken into; urgent callback requested",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176",
+        "description": "Claimant reports a burglary/break-in with theft of multiple items (laptop, camera, and other belongings) and that their car was also broken into. Police have been informed. Claimant is panicked and requests an urgent call back and guidance on next steps. Estimated loss stated as \"30,000 EUR or more\" but not confirmed. Policy number provided uncertainly as \"POL-2025-1234 or so\".",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 30000,
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_088",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Vehicle break-in and theft reported; policy possibly POL-2025-1234",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-12345678",
+        "description": "Claimant reports their car was broken into and items were stolen (\"ALLES WEG\"). They are distressed and request urgent guidance and a phone contact. Policy number not found but believed to be \"POL-2025-1234\" (uncertain). Incident occurred \"gegen Abend\" (in the evening) with no exact time; claimant did not see or hear anything. Extent of stolen items is unclear (\"alles Wichtige\" missing). No incident location provided. No claim amount stated.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_089",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Diebstahl aus aufgebrochenem Auto – Schaden ca. 5.000 EUR (POL-2025-1234)",
+        "subject": "Diebstahlmeldung – POL-2025-1234",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0171-2345678",
+        "description": "Der Versicherungsnehmer meldet einen Einbruch in sein Auto mit Diebstahl mehrerer Wertsachen. Vorfall laut E-Mail in der Nacht zum 13. Oktober 2023. Geschätzter Schaden: knapp 5.000 EUR. Policy-Nummer: POL-2025-1234. Der Absender äußert Unzufriedenheit und erwartet zeitnahe Regulierung; erwähnt, dass die Polizei einen Bericht aufgenommen hat (Details/Nummer nicht genannt).",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 5000,
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date",
+          "incident_location"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_090",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Autoeinbruch und Diebstahl gemeldet – Kunde fordert schnelle Bearbeitung",
+        "subject": "Unglaublich – Einbruch und Diebstahl!! POL-2025-1234",
+        "claimant_name": "Thomas Schmidt",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-1234567",
+        "description": "Der Absender meldet einen Einbruch in sein Auto (Diebstahl) auf einer belebten Straße. Es fehlen mehrere Gegenstände; der Schaden wird vom Kunden auf \"in die Tausende\" geschätzt. Kunde ist verärgert und fordert sofortige, schnelle Bearbeitung ohne umfangreichen Papierkram. Er gibt an, dass Versicherungsnummer und Kontaktdaten in den Akten vorhanden seien; im Betreff wird \"POL-2025-1234\" genannt.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
-        "incident_location": null,
+        "incident_location": "belebte Straße (genauer Ort nicht angegeben)",
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_091",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Diebstahl aus Auto nach eingeschlagenem Fenster – geschätzter Schaden 20.000 EUR",
         "subject": null,
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176 12345678",
+        "description": "Kunde meldet Diebstahl aus dem Auto: Fenster eingeschlagen, sämtliche Gegenstände entwendet (u.a. Laptop, teure Jacke). Kunde ist sehr verärgert und fordert schnelle Rückmeldung. Geschätzte Schadenhöhe ca. 20.000 EUR (unsicher). Angegebene Referenz/Policen-/Vorgangsnummer: POL-2025-1234.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 20000,
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_092",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Auto-Diebstahl gemeldet – Anfrage zur Regulierung (POL-2025-XXXX)",
+        "subject": "Was für ein Desaster!",
         "claimant_name": null,
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176 12345678",
+        "description": "Der Absender meldet, dass sein Auto gestohlen wurde (\"Es hat sich jemand an meinem Auto bedient... weg ist weg\"). Er verweist auf eine bestehende Versicherungspolice \"POL-2025-XXXX\" und fragt nach dem weiteren Ablauf bzw. ob der Schaden reguliert wird. Geschätzter Schaden: \"ein paar Tausend Euro\" (keine konkrete Summe genannt). Keine Angaben zu Datum/Uhrzeit des Vorfalls, Ort, Fahrzeugdaten oder polizeilicher Anzeige.",
+        "priority": "high",
+        "policy_number": "POL-2025-XXXX",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_name",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_093",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Autoeinbruch mit Diebstahl aus geparktem Fahrzeug (ca. 3.000 EUR)",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0151-12345678",
+        "description": "Der Versicherungsnehmer meldet einen Einbruch in sein Auto mit Diebstahl von Gegenständen. Vorfall ereignete sich spät abends am 15. Oktober, als das Fahrzeug in der eigenen Straße geparkt war. Eine vollständige Liste der entwendeten Gegenstände liegt noch nicht vor; geschätzter Schaden/Verlustwert ca. 3.000 EUR. Der Kunde fragt nach den nächsten Schritten, ob außer der Polizei weitere Stellen zu benachrichtigen sind, und nach der üblichen Bearbeitungsdauer.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_location": "in unserer Straße (geparkt)",
+        "claim_amount": 3000,
+        "missing_fields": [
+          "claim_date",
+          "incident_date",
+          "claimant_email"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_094",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Einbruch/Diebstahl aus Auto auf Parkplatz – ca. 10.000 EUR Schaden (Angaben unsicher)",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Tina Müller",
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Claimant berichtet von einem Einbruch/Diebstahl aus ihrem Auto, das auf einem Parkplatz stand (\"Auto wurde ausgeraubt\"). Vorfall war \"gestern\" (genaues Datum nicht genannt). Versicherungsnummer ist nicht sicher; vermutet \"POL-2025-6789\". Es fehlen vermutlich Gegenstände im Wert von ca. 10.000 EUR, genaue Aufstellung noch nicht möglich. Claimant ist unsicher, ob sie bei der richtigen Stelle ist, fragt nach benötigten Unterlagen und ob sie zur Polizei gehen soll. Telefonische Erreichbarkeit derzeit nicht möglich, da Handy vermutlich gestohlen wurde; keine Telefonnummer angegeben. Name am Ende als \"Tina Müller?\" mit Unsicherheit angegeben.",
+        "priority": "high",
+        "policy_number": "POL-2025-6789",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_location": "Parkplatz (genauer Ort unbekannt)",
+        "claim_amount": 10000,
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_095",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Diebstahl aus Auto – Unterstützung bei Schadensmeldung (Lisa Müller)",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Lisa Müller",
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Claimant Lisa Müller meldet einen Diebstahl aus ihrem Auto. Sie ist unsicher, wie sie die Schadensmeldung einreichen soll und welche Unterlagen erforderlich sind. Polizeibericht liegt noch nicht vor. Mögliche Versicherungs-/Policennummer: POL-2025-1234 (nicht sicher, Unterlagen nicht auffindbar). Keine Angaben zu Datum/Uhrzeit, Ort des Vorfalls oder entwendeten Gegenständen/Wert.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_096",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Autoaufbruch: eingeschlagenes Fenster und möglicher Diebstahl – Unterstützung erbeten",
         "subject": null,
-        "claimant_name": null,
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176-123456789",
+        "description": "Der/die Versicherungsnehmer:in berichtet von einem Vorfall am Auto: Als er/sie gestern zum Fahrzeug zurückkam, war ein Fenster eingeschlagen und der Innenraum durchwühlt. Es wird vermutet, dass Gegenstände fehlen, jedoch ist noch unklar, was genau entwendet wurde. Der/die Kund:in ist verunsichert und bittet um Anleitung zu den nächsten Schritten. Eine mögliche (unsichere) Versicherungs-/Policennummer wurde genannt: POL-2025-1234 (nicht bestätigt).",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_097",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Autoeinbruch/Diebstahl aus Fahrzeug in München – Schaden ca. 7.200 EUR",
+        "subject": "Schadensmeldung – Einbruch, Raub, Diebstahl aus Auto",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0171-2345678",
+        "description": "Schadensmeldung zu Police POL-2025-5678: In der Nacht von Samstag auf Sonntag (Vorfall-Datum angegeben als 14. Oktober 2023) wurde in das Fahrzeug des Claimants eingebrochen, das in der Karolinenstraße 12, 80333 München abgestellt war. Es wurden persönliche Gegenstände sowie elektronische Geräte gestohlen. Gesamtschaden ca. 7.200 EUR. Detaillierte Auflistung der gestohlenen Gegenstände und Kaufbelege wurden als Anhang angekündigt/mitgesendet. Diebstahl wurde bei der örtlichen Polizei gemeldet; Aktenzeichen: 123XY2023. Claimant bittet um Eingangsbestätigung und Information zum weiteren Vorgehen/ggf. benötigten Unterlagen. Anschrift: Musterstraße 45, 10115 Berlin.",
+        "priority": "high",
+        "policy_number": "POL-2025-5678",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-10-14",
+        "incident_location": "Karolinenstraße 12, 80333 München",
+        "claim_amount": 7200,
+        "missing_fields": [
+          "claimant_email",
+          "claim_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_098",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Hausrat-Schadensmeldung: Einbruch/Diebstahl aus Fahrzeug, ca. 2.500 EUR (POL-2025-1234)",
+        "subject": "Schadensmeldung POL-2025-1234 - Einbruch und Diebstahl",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "01234/567890",
+        "description": "Schadenmeldung zur Hausratversicherung. Am 2023-09-15 wurde in ein auf dem Grundstück geparktes Fahrzeug eingebrochen (Musterstraße 10, 12345 Musterstadt). Tatzeitraum zwischen 20:00 und 23:00 Uhr. Entwendet wurden: Laptop Dell XPS 13 sowie Fotokamera Canon EOS 80D. Gesamtschaden ca. 2.500 EUR. Polizeiliche Anzeige erstattet, Aktenzeichen AZ-2023-5678. Bitte um Rückmeldung zu weiteren Schritten und ggf. benötigten Unterlagen.",
+        "priority": "high",
+        "policy_number": "POL-2025-1234",
+        "claim_type": "damage",
         "claim_date": null,
-        "incident_date": null,
-        "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "incident_date": "2023-09-15",
+        "incident_location": "Musterstraße 10, 12345 Musterstadt",
+        "claim_amount": 2500,
+        "missing_fields": [
+          "claim_date",
+          "claimant_email"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_099",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Schadensmeldung Diebstahl/Einbruch aus Auto – Police POL-2025-3678",
+        "subject": "Schadensmeldung: Diebstahl Fall",
+        "claimant_name": "Matthias Müller",
         "claimant_email": null,
-        "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "claimant_phone": "0176 12345678",
+        "description": "Der Versicherungsnehmer meldet einen Schadensfall durch Diebstahl. Laut Schilderung umfasst der Vorfall Einbruch und Raub; es wurden auch Gegenstände aus dem Auto entwendet. Geschätzte Schadenshöhe: zwischen 500 und 30.000 EUR. Bitte Prüfung im Rahmen der Police POL-2025-3678 und zeitnahe Rückmeldung zur Abwicklung.",
+        "priority": "high",
+        "policy_number": "POL-2025-3678",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
-        "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "claim_amount": 30000,
+        "missing_fields": [
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     },
     {
       "id": "EMAIL_GEN_100",
-      "expected": {
-        "ticket_id": null,
-        "summary": null,
-        "subject": null,
-        "claimant_name": null,
+      "suggested": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Schadensmeldung Diebstahl/Einbruch – diverse Gegenstände entwendet",
+        "subject": "Schadensmeldung - Diebstahl",
+        "claimant_name": "Max Mustermann",
         "claimant_email": null,
         "claimant_phone": null,
-        "description": null,
-        "priority": null,
-        "policy_number": null,
-        "claim_type": null,
+        "description": "Der Versicherungsnehmer meldet einen Diebstahlschaden durch Einbruch. Es wurden diverse Gegenstände entwendet. Konkrete Details zum Vorfall (Datum, Ort, genaue Auflistung der entwendeten Gegenstände) liegen laut E-Mail nicht vor. Der Gesamtschaden wird als „üblich“ beschrieben, ohne konkrete Summe. Angegebene Versicherungsnummer: POL-2025-XXXX. Rückfragen sollen über die „bekannte Telefonnummer“ erfolgen (keine Nummer im Text enthalten).",
+        "priority": "high",
+        "policy_number": "POL-2025-XXXX",
+        "claim_type": "damage",
         "claim_date": null,
         "incident_date": null,
         "incident_location": null,
         "claim_amount": null,
-        "missing_fields": [],
-        "action_items": [],
-        "next_steps": null,
-        "created_timestamp": null
-      }
+        "missing_fields": [
+          "claimant_email",
+          "claimant_phone",
+          "claim_date",
+          "incident_date"
+        ],
+        "created_timestamp": "2026-02-02T00:00:00Z"
+      },
+      "status": "ok",
+      "error": null
     }
   ]
 }
