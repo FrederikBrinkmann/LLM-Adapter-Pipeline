@@ -22,6 +22,15 @@ from pathlib import Path
 
 import openai
 from openai import AsyncOpenAI
+from dotenv import load_dotenv
+import os
+
+# .env laden (für API Key)
+load_dotenv(Path(__file__).parent.parent.parent / ".env")
+
+# API Key aus LLM_PIPELINE_OPENAI_API_KEY lesen (falls OPENAI_API_KEY nicht gesetzt)
+if not os.getenv("OPENAI_API_KEY") and os.getenv("LLM_PIPELINE_OPENAI_API_KEY"):
+    os.environ["OPENAI_API_KEY"] = os.getenv("LLM_PIPELINE_OPENAI_API_KEY")
 
 # ============================================================================
 # CONFIG - Hier Parameter ändern!
@@ -31,7 +40,7 @@ class CONFIG:
     """Alle Konfigurationsparameter."""
     
     # LLM Settings
-    MODEL = "gpt-4o"
+    MODEL = "gpt-5.2"
     TEMPERATURE = 0.9  # Höher = mehr Variation
     MAX_TOKENS = 1000
     
@@ -60,13 +69,13 @@ class CONFIG:
     ]
     
     # Output
-    OUTPUT_DIR = Path(__file__).parent / "data"
+    OUTPUT_DIR = Path(__file__).parent.parent / "data"
     OUTPUT_FILE = OUTPUT_DIR / "synthetic_test_emails.json"
     
     # Quality Control
     MIN_CHARS = 50
     MAX_CHARS = 2000
-    ACCEPTANCE_RATE_TARGET = 0.85
+    MAX_RETRIES = 3  # Regenerierung bei Ablehnung
     
     # Logging
     VERBOSE = True
@@ -197,14 +206,15 @@ async def generate_email(
     info_level: str,
     client: AsyncOpenAI,
 ) -> tuple[str, dict]:
-    """Generiert eine Mail via GPT-4o."""
+    """Generiert eine Mail via LLM."""
     
     prompt = build_prompt(damage_type, mood, info_level)
     
     try:
-        response = await client.chat.completions.create(
-            model=CONFIG.MODEL,
-            messages=[
+        # GPT-5.x verwendet max_completion_tokens statt max_tokens
+        api_params = {
+            "model": CONFIG.MODEL,
+            "messages": [
                 {
                     "role": "system",
                     "content": "Du bist ein realistischer Versicherungskunde.",
@@ -214,11 +224,22 @@ async def generate_email(
                     "content": prompt,
                 },
             ],
-            temperature=CONFIG.TEMPERATURE,
-            max_tokens=CONFIG.MAX_TOKENS,
-        )
+            "temperature": CONFIG.TEMPERATURE,
+        }
         
-        email_text = response.choices[0].message.content.strip()
+        # Parameter je nach Modell
+        if CONFIG.MODEL.startswith("gpt-5"):
+            api_params["max_completion_tokens"] = CONFIG.MAX_TOKENS
+        else:
+            api_params["max_tokens"] = CONFIG.MAX_TOKENS
+        
+        response = await client.chat.completions.create(**api_params)
+        
+        content = response.choices[0].message.content
+        if content is None:
+            return None, {"success": False, "error": "Response content is None"}
+        
+        email_text = content.strip()
         
         return email_text, {"success": True, "tokens_used": response.usage.total_tokens}
     
@@ -238,7 +259,7 @@ def is_realistic_email(email_text: Optional[str]) -> tuple[bool, dict]:
     # Basic Checks
     if not email_text:
         issues.append("Email ist None")
-        return False, {"issues": issues}
+        return False, {"issues": issues, "char_count": 0, "accepted": False, "realistic_score": 0.0}
     
     if len(email_text) < CONFIG.MIN_CHARS:
         issues.append(f"Zu kurz: {len(email_text)} < {CONFIG.MIN_CHARS}")
@@ -295,13 +316,26 @@ async def generate_all_emails() -> list[SyntheticEmail]:
             for info_level in CONFIG.INFO_LEVELS:
                 email_id += 1
                 
-                # Generierung
-                email_text, gen_meta = await generate_email(
-                    damage_type, mood, info_level, client
-                )
+                # Regenerierung bis akzeptiert (max MAX_RETRIES Versuche)
+                is_valid = False
+                retries = 0
                 
-                # Quality Control
-                is_valid, quality_meta = is_realistic_email(email_text)
+                while not is_valid and retries < CONFIG.MAX_RETRIES:
+                    retries += 1
+                    
+                    # Generierung
+                    email_text, gen_meta = await generate_email(
+                        damage_type, mood, info_level, client
+                    )
+                    
+                    # Quality Control
+                    is_valid, quality_meta = is_realistic_email(email_text)
+                    
+                    if not is_valid and CONFIG.VERBOSE:
+                        print(f"  ⟳ [{email_id:3d}] Retry {retries}/{CONFIG.MAX_RETRIES}: {quality_meta.get('issues', [])}")
+                    
+                    # Rate limiting
+                    await asyncio.sleep(0.1)
                 
                 if is_valid:
                     accepted += 1
@@ -311,12 +345,13 @@ async def generate_all_emails() -> list[SyntheticEmail]:
                     status = "❌"
                 
                 if CONFIG.VERBOSE:
+                    retry_info = f" (nach {retries} Versuchen)" if retries > 1 else ""
                     print(
                         f"{status} [{email_id:3d}] {damage_type:12} | {mood:20} | {info_level:12} "
-                        f"| {quality_meta['char_count']:4d} chars"
+                        f"| {quality_meta['char_count']:4d} chars{retry_info}"
                     )
                 
-                # Speichern (auch rejected, zur Dokumentation)
+                # Speichern
                 email_obj = SyntheticEmail(
                     id=f"EMAIL_GEN_{email_id:03d}",
                     email_text=email_text or "[GENERATION FAILED]",
@@ -326,15 +361,13 @@ async def generate_all_emails() -> list[SyntheticEmail]:
                         "info_level": info_level,
                         "model": CONFIG.MODEL,
                         "temperature": CONFIG.TEMPERATURE,
+                        "retries": retries,
                         **gen_meta,
                     },
                     quality=quality_meta,
                 )
                 
                 emails.append(email_obj)
-                
-                # Rate limiting
-                await asyncio.sleep(0.1)
     
     print()
     print(f"Generierung abgeschlossen!")

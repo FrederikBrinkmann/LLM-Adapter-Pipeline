@@ -1,5 +1,5 @@
 {
-  "next_id": 18,
+  "next_id": 19,
   "tickets": [
     {
       "id": 1,
@@ -1193,6 +1193,79 @@
       "created_at": "2026-02-03T19:44:48.738688",
       "updated_at": "2026-02-03T19:44:48.738688",
       "id": 17
+    },
+    {
+      "ticket_id": "AUTO_GENERATED",
+      "subject": "Unintelligible insurance claim email received",
+      "summary": "Unintelligible insurance claim email received",
+      "claimant_name": null,
+      "claimant_email": null,
+      "claimant_phone": null,
+      "description": "The email content is unintelligible and does not provide any relevant claim information.",
+      "priority": "low",
+      "status": "todo",
+      "policy_number": null,
+      "claim_type": "other",
+      "claim_date": null,
+      "incident_date": null,
+      "incident_location": null,
+      "claim_amount": null,
+      "missing_fields": [
+        "claimant_name",
+        "policy_number",
+        "claim_date",
+        "incident_date",
+        "claim_type"
+      ],
+      "has_missing_critical_fields": true,
+      "action_items": [
+        {
+          "id": "ACT-19FDD781",
+          "title": "Request clarification from sender",
+          "details": "Contact the sender to obtain all missing claim details and resubmit the claim.",
+          "suggested_by": "llm",
+          "status": "open"
+        }
+      ],
+      "next_steps": "Reach out to the sender for clarification and request all critical claim information.",
+      "created_timestamp": "2024-06-13T12:00:00Z",
+      "source_job_id": 24,
+      "source_model_id": "gpt-4.1",
+      "raw_payload": {
+        "ticket_id": "AUTO_GENERATED",
+        "summary": "Unintelligible insurance claim email received",
+        "subject": null,
+        "claimant_name": null,
+        "claimant_email": null,
+        "claimant_phone": null,
+        "description": "The email content is unintelligible and does not provide any relevant claim information.",
+        "priority": "low",
+        "policy_number": null,
+        "claim_type": "other",
+        "claim_date": null,
+        "incident_date": null,
+        "incident_location": null,
+        "claim_amount": null,
+        "missing_fields": [
+          "claimant_name",
+          "policy_number",
+          "claim_date",
+          "incident_date",
+          "claim_type"
+        ],
+        "action_items": [
+          {
+            "title": "Request clarification from sender",
+            "details": "Contact the sender to obtain all missing claim details and resubmit the claim."
+          }
+        ],
+        "next_steps": "Reach out to the sender for clarification and request all critical claim information.",
+        "created_timestamp": "2024-06-13T12:00:00Z",
+        "model_id": "gpt-4.1"
+      },
+      "created_at": "2026-02-15T14:26:32.045813",
+      "updated_at": "2026-02-15T14:26:32.045813",
+      "id": 18
     }
   ]
 }
