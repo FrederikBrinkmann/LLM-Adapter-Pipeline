@@ -25,7 +25,7 @@ from .config import (
     RESULTS_FILE,
     DEFAULT_TIMEOUT_SECONDS,
 )
-from .metrics import EvaluationMetrics
+from .metrics import EvaluationMetrics, print_field_comparison
 
 logger = logging.getLogger(__name__)
 
@@ -169,6 +169,8 @@ class EvaluationRunner:
                 if result["status"] == "success":
                     acc = result.get("field_accuracy", 0)
                     print(f"   [{current}/{total}] {email_id}: ✅ {acc:.0f}%")
+                    # Feldvergleichstabelle ausgeben
+                    print_field_comparison(result["response"], gold[email_id])
                 else:
                     error_msg = result.get("error", "Unknown")[:40]
                     print(f"   [{current}/{total}] {email_id}: ❌ {error_msg}")

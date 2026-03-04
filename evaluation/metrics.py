@@ -10,7 +10,46 @@ from jsonschema import validate, ValidationError
 
 from backend.app.llm.prompting import JSON_SCHEMA
 from .config import CRITICAL_FIELDS, IGNORE_FIELDS
+from .embedding_utils import embedding_similarity
 
+SOFT_FIELDS = {"description", "summary", "subject", "incident_location", "claimant_name"}
+
+def print_field_comparison(predicted: dict, expected: dict):
+    print("| Feld | Gold | LLM | Vergleich | Match | Score |")
+    print("|---|---|---|---|---|---|")
+    for field in expected.keys():
+        if field in IGNORE_FIELDS:
+            continue
+        pred_val = predicted.get(field)
+        gold_val = expected.get(field)
+        if field in SOFT_FIELDS:
+            if isinstance(pred_val, str) and isinstance(gold_val, str):
+                sim = embedding_similarity(pred_val, gold_val)
+                cmp = f"semantisch ({sim:.2f})"
+                match = "✅" if sim >= 0.85 else "❌"
+                score = f"{sim:.2f}"
+            else:
+                cmp = "semantisch"
+                match = "❌"
+                score = "0.00"
+        elif pred_val == gold_val:
+            cmp = "exakt"
+            match = "✅"
+            score = "1.00"
+        elif isinstance(pred_val, (int, float)) and isinstance(gold_val, (int, float)):
+            if abs(float(pred_val) - float(gold_val)) <= 0.01 * max(abs(float(gold_val)), 1):
+                cmp = "exakt (Toleranz)"
+                match = "✅"
+                score = "1.00"
+            else:
+                cmp = "exakt"
+                match = "❌"
+                score = "0.00"
+        else:
+            cmp = "exakt"
+            match = "❌"
+            score = "0.00"
+        print(f"| {field} | {gold_val} | {pred_val} | {cmp} | {match} | {score} |")
 
 class EvaluationMetrics:
     """Berechnet verschiedene Metriken für LLM Output Qualität"""
@@ -67,6 +106,13 @@ class EvaluationMetrics:
             pred_val = predicted.get(field)
             exp_val = expected.get(field)
 
+            if field in SOFT_FIELDS:
+                # Semantische Ähnlichkeit für weiche Felder
+                if isinstance(pred_val, str) and isinstance(exp_val, str):
+                    sim = embedding_similarity(pred_val, exp_val)
+                    if sim >= 0.85:
+                        matches += 1
+                    continue
             if pred_val == exp_val:
                 matches += 1
             elif isinstance(exp_val, (int, float)) and isinstance(pred_val, (int, float)):

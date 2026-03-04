@@ -9,12 +9,12 @@ from .model_config import ModelConfig
 PROVIDER_DEFAULTS: dict[str, dict[str, Any]] = {
     "openai": {
         "temperature": 0.0,
-        "max_tokens": 900,
+        "max_completion_tokens": 900,
     },
     "ollama": {
         "temperature": 0.2,
         "top_p": 0.9,
-        "max_tokens": 700,
+        "num_predict": 700,
     },
 }
 

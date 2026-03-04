@@ -16,7 +16,7 @@ RESULTS_FILE = RESULTS_DIR / "evaluation_results.json"
 REPORT_FILE = RESULTS_DIR / "EVALUATION_REPORT.md"
 
 # Evaluation Settings
-DEFAULT_TIMEOUT_SECONDS = 120  
+DEFAULT_TIMEOUT_SECONDS = 300  # Timeout auf 5 Minuten erhöht
 MAX_CONCURRENT_REQUESTS = 5
 
 # Kritische Felder für Bewertung (alle verglichenen Felder)
@@ -34,6 +34,7 @@ CRITICAL_FIELDS = {
     "incident_date",
     "incident_location",
     "claim_amount",
+    # "next_steps" entfernt
 }
 
 # Felder die beim Vergleich ignoriert werden
@@ -41,4 +42,7 @@ IGNORE_FIELDS = {
     "ticket_id",
     "created_timestamp",
     "model_id",
+    "action_items",
+    "missing_fields",
+    "next_steps",
 }

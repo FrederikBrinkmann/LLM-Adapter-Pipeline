@@ -8,7 +8,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 def default_llm_model_ids() -> list[str]:
-    return ["llama3"]
+    return ["llama3.1-8b"]
 
 
 def default_database_path() -> Path:
@@ -44,7 +44,7 @@ class Settings(BaseSettings):
         description="Origins allowed to access the API via CORS.",
     )
 
-    llm_default_model: str = Field(default="llama3")
+    llm_default_model: str = Field(default="llama3.1-8b")
     llm_model_ids: list[str] = Field(default_factory=default_llm_model_ids)
     llm_model_overrides: dict[str, dict[str, Any]] = Field(default_factory=dict)
 
@@ -54,10 +54,10 @@ class Settings(BaseSettings):
 
     openai_api_key: str | None = Field(default=None)
     openai_api_base: str = Field(default="https://api.openai.com/v1")
-    openai_timeout_seconds: float = Field(default=30.0)
+    openai_timeout_seconds: float = Field(default=120.0)
 
     ollama_base_url: str = Field(default="http://127.0.0.1:11434")
-    ollama_timeout_seconds: float = Field(default=60.0)
+    ollama_timeout_seconds: float = Field(default=120.0)
 
     target_api_base_url: str | None = Field(default=None)
     target_api_token: str | None = Field(default=None)

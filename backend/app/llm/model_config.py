@@ -20,24 +20,16 @@ MODEL_CONFIGS: tuple[ModelConfig, ...] = (
         provider="openai",
         parameters={
             "temperature": 0.2,
-            "max_tokens": 1200,
+            "max_completion_tokens": 2500,
         },
     ),
-    ModelConfig(
-        model_id="gpt-5.2-pro",
-        display_name="OpenAI GPT-5.2 Pro",
-        provider="openai",
-        parameters={
-            "temperature": 0.2,
-            "max_tokens": 1500,
-        },
-    ),
+    # gpt-5.2-pro entfernt - existiert nicht als Chat-Modell
     ModelConfig(
         model_id="gpt-5.1",
         display_name="OpenAI GPT-5.1",
         provider="openai",
         parameters={
-            "max_tokens": 1200,
+            "max_completion_tokens": 2500,
         },
     ),
     ModelConfig(
@@ -45,18 +37,24 @@ MODEL_CONFIGS: tuple[ModelConfig, ...] = (
         display_name="OpenAI GPT-5",
         provider="openai",
         parameters={
-            "max_tokens": 1200,
+            "max_completion_tokens": 2500,
         },
     ),
     ModelConfig(
         model_id="gpt-5-mini",
         display_name="OpenAI GPT-5 mini",
         provider="openai",
+        parameters={
+            "max_completion_tokens": 2500,
+        },
     ),
     ModelConfig(
         model_id="gpt-5-nano",
         display_name="OpenAI GPT-5 nano",
         provider="openai",
+        parameters={
+            "max_completion_tokens": 2500,
+        },
     ),
     # OpenAI Reasoning Models
     ModelConfig(
@@ -64,115 +62,66 @@ MODEL_CONFIGS: tuple[ModelConfig, ...] = (
         display_name="OpenAI o3",
         provider="openai",
         parameters={
-            "max_tokens": 1500,
+            "max_completion_tokens": 2500,
         },
     ),
     ModelConfig(
         model_id="o4-mini",
         display_name="OpenAI o4-mini",
         provider="openai",
+        parameters={
+            "max_completion_tokens": 2500,
+        },
     ),
-    # Local Models (Ollama)
-    # LLaMA 3.1 Familie
+    # =================================================================
+    # Local Models (Ollama) - Installierte Modelle
+    # =================================================================
+    # LLaMA Familie
     ModelConfig(
-        model_id="llama3.1-8b",
+        model_id="llama3.1:8b",
         display_name="LLaMA 3.1 8B (Ollama)",
         provider="ollama",
-        parameters={"temperature": 0.1, "max_tokens": 800},
+        parameters={"temperature": 0.1, "max_completion_tokens": 1200},
     ),
     ModelConfig(
-        model_id="llama3.1-70b",
-        display_name="LLaMA 3.1 70B (Ollama)",
+        model_id="llama3:latest",
+        display_name="LLaMA 3 8B (Ollama)",
         provider="ollama",
-        parameters={"temperature": 0.1, "max_tokens": 1200},
+        parameters={"temperature": 0.1, "max_completion_tokens": 1200},
     ),
+    # Qwen Familie (Alibaba)
     ModelConfig(
-        model_id="llama3.1-405b",
-        display_name="LLaMA 3.1 405B (Ollama)",
+        model_id="qwen3:8b",
+        display_name="Qwen 3 8B (Ollama)",
         provider="ollama",
-        parameters={"temperature": 0.1, "max_tokens": 1200},
+        parameters={"temperature": 0.1, "max_completion_tokens": 1200},
     ),
-    # Gemma 3 Familie
     ModelConfig(
-        model_id="gemma3-2b",
-        display_name="Gemma 3 2B (Ollama)",
+        model_id="qwen3:4b",
+        display_name="Qwen 3 4B (Ollama)",
         provider="ollama",
+        parameters={"temperature": 0.1, "max_completion_tokens": 1000},
     ),
+    # Gemma Familie (Google)
     ModelConfig(
-        model_id="gemma3-9b",
-        display_name="Gemma 3 9B (Ollama)",
-        provider="ollama",
-    ),
-    ModelConfig(
-        model_id="gemma3-27b",
-        display_name="Gemma 3 27B (Ollama)",
-        provider="ollama",
-        parameters={"max_tokens": 1200},
-    ),
-    # Gemma 2 Familie
-    ModelConfig(
-        model_id="gemma2-2b",
-        display_name="Gemma 2 2B (Ollama)",
-        provider="ollama",
-    ),
-    ModelConfig(
-        model_id="gemma2-9b",
+        model_id="gemma2:9b",
         display_name="Gemma 2 9B (Ollama)",
         provider="ollama",
+        parameters={"temperature": 0.1, "max_completion_tokens": 1200},
     ),
+    # Phi Familie (Microsoft)
     ModelConfig(
-        model_id="gemma2-27b",
-        display_name="Gemma 2 27B (Ollama)",
+        model_id="phi3:mini",
+        display_name="Phi-3 Mini (Ollama)",
         provider="ollama",
-        parameters={"max_tokens": 1200},
+        parameters={"temperature": 0.1, "max_completion_tokens": 1000},
     ),
-    # Gemma 1 Familie
+    # Mistral
     ModelConfig(
-        model_id="gemma-2b",
-        display_name="Gemma 2B (Ollama)",
+        model_id="mistral:7b",
+        display_name="Mistral 7B (Ollama)",
         provider="ollama",
-    ),
-    ModelConfig(
-        model_id="gemma-7b",
-        display_name="Gemma 7B (Ollama)",
-        provider="ollama",
-    ),
-    # Phi-3 Familie
-    ModelConfig(
-        model_id="phi3-3b",
-        display_name="Phi-3 3B (Ollama)",
-        provider="ollama",
-        parameters={"temperature": 0.1},
-    ),
-    ModelConfig(
-        model_id="phi3-14b",
-        display_name="Phi-3 14B (Ollama)",
-        provider="ollama",
-        parameters={"temperature": 0.1},
-    ),
-    # OLMo Familie
-    ModelConfig(
-        model_id="olmo-3",
-        display_name="OLMo 3 (Ollama)",
-        provider="ollama",
-    ),
-    ModelConfig(
-        model_id="olmo-3.1",
-        display_name="OLMo 3.1 (Ollama)",
-        provider="ollama",
-    ),
-    # NVIDIA Nemotron
-    ModelConfig(
-        model_id="nemotron-3-nano",
-        display_name="Nemotron 3 Nano (Ollama)",
-        provider="ollama",
-    ),
-    # DeepSeek
-    ModelConfig(
-        model_id="deepseek-v3.1",
-        display_name="DeepSeek V3.1 (Ollama)",
-        provider="ollama",
-        parameters={"max_tokens": 1200},
+        parameters={"temperature": 0.1, "max_completion_tokens": 1200},
     ),
 )
 
