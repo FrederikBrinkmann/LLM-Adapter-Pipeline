@@ -15,8 +15,12 @@ services:
       - LLM_PIPELINE_DATABASE_URL=sqlite:///./data/pipeline.db
       - LLM_PIPELINE_CORS_ORIGINS=["http://localhost:5173","http://localhost:5174","http://frontend:5173"]
       - LLM_PIPELINE_TARGET_API_BASE_URL=http://ticket_service:9000
-      - LLM_PIPELINE_AUTO_SUBMIT_ENABLED=false
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LLM_PIPELINE_AUTO_SUBMIT_ENABLED=${LLM_PIPELINE_AUTO_SUBMIT_ENABLED:-false}
+      - LLM_PIPELINE_AUTO_SUBMIT_ALLOW_MISSING_FIELDS=${LLM_PIPELINE_AUTO_SUBMIT_ALLOW_MISSING_FIELDS:-false}
+      - LLM_PIPELINE_LLM_MODEL_IDS=${LLM_PIPELINE_LLM_MODEL_IDS:-["llama3.1:8b"]}
+      - LLM_PIPELINE_LLM_DEFAULT_MODEL=${LLM_PIPELINE_LLM_DEFAULT_MODEL:-llama3.1:8b}
+      - LLM_PIPELINE_OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LLM_PIPELINE_OLLAMA_BASE_URL=${OLLAMA_HOST:-http://host.docker.internal:11434}
     volumes:
       - backend-data:/app/data
     depends_on:
@@ -40,9 +44,12 @@ services:
     environment:
       - LLM_PIPELINE_DATABASE_URL=sqlite:///./data/pipeline.db
       - LLM_PIPELINE_TARGET_API_BASE_URL=http://ticket_service:9000
-      - LLM_PIPELINE_AUTO_SUBMIT_ENABLED=false
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - OLLAMA_HOST=http://ollama:11434
+      - LLM_PIPELINE_AUTO_SUBMIT_ENABLED=${LLM_PIPELINE_AUTO_SUBMIT_ENABLED:-false}
+      - LLM_PIPELINE_AUTO_SUBMIT_ALLOW_MISSING_FIELDS=${LLM_PIPELINE_AUTO_SUBMIT_ALLOW_MISSING_FIELDS:-false}
+      - LLM_PIPELINE_LLM_MODEL_IDS=${LLM_PIPELINE_LLM_MODEL_IDS:-["llama3.1:8b"]}
+      - LLM_PIPELINE_LLM_DEFAULT_MODEL=${LLM_PIPELINE_LLM_DEFAULT_MODEL:-llama3.1:8b}
+      - LLM_PIPELINE_OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LLM_PIPELINE_OLLAMA_BASE_URL=${OLLAMA_HOST:-http://host.docker.internal:11434}
     volumes:
       - backend-data:/app/data
     depends_on:
@@ -105,6 +112,31 @@ services:
       - ticket_service
     networks:
       - llm-network
+
+  # ===========================================
+  # Mail Ingest Service - Optional
+  # ===========================================
+  mail_ingest:
+    build:
+      context: .
+      dockerfile: docker/mail_ingest/Dockerfile
+    container_name: llm-pipeline-mail-ingest
+    environment:
+      - MAIL_IMAP_HOST=${MAIL_IMAP_HOST:-}
+      - MAIL_IMAP_PORT=${MAIL_IMAP_PORT:-993}
+      - MAIL_IMAP_USER=${MAIL_IMAP_USER:-}
+      - MAIL_IMAP_PASSWORD=${MAIL_IMAP_PASSWORD:-}
+      - MAIL_IMAP_FOLDER=${MAIL_IMAP_FOLDER:-INBOX}
+      - MAIL_POLL_INTERVAL=${MAIL_POLL_INTERVAL:-30}
+      - MAIL_MODEL_ID=${MAIL_MODEL_ID:-gpt-5.2}
+      - MAIL_API_BASE=http://backend:8000
+    depends_on:
+      - backend
+    networks:
+      - llm-network
+    profiles:
+      - with-mail
+    restart: unless-stopped
 
   # ===========================================
   # Ollama (Local LLM Server) - Optional

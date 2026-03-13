@@ -120,6 +120,9 @@ def main() -> None:
     model_id = env("MAIL_MODEL_ID")
     api_base = env("MAIL_API_BASE", "http://127.0.0.1:8000")
 
+    print(f"[info] Mail-Ingest gestartet für {user}", flush=True)
+    print(f"[info] API: {api_base}, Model: {model_id or 'default'}, Poll: {poll_interval}s", flush=True)
+
     ssl_context = ssl.create_default_context()
 
     while True:
@@ -129,8 +132,10 @@ def main() -> None:
                 imap.select(folder)
                 status, data = imap.search(None, "UNSEEN")
                 if status != "OK":
-                    print(f"[warn] Suche nach UNSEEN fehlgeschlagen: {status}")
+                    print(f"[warn] Suche nach UNSEEN fehlgeschlagen: {status}", flush=True)
                 uids = data[0].split() if data and data[0] else []
+                if uids:
+                    print(f"[info] {len(uids)} ungelesene E-Mail(s) gefunden", flush=True)
                 for uid in uids:
                     status, msg_data = imap.fetch(uid, "(RFC822)")
                     if status != "OK" or not msg_data:
@@ -144,23 +149,23 @@ def main() -> None:
                     text = (subject + "\n\n" + body).strip()
 
                     if not text:
-                        print(f"[warn] Leere Mail übersprungen (UID {uid})")
+                        print(f"[warn] Leere Mail übersprungen (UID {uid})", flush=True)
                         imap.store(uid, "+FLAGS", "\\Seen")
                         continue
 
                     try:
                         job_id = submit_ingest(api_base, text, model_id)
-                        print(f"[info] Mail UID {uid.decode()} -> Job {job_id}")
+                        print(f"[info] Mail UID {uid.decode()} -> Job {job_id}", flush=True)
                         imap.store(uid, "+FLAGS", "\\Seen")
                     except Exception as exc:  # noqa: BLE001
-                        print(f"[error] Ingest fehlgeschlagen für UID {uid}: {exc}")
+                        print(f"[error] Ingest fehlgeschlagen für UID {uid}: {exc}", flush=True)
                         # Nicht als gesehen markieren, damit Retry möglich ist.
                 imap.logout()
         except KeyboardInterrupt:
-            print("\n[info] Beendet.")
+            print("\n[info] Beendet.", flush=True)
             sys.exit(0)
         except Exception as exc:  # noqa: BLE001
-            print(f"[error] IMAP-Loop Fehler: {exc}")
+            print(f"[error] IMAP-Loop Fehler: {exc}", flush=True)
         time.sleep(poll_interval)
 
 

@@ -8,7 +8,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 def default_llm_model_ids() -> list[str]:
-    return ["llama3.1-8b"]
+    return ["llama3.1:8b"]
 
 
 def default_database_path() -> Path:
@@ -44,7 +44,7 @@ class Settings(BaseSettings):
         description="Origins allowed to access the API via CORS.",
     )
 
-    llm_default_model: str = Field(default="llama3.1-8b")
+    llm_default_model: str = Field(default="llama3.1:8b")
     llm_model_ids: list[str] = Field(default_factory=default_llm_model_ids)
     llm_model_overrides: dict[str, dict[str, Any]] = Field(default_factory=dict)
 

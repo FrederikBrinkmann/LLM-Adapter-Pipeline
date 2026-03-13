@@ -19,7 +19,6 @@ MODEL_CONFIGS: tuple[ModelConfig, ...] = (
         display_name="OpenAI GPT-5.2",
         provider="openai",
         parameters={
-            "temperature": 0.2,
             "max_completion_tokens": 2500,
         },
     ),
