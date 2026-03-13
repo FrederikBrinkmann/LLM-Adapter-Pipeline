@@ -1,0 +1,138 @@
+version: '3.8'
+
+services:
+  # ===========================================
+  # Backend API (FastAPI)
+  # ===========================================
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+    container_name: llm-pipeline-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - LLM_PIPELINE_DATABASE_URL=sqlite:///./data/pipeline.db
+      - LLM_PIPELINE_CORS_ORIGINS=["http://localhost:5173","http://localhost:5174","http://frontend:5173"]
+      - LLM_PIPELINE_TARGET_API_BASE_URL=http://ticket_service:9000
+      - LLM_PIPELINE_AUTO_SUBMIT_ENABLED=false
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - backend-data:/app/data
+    depends_on:
+      - ticket_service
+    networks:
+      - llm-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ===========================================
+  # Worker Service
+  # ===========================================
+  worker:
+    build:
+      context: .
+      dockerfile: docker/worker/Dockerfile
+    container_name: llm-pipeline-worker
+    environment:
+      - LLM_PIPELINE_DATABASE_URL=sqlite:///./data/pipeline.db
+      - LLM_PIPELINE_TARGET_API_BASE_URL=http://ticket_service:9000
+      - LLM_PIPELINE_AUTO_SUBMIT_ENABLED=false
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      - backend-data:/app/data
+    depends_on:
+      - backend
+    networks:
+      - llm-network
+    restart: unless-stopped
+
+  # ===========================================
+  # Ticket Service (FastAPI)
+  # ===========================================
+  ticket_service:
+    build:
+      context: .
+      dockerfile: docker/ticket_service/Dockerfile
+    container_name: llm-pipeline-ticket-service
+    ports:
+      - "9000:9000"
+    volumes:
+      - ticket-data:/app/data
+    networks:
+      - llm-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ===========================================
+  # Frontend (Pipeline UI)
+  # ===========================================
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend/Dockerfile
+      args:
+        - VITE_API_BASE_URL=http://localhost:8000
+        - VITE_TICKETS_UI_URL=http://localhost:5174
+    container_name: llm-pipeline-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    networks:
+      - llm-network
+
+  # ===========================================
+  # Ticket Frontend (Dashboard UI)
+  # ===========================================
+  ticket_frontend:
+    build:
+      context: .
+      dockerfile: docker/ticket_frontend/Dockerfile
+      args:
+        - VITE_TICKETS_API_BASE_URL=http://localhost:9000
+    container_name: llm-pipeline-ticket-frontend
+    ports:
+      - "5174:5174"
+    depends_on:
+      - ticket_service
+    networks:
+      - llm-network
+
+  # ===========================================
+  # Ollama (Local LLM Server) - Optional
+  # ===========================================
+  ollama:
+    image: ollama/ollama:latest
+    container_name: llm-pipeline-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    networks:
+      - llm-network
+    profiles:
+      - with-ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+networks:
+  llm-network:
+    driver: bridge
+
+volumes:
+  backend-data:
+  ticket-data:
+  ollama-data:

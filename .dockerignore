@@ -1,0 +1,48 @@
+# Docker
+.env
+.env.docker
+docker-compose.override.yml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+
+# Node
+node_modules/
+dist/
+.npm
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data (optional - auskommentieren wenn Daten mit gebaut werden sollen)
+data/
+*.db
+*.sqlite
+
+# Evaluation results (groß, nicht in Image)
+evaluation/results/
+
+# Git
+.git/
+.gitignore
+
+# Docs
+*.md
+!README.md
+docs/
+
+# Tests
+tests/
+*_test.py
+test_*.py
