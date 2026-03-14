@@ -128,4 +128,11 @@ MODEL_CONFIGS: tuple[ModelConfig, ...] = (
 MODEL_CONFIG_BY_ID: dict[str, ModelConfig] = {config.model_id: config for config in MODEL_CONFIGS}
 
 
-__all__ = ["ModelConfig", "MODEL_CONFIGS", "MODEL_CONFIG_BY_ID"]
+def get_model_config(model_id: str) -> ModelConfig:
+    """Liefert die Konfiguration für ein Modell anhand der ID."""
+    if model_id not in MODEL_CONFIG_BY_ID:
+        raise ValueError(f"Unbekanntes Modell: {model_id}")
+    return MODEL_CONFIG_BY_ID[model_id]
+
+
+__all__ = ["ModelConfig", "MODEL_CONFIGS", "MODEL_CONFIG_BY_ID", "get_model_config"]

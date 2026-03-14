@@ -63,6 +63,65 @@ def decode_subject(msg: email.message.Message) -> str:
     return " ".join(parts).strip()
 
 
+def extract_sender_email(msg: email.message.Message) -> str | None:
+    """Extrahiert die E-Mail-Adresse des Absenders aus dem From-Header."""
+    from_header = msg.get("From", "")
+    if not from_header:
+        return None
+    
+    # Decode falls nötig
+    decoded_parts = decode_header(from_header)
+    decoded_from = ""
+    for value, encoding in decoded_parts:
+        if isinstance(value, bytes):
+            try:
+                decoded_from += value.decode(encoding or "utf-8", errors="ignore")
+            except LookupError:
+                decoded_from += value.decode("utf-8", errors="ignore")
+        else:
+            decoded_from += str(value)
+    
+    # E-Mail-Adresse extrahieren (Format: "Name <email@example.com>" oder "email@example.com")
+    email_match = re.search(r'<([^>]+@[^>]+)>', decoded_from)
+    if email_match:
+        return email_match.group(1).strip()
+    
+    # Falls keine spitzen Klammern, prüfe ob es direkt eine E-Mail ist
+    email_match = re.search(r'[\w.+-]+@[\w.-]+\.\w+', decoded_from)
+    if email_match:
+        return email_match.group(0).strip()
+    
+    return None
+
+
+def extract_sender_name(msg: email.message.Message) -> str | None:
+    """Extrahiert den Namen des Absenders aus dem From-Header."""
+    from_header = msg.get("From", "")
+    if not from_header:
+        return None
+    
+    # Decode falls nötig
+    decoded_parts = decode_header(from_header)
+    decoded_from = ""
+    for value, encoding in decoded_parts:
+        if isinstance(value, bytes):
+            try:
+                decoded_from += value.decode(encoding or "utf-8", errors="ignore")
+            except LookupError:
+                decoded_from += value.decode("utf-8", errors="ignore")
+        else:
+            decoded_from += str(value)
+    
+    # Name extrahieren (Format: "Name <email@example.com>")
+    name_match = re.match(r'^([^<]+)\s*<', decoded_from)
+    if name_match:
+        name = name_match.group(1).strip().strip('"\'')
+        if name:
+            return name
+    
+    return None
+
+
 def extract_body(msg: email.message.Message) -> str:
     if msg.is_multipart():
         for part in msg.walk():
@@ -146,7 +205,28 @@ def main() -> None:
 
                     subject = decode_subject(msg)
                     body = extract_body(msg)
-                    text = (subject + "\n\n" + body).strip()
+                    sender_email = extract_sender_email(msg)
+                    sender_name = extract_sender_name(msg)
+                    
+                    # Baue den Text mit Absender-Informationen auf
+                    text_parts = []
+                    
+                    # Absender-Infos als Kontext für das LLM hinzufügen
+                    if sender_name or sender_email:
+                        sender_info = []
+                        if sender_name:
+                            sender_info.append(f"Absender: {sender_name}")
+                        if sender_email:
+                            sender_info.append(f"E-Mail: {sender_email}")
+                        text_parts.append("\n".join(sender_info))
+                    
+                    if subject:
+                        text_parts.append(f"Betreff: {subject}")
+                    
+                    if body:
+                        text_parts.append(body)
+                    
+                    text = "\n\n".join(text_parts).strip()
 
                     if not text:
                         print(f"[warn] Leere Mail übersprungen (UID {uid})", flush=True)

@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .config import settings
 from .db import init_db
 from .llm.setup import initialize_models
-from .routes import health, ingest, jobs, models
+from .routes import followup, health, ingest, jobs, models
 
 app = FastAPI(
     title=settings.api_title,
@@ -36,3 +36,4 @@ app.include_router(health.router)
 app.include_router(ingest.router)
 app.include_router(models.router)
 app.include_router(jobs.router)
+app.include_router(followup.router)

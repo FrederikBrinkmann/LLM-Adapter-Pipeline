@@ -74,6 +74,15 @@ class Settings(BaseSettings):
         default=False, description="Submit even if missing_fields are present"
     )
 
+    # SMTP-Konfiguration für E-Mail-Versand
+    smtp_host: str | None = Field(default=None, description="SMTP server hostname")
+    smtp_port: int = Field(default=587, description="SMTP server port")
+    smtp_user: str | None = Field(default=None, description="SMTP username")
+    smtp_password: str | None = Field(default=None, description="SMTP password")
+    smtp_from_email: str | None = Field(default=None, description="From email address")
+    smtp_from_name: str = Field(default="Versicherungs-Team", description="From name")
+    smtp_use_tls: bool = Field(default=True, description="Use TLS for SMTP")
+
     @computed_field
     @property
     def database_url(self) -> str:

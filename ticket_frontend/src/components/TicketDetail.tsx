@@ -1,8 +1,12 @@
-import { Dispatch, SetStateAction } from "react";
+import { useState } from "react";
 
 type TicketStatus = "todo" | "in_progress" | "waiting_for_customer" | "done";
 type TicketPriority = "low" | "medium" | "high" | "urgent";
 type ActionSource = "llm" | "agent" | "system";
+
+// API Base URLs
+const BACKEND_API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, "") ?? "http://127.0.0.1:8000";
 
 interface ActionItem {
   id: string;
@@ -40,6 +44,13 @@ interface Ticket {
   updated_at: string;
 }
 
+interface FollowupEmail {
+  subject: string;
+  body: string;
+  recipient_email: string | null;
+  generated_by: string;
+}
+
 const STATUS_LABELS: Record<TicketStatus, string> = {
   todo: "Todo",
   in_progress: "In Arbeit",
@@ -70,12 +81,104 @@ interface TicketDetailProps {
 }
 
 const TicketDetail = ({ ticket, onClose, onStatusChange }: TicketDetailProps) => {
+  const [followupEmail, setFollowupEmail] = useState<FollowupEmail | null>(null);
+  const [editedEmail, setEditedEmail] = useState<{ subject: string; body: string } | null>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [emailError, setEmailError] = useState<string | null>(null);
+  const [emailSuccess, setEmailSuccess] = useState<string | null>(null);
+
   const handleStatusChange = async (newStatus: TicketStatus) => {
     try {
       await onStatusChange(newStatus);
     } catch (err) {
       console.error("Status update failed:", err);
     }
+  };
+
+  const handleGenerateFollowup = async () => {
+    setIsGenerating(true);
+    setEmailError(null);
+    setEmailSuccess(null);
+    setFollowupEmail(null);
+    setEditedEmail(null);
+
+    try {
+      const response = await fetch(`${BACKEND_API_BASE_URL}/followup/generate`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ticket_id: ticket.id,
+          ticket_subject: ticket.subject,
+          claimant_name: ticket.claimant_name,
+          claimant_email: ticket.claimant_email,
+          missing_fields: ticket.missing_fields,
+          claim_type: ticket.claim_type,
+          description: ticket.description,
+        }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json().catch(() => ({ detail: "Unbekannter Fehler" }));
+        throw new Error(error.detail || `HTTP ${response.status}`);
+      }
+
+      const data = (await response.json()) as FollowupEmail;
+      setFollowupEmail(data);
+      setEditedEmail({ subject: data.subject, body: data.body });
+    } catch (err) {
+      setEmailError(err instanceof Error ? err.message : "E-Mail konnte nicht generiert werden");
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  const handleSendEmail = async () => {
+    if (!editedEmail || !ticket.claimant_email) {
+      setEmailError("Keine E-Mail-Adresse des Kunden vorhanden");
+      return;
+    }
+
+    setIsSending(true);
+    setEmailError(null);
+
+    try {
+      const backendUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+      
+      const response = await fetch(`${backendUrl}/followup/send`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          recipient_email: ticket.claimant_email,
+          subject: editedEmail.subject,
+          body: editedEmail.body,
+          ticket_id: ticket.id,
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.detail || "E-Mail konnte nicht gesendet werden");
+      }
+
+      // Status auf "Warten auf Kunde" setzen
+      await onStatusChange("waiting_for_customer");
+      
+      setEmailSuccess(`E-Mail wurde an ${ticket.claimant_email} gesendet`);
+      setFollowupEmail(null);
+      setEditedEmail(null);
+    } catch (err) {
+      setEmailError(err instanceof Error ? err.message : "E-Mail konnte nicht gesendet werden");
+    } finally {
+      setIsSending(false);
+    }
+  };
+
+  const handleCancelEmail = () => {
+    setFollowupEmail(null);
+    setEditedEmail(null);
+    setEmailError(null);
+    setEmailSuccess(null);
   };
 
   return (
@@ -213,6 +316,74 @@ const TicketDetail = ({ ticket, onClose, onStatusChange }: TicketDetailProps) =>
                     {field}
                   </span>
                 ))}
+              </div>
+
+              {/* Followup Email Section */}
+              <div className="followup-section">
+                {emailError && <div className="followup-error">❌ {emailError}</div>}
+                {emailSuccess && <div className="followup-success">✅ {emailSuccess}</div>}
+
+                {!followupEmail && !emailSuccess && (
+                  <button
+                    className="followup-generate-btn"
+                    onClick={handleGenerateFollowup}
+                    disabled={isGenerating}
+                  >
+                    {isGenerating ? "⏳ Generiere E-Mail..." : "✉️ Nachfrage-E-Mail generieren"}
+                  </button>
+                )}
+
+                {followupEmail && editedEmail && (
+                  <div className="followup-preview">
+                    <h4>📧 E-Mail Vorschau</h4>
+                    <div className="followup-field">
+                      <label>An:</label>
+                      <span className={ticket.claimant_email ? "" : "empty"}>
+                        {ticket.claimant_email || "Keine E-Mail-Adresse vorhanden"}
+                      </span>
+                    </div>
+                    <div className="followup-field">
+                      <label>Betreff:</label>
+                      <input
+                        type="text"
+                        value={editedEmail.subject}
+                        onChange={(e) => setEditedEmail({ ...editedEmail, subject: e.target.value })}
+                        className="followup-subject-input"
+                      />
+                    </div>
+                    <div className="followup-field">
+                      <label>Nachricht:</label>
+                      <textarea
+                        value={editedEmail.body}
+                        onChange={(e) => setEditedEmail({ ...editedEmail, body: e.target.value })}
+                        className="followup-body-textarea"
+                        rows={12}
+                      />
+                    </div>
+                    <div className="followup-meta">
+                      <small>Generiert von: {followupEmail.generated_by}</small>
+                    </div>
+                    <div className="followup-actions">
+                      <button
+                        className="followup-send-btn"
+                        onClick={handleSendEmail}
+                        disabled={isSending || !ticket.claimant_email}
+                      >
+                        {isSending ? "⏳ Sende..." : "📤 E-Mail senden"}
+                      </button>
+                      <button
+                        className="followup-regenerate-btn"
+                        onClick={handleGenerateFollowup}
+                        disabled={isGenerating}
+                      >
+                        🔄 Neu generieren
+                      </button>
+                      <button className="followup-cancel-btn" onClick={handleCancelEmail}>
+                        ✕ Abbrechen
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}

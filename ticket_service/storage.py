@@ -202,7 +202,7 @@ class TicketStore:
 
     def _apply_update(self, stored: dict[str, Any], update: TicketUpdate) -> dict[str, Any]:
         ticket = Ticket(**stored)
-        data = ticket.model_dump()
+        data = ticket.model_dump(mode="json")
         for field in (
             "ticket_id",
             "subject",
